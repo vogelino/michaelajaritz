@@ -1,0 +1,16 @@
+{
+  "name": "michaelajaritz",
+  "version": "1.0.0",
+  "description": "The personal website of Michaela Jaritz, business coach and trainer.",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://vogelino@bitbucket.org/vogelino/michaelajaritz.git"
+  },
+  "author": "Lucas Vogel <contact@vogelino.com> (http://vogelino.com/)",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/vogelino/michaelajaritz#readme"
+}
