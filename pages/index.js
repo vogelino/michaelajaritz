@@ -1,7 +1,7 @@
 import React from 'react';
+import { FormattedMessage } from 'react-intl';
 import TextsProvider from '../texts';
 import HtmlHead from '../components/HtmlHead';
-import { FormattedMessage } from 'react-intl';
 
 export default () => (
 	<TextsProvider>

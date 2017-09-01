@@ -1,9 +1,10 @@
+import React from 'react';
 import { addLocaleData, IntlProvider } from 'react-intl';
 import de from 'react-intl/locale-data/de';
 import PropTypes from 'prop-types';
 import getMessages from './messages';
 
-addLocaleData([ ...de ]);
+addLocaleData([...de]);
 
 const locale = 'de-DE';
 const messages = getMessages(locale);
