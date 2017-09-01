@@ -5,4 +5,4 @@ const texts = {
 	'de-DE': germanTexts,
 };
 
-export default (locale) => flattenObject(texts[locale]);
+export default (locale) => flattenObject(texts[locale] || texts['de-DE']);

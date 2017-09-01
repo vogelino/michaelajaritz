@@ -1,4 +1,5 @@
 export default {
+	testString: 'hello',
 	site: {
 		title: ' | Michaela Jaritz | Business Coaching & Training',
 	},
