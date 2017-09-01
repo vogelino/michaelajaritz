@@ -1,9 +1,13 @@
 import React from 'react';
-import HtmlHead from '../components/HtmlHead.js';
+import TextsProvider from '../texts';
+import HtmlHead from '../components/HtmlHead';
+import { FormattedMessage } from 'react-intl';
 
 export default () => (
-	<div>
-		<HtmlHead pageTitle="Willkommen" />
-		<div>Welcome to next.js!</div>
-	</div>
+	<TextsProvider>
+		<div>
+			<HtmlHead pageName="welcome" />
+			<FormattedMessage id="pages.welcome.greetings" />
+		</div>
+	</TextsProvider>
 );

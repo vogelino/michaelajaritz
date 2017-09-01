@@ -1,16 +1,22 @@
 import React from 'react';
 import Head from 'next/head';
 import PropTypes from 'prop-types';
+import withTexts from '../texts';
+import { intlShape, injectIntl } from 'react-intl';
 
-const HtmlHead = ({ pageTitle }) => (
+const HtmlHead = ({ pageName, intl }) => (
     <Head>
-        <title>{pageTitle} | Michaela Jaritz | Business Coaching & Training</title>
+        <title>
+            {intl.formatMessage({ id: `pages.${pageName}.title` })}
+            {intl.formatMessage({ id: 'site.title' })}
+        </title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     </Head>
 );
 
 HtmlHead.propTypes = {
-    pageTitle: PropTypes.string.isRequired,
+    pageName: PropTypes.string.isRequired,
+    intl: intlShape.isRequired,
 };
 
-export default HtmlHead;
+export default injectIntl(HtmlHead);
