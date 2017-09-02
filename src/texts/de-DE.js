@@ -6,7 +6,7 @@ export default {
 	pages: {
 		welcome: {
 			title: 'Willkommen',
-			greetings: 'Hallo die Welt!',
+			greetings: 'Hallo die Leute!',
 		},
 	},
 };
