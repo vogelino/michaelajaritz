@@ -1,0 +1,17 @@
+{
+	"token": "2E52BkbRpoY9Xkbd9ySAB04U",
+	"user": {
+		"uid": "F320GQhPlAPwSyKWYbcPoVA5",
+		"username": "vogelino",
+		"email": "contact@vogelino.com"
+	},
+	"lastUpdate": 1504353479159,
+	"name": "michaelajaritz",
+	"alias": "michaela-jaritz.vogelino.com",
+	"env": {
+		"NODE_ENV": "production"
+	},
+	"engines": {
+		"node": "8.4.0"
+	}
+}

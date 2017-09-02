@@ -9,9 +9,13 @@
     "lint": "eslint ./**/*.js",
     "lint-fix": "eslint --fix ./**/*.js",
     "test": "jest",
-    "coverage": "jest --coverage",
+    "generate-coverage-report": "jest --coverage",
+    "deploy-coverage-report": "(cd ./coverage/lcov-report/ && now && now alias)",
+    "copy-coverage-now-config": "cp ./now.coverage.json ./coverage/lcov-report/now.json",
+    "publish-coverage-report": "npm run generate-coverage-report && npm run copy-coverage-now-config && npm run deploy-coverage-report",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "publish-website": "now && now alias"
   },
   "repository": {
     "type": "git",
@@ -45,6 +49,7 @@
     "eslint-plugin-react": "^7.3.0",
     "jest": "^20.0.4",
     "jest-cli": "^20.0.4",
+    "now": "^7.4.0",
     "react-test-renderer": "^15.6.1",
     "regenerator-runtime": "^0.11.0"
   }
