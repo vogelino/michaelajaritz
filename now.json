@@ -1,8 +1,10 @@
 {
-	"env": {
-		"NODE_ENV": "production"
-	},
+	"name": "michalea-jaritz",
+	"alias": "michalea-jaritz.vogelino.com",
 	"engines": {
 		"node": "8.4.0"
+	},
+	"env": {
+		"NODE_ENV": "production"
 	}
 }

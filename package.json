@@ -2,6 +2,9 @@
   "name": "michaelajaritz",
   "version": "1.0.0",
   "description": "The personal website of Michaela Jaritz, business coach and trainer.",
+  "engines": {
+    "node": "8.4.0"
+  },
   "scripts": {
     "dist": "mkdir -p dist",
     "lint": "eslint ./**/*.js",
@@ -15,12 +18,14 @@
     "dev:storybook": "start-storybook -p 6006",
     "generate:coverage": "rm -rf ./dist/coverage && jest --coverage",
     "generate:storybook": "rm -rf ./dist/storybook && build-storybook -c .storybook -o ./dist/storybook",
-    "deploy:coverage": "npm run deploy -- ./dist/coverage/lcov-report -n mj-coverage && npm run alias -- $COVERAGE_URL",
-    "deploy:storybook": "npm run deploy -- ./dist/storybook/ --config=./now.storybook.js -n mj-coverage && npm run alias -- $STORYBOOK_URL",
-    "deploy:website": "npm run deploy -- -n mj-website && npm run alias -- $WEBSITE_URL",
-    "deploy:all": "npm run do:coverage && npm run do:storybook && npm run deploy:website",
+    "config:coverage": "cp ./now.coverage.json ./dist/coverage/lcov-report/now.json",
+    "deploy:coverage": "npm run config:coverage && (cd ./dist/coverage/lcov-report && now deploy -t $NOW_TOKEN && now alias -t $NOW_TOKEN)",
     "do:coverage": "npm run generate:coverage && npm run deploy:coverage",
-    "do:storybook": "npm run generate:storybook && npm run deploy:storybook"
+    "config:storybook": "cp ./now.storybook.json ./dist/storybook/now.json",
+    "deploy:storybook": "npm run config:storybook && (cd ./dist/storybook/ && now deploy -t $NOW_TOKEN && now alias -t $NOW_TOKEN)",
+    "do:storybook": "npm run generate:storybook && npm run deploy:storybook",
+    "deploy:website": "now deploy -t $NOW_TOKEN && now alias -t $NOW_TOKEN",
+    "deploy:all": "npm run do:coverage && npm run do:storybook && npm run deploy:website"
   },
   "repository": {
     "type": "git",
