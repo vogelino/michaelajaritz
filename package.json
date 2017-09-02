@@ -10,8 +10,8 @@
     "start": "next start src",
     "build": "next build src",
     "dev": "next dev src",
-    "deploy": "now deploy --token=$NOW_TOKEN",
-    "alias": "now alias --token=$NOW_TOKEN",
+    "deploy": "now deploy -t $NOW_TOKEN",
+    "alias": "now alias -t $NOW_TOKEN",
     "coverage:generate": "rm -rf ./dist/coverage && jest --coverage",
     "coverage:deploy": "(cd ./dist/coverage/lcov-report/ && npm run deploy && npm run alias)",
     "coverage:config": "cp ./now.coverage.json ./dist/coverage/lcov-report/now.json",
@@ -56,7 +56,7 @@
     "eslint-plugin-react": "^7.3.0",
     "jest": "^20.0.4",
     "jest-cli": "^20.0.4",
-    "now": "^8.0.0-beta.9",
+    "now": "^7.3.0",
     "react-test-renderer": "^15.6.1",
     "regenerator-runtime": "^0.11.0"
   }
