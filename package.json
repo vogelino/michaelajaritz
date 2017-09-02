@@ -13,11 +13,11 @@
     "deploy": "now deploy -t $NOW_TOKEN",
     "alias": "now alias -t $NOW_TOKEN",
     "coverage:generate": "rm -rf ./dist/coverage && jest --coverage",
-    "coverage:deploy": "(cd ./dist/coverage/lcov-report/ && npm run deploy -- -c ../../../now.coverage.js && npm run alias)",
+    "coverage:deploy": "(cd ./dist/coverage/lcov-report/ && npm run deploy -- -c ../../../now.coverage.js && npm run alias -- -c ../../../now.coverage.js)",
     "coverage": "npm run coverage:generate && npm run coverage:deploy",
     "storybook:dev": "start-storybook -p 6006",
     "storybook:generate": "rm -rf ./dist/storybook && build-storybook -c .storybook -o ./dist/storybook",
-    "storybook:deploy": "(cd ./dist/storybook/ && npm run deploy -- -c ../../now.storybook.js && npm run alias)",
+    "storybook:deploy": "(cd ./dist/storybook/ && npm run deploy -- -c ../../now.storybook.js && npm run alias -- -c ../../../now.storybook.js)",
     "storybook": "npm run storybook:generate && npm run storybook:deploy",
     "website:publish": "npm run deploy && npm run alias",
     "deploy-all": "npm run coverage && npm run storybook && npm run website:publish"
