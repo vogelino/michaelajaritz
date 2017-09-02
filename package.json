@@ -11,16 +11,16 @@
     "build": "next build src",
     "dev": "next dev src",
     "coverage:generate": "rm -rf ./dist/coverage && jest --coverage",
-    "coverage:deploy": "(cd ./dist/coverage/lcov-report/ && now-pipeline && now alias)",
+    "coverage:deploy": "(cd ./dist/coverage/lcov-report/ && now && now alias)",
     "coverage:config": "cp ./now.coverage.json ./dist/coverage/lcov-report/now.json",
     "coverage": "npm run coverage:generate && npm run coverage:config && npm run coverage:deploy",
     "storybook:dev": "start-storybook -p 6006",
     "storybook:generate": "rm -rf ./dist/storybook && build-storybook -c .storybook -o ./dist/storybook",
     "storybook:config": "cp ./now.storybook.json ./dist/storybook/now.json",
-    "storybook:deploy": "(cd ./dist/storybook/ && now-pipeline && now alias)",
+    "storybook:deploy": "(cd ./dist/storybook/ && now && now alias)",
     "storybook": "npm run storybook:generate && npm run storybook:config && npm run storybook:deploy",
-    "website:publish": "now && now-pipeline alias",
-    "deploy-all": "npm run coverage & npm run storybook & npm run website:publish"
+    "website:publish": "now && now alias",
+    "deploy-all": "npm run coverage && npm run storybook && npm run website:publish"
   },
   "repository": {
     "type": "git",
@@ -54,8 +54,7 @@
     "eslint-plugin-react": "^7.3.0",
     "jest": "^20.0.4",
     "jest-cli": "^20.0.4",
-    "now": "^7.4.0",
-    "now-pipeline": "^1.8.0",
+    "now": "^8.0.0-beta.9",
     "react-test-renderer": "^15.6.1",
     "regenerator-runtime": "^0.11.0"
   }
