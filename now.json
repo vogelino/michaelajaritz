@@ -1,6 +1,4 @@
 {
-	"name": "michaelajaritz",
-	"alias": "michaela-jaritz.vogelino.com",
 	"env": {
 		"NODE_ENV": "production"
 	},

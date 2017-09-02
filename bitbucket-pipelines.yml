@@ -8,6 +8,6 @@ pipelines:
         script:
           - npm install
           - npm run lint
-          - npm run coverage
-          - npm run storybook
-          - npm run website:publish
+          - npm run do:coverage
+          - npm run do:storybook
+          - npm run deploy:website
