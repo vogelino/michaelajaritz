@@ -1,0 +1,12 @@
+image: node:8.4.0
+
+pipelines:
+	default:
+		- step:
+			caches:
+				- node
+			script:
+				- npm install
+				- npm run lint
+				- npm test
+				- npm run build
