@@ -8,7 +8,7 @@ pipelines:
         script:
           - npm install
           - npm run lint
-          - npm coverage
-          - npm storybook
-          - npm build
-          - npm website:publish
+          - npm run coverage
+          - npm run storybook
+          - npm run build
+          - npm run website:publish
