@@ -19,7 +19,8 @@
     "storybook:config": "cp ./now.storybook.json ./dist/storybook/now.json",
     "storybook:deploy": "(cd ./dist/storybook/ && now && now alias)",
     "storybook": "npm run storybook:generate && npm run storybook:config && npm run storybook:deploy",
-    "website:publish": "now && now alias"
+    "website:publish": "now && now alias",
+    "deploy-all": "npm run coverage & npm run storybook & npm run website:publish"
   },
   "repository": {
     "type": "git",
