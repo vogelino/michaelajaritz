@@ -3,7 +3,7 @@ import Head from 'next/head';
 import PropTypes from 'prop-types';
 import { intlShape, injectIntl } from 'react-intl';
 
-const HtmlHead = ({ pageName, intl }) => (
+export const HtmlHead = ({ pageName, intl }) => (
 	<Head>
 		<title>
 			{intl.formatMessage({ id: `pages.${pageName}.title` })}

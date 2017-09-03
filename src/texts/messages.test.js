@@ -7,6 +7,6 @@ test('getMessages should return a flattened object', () => {
 });
 
 test('getMessages should default to german', () => {
-	const messages = getMessages('bob-BOB');
+	const messages = getMessages(undefined);
 	expect(messages['pages.welcome.title']).toBe('Willkommen');
 });
