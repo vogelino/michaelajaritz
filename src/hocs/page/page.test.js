@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import page from './page';
+import page from '.';
 
 test('It should render without crashing', () => {
 	const Component = () => <div>component</div>;

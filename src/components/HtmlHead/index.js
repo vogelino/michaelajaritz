@@ -3,7 +3,7 @@ import Head from 'next/head';
 import PropTypes from 'prop-types';
 import { intlShape, injectIntl } from 'react-intl';
 
-export const HtmlHead = ({ pageName, intl }) => (
+export const HtmlHeadComponent = ({ pageName, intl }) => (
 	<Head>
 		<title>
 			{intl.formatMessage({ id: `pages.${pageName}.title` })}
@@ -13,9 +13,9 @@ export const HtmlHead = ({ pageName, intl }) => (
 	</Head>
 );
 
-HtmlHead.propTypes = {
+HtmlHeadComponent.propTypes = {
 	pageName: PropTypes.string.isRequired,
 	intl: intlShape.isRequired,
 };
 
-export default injectIntl(HtmlHead);
+export default injectIntl(HtmlHeadComponent);
