@@ -13,4 +13,4 @@ WelcomePage.propTypes = {
 	pageName: PropTypes.string.isRequired,
 };
 
-export default page('Welcome')(WelcomePage);
+export default page('welcome')(WelcomePage);
