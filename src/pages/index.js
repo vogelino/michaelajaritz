@@ -1,13 +1,16 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
-import TextsProvider from '../texts';
-import HtmlHead from '../components/HtmlHead';
+import page from '../hocs/page';
 
-export default () => (
-	<TextsProvider>
-		<div>
-			<HtmlHead pageName="welcome" />
-			<FormattedMessage id="pages.welcome.greetings" />
-		</div>
-	</TextsProvider>
+const WelcomePage = ({ pageName }) => (
+	<div>
+		{pageName}: <FormattedMessage id="pages.welcome.greetings" />
+	</div>
 );
+
+WelcomePage.propTypes = {
+	pageName: PropTypes.string.isRequired,
+};
+
+export default page('welcome')(WelcomePage);
