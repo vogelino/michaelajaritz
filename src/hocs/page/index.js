@@ -1,5 +1,6 @@
 import React from 'react';
 import { Provider } from 'react-redux';
+import ThemeProvider from '../../theme';
 import TextsProvider from '../../texts';
 import HtmlHead from '../../components/HtmlHead';
 import configureStore from '../../redux/store/configureStore';
@@ -10,10 +11,12 @@ export default (pageName) => (Component) => (props) => {
 	return (
 		<Provider store={configureStore()}>
 			<TextsProvider>
-				<div className="page-wrapper">
-					<HtmlHead pageName={pageName} />
-					<ComponentWithResize pageName={pageName} {...props} />
-				</div>
+				<ThemeProvider>
+					<div className="page-wrapper">
+						<HtmlHead pageName={pageName} />
+						<ComponentWithResize pageName={pageName} {...props} />
+					</div>
+				</ThemeProvider>
 			</TextsProvider>
 		</Provider>
 	);

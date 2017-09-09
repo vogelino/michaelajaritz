@@ -35,15 +35,19 @@
   "license": "ISC",
   "homepage": "https://bitbucket.org/vogelino/michaelajaritz#readme",
   "dependencies": {
+    "babel-plugin-emotion": "^7.2.2",
+    "emotion": "^7.2.2",
     "flux-standard-action": "^1.2.0",
     "next": "^3.2.1",
     "prop-types": "^15.5.10",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
+    "react-emotion": "^7.2.2",
     "react-intl": "^2.3.0",
     "react-redux": "^5.0.6",
     "redux": "^3.7.2",
-    "redux-devtools-extension": "^2.13.2"
+    "redux-devtools-extension": "^2.13.2",
+    "theming": "^1.1.0"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^3.2.6",
