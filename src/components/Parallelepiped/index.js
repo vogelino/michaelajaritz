@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { css } from 'emotion';
 import styled from 'react-emotion';
+import { withTheme } from 'theming';
 
 const getScaleYByPlacement = ({ placement }) =>
 	`scaleY(${placement === 'toTop' ? 1 : -1})`;
@@ -14,8 +15,8 @@ const getRotateByPlacement = ({ ready, placement }) => (
 
 const Container = styled('div')`
 	display: inline-block;
-	width: 223px;
-	height: 129px;
+	width: 240px;
+	height: 120px;
 	transform-origin: 0 100%;
 	transform: ${getRotateByPlacement} ${getScaleYByPlacement};
 	opacity: ${({ ready }) => (ready ? 1 : 0)};
@@ -24,7 +25,6 @@ const Container = styled('div')`
 `;
 
 const parallelepipedPathClass = css`
-	fill: red;
 	transition: fill 400ms cubic-bezier(0,1,.37,.98);
 `;
 
@@ -41,7 +41,7 @@ class Parallelepiped extends Component {
 		}, after);
 	}
 	render() {
-		const { placement } = this.props;
+		const { theme, placement } = this.props;
 		const { ready } = this.state;
 		return (
 			<Container
@@ -50,11 +50,12 @@ class Parallelepiped extends Component {
 			>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
-					viewBox="0 0 223 129"
+					viewBox="0 0 85.04 42.52"
 				>
-					<path
-						d="M149 129.03L223.49 0H74.5L0 129.03h149z"
+					<polygon
+						points="28.35 0 0 42.52 56.69 42.52 85.04 0 28.35 0"
 						className={parallelepipedPathClass}
+						css={`fill: ${theme.primary};`}
 					/>
 				</svg>
 			</Container>
@@ -64,11 +65,18 @@ class Parallelepiped extends Component {
 
 Parallelepiped.defaultProps = {
 	placement: 'toTop',
+	theme: {
+		primary: 'blue',
+	},
 };
 
 Parallelepiped.propTypes = {
 	placement: PropTypes.oneOf(['toTop', 'toBottom']),
+	theme: PropTypes.shape({
+		primary: PropTypes.string.isRequired,
+	}),
 };
 
-export default Parallelepiped;
+
+export default withTheme(Parallelepiped);
 

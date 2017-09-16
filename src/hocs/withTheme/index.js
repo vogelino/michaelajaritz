@@ -1,12 +1,11 @@
+import React from 'react';
+import { ThemeProvider } from 'react-emotion';
+import theme from '../../theme/theme';
 
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-
-export default (WrappedComponent) => {
-	const ComponentWithTheme = (props) => (
-		<ThemeProvider theme={{}}>
-			</WrappedComponent>
+export default (WrappedComponent) =>
+	(props) => (
+		<ThemeProvider theme={theme}>
+			<WrappedComponent {...props} />
 		</ThemeProvider>
 	);
-};
 

@@ -1,4 +1,4 @@
 export default {
-	primary: 'BADA55',
+	primary: '#BADA55',
 };
 

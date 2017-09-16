@@ -1,17 +1,17 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { ThemeProvider } from 'theming';
+import PropTypes from 'prop-types';
 import theme from './theme';
 
-const ComponentWithTheme = ({ children }) => (
+const ThemeProdiverWrapper = ({ children }) => (
 	<ThemeProvider theme={theme}>
 		{children}
 	</ThemeProvider>
 );
 
-ComponentWithTheme.propTypes = {
+ThemeProdiverWrapper.propTypes = {
 	children: PropTypes.element.isRequired,
 };
 
-export default ComponentWithTheme;
+export default ThemeProdiverWrapper;
 

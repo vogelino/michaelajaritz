@@ -1,8 +1,14 @@
 import React from 'react';
 import { mount } from 'enzyme';
+import ThemeProvider from '../../theme';
 import Parallelepiped from '.';
 
 test('should render without crashing', () => {
-	mount(<Parallelepiped />);
+	const Comp = () => (
+		<ThemeProvider>
+			<Parallelepiped />
+		</ThemeProvider>
+	);
+	mount(<Comp />);
 });
 

@@ -2,14 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import page from '../hocs/page';
-import { interaction } from '../hocs/withErrorLogs';
+import { gracefulFunction } from '../hocs/withErrorLogs';
 
 const WelcomePage = ({ pageName }) => (
 	<div>
 		{pageName}: <FormattedMessage id="pages.welcome.greetings" />
 		<button
 			onClick={
-				interaction('Do something', () => {
+				gracefulFunction('Do something', () => {
 					throw new Error('Test error');
 				})
 			}
