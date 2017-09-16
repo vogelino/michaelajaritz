@@ -2,7 +2,7 @@ import React from 'react';
 import Raven from 'raven-js';
 import InteractionError from '../../errors/InteractionError';
 
-const logException = (ex, context) => {
+export const logException = (ex, context) => {
 	Raven.captureException(ex, {
 		extra: context,
 	});
@@ -13,7 +13,7 @@ const logException = (ex, context) => {
 	/* eslint-enable no-console */
 };
 
-export const interaction = (description, callback) => (...args) => {
+export const gracefulFunction = (description, callback) => (...args) => {
 	try {
 		callback(...args);
 	}
@@ -24,16 +24,6 @@ export const interaction = (description, callback) => (...args) => {
 			message,
 		});
 		logException(error);
-	}
-};
-
-export default (WrappedComponent) => (props) => {
-	try {
-		return <WrappedComponent {...props} />;
-	}
-	catch (exception) {
-		logException(exception);
-		return <div />;
 	}
 };
 

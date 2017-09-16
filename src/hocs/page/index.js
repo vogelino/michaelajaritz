@@ -6,7 +6,6 @@ import TextsProvider from '../../texts';
 import HtmlHead from '../../components/HtmlHead';
 import configureStore from '../../redux/store/configureStore';
 import withResize from '../withResize';
-import withErrorLogs from '../withErrorLogs';
 
 Raven.config('https://5b9457deb5544977a1851e1217fd8066@sentry.io/214731', {
 	environment: process.NODE_ENV,
@@ -15,17 +14,17 @@ Raven.config('https://5b9457deb5544977a1851e1217fd8066@sentry.io/214731', {
 
 export default (pageName) => (Component) => (props) => {
 	const ComponentWithResize = withResize(Component);
-	const ComponentWithErrorLogs = withErrorLogs(ComponentWithResize);
 	return (
 		<Provider store={configureStore()}>
 			<TextsProvider>
 				<ThemeProvider>
 					<div className="page-wrapper">
 						<HtmlHead pageName={pageName} />
-						<ComponentWithErrorLogs pageName={pageName} {...props} />
+						<ComponentWithResize pageName={pageName} {...props} />
 					</div>
 				</ThemeProvider>
 			</TextsProvider>
 		</Provider>
 	);
 };
+
