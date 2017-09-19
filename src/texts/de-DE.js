@@ -8,6 +8,9 @@ export default {
 		welcome: {
 			title: 'Willkommen',
 			greetings: 'Hallo zusammen!',
+			content: {
+				title: 'Erfahren.\nZugeschnitten.\nErfolgreich.',
+			},
 		},
 		idea: {
 			title: 'Die Idee',

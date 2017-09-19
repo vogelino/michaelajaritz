@@ -17,8 +17,10 @@ export default {
 	menuFontWeightActive: baseFontWeight + 200,
 	addressFontSize: `${baseFontSize - 2}px`,
 	addressFontFamily: sansSerifFont,
-	titleFontSize: `${baseFontSize + 10}px`,
+	titleFontSize: `${baseFontSize + 25}px`,
 	titleFontFamily: monospaceFont,
+	titleFontWeight: baseFontWeight - 100,
+	titleLetterSpacing: '0.04em',
 	subtitleFontSize: `${baseFontSize + 38}px`,
 	subtitleFontFamily: sansSerifFont,
 };

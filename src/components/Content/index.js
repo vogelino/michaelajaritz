@@ -9,7 +9,6 @@ const ContentWrapper = styled('section')`
 	position: absolute;
 	top: 0;
 	right: 0;
-	background: purple;
 	padding: 40px 50px 40px 0;
 	display: flex;
 	flex-direction: column;
