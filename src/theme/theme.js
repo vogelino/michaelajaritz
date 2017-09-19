@@ -1,4 +1,8 @@
+import colors from './colors';
+import typography from './typography';
+
 export default {
-	primary: '#BADA55',
+	...colors,
+	...typography,
 };
 

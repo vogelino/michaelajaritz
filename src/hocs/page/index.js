@@ -13,7 +13,9 @@ Raven.config('https://5b9457deb5544977a1851e1217fd8066@sentry.io/214731', {
 	environment: process.NODE_ENV,
 }).install();
 
+/* eslint-disable no-unused-expressions */
 injectGlobal`
+	@import url('https://fonts.googleapis.com/css?family=Lato:300,400,400i,700|PT+Mono');
 	body {
 		margin: 0;
 	}
@@ -22,6 +24,7 @@ injectGlobal`
 		box-sizing: border-box;
 	}
 `;
+/* eslint-enable no-unused-expressions */
 
 export default (pageName) => (Component) => (props) => {
 	const ComponentWithResize = withResize(Component);
