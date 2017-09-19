@@ -6,14 +6,7 @@ import { gracefulFunction } from '../hocs/withErrorLogs';
 
 const WelcomePage = ({ pageName }) => (
 	<div>
-		{pageName}: <FormattedMessage id="pages.welcome.greetings" />
-		<button
-			onClick={
-				gracefulFunction('Do something', () => {
-					throw new Error('Test error');
-				})
-			}
-		/>
+
 	</div>
 );
 

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="212px" height="61px" viewBox="0 0 212 61" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>Logo&amp;Text</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Logo&amp;Text">
+            <g id="Logo-Text" transform="translate(0.000000, 27.000000)" font-size="23" font-family="Lato-Bold, Lato" letter-spacing="0.400000006" fill="#505A62" font-weight="bold">
+                <text id="logoText">
+                    <tspan x="-1.12601605" y="28.2855096">Michaela Jaritz</tspan>
+                </text>
+            </g>
+            <g id="Logo" transform="translate(163.000000, 0.000000)">
+                <polygon id="Fill-1" fill="#CA008C" points="9.66715897 13.3942359 14.4930884 21.7529615 19.318795 13.3942359"></polygon>
+                <polygon id="Fill-2" fill="#EFB500" points="9.66715897 13.3942359 4.84134093 21.7529615 14.4930884 21.7529615"></polygon>
+                <polygon id="Fill-3" fill="#CA008C" points="0.0154671798 30.1114977 9.66721469 30.1114977 4.84139666 21.7528835"></polygon>
+                <polygon id="Fill-4" fill="#CA008C" points="4.84136322 21.752917 9.66718126 30.1115311 14.4929993 21.752917"></polygon>
+                <polygon id="Fill-5" fill="#0578DF" points="14.493055 21.752917 19.318873 30.1115311 24.1448025 21.752917"></polygon>
+                <polygon id="Fill-6" fill="#CA008C" points="19.3617806 13.3942359 14.5358511 21.7529615 24.1875986 21.7529615"></polygon>
+                <polygon id="Fill-7" fill="#0578DF" points="29.0134724 13.3942359 24.1875429 21.7529615 33.8392904 21.7529615"></polygon>
+                <polygon id="Fill-8" fill="#0578DF" points="29.0134724 13.3942359 33.8392904 21.7529615 38.6652199 13.3942359"></polygon>
+                <polygon id="Fill-9" fill="#CA008C" points="38.6651642 13.3942359 33.8392347 21.7529615 43.4909822 21.7529615"></polygon>
+                <polygon id="Fill-10" fill="#0578DF" points="19.3617806 30.1114977 29.0134167 30.1114977 24.1875986 21.7528835"></polygon>
+                <polygon id="Fill-11" fill="#EFB500" points="24.1875763 21.752917 29.0135058 30.1115311 33.8393238 21.752917"></polygon>
+                <polygon id="Fill-12" fill="#EFB500" points="33.8392681 21.752917 38.6651976 30.1115311 43.4910156 21.752917"></polygon>
+                <polygon id="Fill-13" fill="#EFB500" points="38.6651642 30.1114977 48.3169117 30.1114977 43.4909822 21.7528835"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

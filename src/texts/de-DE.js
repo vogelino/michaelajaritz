@@ -2,6 +2,7 @@ export default {
 	testString: 'hello',
 	site: {
 		title: ' | Michaela Jaritz | Business Coaching & Training',
+		slogan: 'Sichtbar machen.\nPlatz machen.\nMöglich machen.',
 	},
 	pages: {
 		welcome: {
@@ -25,6 +26,14 @@ export default {
 		},
 		cooperations: {
 			title: 'Kooperationen',
+		},
+	},
+	legal: {
+		imprint: {
+			title: 'Impressum',
+		},
+		privacy: {
+			title: 'Datenschutz',
 		},
 	},
 };

@@ -2,26 +2,25 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'react-emotion';
 import Menu from '../Menu';
+import Logo from '../Logo';
+import Footer from '../Footer';
 
 const SidebarWrapper = styled('aside')`
 	width: 280px;
 	height: 100%;
 	position: fixed;
-	background: blue;
 	display: flex;
 	flex-direction: column;
-	padding: 60px 10px 60px 70px;
+	padding: 40px 10px 40px 50px;
 `;
 
 const LogoZone = styled('section')`
 	width: 100%;
-	background: green;
 	flex-basis: 130px;
 `;
 
 const MenuZone = styled('nav')`
 	width: 100%;
-	background: yellow;
 	flex-basis: 100%;
 	display: flex;
 	flex-direction: column;
@@ -30,17 +29,20 @@ const MenuZone = styled('nav')`
 
 const FooterZone = styled('footer')`
 	width: 100%;
-	background: orange;
 	flex-basis: 80px;
 `;
 
 const Sidebar = ({ pageName }) => (
 	<SidebarWrapper>
-		<LogoZone />
+		<LogoZone>
+			<Logo />
+		</LogoZone>
 		<MenuZone>
 			<Menu pageName={pageName} />
 		</MenuZone>
-		<FooterZone />
+		<FooterZone>
+			<Footer />
+		</FooterZone>
 	</SidebarWrapper>
 );
 

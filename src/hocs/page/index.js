@@ -8,6 +8,8 @@ import HtmlHead from '../../components/HtmlHead';
 import configureStore from '../../redux/store/configureStore';
 import withResize from '../withResize';
 import Sidebar from '../../components/Sidebar';
+import IllustrationZone from '../../components/IllustrationZone';
+import Content from '../../components/Content';
 
 Raven.config('https://5b9457deb5544977a1851e1217fd8066@sentry.io/214731', {
 	environment: process.NODE_ENV,
@@ -16,6 +18,7 @@ Raven.config('https://5b9457deb5544977a1851e1217fd8066@sentry.io/214731', {
 /* eslint-disable no-unused-expressions */
 injectGlobal`
 	@import url('https://fonts.googleapis.com/css?family=Lato:300,400,400i,700|PT+Mono');
+
 	body {
 		margin: 0;
 	}
@@ -34,8 +37,11 @@ export default (pageName) => (Component) => (props) => {
 				<ThemeProvider>
 					<div className="page-wrapper">
 						<HtmlHead pageName={pageName} />
+						<IllustrationZone />
 						<Sidebar pageName={pageName} />
-						<ComponentWithResize pageName={pageName} {...props} />
+						<Content>
+							<ComponentWithResize pageName={pageName} {...props} />
+						</Content>
 					</div>
 				</ThemeProvider>
 			</TextsProvider>

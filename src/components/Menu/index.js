@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'react-emotion';
 import Link from 'next/link';
 import { FormattedMessage } from 'react-intl';
+import { withTheme } from 'theming';
+import AnimatedInText from '../AnimatedInText';
 
 const pages = [
 	'welcome',
@@ -15,8 +17,20 @@ const pages = [
 ];
 
 const MenuListItem = styled('li')`
-	background: ${({ active }) => (active ? 'hotpink' : 'red')};
-	padding: 20px 0 0;
+	padding: 10px 0 0;
+	font-weight: ${({ active, theme }) => (active ? theme.menuFontWeightActive : theme.menuFontWeight)};
+	font-size: ${({ theme }) => theme.menuFontSize};
+	font-family: ${({ theme }) => theme.menuFontFamily};
+
+	& a {
+		text-decoration: none;
+		color: ${({ theme, active }) => (!active ? theme.grey : theme.darkGrey)};
+		transition: color 150ms ease-out;
+
+		&:hover {
+			color: ${({ theme }) => theme.darkGrey}
+		}
+	}
 `;
 
 const MenuList = styled('ul')`
@@ -28,13 +42,15 @@ const MenuList = styled('ul')`
 	}
 `;
 
-const Menu = ({ pageName }) => (
+const Menu = ({ pageName, theme }) => (
 	<MenuList>
-		{pages.map((page) => (
-			<MenuListItem key={page} active={pageName === page}>
-				<Link href={`/${page === 'welcome' ? '' : page}`}>
+		{pages.map((page, index) => (
+			<MenuListItem key={page} active={pageName === page} theme={theme}>
+				<Link prefetch href={`/${page === 'welcome' ? '' : page}`}>
 					<a>
-						<FormattedMessage id={`pages.${page}.title`} />
+						<AnimatedInText timeout={(index * 100) + 400}>
+							<FormattedMessage id={`pages.${page}.title`} />
+						</AnimatedInText>
 					</a>
 				</Link>
 			</MenuListItem>
@@ -44,7 +60,15 @@ const Menu = ({ pageName }) => (
 
 Menu.propTypes = {
 	pageName: PropTypes.string.isRequired,
+	theme: PropTypes.shape({
+		menuFontSize: PropTypes.string.isRequired,
+	}).isRequired,
 };
 
-export default Menu;
+/* eslint-disable react/prefer-stateless-function */
+export default withTheme(class extends Component {
+	render() {
+		return <Menu {...this.props} />;
+	}
+});
 
