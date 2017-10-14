@@ -5,16 +5,7 @@ import Link from 'next/link';
 import { FormattedMessage } from 'react-intl';
 import { withTheme } from 'theming';
 import AnimatedInText from '../AnimatedInText';
-
-const pages = [
-	'welcome',
-	'idea',
-	'offer',
-	'focus',
-	'aboutme',
-	'contact',
-	'cooperations',
-];
+import pages from '../../constants/pages';
 
 const MenuListItem = styled('li')`
 	padding: 10px 0 0;
@@ -45,11 +36,11 @@ const MenuList = styled('ul')`
 const Menu = ({ pageName, theme }) => (
 	<MenuList>
 		{pages.map((page, index) => (
-			<MenuListItem key={page} active={pageName === page} theme={theme}>
-				<Link prefetch href={`/${page === 'welcome' ? '' : page}`}>
+			<MenuListItem key={page.name} active={pageName === page.name} theme={theme}>
+				<Link prefetch href={page.path}>
 					<a>
 						<AnimatedInText timeout={(index * 100) + 400}>
-							<FormattedMessage id={`pages.${page}.title`} />
+							<FormattedMessage id={`pages.${page.name}.title`} />
 						</AnimatedInText>
 					</a>
 				</Link>

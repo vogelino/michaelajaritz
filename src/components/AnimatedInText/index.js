@@ -5,13 +5,14 @@ import styled from 'react-emotion';
 export const AnimatedInTextContent = styled('span')`
 	position: relative;
 	display: inline-block;
+	width: ${({ block }) => (block ? '100%' : 'auto')};
 
 	& > * {
-		position: absolute;
+		white-space: ${({ block }) => !block && 'nowrap'};
+		position: ${({ block }) => !block && 'absolute'};
 		transform: translateY(30px);
 		opacity: 0;
 		transition: opacity 6000ms cubic-bezier(0,1,.37,.98), transform 400ms cubic-bezier(0,1,.37,.98);
-		white-space: nowrap;
 	}
 
 	&.ready > * {
@@ -31,10 +32,13 @@ class AnimatedInText extends Component {
 		setTimeout(() => this.setState({ animateReady: true }), timeout);
 	}
 	render() {
-		const { children } = this.props;
+		const { children, block } = this.props;
 		const { animateReady } = this.state;
 		return (
-			<AnimatedInTextContent className={animateReady && 'ready'}>
+			<AnimatedInTextContent
+				className={animateReady && 'ready'}
+				block={block}
+			>
 				{children}
 			</AnimatedInTextContent>
 		);
@@ -43,11 +47,13 @@ class AnimatedInText extends Component {
 
 AnimatedInText.defaultProps = {
 	timeout: 10,
+	block: false,
 };
 
 AnimatedInText.propTypes = {
 	children: PropTypes.element.isRequired,
 	timeout: PropTypes.number.isRequired,
+	block: PropTypes.bool,
 };
 
 export default AnimatedInText;

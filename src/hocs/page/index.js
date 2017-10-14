@@ -1,10 +1,9 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import Raven from 'raven-js';
-import { injectGlobal } from 'emotion';
+import { injectGlobal, hydrate } from 'emotion';
 import ThemeProvider from '../../theme';
 import TextsProvider from '../../texts';
-import HtmlHead from '../../components/HtmlHead';
 import configureStore from '../../redux/store/configureStore';
 import withResize from '../withResize';
 import Sidebar from '../../components/Sidebar';
@@ -15,37 +14,49 @@ Raven.config('https://5b9457deb5544977a1851e1217fd8066@sentry.io/214731', {
 	environment: process.NODE_ENV,
 }).install();
 
-/* eslint-disable no-unused-expressions */
-injectGlobal`
-	@import url('https://fonts.googleapis.com/css?family=Lato:300,400,400i,700|PT+Mono');
-
-	body {
-		margin: 0;
+export default (pageName) => (Component) => {
+	/* eslint-disable no-underscore-dangle */
+	if (typeof window !== 'undefined') {
+		hydrate(window.__NEXT_DATA__.ids);
 	}
+	/* eslint-enable no-underscore-dangle */
 
-	* {
-		box-sizing: border-box;
-	}
-`;
-/* eslint-enable no-unused-expressions */
+	return (props) => {
+		/* eslint-disable no-unused-expressions */
+		injectGlobal`
+			body {
+				margin: 0;
+			}
 
-export default (pageName) => (Component) => (props) => {
-	const ComponentWithResize = withResize(Component);
-	return (
-		<Provider store={configureStore()}>
-			<TextsProvider>
-				<ThemeProvider>
-					<div className="page-wrapper">
-						<HtmlHead pageName={pageName} />
-						<IllustrationZone />
-						<Sidebar pageName={pageName} />
-						<Content>
-							<ComponentWithResize pageName={pageName} {...props} />
-						</Content>
-					</div>
-				</ThemeProvider>
-			</TextsProvider>
-		</Provider>
-	);
+			.page-wrapper {
+				min-width: 1280px;
+				position: absolute;
+				width: 100%;
+				height: 100%;
+			}
+
+			* {
+				box-sizing: border-box;
+			}
+		`;
+		/* eslint-enable no-unused-expressions */
+
+		const ComponentWithResize = withResize(Component);
+		return (
+			<Provider store={configureStore()}>
+				<TextsProvider>
+					<ThemeProvider>
+						<div className="page-wrapper">
+							<IllustrationZone pageName={pageName} />
+							<Sidebar pageName={pageName} />
+							<Content>
+								<ComponentWithResize pageName={pageName} {...props} />
+							</Content>
+						</div>
+					</ThemeProvider>
+				</TextsProvider>
+			</Provider>
+		);
+	};
 };
 

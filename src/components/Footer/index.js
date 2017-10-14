@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React from 'react';
 import styled from 'react-emotion';
 import Link from 'next/link';
 import { FormattedMessage } from 'react-intl';
 import { withTheme } from 'theming';
 import AnimatedInText, { AnimatedInTextContent } from '../AnimatedInText';
+import SocialIconList from '../SocialIconList';
 
 const FooterWrapper = styled('div')`
 	width: 100%;
@@ -15,16 +15,7 @@ const FooterWrapper = styled('div')`
 	}
 `;
 
-const FooterIcon = styled('a')`
-	width: 24px;
-	height: 24px;
-	margin-right: 16px;
-	background: green;
-	display: inline-block;
-	cursor: pointer;
-`;
-
-const FooterLink = styled('a')`
+const FooterLink = withTheme(styled('a')`
 	font-size: ${({ theme }) => theme.footerLinkFontSize};
 	font-weight: ${({ theme }) => theme.footerLinkFontWeight};
 	font-family: ${({ theme }) => theme.footerLinkFontFamily};
@@ -39,37 +30,21 @@ const FooterLink = styled('a')`
 	&:hover {
 		color: ${({ theme }) => theme.darkGrey}
 	}
-`;
+`);
 
 
-const Footer = ({ theme }) => (
+const Footer = () => (
 	<FooterWrapper>
-		<div>
-			<Link href="https://facebook.com">
-				<AnimatedInText timeout={1000}>
-					<FooterIcon theme={theme} />
-				</AnimatedInText>
-			</Link>
-			<Link href="https://facebook.com">
-				<AnimatedInText timeout={1100}>
-					<FooterIcon theme={theme} />
-				</AnimatedInText>
-			</Link>
-			<Link href="https://facebook.com">
-				<AnimatedInText timeout={1200}>
-					<FooterIcon theme={theme} />
-				</AnimatedInText>
-			</Link>
-		</div>
+		<SocialIconList startTimeout={1000} />
 		<Link href="/imprint">
-			<FooterLink theme={theme}>
+			<FooterLink>
 				<AnimatedInText timeout={1300}>
 					<FormattedMessage id="legal.imprint.title" />
 				</AnimatedInText>
 			</FooterLink>
 		</Link>
 		<Link href="/privacy">
-			<FooterLink theme={theme}>
+			<FooterLink>
 				<AnimatedInText timeout={1400}>
 					<FormattedMessage id="legal.privacy.title" />
 				</AnimatedInText>
@@ -78,18 +53,5 @@ const Footer = ({ theme }) => (
 	</FooterWrapper>
 );
 
-Footer.propTypes = {
-	theme: PropTypes.shape({
-		footerLinkFontSize: PropTypes.string.isRequired,
-		footerLinkFontWeight: PropTypes.number.isRequired,
-		footerLinkFontFontFamily: PropTypes.string.isRequired,
-	}).isRequired,
-};
-
-/* eslint-disable react/prefer-stateless-function */
-export default withTheme(class extends Component {
-	render() {
-		return <Footer {...this.props} />;
-	}
-});
+export default Footer;
 
