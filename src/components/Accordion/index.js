@@ -43,7 +43,7 @@ const AccordionItem = withTheme(styled(ASAccordionItem)`
 		position: relative;
 
 		&:hover {
-			color: ${({ theme }) => [theme.blue, theme.orange, theme.purple][Math.round(Math.random() * 2)]}
+			color: ${({ theme, color }) => theme[color]}
 		}
 		
 		&:after {
@@ -90,10 +90,16 @@ class AccordionWrapper extends Component {
 
 	render() {
 		const { items } = this.state;
+		const { color } = this.props;
 		return (
 			<Accordion activeItems={[]}>
 				{items.map(({ title, content, ready }) => (
-					<AccordionItem key={title} title={title} className={ready && 'ready'}>
+					<AccordionItem
+						key={title}
+						title={title}
+						className={ready && 'ready'}
+						color={color}
+					>
 						<Paragraph timeout={0}>{content}</Paragraph>
 					</AccordionItem>
 				))}
@@ -105,6 +111,7 @@ class AccordionWrapper extends Component {
 AccordionWrapper.defaultProps = {
 	items: [],
 	startTimeout: 10,
+	color: 'blue',
 };
 
 const messageType = PropTypes.oneOfType([
@@ -119,6 +126,7 @@ AccordionWrapper.propTypes = {
 		content: messageType,
 	})),
 	startTimeout: PropTypes.number,
+	color: PropTypes.oneOf(['blue', 'orange', 'purple']),
 };
 
 export default AccordionWrapper;

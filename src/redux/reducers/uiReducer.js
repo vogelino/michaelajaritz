@@ -7,10 +7,7 @@ export const uiInitialState = {
 
 export default (state = uiInitialState, action = {}) => {
 	switch (action.type) {
-	case types.WINDOW_RESIZED: return {
-		windowWidth: action.payload.width,
-		windowHeight: action.payload.height,
-	};
+	case types.WINDOW_RESIZED: return action.payload;
 	default: return state;
 	}
 };

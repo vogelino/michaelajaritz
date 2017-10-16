@@ -1,17 +1,17 @@
 import React from 'react';
 import Parallelepiped from '../Parallelepiped';
 
-const welcome = () => (
+const Offer = () => (
 	<div>
 		<Parallelepiped
 			size={14}
-			image="/static/images/welcomeMain.jpg"
+			image="/static/images/artworks/atelier.jpg"
 			timeout={100}
 		/>
 		<Parallelepiped
 			placement="toBottom"
 			size={14}
-			image="/static/images/welcomeSecondary.jpg"
+			image="/static/images/artworks/renoir.jpg"
 			timeout={100}
 		/>
 		<Parallelepiped
@@ -68,11 +68,11 @@ const welcome = () => (
 	</div>
 );
 
-welcome.defaultProps = {
+Offer.defaultProps = {
 };
 
-welcome.propTypes = {
+Offer.propTypes = {
 };
 
-export default welcome;
+export default Offer;
 

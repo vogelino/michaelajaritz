@@ -12,11 +12,11 @@ const Icon = styled('span')`
 	background-image: url('${({ iconPath }) => iconPath}');
 	background-size: 100% 100%;
 	background-repeat: no-repeat;
-	transform: scale(.8);
+	transform: scale(.8) rotate(0);
 	transition: transform 100ms ease-out;
 
 	&:hover {
-		transform: scale(1);
+		transform: scale(1) rotate(-2deg);
 	}
 `;
 

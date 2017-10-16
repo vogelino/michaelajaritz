@@ -1,78 +1,104 @@
 import React from 'react';
 import Parallelepiped from '../Parallelepiped';
 
-const welcome = () => (
+const Idea = () => (
 	<div>
 		<Parallelepiped
-			size={14}
-			image="/static/images/welcomeMain.jpg"
+			size={17}
+			image="/static/images/artworks/vangogh.jpg"
 			timeout={100}
 		/>
 		<Parallelepiped
 			placement="toBottom"
-			size={14}
-			image="/static/images/welcomeSecondary.jpg"
+			size={10}
+			image="/static/images/artworks/makespace.jpg"
 			timeout={100}
 		/>
 		<Parallelepiped
-			size={6}
-			position={[7, -14]}
+			placement="toBottom"
+			size={13}
+			image="/static/images/artworks/possible.jpg"
 			timeout={200}
+			position={[5, 10]}
 		/>
 		<Parallelepiped
+			placement="toBottom"
 			size={3}
-			position={[13, -14]}
-			color="orange"
-			timeout={200}
+			timeout={300}
+			color="purple"
+			position={[13.5, 7]}
 		/>
 		<Parallelepiped
-			size={1}
-			position={[17.5, -17]}
-			color="blue"
-			timeout={200}
-		/>
-		<Parallelepiped
+			placement="toBottom"
 			size={2}
-			position={[14, 0]}
-			color="purple"
-			timeout={200}
-		/>
-		<Parallelepiped
-			placement="toBottom"
-			size={1}
-			position={[14, 0]}
-			color="blue"
-			timeout={300}
-		/>
-		<Parallelepiped
-			placement="toBottom"
-			size={3}
-			position={[7, 14]}
+			timeout={400}
 			color="orange"
-			timeout={200}
-		/>
-		<Parallelepiped
-			placement="toBottom"
-			size={1.5}
-			position={[8.5, 17]}
-			color="purple"
-			timeout={300}
+			position={[18, 10]}
 		/>
 		<Parallelepiped
 			placement="toBottom"
 			size={1}
-			position={[11.5, 17]}
+			timeout={500}
+			color="orange"
+			position={[20.5, 7]}
+		/>
+		<Parallelepiped
+			placement="toBottom"
+			size={7}
+			timeout={200}
 			color="blue"
+			position={[10, 0]}
+		/>
+		<Parallelepiped
+			placement="toTop"
+			size={2}
 			timeout={300}
+			color="orange"
+			position={[17, 0]}
+		/>
+		<Parallelepiped
+			placement="toTop"
+			size={1}
+			timeout={400}
+			color="purple"
+			position={[20, -2]}
+		/>
+		<Parallelepiped
+			placement="toTop"
+			size={3}
+			timeout={200}
+			color="orange"
+			position={[8.5, -17]}
+		/>
+		<Parallelepiped
+			placement="toTop"
+			size={3}
+			timeout={300}
+			color="purple"
+			position={[10, -20]}
+		/>
+		<Parallelepiped
+			placement="toTop"
+			size={3}
+			timeout={300}
+			color="blue"
+			position={[11.5, -17]}
+		/>
+		<Parallelepiped
+			placement="toTop"
+			size={1}
+			timeout={500}
+			color="orange"
+			position={[13, -20]}
 		/>
 	</div>
 );
 
-welcome.defaultProps = {
+Idea.defaultProps = {
 };
 
-welcome.propTypes = {
+Idea.propTypes = {
 };
 
-export default welcome;
+export default Idea;
 

@@ -15,7 +15,25 @@ const ParagraphWrapper = withTheme(styled('p')`
 	padding: 0 4px;
 
 	& a {
-		color: ${({ theme }) => [theme.blue, theme.orange, theme.purple][Math.round(Math.random() * 2)]}
+		color: ${({ theme }) => [theme.blue, theme.purple][Math.round(Math.random())]};
+		transition: color 200ms ease-out;
+
+		&:hover {
+			color: ${({ theme }) => theme.orange};
+		}
+	}
+
+	& ul,
+	& li {
+		padding: 0;
+		margin: 0 0 8px 0;
+		list-style: none;
+	}
+
+	& li:before {
+		content: '•';
+		padding-right: 8px;
+		opacity: .4;
 	}
 `);
 

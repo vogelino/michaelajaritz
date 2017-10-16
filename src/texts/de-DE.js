@@ -87,6 +87,12 @@ export default {
 		},
 		cooperations: {
 			title: 'Kooperationen',
+			content: {
+				title: 'Kooperationen.',
+				text: 'Ein großes Kunstwerk entsteht oft in der Zusammenarbeit. Ich arbeite im Netzwerk sehr gern und erfolgreich mit folgenden Menschen und Unternehmen zusammen:',
+				list: '<ul><li><a href="http://a-u-m.biz/" title="Marketing, Consulting, Training, Coaching">A+M</a></li><li><a href="https://www.symbolon.com" title="Ausbildungszentrum für Reflexionskompetenz in der Wirtschaft">Symbolon</a></li><li><a href="http://www.methodenberatung-jahn.de/" title="Methodenberatung, Marktforschung und Multivariate Datenanalyse Leipzig">Judith Jahn Methodenberatung</a></li></ul>', // eslint-disable-line
+				thanks: 'Mein herzlicher Dank für die professionelle Zusammenarbeit, die mir viel Freude gemacht hat, geht an <a href="https://vogelino.com" title="UI and UX Designer based in Berlin">Lucas Vogel</a> für das Design und die Umsetzung dieses Webauftritts und an Susanne Stark, Die Lichtbildnerei für die Portrait-Aufnahmen.',
+			},
 		},
 	},
 	legal: {

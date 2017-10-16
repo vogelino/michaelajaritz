@@ -14,9 +14,8 @@ export const getCoreLayout = (WrappedComponent) => {
 		}
 		componentDidMount() {
 			const { setWindowSize } = this.props;
-			const resizer = () => {
+			const resizer = () =>
 				setWindowSize(getWindowSize());
-			};
 			this.optimizedResize.add(resizer);
 			setWindowSize(getWindowSize());
 		}
@@ -42,3 +41,4 @@ export default (WrappedComponent) => {
 	});
 	return connect(null, mapDispatchToProps)(getCoreLayout(WrappedComponent));
 };
+

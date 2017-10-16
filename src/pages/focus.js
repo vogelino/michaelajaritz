@@ -11,19 +11,19 @@ const FocusPage = ({ pageName }) => (
 		<Subtitle timeout={1000}>
 			<FormattedHTMLMessage id={`pages.${pageName}.content.subtitle`} />
 		</Subtitle>
-		<BigTitle timeout={1200} color="orange">
+		<BigTitle timeout={1200} color="blue">
 			<FormattedHTMLMessage id={`pages.${pageName}.content.titleArt`} />
 		</BigTitle>
 		<Paragraph timeout={1400}>
 			<FormattedHTMLMessage id={`pages.${pageName}.content.textArt`} />
 		</Paragraph>
-		<BigTitle timeout={1500} color="purple">
+		<BigTitle timeout={1500} color="orange">
 			<FormattedHTMLMessage id={`pages.${pageName}.content.titleHuman`} />
 		</BigTitle>
 		<Paragraph timeout={1600}>
 			<FormattedHTMLMessage id={`pages.${pageName}.content.textHuman`} />
 		</Paragraph>
-		<BigTitle timeout={1700} color="blue">
+		<BigTitle timeout={1700} color="purple">
 			<FormattedHTMLMessage id={`pages.${pageName}.content.titleMethod`} />
 		</BigTitle>
 		<Paragraph timeout={1800}>

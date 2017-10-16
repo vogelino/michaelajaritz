@@ -46,6 +46,7 @@ const Image = styled('div')`
 	width: 100%;
 	height: 100%;
 	clip-path: url(#${({ clipPathId }) => clipPathId});
+	background-color: ${({ color }) => color};
 	background-image: url('${({ image }) => image}');
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -75,12 +76,12 @@ class Parallelepiped extends Component {
 	render() {
 		const { theme, placement, size, position, color, image } = this.props;
 		const { ready } = this.state;
-		const imageId = image && image.replace(/(\/|\.)/g, '');
+		const clipPathId = `${placement}-${color}-${position.join('-')}-${size}`;
 		const height = getHeightBySize({ size });
 		const width = getWidthBySize({ size });
 		const thirdWidth = (width / 100) * 33.3337;
 		const twoThirdWidth = (width / 100) * 66.6667;
-		const path = [
+		const pathToTop = [
 			`M${thirdWidth}`,
 			0,
 			0,
@@ -88,6 +89,18 @@ class Parallelepiped extends Component {
 			twoThirdWidth,
 			height,
 			width,
+			0,
+			thirdWidth,
+			'0z',
+		].join(' ');
+		const pathToBottom = [
+			'M0',
+			'0',
+			thirdWidth,
+			height,
+			width,
+			height,
+			twoThirdWidth,
 			0,
 			thirdWidth,
 			'0z',
@@ -100,41 +113,28 @@ class Parallelepiped extends Component {
 				size={size}
 				ready={ready}
 			>
-				{image &&
-					<svg
-						xmlns="http://www.w3.org/2000/svg"
-						viewBox={`0 0 ${width} ${height}`}
-						version="1.1"
-					>
-						<defs>
-							<clipPath id={imageId}>
-								<path d={path} className={parallelepipedPathClass} />
-							</clipPath>
-						</defs>
-					</svg>
-				}
-				{image &&
-					<Image
-						clipPathId={imageId}
-						image={image}
-						style={{
-							transform: `scale(${placement === 'toBottom' ? -1 : 1})`,
-						}}
-					/>
-				}
-				{!image &&
-					<svg
-						xmlns="http://www.w3.org/2000/svg"
-						viewBox="0 0 85.04 42.52"
-						version="1.1"
-					>
-						<polygon
-							points="28.35 0 0 42.52 56.69 42.52 85.04 0 28.35 0"
-							className={parallelepipedPathClass}
-							fill={theme[color]}
-						/>
-					</svg>
-				}
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					viewBox={`0 0 ${width} ${height}`}
+					version="1.1"
+				>
+					<defs>
+						<clipPath id={clipPathId}>
+							<path
+								d={placement === 'toBottom' ? pathToBottom : pathToTop}
+								className={parallelepipedPathClass}
+							/>
+						</clipPath>
+					</defs>
+				</svg>
+				<Image
+					color={!image && theme[color]}
+					clipPathId={clipPathId}
+					image={image}
+					style={{
+						transform: `scaleY(${placement === 'toBottom' ? -1 : 1})`,
+					}}
+				/>
 			</Container>
 		);
 	}

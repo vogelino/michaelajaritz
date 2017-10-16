@@ -4,56 +4,78 @@ import Parallelepiped from '../Parallelepiped';
 const welcome = () => (
 	<div>
 		<Parallelepiped
-			size={20}
-			image="/static/images/welcomeMain.jpg"
+			size={12}
+			image="/static/logos/aundm.jpg"
 			timeout={100}
 		/>
 		<Parallelepiped
 			placement="toBottom"
-			size={10}
-			image="/static/images/welcomeSecondary.jpg"
-			timeout={100}
+			size={12}
+			image="/static/logos/judith-jahn.jpg"
+			timeout={200}
+			position={[6, 12]}
+		/>
+		<Parallelepiped
+			placement="toBottom"
+			size={12}
+			image="/static/logos/symbolon.jpg"
+			timeout={300}
+		/>
+		<Parallelepiped
+			placement="toTop"
+			size={6}
+			timeout={300}
+			color="blue"
+			position={[6, -12]}
+		/>
+		<Parallelepiped
+			placement="toBottom"
+			size={1}
+			timeout={500}
+			color="blue"
+			position={[17, 6]}
+		/>
+		<Parallelepiped
+			placement="toBottom"
+			size={2}
+			timeout={400}
+			color="purple"
+			position={[14, 4]}
 		/>
 		<Parallelepiped
 			placement="toBottom"
 			size={4}
-			position={[10, 0]}
-			timeout={200}
-		/>
-		<Parallelepiped
-			placement="toBottom"
-			size={2}
-			position={[14, 0]}
-			color="orange"
 			timeout={300}
+			color="orange"
+			position={[12, 0]}
 		/>
 		<Parallelepiped
-			placement="toBottom"
-			size={1}
-			position={[16, 4]}
-			color="blue"
-			timeout={400}
-		/>
-		<Parallelepiped
-			placement="toBottom"
-			size={2}
-			position={[2, 8]}
+			placement="toTop"
+			size={3}
+			timeout={300}
 			color="purple"
-			timeout={200}
+			position={[16, 0]}
 		/>
 		<Parallelepiped
-			placement="toBottom"
+			placement="toTop"
 			size={2}
-			position={[5, 10]}
-			color="blue"
 			timeout={200}
+			color="blue"
+			position={[12, 0]}
 		/>
 		<Parallelepiped
-			placement="toBottom"
-			size={1}
-			position={[8, 12]}
+			placement="toTop"
+			size={3}
+			timeout={400}
 			color="orange"
-			timeout={300}
+			position={[12, -12]}
+		/>
+		<Parallelepiped
+			placement="toTop"
+			size={1}
+			timeout={500}
+			color="purple"
+			position={[16.5, -15]}
 		/>
 	</div>
 );

@@ -31,6 +31,7 @@ const OfferPage = ({ intl, pageName }) => {
 			</Paragraph>
 			<Accordion
 				startTimeout={1400}
+				color="orange"
 				items={[
 					{
 						title: intl.formatMessage(messages.symbolonTitle),
@@ -46,7 +47,7 @@ const OfferPage = ({ intl, pageName }) => {
 					},
 				]}
 			/>
-			<BigTitle timeout={1800} color="purple">
+			<BigTitle timeout={1800} color="blue">
 				<FormattedHTMLMessage id={`pages.${pageName}.content.titleTeamOffer`} />
 			</BigTitle>
 			<Paragraph timeout={1900}>
@@ -54,6 +55,7 @@ const OfferPage = ({ intl, pageName }) => {
 			</Paragraph>
 			<Accordion
 				startTimeout={2000}
+				color="blue"
 				items={[
 					{
 						title: intl.formatMessage(messages.systemicTitle),

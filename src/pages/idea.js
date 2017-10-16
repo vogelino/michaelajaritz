@@ -32,7 +32,7 @@ const IdeaPage = ({ pageName }) => {
 			<Paragraph timeout={1800}>
 				<Text id="textIntro" />
 			</Paragraph>
-			<BigTitle timeout={1900} color="blue">
+			<BigTitle timeout={1900} color="purple">
 				<Text id="titleMakeVisible" />
 			</BigTitle>
 			<Paragraph timeout={2000}>
@@ -44,7 +44,7 @@ const IdeaPage = ({ pageName }) => {
 			<Paragraph timeout={2200}>
 				<Text id="textMakeRoom" />
 			</Paragraph>
-			<BigTitle timeout={2300} color="purple">
+			<BigTitle timeout={2300} color="blue">
 				<Text id="titleMakePossible" />
 			</BigTitle>
 			<Paragraph timeout={2400}>

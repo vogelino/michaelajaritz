@@ -1,68 +1,104 @@
 import React from 'react';
 import Parallelepiped from '../Parallelepiped';
 
-const welcome = () => (
+const Focus = () => (
 	<div>
 		<Parallelepiped
-			size={20}
-			image="/static/images/welcomeMain.jpg"
+			size={14}
+			image="/static/images/artworks/gallery.jpg"
+			timeout={100}
+		/>
+		<Parallelepiped
+			placement="toBottom"
+			size={13}
+			image="/static/images/artworks/monalisa.jpg"
 			timeout={100}
 		/>
 		<Parallelepiped
 			placement="toBottom"
 			size={10}
-			image="/static/images/welcomeSecondary.jpg"
-			timeout={100}
+			image="/static/images/artworks/rembrant.jpg"
+			timeout={200}
+			position={[6.5, 13]}
 		/>
 		<Parallelepiped
 			placement="toBottom"
 			size={4}
-			position={[10, 0]}
-			timeout={200}
-		/>
-		<Parallelepiped
-			placement="toBottom"
-			size={2}
-			position={[14, 0]}
-			color="orange"
 			timeout={300}
-		/>
-		<Parallelepiped
-			placement="toBottom"
-			size={1}
-			position={[16, 4]}
-			color="blue"
-			timeout={400}
-		/>
-		<Parallelepiped
-			placement="toBottom"
-			size={2}
-			position={[2, 8]}
 			color="purple"
-			timeout={200}
+			position={[16.5, 13]}
 		/>
 		<Parallelepiped
 			placement="toBottom"
 			size={2}
-			position={[5, 10]}
+			timeout={400}
 			color="blue"
-			timeout={200}
+			position={[18.5, 17]}
 		/>
 		<Parallelepiped
 			placement="toBottom"
 			size={1}
-			position={[8, 12]}
+			timeout={500}
 			color="orange"
+			position={[22.5, 17]}
+		/>
+		<Parallelepiped
+			placement="toBottom"
+			size={3}
+			timeout={200}
+			color="orange"
+			position={[13, 0]}
+		/>
+		<Parallelepiped
+			placement="toTop"
+			size={2}
 			timeout={300}
+			color="blue"
+			position={[14, 0]}
+		/>
+		<Parallelepiped
+			placement="toTop"
+			size={1}
+			timeout={400}
+			color="purple"
+			position={[17, -2]}
+		/>
+		<Parallelepiped
+			placement="toTop"
+			size={6}
+			timeout={200}
+			color="blue"
+			position={[7, -14]}
+		/>
+		<Parallelepiped
+			placement="toTop"
+			size={4}
+			timeout={300}
+			color="purple"
+			position={[10, -20]}
+		/>
+		<Parallelepiped
+			placement="toTop"
+			size={3}
+			timeout={300}
+			color="orange"
+			position={[13, -14]}
+		/>
+		<Parallelepiped
+			placement="toTop"
+			size={1}
+			timeout={500}
+			color="blue"
+			position={[17.5, -17]}
 		/>
 	</div>
 );
 
-welcome.defaultProps = {
+Focus.defaultProps = {
 };
 
-welcome.propTypes = {
+Focus.propTypes = {
 };
 
-export default welcome;
+export default Focus;
 

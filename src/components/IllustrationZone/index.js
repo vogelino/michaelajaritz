@@ -1,3 +1,4 @@
+import { connect } from 'react-redux';
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'react-emotion';
@@ -26,20 +27,23 @@ const IllustrationZoneWrapper = styled('section')`
 	top: 0;
 	left: 0;
 	padding-left: 280px;
+	overflow: hidden;
 `;
 
 const IllustrationZoneContent = styled('div')`
 	position: relative;
 	width: 100%;
-	height: 100%;
+	height: 200%;
 	overflow: hidden;
+	transform-origin: 0 50%;
+	transform: translateY(-25%) scale(${({ scale }) => scale});
 `;
 
-const IllustrationZone = ({ pageName }) => {
+const IllustrationZone = ({ pageName, scale }) => {
 	const Component = components[pageName];
 	return (
 		<IllustrationZoneWrapper>
-			<IllustrationZoneContent>
+			<IllustrationZoneContent scale={scale}>
 				<Component />
 			</IllustrationZoneContent>
 		</IllustrationZoneWrapper>
@@ -48,7 +52,12 @@ const IllustrationZone = ({ pageName }) => {
 
 IllustrationZone.propTypes = {
 	pageName: PropTypes.string,
+	scale: PropTypes.number.isRequired,
 };
 
-export default IllustrationZone;
+const mapStateToProps = ({ ui }) => ({
+	scale: ui.windowWidth < 1280 ? 0.8 : ui.windowWidth / 1600,
+});
+
+export default connect(mapStateToProps)(IllustrationZone);
 
