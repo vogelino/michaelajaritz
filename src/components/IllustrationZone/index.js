@@ -40,7 +40,7 @@ const IllustrationZoneContent = styled('div')`
 `;
 
 const IllustrationZone = ({ pageName, scale }) => {
-	const Component = components[pageName];
+	const Component = components[pageName] || (() => null);
 	return (
 		<IllustrationZoneWrapper>
 			<IllustrationZoneContent scale={scale}>

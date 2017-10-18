@@ -22,7 +22,7 @@ const Icon = styled('span')`
 
 const SocialIconList = ({ startTimeout }) => (
 	<div>
-		<a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+		<a href="https://www.facebook.com/michaela.jaritz.77" target="_blank" rel="noopener noreferrer">
 
 			<AnimatedInText timeout={startTimeout}>
 				<span>
@@ -30,14 +30,7 @@ const SocialIconList = ({ startTimeout }) => (
 				</span>
 			</AnimatedInText>
 		</a>
-		<a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-			<AnimatedInText timeout={startTimeout + 100}>
-				<span>
-					<Icon iconPath="/static/twitter.svg" />
-				</span>
-			</AnimatedInText>
-		</a>
-		<a href="https://xing.com" target="_blank" rel="noopener noreferrer">
+		<a href="https://www.xing.com/profile/Michaela_Jaritz/" target="_blank" rel="noopener noreferrer">
 			<AnimatedInText timeout={startTimeout + 200}>
 				<span>
 					<Icon iconPath="/static/xing.svg" />

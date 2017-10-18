@@ -81,7 +81,7 @@ export default {
 			content: {
 				subtitle: 'Training. Coaching. Moderation.',
 				title: 'Michaela Jaritz',
-				contactInformations: 'The Westin Business Center <br />Gerberstr. 15 <br />04105 Leipzig <br /> <br />michaela.jaritz@outlook.de <br />+49 175 5844 738', // eslint-disable-line
+				contactInformations: 'The Westin Business Center <br />Gerberstr. 15 <br />04105 Leipzig <br /> <br /><a href="mailto:michaela.jaritz@outlook.de" title="professional email of Michaela Jaritz">michaela.jaritz@outlook.de</a><br />+49 175 5844 738', // eslint-disable-line
 				finalSentence: 'Schreiben Sie mir, rufen Sie mich an oder treffen Sie mich bei einer der nächsten <a href="" target="_blank" rel="nofollow noreferrer" />Art4Reflection-Veranstaltungen</a>. Ich freue mich auf Sie.',
 			},
 		},
