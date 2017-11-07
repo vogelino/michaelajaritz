@@ -10,6 +10,11 @@ export const HtmlHeadComponent = ({ pageName, intl, children }) => (
 			{intl.formatMessage({ id: 'site.title' })}
 		</title>
 		<meta name="viewport" content="initial-scale=1.0, width=device-width" />
+		<meta name="description" content={intl.formatMessage({ id: 'site.description' })} />
+		<meta name="revisit-after" content="30 days" />
+		<meta name="distribution" content="web" />
+		<meta name="robots" content="index, follow" />
+		<meta httpEquiv="Content-Type" content="text/html; charset=UTF-8" />
 		{children}
 	</Head>
 );

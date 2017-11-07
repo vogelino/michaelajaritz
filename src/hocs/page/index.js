@@ -2,6 +2,7 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import Raven from 'raven-js';
 import { injectGlobal, hydrate } from 'emotion';
+import HtmlHead from '../../components/HtmlHead';
 import ThemeProvider from '../../theme';
 import TextsProvider from '../../texts';
 import configureStore from '../../redux/store/configureStore';
@@ -47,6 +48,7 @@ export default (pageName) => (Component) => {
 				<TextsProvider>
 					<ThemeProvider>
 						<div className="page-wrapper">
+							<HtmlHead pageName={pageName} />
 							<IllustrationZone pageName={pageName} />
 							<Sidebar pageName={pageName} />
 							<Content>

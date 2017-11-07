@@ -85,3 +85,4 @@ OfferPage.propTypes = {
 };
 
 export default page('offer')(injectIntl(OfferPage));
+

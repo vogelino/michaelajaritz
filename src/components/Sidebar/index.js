@@ -11,7 +11,7 @@ const SidebarWrapper = styled('aside')`
 	position: fixed;
 	display: flex;
 	flex-direction: column;
-	padding: 40px 10px 40px 50px;
+	padding: 40px 0 40px 50px;
 `;
 
 const LogoZone = styled('section')`

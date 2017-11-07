@@ -24,7 +24,7 @@ const welcome = () => (
 		<Parallelepiped
 			size={10}
 			placement="toBottom"
-			image="/static/images/artworks/monalisa.jpg"
+			image="/static/images/artworks/girl-pearl.jpg"
 			timeout={300}
 			position={[4, 8]}
 		/>

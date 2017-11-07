@@ -29,12 +29,6 @@ const ParagraphWrapper = withTheme(styled('p')`
 		margin: 0 0 8px 0;
 		list-style: none;
 	}
-
-	& li:before {
-		content: '•';
-		padding-right: 8px;
-		opacity: .4;
-	}
 `);
 
 const Paragraph = ({ children, timeout }) => (

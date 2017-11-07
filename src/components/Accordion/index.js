@@ -117,6 +117,7 @@ AccordionWrapper.defaultProps = {
 const messageType = PropTypes.oneOfType([
 	PropTypes.instanceOf(FormattedMessage),
 	PropTypes.instanceOf(FormattedHTMLMessage),
+	PropTypes.element,
 	PropTypes.string,
 ]).isRequired;
 

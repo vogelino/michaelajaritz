@@ -26,7 +26,7 @@ const IllustrationZoneWrapper = styled('section')`
 	position: fixed;
 	top: 0;
 	left: 0;
-	padding-left: 280px;
+	padding-left: 240px;
 	overflow: hidden;
 `;
 

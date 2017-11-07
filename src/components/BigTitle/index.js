@@ -41,7 +41,7 @@ const BigTitleLine = styled('span')`
 `;
 
 const BigTitleWrapper = styled('h1')`
-	margin: ${({ nomargin }) => (nomargin ? 0 : 60)}px 0 0;
+	margin: ${({ nomargin }) => (nomargin ? 0 : 30)}px 0 0;
 
 	&.ready span {
 		opacity: 1;

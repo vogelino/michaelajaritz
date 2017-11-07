@@ -3,21 +3,24 @@ export default {
 	site: {
 		title: ' | Michaela Jaritz | Business Coaching & Training',
 		slogan: 'Sichtbar machen.\nPlatz machen.\nMöglich machen.',
+		description: 'Training, Coatching und Moderation für Sie persönnllich oder für Teams und Gruppen, systemisch, mit der Symbolon-Methode®.',
 	},
 	pages: {
 		welcome: {
 			title: 'Willkommen',
 			greetings: 'Hallo zusammen!',
 			content: {
-				title: 'Erfahren.\nZugeschnitten.\nErfolgreich.',
+				title: 'Erfrischend.\nIndividuell.\nNachhaltig.',
 				subtitle: 'Training, Coaching & Moderation',
+				quote: 'In allem, was wir sehen, <br/>finden wir uns selbst.',
+				greetings: 'Schön, dass Sie auf meine Webseite gefunden haben. Verschaffen Sie sich hier einen Eindruck von mir und meiner Arbeit als Trainerin, Coach und Moderatorin. Folgen Sie Ihrem Gespür, ob und wie gut mein Angebot zu Ihren Themen und Anliegen passt. Ich freue mich, von Ihnen zu hören, zu lesen und Sie kennenzulernen.',
 			},
 		},
 		idea: {
 			title: 'Die Idee',
 			content: {
-				titleTraining: 'Training,',
-				titleCoaching: 'Coaching,',
+				titleTraining: 'Training.',
+				titleCoaching: 'Coaching.',
 				titleModeration: 'Moderation.',
 				subtitle: 'Für Ihre Potentialentfaltung:',
 				textIntro: 'Stellen Sie sich vor, Sie schauen in ein Kaleidoskop. Dieses „Fernrohr“ mit seinen bunten und schillernden Glasteilchen spiegelt im übertragenen Sinne Ihr ganz besonderes und individuelles Potential.  <br /> <br /> Manchmal reicht schon eine leichte Drehung und Sie erhalten sofort neue und überraschende Ein- und Ausblicke. Eine frische Perspektive auf vermeintlich Bekanntes entsteht. Vorhandene Muster lösen sich auf und neue werden sichtbar.  <br /> <br /> Meine Trainings und Coachings bringen Ihr individuelles Potential ans Licht und lassen es sich entfalten. Die Möglichkeiten sind unendlich – genau wie in einem Kaleidoskop.', // eslint-disable-line
@@ -38,7 +41,7 @@ export default {
 				titleTeamOffer: 'Teams & Gruppen:',
 				textTeamOffer: 'Individuelle Trainings, Team-Entwicklung und Moderationen, systemisch fundiert, mit der Symbolon-Methode®, Schwerpunkt Persönlichkeitsentwicklung für Fach- und Führungskräfte sowie Vertriebs- und Kommunikationsthemen.', // eslint-disable-line
 				symbolonTitle: 'Symbolon-Methode®',
-				symbolonText: 'Die Symbolon-Methode® ist weltweit das führende Reflexionsinstrument für Persönlichkeitsentwicklung. Bis heute wurden über 10.000 Symbolon-Profile in Coachings und Trainings angewendet.<br /><br />Im UnterSymbolon-Methode® schied zu herkömmlichen Analyseinstrumenten basiert die Symbolon-Potentialanalyse auf der Reflexion von Kunstwerken, Archetypen und Symbolen. Weitere Details unter <a href="https://www.symbolon.com/symbolon-methode" target="_blank" rel="nofollow noreferrer">https://www.symbolon.com/symbolon-methode.</a>', // eslint-disable-line
+				symbolonText: 'Die Symbolon-Methode® ist weltweit das führende Reflexionsinstrument für Persönlichkeitsentwicklung. Bis heute wurden über 10.000 Symbolon-Profile in Coachings und Trainings angewendet.<br /><br />Im Unterschied zu herkömmlichen Analyseinstrumenten basiert die Symbolon-Potentialanalyse auf der Reflexion von Kunstwerken, Archetypen und Symbolen. Weitere Details unter <a href="https://www.symbolon.com/symbolon-methode" target="_blank" rel="nofollow noreferrer">https://www.symbolon.com/symbolon-methode.</a>', // eslint-disable-line
 				symbolonProfilTitle: 'Symbolon-Profil',
 				symbolonProfilText: 'Das Symbolon-Profil wird von Ihnen online ausgefüllt und beinhaltet fünf unterschiedliche Bereiche. Ihre daraus resultierende schriftliche 30-seitige Potentialanalyse sowie Ihre individuelle Fragestellung bilden den Rahmen für unser gemeinsames Coaching-Gespräch, das etwa zwei Stunden dauert. Ihr persönlicher Maßnahmenplan, Ihre Vereinbarung mit sich selbst, garantiert die nachhaltige Umsetzung.',
 				symbolonProfilIntensiveTitle: 'Symbolon-Profil Intensiv',
@@ -69,7 +72,7 @@ export default {
 			title: 'Über mich',
 			content: {
 				titleExperience: 'Erfahren.',
-				textExperience: '25 Jahre Marketing- und Vertriebserfahrung bei der Firma Microsoft Corporation (Redmond, USA) und Microsoft Deutschland GmbH. Sattelfest im Großunternehmen und in der Führung (virtueller) Teams. Systemische Trainerin (zertifiziert von der European Coaching Association, ECA) und Symbolon-Spezialistin (zertifiziert von der International Coaching Federation, ICF).',
+				textExperience: '25 Jahre Marketing- und Vertriebserfahrung bei der Firma Microsoft Corporation (Redmond, USA) und Microsoft Deutschland GmbH. Sattelfest im Großunternehmen und in der Führung (virtueller) Teams. Systemische Trainerin (zertifiziert von der European Coaching Association, ECA) und Symbolon-Spezialistin (zertifiziert von der International Coach Federation, ICF).',
 				titleLanguages: 'Sprachverliebt.',
 				textLanguages: 'Als Diplom-Übersetzerin baue ich mit Sprache Brücken: zu Ihnen, zu Ihrem Team, in Ihrer Gruppe. Trainings und Coachings auf Deutsch und Englisch.',
 				titleHuman: 'Menschlich.',
@@ -90,7 +93,7 @@ export default {
 			content: {
 				title: 'Kooperationen.',
 				text: 'Ein großes Kunstwerk entsteht oft in der Zusammenarbeit. Ich arbeite im Netzwerk sehr gern und erfolgreich mit folgenden Menschen und Unternehmen zusammen:',
-				list: '<ul><li><a href="http://a-u-m.biz/" title="Marketing, Consulting, Training, Coaching">A+M</a></li><li><a href="https://www.symbolon.com" title="Ausbildungszentrum für Reflexionskompetenz in der Wirtschaft">Symbolon</a></li><li><a href="http://www.methodenberatung-jahn.de/" title="Methodenberatung, Marktforschung und Multivariate Datenanalyse Leipzig">Judith Jahn Methodenberatung</a></li></ul>', // eslint-disable-line
+				list: '<ul><li><a href="http://a-u-m.biz/" title="Marketing, Consulting, Training, Coaching">A+M Hamburg</a></li><li><a href="https://www.symbolon.com" title="Ausbildungszentrum für Reflexionskompetenz in der Wirtschaft">Symbolon AG</a></li><li><a href="http://www.methodenberatung-jahn.de/" title="Methodenberatung, Marktforschung und Multivariate Datenanalyse Leipzig">Judith Jahn Methodenberatung</a></li></ul>', // eslint-disable-line
 				thanks: 'Mein herzlicher Dank für die professionelle Zusammenarbeit, die mir viel Freude gemacht hat, geht an <a href="https://vogelino.com" title="UI and UX Designer based in Berlin">Lucas Vogel</a> für das Design und die Umsetzung dieses Webauftritts und an Susanne Stark, Die Lichtbildnerei für die Portrait-Aufnahmen.',
 			},
 		},
