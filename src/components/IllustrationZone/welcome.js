@@ -4,7 +4,7 @@ import Parallelepiped from '../Parallelepiped';
 const welcome = () => (
 	<div>
 		<Parallelepiped
-			size={20}
+			size={18}
 			image="/static/images/artworks/monet.jpg"
 			timeout={100}
 		/>

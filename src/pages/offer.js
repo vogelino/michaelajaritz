@@ -34,10 +34,6 @@ const OfferPage = ({ intl, pageName }) => {
 				color="orange"
 				items={[
 					{
-						title: intl.formatMessage(messages.symbolonTitle),
-						content: <FormattedHTMLMessage id={`pages.${pageName}.content.symbolonText`} />,
-					},
-					{
 						title: intl.formatMessage(messages.symbolonProfilTitle),
 						content: <FormattedHTMLMessage id={`pages.${pageName}.content.symbolonProfilText`} />,
 					},
@@ -54,13 +50,9 @@ const OfferPage = ({ intl, pageName }) => {
 				<FormattedHTMLMessage id={`pages.${pageName}.content.textTeamOffer`} />
 			</Paragraph>
 			<Accordion
-				startTimeout={2000}
+				startTimeout={2100}
 				color="blue"
 				items={[
-					{
-						title: intl.formatMessage(messages.systemicTitle),
-						content: <FormattedHTMLMessage id={`pages.${pageName}.content.systemicText`} />,
-					},
 					{
 						title: intl.formatMessage(messages.businessCoachingTitle),
 						content: <FormattedHTMLMessage id={`pages.${pageName}.content.businessCoachingText`} />,

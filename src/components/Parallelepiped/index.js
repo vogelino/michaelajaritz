@@ -14,7 +14,7 @@ const getRotateByPlacement = ({ ready, placement }) => (
 );
 
 const getHeightBySize = ({ size }) => size * 20;
-const getWidthBySize = ({ size }) => size * 40;
+const getWidthBySize = ({ size }) => size * 35;
 
 const getPosition = ({ position, size }) => {
 	const [x, y] = position;

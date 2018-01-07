@@ -3,7 +3,7 @@ export default {
 	site: {
 		title: ' | Michaela Jaritz | Business Coaching & Training',
 		slogan: 'Sichtbar machen.\nPlatz machen.\nMöglich machen.',
-		description: 'Training, Coatching und Moderation für Sie persönnllich oder für Teams und Gruppen, systemisch, mit der Symbolon-Methode®.',
+		description: 'Training, Coatching und Moderation für Sie persönnllich oder für Teams und Gruppen, systemisch, mit der <a href="/focus" title="Im Fokus - Was ist die Symbolon Methode?">Symbolon-Methode®</a>.',
 	},
 	pages: {
 		welcome: {
@@ -25,7 +25,7 @@ export default {
 				subtitle: 'Für Ihre Potentialentfaltung:',
 				textIntro: 'Stellen Sie sich vor, Sie schauen in ein Kaleidoskop. Dieses „Fernrohr“ mit seinen bunten und schillernden Glasteilchen spiegelt im übertragenen Sinne Ihr ganz besonderes und individuelles Potential.  <br /> <br /> Manchmal reicht schon eine leichte Drehung und Sie erhalten sofort neue und überraschende Ein- und Ausblicke. Eine frische Perspektive auf vermeintlich Bekanntes entsteht. Vorhandene Muster lösen sich auf und neue werden sichtbar.  <br /> <br /> Meine Trainings und Coachings bringen Ihr individuelles Potential ans Licht und lassen es sich entfalten. Die Möglichkeiten sind unendlich – genau wie in einem Kaleidoskop.', // eslint-disable-line
 				titleMakeVisible: 'Sichtbar machen.',
-				textMakeVisible: 'Mit der Symbolon-Methode®, dem Coaching mit Kunstwerken, wird bisher Unsichtbares sichtbar und Sie erhalten verblüffend schnell neue Einblicke und Lösungsansätze.', // eslint-disable-line
+				textMakeVisible: 'Mit der <a href="/focus" title="Im Fokus - Was ist die Symbolon Methode?">Symbolon-Methode®</a>, dem Coaching mit Kunstwerken, wird bisher Unsichtbares sichtbar und Sie erhalten verblüffend schnell neue Einblicke und Lösungsansätze.', // eslint-disable-line
 				titleMakeRoom: 'Platz machen.',
 				textMakeRoom: 'Damit Neues entstehen kann, darf Bisheriges Platz machen. Ich begleite Sie dabei, herauszufinden, was das genau für Sie ist.', // eslint-disable-line
 				titleMakePossible: 'Möglich machen.',
@@ -35,19 +35,15 @@ export default {
 		offer: {
 			title: 'Mein Angebot',
 			content: {
-				subtitle: 'Mein Angebot für:',
-				titlePersonalOffer: 'Sie persönlich:',
-				textPersonalOffer: 'Business Coaching mit Kunstwerken und der Symbolon-Methode® – frappierend schnell im Erkenntnisgewinn und nachhaltig in der Umsetzung.', // eslint-disable-line
-				titleTeamOffer: 'Teams & Gruppen:',
-				textTeamOffer: 'Individuelle Trainings, Team-Entwicklung und Moderationen, systemisch fundiert, mit der Symbolon-Methode®, Schwerpunkt Persönlichkeitsentwicklung für Fach- und Führungskräfte sowie Vertriebs- und Kommunikationsthemen.', // eslint-disable-line
-				symbolonTitle: 'Symbolon-Methode®',
-				symbolonText: 'Die Symbolon-Methode® ist weltweit das führende Reflexionsinstrument für Persönlichkeitsentwicklung. Bis heute wurden über 10.000 Symbolon-Profile in Coachings und Trainings angewendet.<br /><br />Im Unterschied zu herkömmlichen Analyseinstrumenten basiert die Symbolon-Potentialanalyse auf der Reflexion von Kunstwerken, Archetypen und Symbolen. Weitere Details unter <a href="https://www.symbolon.com/symbolon-methode" target="_blank" rel="nofollow noreferrer">https://www.symbolon.com/symbolon-methode.</a>', // eslint-disable-line
+				subtitle: 'Mein Angebot:',
+				titlePersonalOffer: 'Für Sie persönlich:',
+				textPersonalOffer: 'Business Coaching mit Kunstwerken und der <a href="/focus" title="Im Fokus - Was ist die Symbolon Methode?">Symbolon-Methode®</a> – frappierend schnell im Erkenntnisgewinn und nachhaltig in der Umsetzung.', // eslint-disable-line
+				titleTeamOffer: 'Für Teams & Gruppen:',
+				textTeamOffer: 'Individuelle Trainings, Team-Entwicklung und Moderationen, systemisch fundiert, mit der <a href="/focus" title="Im Fokus - Was ist die Symbolon Methode?">Symbolon-Methode®</a>, Schwerpunkt Persönlichkeitsentwicklung für Fach- und Führungskräfte sowie Vertriebs- und Kommunikationsthemen.', // eslint-disable-line
 				symbolonProfilTitle: 'Symbolon-Profil',
 				symbolonProfilText: 'Das Symbolon-Profil wird von Ihnen online ausgefüllt und beinhaltet fünf unterschiedliche Bereiche. Ihre daraus resultierende schriftliche 30-seitige Potentialanalyse sowie Ihre individuelle Fragestellung bilden den Rahmen für unser gemeinsames Coaching-Gespräch, das etwa zwei Stunden dauert. Ihr persönlicher Maßnahmenplan, Ihre Vereinbarung mit sich selbst, garantiert die nachhaltige Umsetzung.',
 				symbolonProfilIntensiveTitle: 'Symbolon-Profil Intensiv',
 				symbolonProfilIntensiveText: 'Das Symbolon-Profil Intensiv beinhaltet 17 unterschiedliche Bereiche und wird handschriftlich ausgefüllt. Die daraus resultierende schriftliche Potentialanalyse, Ihr persönliches 75-seitiges Buch, sowie Ihre individuelle Fragestellung bilden den Rahmen für unser gemeinsames Coaching-Gespräch, das an zwei Terminen mit jeweils zwei Stunden stattfindet. Ihr persönlicher Maßnahmenplan, Ihre Vereinbarung mit sich selbst, garantiert die nachhaltige Umsetzung.',
-				systemicTitle: 'Systemisch',
-				systemicText: 'Die systemische Betrachtungsweise sieht einzelne Personen als Teil eines größeren Gesamtsystems, dessen Elemente in wechselseitigem Zusammenhang miteinander stehen und sich gegenseitig beeinflussen. Meine systemische Grundhaltung stärkt Ihre Fähigkeit zur Selbstverantwortung, ist wertschätzend und ganzheitlich.',
 				businessCoachingTitle: 'Individuell für Sie kuratierte firmeninterne Trainings',
 				businessCoachingText: 'Basierend auf Ihrer konkreten Situation und Ihren Bedürfnissen stelle ich die Inhalte für Ihr firmeninternes Training oder Ihren Workshop zusammen. Vertriebliche und kommunikative Methodenkompetenz sowie persönlichkeitsentwickelnde Themen stehen dabei im Mittelpunkt. In meinen Trainings ergeben theoretische Grundlagen, Möglichkeiten zur Selbstanalyse und -reflexion und viel Praxis-Übungen einen Mix, der ein lernförderndes Umfeld und eine nachhaltige Umsetzung der Inhalte garantiert.<br /><br />Für die weitere Nachhaltigkeit in der Umsetzung hat sich das „+1-Konzept“ bewährt. Mit zeitlichem Abstand von 6 bis 8 Wochen zum Training oder Workshop findet ein Folgetag statt, bei dem die Teilnehmer den Praxistransfer des Gelernten reflektieren, Inhalte vertiefen und weiter üben.', // eslint-disable-line
 				symbolonTeamTitle: 'Symbolon Team-Profil',
@@ -65,7 +61,7 @@ export default {
 				titleHuman: 'Der Mensch.',
 				textHuman: 'Für mich ist jeder Mensch eine Führungspersönlichkeit, denn Führung beginnt immer mit der eigenen Person, mit der eigenen Lebensführung. Die Fähigkeit zur Selbstreflexion ist dabei zentrale Schlüsselkompetenz – vor allem mit Blick auf den immer schneller werdenden Wandel und die digitale Transformation.', // eslint-disable-line
 				titleMethod: 'Die Methode.',
-				textMethod: 'Ich arbeite auf Basis meiner systemischen Trainer-Ausbildung und der Symbolon-Methode®. Immer mit dem Blick auf die bereits vorhandenen Ressourcen und die Möglichkeiten zur Potentialentfaltung.', // eslint-disable-line
+				textMethod: 'Ich arbeite auf Basis meiner systemischen Trainer-Ausbildung und der <a href="/focus" title="Im Fokus - Was ist die Symbolon Methode?">Symbolon-Methode®</a>. Immer mit dem Blick auf die bereits vorhandenen Ressourcen und die Möglichkeiten zur Potentialentfaltung.<br /><br />Die systemische Betrachtungsweise sieht einzelne Personen als Teil eines größeren Gesamtsystems, dessen Elemente in wechselseitigem Zusammenhang miteinander stehen und sich gegenseitig beeinflussen. Meine systemische Grundhaltung stärkt Ihre Fähigkeit zur Selbstverantwortung, ist wertschätzend und ganzheitlich.<br /><br />Die <a href="/focus" title="Im Fokus - Was ist die Symbolon Methode?">Symbolon-Methode®</a> ist weltweit das führende Reflexionsinstrument für Persönlichkeitsentwicklung. Bis heute wurden über 10.000 Symbolon-Profile in Coachings und Trainings angewendet.<br /><br />Im Unterschied zu herkömmlichen Analyseinstrumenten basiert die Symbolon-Potentialanalyse auf der Reflexion von Kunstwerken, Archetypen und Symbolen. Weitere Details unter <a href="https://www.symbolon.com/symbolon-methode" target="_blank" rel="nofollow noreferrer">https://www.symbolon.com/symbolon-methode.</a>', // eslint-disable-line
 			},
 		},
 		aboutme: {
@@ -94,7 +90,7 @@ export default {
 				title: 'Kooperationen.',
 				text: 'Ein großes Kunstwerk entsteht oft in der Zusammenarbeit. Ich arbeite im Netzwerk sehr gern und erfolgreich mit folgenden Menschen und Unternehmen zusammen:',
 				list: '<ul><li><a href="http://a-u-m.biz/" title="Marketing, Consulting, Training, Coaching">A+M Hamburg</a></li><li><a href="https://www.symbolon.com" title="Ausbildungszentrum für Reflexionskompetenz in der Wirtschaft">Symbolon AG</a></li><li><a href="http://www.methodenberatung-jahn.de/" title="Methodenberatung, Marktforschung und Multivariate Datenanalyse Leipzig">Judith Jahn Methodenberatung</a></li></ul>', // eslint-disable-line
-				thanks: 'Mein herzlicher Dank für die professionelle Zusammenarbeit, die mir viel Freude gemacht hat, geht an <a href="https://vogelino.com" title="UI and UX Designer based in Berlin">Lucas Vogel</a> für das Design und die Umsetzung dieses Webauftritts und an Susanne Stark, Die Lichtbildnerei für die Portrait-Aufnahmen.',
+				thanks: 'Mein herzlicher Dank für die professionelle Zusammenarbeit, die mir viel Freude gemacht hat, geht an <a href="https://vogelino.com" title="UI and UX Designer based in Berlin" target="_blank" rel="nofollow noopener">Lucas Vogel</a> für das Design und die Umsetzung dieses Webauftritts und an <a href="http://www.lichtbildnerei-leipzig.de" title="Professionelle Lichtbildnerei" target="_blank" rel="nofollow noopener">Susanne Stark</a>, Die Lichtbildnerei für die Portrait-Aufnahmen.',
 			},
 		},
 	},
