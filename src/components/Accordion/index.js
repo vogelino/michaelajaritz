@@ -16,15 +16,14 @@ const Accordion = styled(ASAccordion)`
 
 const AccordionItem = withTheme(styled(ASAccordionItem)`
 	padding: 10px 0;
-	border-top: solid 1px whitesmoke;
-	background: white;
+	border-top: solid 1px rgba(0,0,0,.1);
 	overflow: hidden;
 	opacity: 0;
 	transform: translateY(10px);
 	transition: opacity 2000ms cubic-bezier(0,1,.37,.98), transform 400ms cubic-bezier(0,1,.37,.98);
 
 	&:last-child {
-		border-bottom: solid 1px whitesmoke;
+		border-bottom: solid 1px rgba(0,0,0,.1);
 	}
 
 	&.ready {
