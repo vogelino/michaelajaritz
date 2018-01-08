@@ -36,8 +36,6 @@ const WelcomePage = ({ pageName, intl }) => {
 				<FormattedHTMLMessage id={`pages.${pageName}.content.quote`} />
 			</Subtitle>
 			<br />
-			<br />
-			<br />
 			<Paragraph timeout={2400}>
 				<FormattedMessage id={`pages.${pageName}.content.greetings`} />
 			</Paragraph>

@@ -12,7 +12,7 @@ export default {
 			content: {
 				title: 'Erfrischend.\nIndividuell.\nNachhaltig.',
 				subtitle: 'Training, Coaching & Moderation',
-				quote: 'In allem, was wir sehen, <br/>finden wir uns selbst.',
+				quote: 'In allem, was wir sehen, finden wir uns selbst.',
 				greetings: 'Schön, dass Sie auf meine Webseite gefunden haben. Verschaffen Sie sich hier einen Eindruck von mir und meiner Arbeit als Trainerin, Coach und Moderatorin. Folgen Sie Ihrem Gespür, ob und wie gut mein Angebot zu Ihren Themen und Anliegen passt. Ich freue mich, von Ihnen zu hören, zu lesen und Sie kennenzulernen.',
 			},
 		},
