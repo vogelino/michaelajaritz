@@ -12,7 +12,7 @@ export const AnimatedInTextContent = styled('span')`
 		position: ${({ block }) => !block && 'absolute'};
 		transform: translateY(30px);
 		opacity: 0;
-		transition: opacity 6000ms cubic-bezier(0,1,.37,.98), transform 400ms cubic-bezier(0,1,.37,.98);
+		transition: ${({ ready }) => ready && 'opacity 6000ms cubic-bezier(0,1,.37,.98), transform 400ms cubic-bezier(0,1,.37,.98)'};
 	}
 
 	&.ready > * {
@@ -25,10 +25,11 @@ class AnimatedInText extends Component {
 	constructor(props) {
 		super(props);
 
-		this.state = { animateReady: false };
+		this.state = { animateReady: true };
 	}
 	componentDidMount() {
 		const { timeout } = this.props;
+		setTimeout(() => this.setState({ animateReady: false }), 10);
 		setTimeout(() => this.setState({ animateReady: true }), timeout);
 	}
 	render() {
@@ -37,6 +38,7 @@ class AnimatedInText extends Component {
 		return (
 			<AnimatedInTextContent
 				className={animateReady && 'ready'}
+				ready={animateReady}
 				block={block}
 			>
 				{children}
@@ -46,7 +48,7 @@ class AnimatedInText extends Component {
 }
 
 AnimatedInText.defaultProps = {
-	timeout: 10,
+	timeout: 15,
 	block: false,
 };
 

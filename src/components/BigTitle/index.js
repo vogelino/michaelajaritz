@@ -20,7 +20,6 @@ const BigTitleLineContent = styled('span')`
 		bottom: -5px;
 		left: 4px;
 		display: block;
-		transition: transform 600ms cubic-bezier(.12,1.45,.28,.97);
 		transform: scaleX(0);
 		transform-origin: 0 50%;
 		transition-delay: 400ms;
@@ -37,7 +36,6 @@ const BigTitleLine = styled('span')`
 	margin-bottom: 10px;
 	opacity: 0;
 	transform: translateY(20px);
-	transition: opacity 2000ms cubic-bezier(0,1,.37,.98), transform 400ms cubic-bezier(0,1,.37,.98);
 `;
 
 const BigTitleWrapper = styled('h1')`
@@ -46,10 +44,12 @@ const BigTitleWrapper = styled('h1')`
 	&.ready span {
 		opacity: 1;
 		transform: translateY(0);
+		transition: opacity 2000ms cubic-bezier(0,1,.37,.98) 100ms, transform 400ms cubic-bezier(0,1,.37,.98) 100ms;
 	}
 
 	&.ready span > span:after {
 		transform: scaleX(1);
+		transition: transform 600ms cubic-bezier(.12,1.45,.28,.97) 300ms;
 	}
 `;
 
@@ -57,11 +57,12 @@ class BigTitle extends Component {
 	constructor(props) {
 		super(props);
 
-		this.state = { ready: false };
+		this.state = { ready: true };
 	}
 
 	componentDidMount() {
 		const { timeout } = this.props;
+		setTimeout(() => this.setState({ ready: false }), 10);
 		setTimeout(() => this.setState({ ready: true }), timeout);
 	}
 
@@ -82,7 +83,7 @@ class BigTitle extends Component {
 }
 
 BigTitle.defaultProps = {
-	timeout: 10,
+	timeout: 15,
 	color: 'blue',
 	nomargin: false,
 };

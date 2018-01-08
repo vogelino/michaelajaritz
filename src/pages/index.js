@@ -32,7 +32,7 @@ const WelcomePage = ({ pageName, intl }) => {
 			))}
 			<br />
 			<br />
-			<Subtitle timeout={2300} nomargin>
+			<Subtitle timeout={2300} block nomargin>
 				<FormattedHTMLMessage id={`pages.${pageName}.content.quote`} />
 			</Subtitle>
 			<br />

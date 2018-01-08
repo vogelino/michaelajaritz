@@ -14,9 +14,9 @@ const Subtitle = withTheme(styled('h2')`
 	margin: 0 0 ${({ nomargin }) => (nomargin ? 0 : 80)}px 0;
 `);
 
-const AnimatedSubtitle = ({ children, timeout, nomargin }) => (
+const AnimatedSubtitle = ({ children, timeout, nomargin, block }) => (
 	<Subtitle nomargin={nomargin}>
-		<AnimatedInText timeout={timeout}>
+		<AnimatedInText timeout={timeout} block={block}>
 			<span>
 				{children}
 			</span>
@@ -27,12 +27,14 @@ const AnimatedSubtitle = ({ children, timeout, nomargin }) => (
 AnimatedSubtitle.defaultProps = {
 	timeout: 10,
 	nomargin: false,
+	block: false,
 };
 
 AnimatedSubtitle.propTypes = {
 	children: PropTypes.element.isRequired,
 	timeout: PropTypes.number,
 	nomargin: PropTypes.bool,
+	block: PropTypes.bool,
 };
 
 export default AnimatedSubtitle;
