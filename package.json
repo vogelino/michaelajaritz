@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "The personal website of Michaela Jaritz, business coach and trainer.",
   "engines": {
-    "node": "8.4.0"
+    "node": "8.9.0"
   },
   "scripts": {
     "dist": "mkdir -p dist",

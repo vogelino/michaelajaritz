@@ -1,8 +1,8 @@
 {
 	"name": "michaela-jaritz",
-	"alias": "michaela-jaritz.vogelino.com",
+	"alias": "2018.michaela-jaritz.com",
 	"engines": {
-		"node": "8.4.0"
+		"node": "8.9.0"
 	},
 	"env": {
 		"NODE_ENV": "production"
