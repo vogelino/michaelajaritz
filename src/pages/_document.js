@@ -23,12 +23,12 @@ export default class MyDocument extends Document {
 		return (
 			<html lang="de">
 				<Head>
-					<link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700|PT+Mono" rel="stylesheet" />
 					<style id="emotion-critical" dangerouslySetInnerHTML={{ __html: this.props.css }} />
 				</Head>
 				<body>
 					<Main />
 					<NextScript />
+					<link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700|PT+Mono" rel="stylesheet" />
 				</body>
 			</html>
 		);

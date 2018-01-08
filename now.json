@@ -1,6 +1,9 @@
 {
 	"name": "michaela-jaritz",
-	"alias": "2018.michaela-jaritz.com",
+	"alias": [
+		"2017.michaela-jaritz.com",
+		"2018.michaela-jaritz.com"
+	],
 	"engines": {
 		"node": "8.9.0"
 	},
