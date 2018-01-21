@@ -49,7 +49,7 @@ export default {
 				symbolonTeamTitle: 'Symbolon Team-Profil',
 				symbolonTeamText: 'Bei einer Teamentwicklung mit dem Symbolon-Team-Profil füllen alle Teammitglieder ihr individuelles Symbolon-Profil bzw. Symbolon-Profil Intensiv aus. In der Voranalyse fasse ich alle Einzelprofile in einem Teamprofil zusammen. Im Workshop werden dann die Kernthemen des Teams interaktiv bearbeitet, gemeinsam werden Lösungen entwickelt und Ziele vereinbart. Vor und/oder nach dem Workshop sind Einzel-Coachings eine sinnvolle Ergänzung.', // eslint-disable-line
 				art4reflectionTitle: 'Symbolon Art4Reflection',
-				art4reflectionText: 'Das Coaching im Museum findet als offene Veranstaltung für Gruppen mit max. 10 Teilnehmern statt oder exklusiv für Ihr Team. In der etwa 1,5-stündigen Führung erleben Sie einen Reflexionsprozess mit drei unterschiedlichen Kunstwerken.  <br />Treffen Sie mich bei den Führungen in Leipzig, im Museum der bildenden Künste.  <br /> <br /><strong>Nächste Termine:</strong> <br />Mittwoch, 18. Oktober, 18:00 Uhr <br />Samstag, 21. Oktober, 12:00 Uhr <br />Mittwoch, 15. November, 16:00 Uhr <br />Samstag, 18. November, 12:00 Uhr <br /> <br />Weitere Informationen unter: <a href="http://www.art4reflection.com" target="_blank" rel="nofollow noreferrer">www.art4reflection.com</a>', // eslint-disable-line
+				art4reflectionText: 'Das Coaching im Museum findet als offene Veranstaltung für Gruppen mit max. 10 Teilnehmern statt oder exklusiv für Ihr Team. In der etwa 1,5-stündigen Führung erleben Sie einen Reflexionsprozess mit drei unterschiedlichen Kunstwerken.  <br />Treffen Sie mich bei den Führungen in Leipzig, im Museum der bildenden Künste.  <br /> <br /><strong>Aktuelle Symbolon Art4Reflection-Termine:</strong> <br />Mittwoch, 28.02.2018 – 18:00 Uhr <br />Mittwoch, 14.03.2018 – 18:00 Uhr <br />Samstag, 17.03.2018 – 14:00 Uhr <br />Samstag, 14.04.2018 – 14:00 Uhr <br /> <br />Weitere Informationen unter: <a href="http://www.art4reflection.com" target="_blank" rel="nofollow noreferrer">www.art4reflection.com</a>', // eslint-disable-line
 			},
 		},
 		focus: {
@@ -81,7 +81,7 @@ export default {
 				subtitle: 'Training. Coaching. Moderation.',
 				title: 'Michaela Jaritz',
 				contactInformations: 'The Westin Business Center <br />Gerberstr. 15 <br />04105 Leipzig <br /> <br /><a href="mailto:michaela.jaritz@outlook.de" title="professional email of Michaela Jaritz">michaela.jaritz@outlook.de</a><br />+49 175 5844 738', // eslint-disable-line
-				finalSentence: 'Schreiben Sie mir, rufen Sie mich an oder treffen Sie mich bei einer der nächsten <a href="" target="_blank" rel="nofollow noreferrer" />Art4Reflection-Veranstaltungen</a>. Ich freue mich auf Sie.',
+				finalSentence: 'Schreiben Sie mir, rufen Sie mich an oder treffen Sie mich bei einer der nächsten <a href="" target="_blank" rel="nofollow noreferrer" />Symbolon Art4Reflection-Veranstaltungen</a>. Ich freue mich auf Sie.',
 			},
 		},
 		cooperations: {
