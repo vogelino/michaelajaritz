@@ -4,5 +4,8 @@
 		"react",
 		"stage-2"
 	],
-	"plugins": [["emotion/babel", { "inline": true }]]
+	"plugins": [
+		["emotion/babel", { "inline": true }],
+		"transform-object-assign"
+	]
 }
