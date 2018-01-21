@@ -20,13 +20,13 @@ const AccordionItem = withTheme(styled(ASAccordionItem)`
 	overflow: hidden;
 	opacity: 0;
 	transform: translateY(10px);
+	transition: opacity 2000ms cubic-bezier(0,1,.37,.98), transform 400ms cubic-bezier(0,1,.37,.98);
 
 	&:last-child {
 		border-bottom: solid 1px rgba(0,0,0,.1);
 	}
 
 	&.ready {
-		transition: opacity 2000ms cubic-bezier(0,1,.37,.98) 200ms, transform 400ms cubic-bezier(0,1,.37,.98) 200ms;
 		opacity: 1;
 		transform: translateY(0);
 	}
@@ -67,7 +67,7 @@ class AccordionWrapper extends Component {
 		this.state = {
 			items: props.items.map((item) => ({
 				...item,
-				ready: true,
+				ready: false,
 			})),
 		};
 	}
@@ -78,46 +78,20 @@ class AccordionWrapper extends Component {
 		const animationDuration = 100;
 		items.forEach((item, index) => {
 			const timeout = (animationDuration * index) + startTimeout;
-			this.postReadyTimeout = setTimeout(() => {
-				clearTimeout(this.postReadyTimeout);
-				if (!this.node) return;
-				this.setState({
-					items: items.map((innerItem) => ({
-						...innerItem,
-						ready: false,
-					})),
-				});
-			}, 10);
-			this.readyTimeout = setTimeout(() => {
-				clearTimeout(this.readyTimeout);
-				if (!this.node) return;
-				this.setState({
-					items: items.map((innerItem, innerIndex) => ({
-						...innerItem,
-						ready: innerIndex <= index,
-					})),
-				});
-			}, timeout);
+			setTimeout(() => this.setState({
+				items: items.map((innerItem, innerIndex) => ({
+					...innerItem,
+					ready: innerIndex <= index,
+				})),
+			}), timeout);
 		});
-	}
-
-	componentWillUnmount() {
-		if (this.postReadyTimeout) clearTimeout(this.postReadyTimeout);
-		if (this.readyTimeout) clearTimeout(this.readyTimeout);
-		this.postReadyTimeout = false;
-		this.readyTimeout = false;
 	}
 
 	render() {
 		const { items } = this.state;
 		const { color } = this.props;
 		return (
-			<Accordion
-				activeItems={[]}
-				ref={(node) => {
-					this.node = node;
-				}}
-			>
+			<Accordion activeItems={[]}>
 				{items.map(({ title, content, ready }) => (
 					<AccordionItem
 						key={title}
@@ -135,7 +109,7 @@ class AccordionWrapper extends Component {
 
 AccordionWrapper.defaultProps = {
 	items: [],
-	startTimeout: 15,
+	startTimeout: 10,
 	color: 'blue',
 };
 

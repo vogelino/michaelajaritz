@@ -12,7 +12,7 @@ export const AnimatedInTextContent = styled('span')`
 		position: ${({ block }) => !block && 'absolute'};
 		transform: translateY(30px);
 		opacity: 0;
-		transition: ${({ ready }) => ready && 'opacity 6000ms cubic-bezier(0,1,.37,.98), transform 400ms cubic-bezier(0,1,.37,.98)'};
+		transition: opacity 6000ms cubic-bezier(0,1,.37,.98), transform 400ms cubic-bezier(0,1,.37,.98);
 	}
 
 	&.ready > * {
@@ -25,22 +25,11 @@ class AnimatedInText extends Component {
 	constructor(props) {
 		super(props);
 
-		this.state = { animateReady: true };
+		this.state = { animateReady: false };
 	}
 	componentDidMount() {
 		const { timeout } = this.props;
-		this.animateReadyResetTimeout = setTimeout(() => {
-			clearTimeout(this.animateReadyResetTimeout);
-			this.setState({ animateReady: false });
-		}, 10);
-		this.animateReadyTiemout = setTimeout(() => {
-			clearTimeout(this.animateReadyTimeout);
-			this.setState({ animateReady: true });
-		}, timeout);
-	}
-	componentWillUnmount() {
-		clearTimeout(this.animateReadyResetTimeout);
-		clearTimeout(this.animateReadyTimeout);
+		setTimeout(() => this.setState({ animateReady: true }), timeout);
 	}
 	render() {
 		const { children, block } = this.props;
