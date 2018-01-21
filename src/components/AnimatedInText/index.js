@@ -29,8 +29,18 @@ class AnimatedInText extends Component {
 	}
 	componentDidMount() {
 		const { timeout } = this.props;
-		setTimeout(() => this.setState({ animateReady: false }), 10);
-		setTimeout(() => this.setState({ animateReady: true }), timeout);
+		this.animateReadyResetTimeout = setTimeout(() => {
+			clearTimeout(this.animateReadyResetTimeout);
+			this.setState({ animateReady: false });
+		}, 10);
+		this.animateReadyTiemout = setTimeout(() => {
+			clearTimeout(this.animateReadyTimeout);
+			this.setState({ animateReady: true });
+		}, timeout);
+	}
+	componentWillUnmount() {
+		clearTimeout(this.animateReadyResetTimeout);
+		clearTimeout(this.animateReadyTimeout);
 	}
 	render() {
 		const { children, block } = this.props;

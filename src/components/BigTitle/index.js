@@ -62,8 +62,19 @@ class BigTitle extends Component {
 
 	componentDidMount() {
 		const { timeout } = this.props;
-		setTimeout(() => this.setState({ ready: false }), 10);
-		setTimeout(() => this.setState({ ready: true }), timeout);
+		this.postReadyTimeout = setTimeout(() => {
+			clearTimeout(this.postReadyTimeout);
+			this.setState({ ready: false });
+		}, 10);
+		this.readyTimeout = setTimeout(() => {
+			clearTimeout(this.readyTimeout);
+			this.setState({ ready: true });
+		}, timeout);
+	}
+
+	componentWillUnmount() {
+		clearTimeout(this.postReadyTimeout);
+		clearTimeout(this.readyTimeout);
 	}
 
 	render() {

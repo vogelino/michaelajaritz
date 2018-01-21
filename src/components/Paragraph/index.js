@@ -13,6 +13,7 @@ const ParagraphWrapper = withTheme(styled('p')`
 	color: ${({ theme }) => theme.darkGrey};
 	margin: 20px 0 20px 0;
 	padding: 0 4px;
+	hyphens: auto;
 
 	& a {
 		color: ${({ theme }) => [theme.blue, theme.purple][Math.round(Math.random())]};
