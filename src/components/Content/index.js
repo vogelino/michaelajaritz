@@ -1,5 +1,4 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
@@ -49,35 +48,19 @@ const ScrollContainer = styled('div')`
 	}
 `;
 
-const MobileWrapper = styled('div')`
-	width: 100%;
-	box-sizing: border-box;
-	padding: 40px 20px;
-`;
-
-const Content = ({ children, isMobile }) => (isMobile ? (
-	<MobileWrapper>
-		{children}
-	</MobileWrapper>
-	) : (
-		<ContentWrapper>
-			<ScrollContainer>
-				{children}
-			</ScrollContainer>
-			<ScrollTopGradientOverlay />
-			<ScrollBottomGradientOverlay />
-		</ContentWrapper>
-	)
+const Content = ({ children }) => (
+	<ContentWrapper>
+		<ScrollContainer>
+			{children}
+		</ScrollContainer>
+		<ScrollTopGradientOverlay />
+		<ScrollBottomGradientOverlay />
+	</ContentWrapper>
 );
 
 Content.propTypes = {
 	children: PropTypes.any,
-	isMobile: PropTypes.bool.isRequired,
 };
 
-const mapStateToProps = ({ ui }) => ({
-	isMobile: ui.windowWidth < 1280,
-});
-
-export default connect(mapStateToProps)(Content);
+export default Content;
 
