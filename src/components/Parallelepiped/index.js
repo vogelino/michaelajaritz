@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled, { withTheme } from 'styled-components';
 
-const getScaleYByPlacement = ({ placement }) =>
-	`scaleY(${placement === 'toTop' ? 1 : -1})`;
+const getTranslateYByPlacement = ({ placement }) => (
+	placement === 'toTop' ? '' : 'translateY(100%)'
+);
 
 const getRotateByPlacement = ({ ready, placement }) => (
 	!ready ?
@@ -28,7 +29,7 @@ const Container = styled('div')`
 	width: ${getWidthBySize}px;
 	height: ${getHeightBySize}px;
 	transform-origin: 0 100%;
-	transform: ${getPosition} ${getRotateByPlacement} ${getScaleYByPlacement};
+	transform: ${getPosition} ${getRotateByPlacement} ${getTranslateYByPlacement};
 	opacity: ${({ ready }) => (ready ? 1 : 0)};
 	transition: transform 400ms cubic-bezier(0,1,.37,.98),
 		opacity 400ms cubic-bezier(0,1,.37,.98);
@@ -37,22 +38,18 @@ const Container = styled('div')`
 	left: 0;
 `;
 
-const Image = styled('div')`
+const Image = styled('image')`
 	position: absolute;
 	top: 0;
 	left: 0;
 	width: 100%;
 	height: 100%;
 	clip-path: url(#${({ clipPathId }) => clipPathId});
-	background-color: ${({ color }) => color};
-	background-image: url('${({ image }) => image}');
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center center;
+	${({ color }) => color && `background-color: ${color};`}
 	border: 0;
 `;
 
-const parallelepipedPathClass = css`
+const ParallelepipedPath = styled('path')`
 	transition: fill 400ms cubic-bezier(0,1,.37,.98);
 `;
 
@@ -116,23 +113,27 @@ class Parallelepiped extends Component {
 					viewBox={`0 0 ${width} ${height}`}
 					version="1.1"
 				>
-					<defs>
-						<clipPath id={clipPathId}>
-							<path
-								d={placement === 'toBottom' ? pathToBottom : pathToTop}
-								className={parallelepipedPathClass}
-							/>
-						</clipPath>
-					</defs>
+					{image && (
+						<defs>
+							<clipPath id={clipPathId}>
+								<ParallelepipedPath d={placement === 'toBottom' ? pathToBottom : pathToTop} />
+							</clipPath>
+						</defs>
+					)}
+					{image && (
+						<Image
+							clipPathId={clipPathId}
+							xlinkHref={image}
+							width={width}
+							height={height}
+						/>)}
+					{!image && (
+						<ParallelepipedPath
+							d={placement === 'toBottom' ? pathToBottom : pathToTop}
+							fill={theme[color]}
+						/>
+					)}
 				</svg>
-				<Image
-					color={!image && theme[color]}
-					clipPathId={clipPathId}
-					image={image}
-					style={{
-						transform: `scaleY(${placement === 'toBottom' ? -1 : 1})`,
-					}}
-				/>
 			</Container>
 		);
 	}
