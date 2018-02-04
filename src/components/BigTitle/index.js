@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import styled from 'react-emotion';
-import { withTheme } from 'theming';
+import styled, { withTheme } from 'styled-components';
 import { FormattedMessage, FormattedHTMLMessage } from 'react-intl';
 
 const BigTitleLineContent = styled('span')`

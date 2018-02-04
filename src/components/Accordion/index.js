@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import styled from 'react-emotion';
+import styled from 'styled-components';
 import {
 	Accordion as ASAccordion,
 	AccordionItem as ASAccordionItem,
 } from 'react-sanfona';
 import { FormattedMessage, FormattedHTMLMessage } from 'react-intl';
-import { withTheme } from 'theming';
+import withTheme from '../../hocs/withTheme';
 import Paragraph from '../Paragraph';
 
 const Accordion = styled(ASAccordion)`

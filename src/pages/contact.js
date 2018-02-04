@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedHTMLMessage } from 'react-intl';
-import styled from 'react-emotion';
+import styled from 'styled-components';
 import page from '../hocs/page';
 import BigTitle from '../components/BigTitle';
 import Subtitle from '../components/Subtitle';

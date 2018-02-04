@@ -1,6 +1,6 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { injectGlobal, hydrate } from 'emotion';
+import { injectGlobal } from 'styled-components';
 import HtmlHead from '../../components/HtmlHead';
 import ThemeProvider from '../../theme';
 import TextsProvider from '../../texts';
@@ -28,30 +28,22 @@ injectGlobal`
 `;
 /* eslint-enable no-unused-expressions */
 
-export default (pageName) => (Component) => {
-	/* eslint-disable no-underscore-dangle */
-	if (typeof window !== 'undefined') {
-		hydrate(window.__NEXT_DATA__.ids);
-	}
-	/* eslint-enable no-underscore-dangle */
-
-	return (props) => (
-		<Provider store={configureStore()}>
-			<TextsProvider>
-				<ThemeProvider>
-					<div className="page-wrapper">
-						<HtmlHead pageName={pageName} />
-						<IllustrationZone pageName={pageName} />
-						<Sidebar pageName={pageName} />
-						<Content>
-							<CoreLayout>
-								<Component pageName={pageName} {...props} />
-							</CoreLayout>
-						</Content>
-					</div>
-				</ThemeProvider>
-			</TextsProvider>
-		</Provider>
-	);
-};
+export default (pageName) => (Component) => (props) => (
+	<Provider store={configureStore()}>
+		<TextsProvider>
+			<ThemeProvider>
+				<div className="page-wrapper">
+					<HtmlHead pageName={pageName} />
+					<IllustrationZone pageName={pageName} />
+					<Sidebar pageName={pageName} />
+					<Content>
+						<CoreLayout>
+							<Component pageName={pageName} {...props} />
+						</CoreLayout>
+					</Content>
+				</div>
+			</ThemeProvider>
+		</TextsProvider>
+	</Provider>
+);
 

@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import styled from 'react-emotion';
+import styled, { withTheme } from 'styled-components';
 import Link from 'next/link';
 import { FormattedMessage } from 'react-intl';
-import { withTheme } from 'theming';
 import AnimatedInText, { AnimatedInTextContent } from '../AnimatedInText';
 
 const LogoImage = styled('img')`
@@ -79,4 +78,3 @@ export default withTheme(class extends Component {
 		return <Logo {...this.props} />;
 	}
 });
-

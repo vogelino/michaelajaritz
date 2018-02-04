@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'react-emotion';
+import styled from 'styled-components';
 import welcome from './welcome';
 import aboutme from './aboutme';
 import cooperations from './cooperations';

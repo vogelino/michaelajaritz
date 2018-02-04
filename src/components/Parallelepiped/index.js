@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { css } from 'emotion';
-import styled from 'react-emotion';
-import { withTheme } from 'theming';
+import styled, { withTheme } from 'styled-components';
 
 const getScaleYByPlacement = ({ placement }) =>
 	`scaleY(${placement === 'toTop' ? 1 : -1})`;
@@ -161,4 +159,3 @@ Parallelepiped.propTypes = {
 
 
 export default withTheme(Parallelepiped);
-

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'react-emotion';
-import { withTheme } from 'theming';
+import styled from 'styled-components';
+import withTheme from '../../hocs/withTheme';
 import AnimatedInText from '../AnimatedInText';
 
 const Subtitle = withTheme(styled('h2')`

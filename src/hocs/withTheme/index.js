@@ -1,5 +1,5 @@
 import React from 'react';
-import { ThemeProvider } from 'react-emotion';
+import { ThemeProvider } from 'styled-components';
 import theme from '../../theme/theme';
 
 export default (WrappedComponent) =>
