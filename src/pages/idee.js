@@ -58,5 +58,5 @@ IdeaPage.propTypes = {
 	pageName: PropTypes.string.isRequired,
 };
 
-export default page('idea')(IdeaPage);
+export default page('idee')(IdeaPage);
 

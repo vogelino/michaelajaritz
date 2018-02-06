@@ -2,22 +2,22 @@ import { connect } from 'react-redux';
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import welcome from './welcome';
-import aboutme from './aboutme';
-import cooperations from './cooperations';
-import focus from './focus';
-import idea from './idea';
-import offer from './offer';
-import contact from './contact';
+import willkommen from './willkommen';
+import ueberMich from './ueber-mich';
+import kooperationen from './kooperationen';
+import fokus from './fokus';
+import idee from './idee';
+import angebot from './angebot';
+import kontakt from './kontakt';
 
 const components = {
-	welcome,
-	aboutme,
-	cooperations,
-	focus,
-	idea,
-	offer,
-	contact,
+	'ueber-mich': ueberMich,
+	willkommen,
+	kooperationen,
+	fokus,
+	idee,
+	angebot,
+	kontakt,
 };
 
 const IllustrationZoneWrapper = styled('section')`

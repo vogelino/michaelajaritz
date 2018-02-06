@@ -36,10 +36,10 @@ const FooterLink = withTheme(styled('a')`
 const Footer = () => (
 	<FooterWrapper>
 		<SocialIconList startTimeout={1000} />
-		<Link href="/legal">
+		<Link href="/impressum">
 			<FooterLink>
 				<AnimatedInText timeout={1300}>
-					<FormattedMessage id="pages.legal.title" />
+					<FormattedMessage id="pages.impressum.title" />
 				</AnimatedInText>
 			</FooterLink>
 		</Link>

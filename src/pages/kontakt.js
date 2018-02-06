@@ -42,5 +42,5 @@ ContactPage.propTypes = {
 	pageName: PropTypes.string.isRequired,
 };
 
-export default page('contact')(ContactPage);
+export default page('kontakt')(ContactPage);
 

@@ -32,5 +32,5 @@ AboutMePage.propTypes = {
 	pageName: PropTypes.string.isRequired,
 };
 
-export default page('aboutme')(AboutMePage);
+export default page('ueber-mich')(AboutMePage);
 

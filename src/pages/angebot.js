@@ -76,5 +76,5 @@ OfferPage.propTypes = {
 	intl: intlShape.isRequired,
 };
 
-export default page('offer')(injectIntl(OfferPage));
+export default page('angebot')(injectIntl(OfferPage));
 

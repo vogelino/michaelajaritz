@@ -36,4 +36,4 @@ FocusPage.propTypes = {
 	pageName: PropTypes.string.isRequired,
 };
 
-export default page('focus')(FocusPage);
+export default page('fokus')(FocusPage);

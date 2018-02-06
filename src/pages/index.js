@@ -48,5 +48,5 @@ WelcomePage.propTypes = {
 	intl: intlShape.isRequired,
 };
 
-export default page('welcome')(injectIntl(WelcomePage));
+export default page('willkommen')(injectIntl(WelcomePage));
 

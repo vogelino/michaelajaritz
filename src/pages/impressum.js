@@ -7,12 +7,12 @@ import Paragraph from '../components/Paragraph';
 const ImprintPage = () => (
 	<div>
 		<Paragraph timeout={1200}>
-			<FormattedHTMLMessage id="pages.legal.text" />
+			<FormattedHTMLMessage id="pages.impressum.text" />
 		</Paragraph>
 	</div>
 );
 
 ImprintPage.propTypes = {};
 
-export default page('legal')(ImprintPage);
+export default page('impressum')(ImprintPage);
 

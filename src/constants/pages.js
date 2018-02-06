@@ -1,31 +1,31 @@
 export default [
 	{
-		name: 'welcome',
+		name: 'willkommen',
 		path: '/',
 	},
 	{
-		name: 'idea',
-		path: '/idea',
+		name: 'idee',
+		path: '/idee',
 	},
 	{
-		name: 'offer',
-		path: '/offer',
+		name: 'angebot',
+		path: '/angebot',
 	},
 	{
-		name: 'focus',
-		path: '/focus',
+		name: 'fokus',
+		path: '/fokus',
 	},
 	{
-		name: 'aboutme',
-		path: '/aboutme',
+		name: 'ueber-mich',
+		path: '/ueber-mich',
 	},
 	{
-		name: 'contact',
-		path: '/contact',
+		name: 'kontakt',
+		path: '/kontakt',
 	},
 	{
-		name: 'cooperations',
-		path: '/cooperations',
+		name: 'kooperationen',
+		path: '/kooperationen',
 	},
 ];
 

@@ -26,5 +26,5 @@ CooperationsPage.propTypes = {
 	pageName: PropTypes.string.isRequired,
 };
 
-export default page('cooperations')(CooperationsPage);
+export default page('kooperationen')(CooperationsPage);
 
