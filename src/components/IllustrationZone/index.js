@@ -9,6 +9,7 @@ import fokus from './fokus';
 import idee from './idee';
 import angebot from './angebot';
 import kontakt from './kontakt';
+import impressum from './impressum';
 
 const components = {
 	'ueber-mich': ueberMich,
@@ -18,6 +19,7 @@ const components = {
 	idee,
 	angebot,
 	kontakt,
+	impressum,
 };
 
 const IllustrationZoneWrapper = styled('section')`

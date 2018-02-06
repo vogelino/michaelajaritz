@@ -1,93 +1,95 @@
 import React from 'react';
 import Parallelepiped from '../Parallelepiped';
 
-const welcome = () => (
+const Cooperations = () => (
 	<div>
 		<Parallelepiped
 			link="http://a-u-m.biz/"
-			size={12}
+			size={8}
 			image="/static/logos/aundm.jpg"
 			timeout={100}
+			placement="toBottom"
+			position={[10, 0]}
 		/>
 		<Parallelepiped
 			link="https://www.symbolon.com/"
 			placement="toBottom"
-			size={12}
+			size={8}
 			image="/static/logos/judith-jahn.jpg"
 			timeout={200}
-			position={[6, 12]}
+			position={[5, 10]}
 		/>
 		<Parallelepiped
 			link="http://www.methodenberatung-jahn.de/"
 			placement="toBottom"
-			size={12}
+			size={10}
 			image="/static/logos/symbolon.jpg"
 			timeout={300}
 		/>
 		<Parallelepiped
 			placement="toTop"
-			size={6}
+			image="/static/images/artworks/TheRehearsalOfTheBalletOnstage.jpg"
+			size={15}
 			timeout={300}
 			color="blue"
-			position={[6, -12]}
 		/>
 		<Parallelepiped
 			placement="toBottom"
 			size={1}
 			timeout={500}
 			color="blue"
-			position={[17, 6]}
+			position={[22, 8]}
 		/>
 		<Parallelepiped
 			placement="toBottom"
 			size={2}
 			timeout={400}
 			color="purple"
-			position={[14, 4]}
+			position={[13, 10]}
 		/>
 		<Parallelepiped
 			placement="toBottom"
-			size={4}
+			size={3}
 			timeout={300}
 			color="orange"
-			position={[12, 0]}
+			position={[14, 8]}
 		/>
 		<Parallelepiped
 			placement="toTop"
 			size={3}
 			timeout={300}
-			color="purple"
-			position={[16, 0]}
+			color="blue"
+			position={[15, 0]}
 		/>
 		<Parallelepiped
 			placement="toTop"
 			size={2}
 			timeout={200}
 			color="blue"
-			position={[12, 0]}
+			position={[7.5, -15]}
 		/>
 		<Parallelepiped
 			placement="toTop"
 			size={3}
 			timeout={400}
-			color="orange"
-			position={[12, -12]}
+			color="purple"
+			position={[9.5, -15]}
 		/>
 		<Parallelepiped
 			placement="toTop"
 			size={1}
 			timeout={500}
-			color="purple"
-			position={[16.5, -15]}
+			color="orange"
+			position={[14, -18]}
 		/>
 	</div>
 );
 
-welcome.defaultProps = {
+Cooperations.defaultProps = {
 };
 
-welcome.propTypes = {
+Cooperations.propTypes = {
 };
 
-export default welcome;
+export default Cooperations;
 
