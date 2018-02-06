@@ -37,6 +37,20 @@ const SocialIconList = ({ startTimeout }) => (
 				</span>
 			</AnimatedInText>
 		</a>
+		<a href="https://twitter.com/MichaelaJaritz" target="_blank" rel="noopener noreferrer">
+			<AnimatedInText timeout={startTimeout + 300}>
+				<span>
+					<Icon iconPath="/static/twitter.svg" />
+				</span>
+			</AnimatedInText>
+		</a>
+		<a href="https://www.linkedin.com/in/michaela-jaritz-797b77145/" target="_blank" rel="noopener noreferrer">
+			<AnimatedInText timeout={startTimeout + 400}>
+				<span>
+					<Icon iconPath="/static/linkedin.svg" />
+				</span>
+			</AnimatedInText>
+		</a>
 	</div>
 );
 
