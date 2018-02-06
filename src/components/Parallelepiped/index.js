@@ -53,6 +53,16 @@ const ParallelepipedPath = styled('path')`
 	transition: fill 400ms cubic-bezier(0,1,.37,.98);
 `;
 
+const ExternalLink = styled.a`
+	cursor: pointer;
+	opacity: 1;
+	transition: opacity 800ms cubic-bezier(0,1,.37,.98);
+	
+	&:hover {
+		opacity: .8;
+	}
+`;
+
 class Parallelepiped extends Component {
 
 	constructor(props) {
@@ -69,7 +79,7 @@ class Parallelepiped extends Component {
 	}
 
 	render() {
-		const { theme, placement, size, position, color, image } = this.props;
+		const { link, theme, placement, size, position, color, image } = this.props;
 		const { ready } = this.state;
 		const clipPathId = `${placement}-${color}-${position.join('-')}-${size}`;
 		const height = getHeightBySize({ size });
@@ -100,6 +110,19 @@ class Parallelepiped extends Component {
 			thirdWidth,
 			'0z',
 		].join(' ');
+		const content = image ? (
+			<Image
+				clipPathId={clipPathId}
+				xlinkHref={image}
+				width={width}
+				height={height}
+			/>
+		) : (
+			<ParallelepipedPath
+				d={placement === 'toBottom' ? pathToBottom : pathToTop}
+				fill={theme[color]}
+			/>
+		);
 
 		return (
 			<Container
@@ -120,19 +143,11 @@ class Parallelepiped extends Component {
 							</clipPath>
 						</defs>
 					)}
-					{image && (
-						<Image
-							clipPathId={clipPathId}
-							xlinkHref={image}
-							width={width}
-							height={height}
-						/>)}
-					{!image && (
-						<ParallelepipedPath
-							d={placement === 'toBottom' ? pathToBottom : pathToTop}
-							fill={theme[color]}
-						/>
-					)}
+					{link ? (
+						<ExternalLink href={link} target="_blank" rel="noopener nofollower">
+							{content}
+						</ExternalLink>
+					) : content}
 				</svg>
 			</Container>
 		);
@@ -146,6 +161,7 @@ Parallelepiped.defaultProps = {
 	color: 'purple',
 	image: undefined,
 	timeout: 10,
+	link: undefined,
 };
 
 Parallelepiped.propTypes = {
@@ -156,6 +172,7 @@ Parallelepiped.propTypes = {
 	color: PropTypes.oneOf(['blue', 'orange', 'purple']),
 	image: PropTypes.string,
 	timeout: PropTypes.number,
+	link: PropTypes.string,
 };
 
 

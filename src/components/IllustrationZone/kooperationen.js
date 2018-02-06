@@ -4,11 +4,13 @@ import Parallelepiped from '../Parallelepiped';
 const welcome = () => (
 	<div>
 		<Parallelepiped
+			link="http://a-u-m.biz/"
 			size={12}
 			image="/static/logos/aundm.jpg"
 			timeout={100}
 		/>
 		<Parallelepiped
+			link="https://www.symbolon.com/"
 			placement="toBottom"
 			size={12}
 			image="/static/logos/judith-jahn.jpg"
@@ -16,6 +18,7 @@ const welcome = () => (
 			position={[6, 12]}
 		/>
 		<Parallelepiped
+			link="http://www.methodenberatung-jahn.de/"
 			placement="toBottom"
 			size={12}
 			image="/static/logos/symbolon.jpg"
