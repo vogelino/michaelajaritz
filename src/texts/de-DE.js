@@ -11,7 +11,7 @@ export default {
 			greetings: 'Hallo zusammen!',
 			content: {
 				title: 'Erfrischend.\nIndividuell.\nNachhaltig.',
-				subtitle: 'Training, Coaching & Moderation',
+				subtitle: 'Training. Coaching. Moderation.',
 				quote: 'In allem, was wir sehen, finden wir uns selbst.',
 				greetings: 'Schön, dass Sie auf meine Webseite gefunden haben. Verschaffen Sie sich hier einen Eindruck von mir und meiner Arbeit als Trainerin, Coach und Moderatorin. Folgen Sie Ihrem Gespür, ob und wie gut mein Angebot zu Ihren Themen und Anliegen passt. Ich freue mich, von Ihnen zu hören, zu lesen und Sie kennenzulernen.',
 			},
@@ -22,7 +22,7 @@ export default {
 				titleTraining: 'Training.',
 				titleCoaching: 'Coaching.',
 				titleModeration: 'Moderation.',
-				subtitle: 'Für Ihre Potentialentfaltung:',
+				subtitle: 'Für Ihre Potentialentfaltung.',
 				textIntro: 'Stellen Sie sich vor, Sie schauen in ein Kaleidoskop. Dieses „Fernrohr“ mit seinen bunten und schillernden Glasteilchen spiegelt im übertragenen Sinne Ihr ganz besonderes und individuelles Potential.  <br /> <br /> Manchmal reicht schon eine leichte Drehung und Sie erhalten sofort neue und überraschende Ein- und Ausblicke. Eine frische Perspektive auf vermeintlich Bekanntes entsteht. Vorhandene Muster lösen sich auf und neue werden sichtbar.  <br /> <br /> Meine Trainings und Coachings bringen Ihr individuelles Potential ans Licht und lassen es sich entfalten. Die Möglichkeiten sind unendlich – genau wie in einem Kaleidoskop.', // eslint-disable-line
 				titleMakeVisible: 'Sichtbar machen.',
 				textMakeVisible: 'Mit der <a href="/focus" title="Im Fokus - Was ist die Symbolon Methode?">Symbolon-Methode®</a>, dem Coaching mit Kunstwerken, wird bisher Unsichtbares sichtbar und Sie erhalten verblüffend schnell neue Einblicke und Lösungsansätze.', // eslint-disable-line
@@ -35,7 +35,7 @@ export default {
 		offer: {
 			title: 'Mein Angebot',
 			content: {
-				subtitle: 'Mein Angebot:',
+				subtitle: 'Mein Angebot.',
 				titlePersonalOffer: 'Für Sie persönlich:',
 				textPersonalOffer: 'Business Coaching mit Kunstwerken und der <a href="/focus" title="Im Fokus - Was ist die Symbolon Methode?">Symbolon-Methode®</a> – frappierend schnell im Erkenntnisgewinn und nachhaltig in der Umsetzung.', // eslint-disable-line
 				titleTeamOffer: 'Für Teams & Gruppen:',
@@ -55,20 +55,20 @@ export default {
 		focus: {
 			title: 'Im Fokus',
 			content: {
-				subtitle: 'Das, was mich leitet.',
+				subtitle: 'Was mich leitet.',
 				titleArt: 'Die Kunst.',
 				textArt: 'Kunst ist zentrales Element meiner Arbeit: Kunstwerke zur Selbstreflexion. Lebenskunst als Grundfähigkeit eines jeden Menschen. Die Handwerkskunst, ein für Sie zugeschnittenes Training zu konzipieren. Die Kunst, mit Sprache zu spielen, zu gestalten.', // eslint-disable-line
 				titleHuman: 'Der Mensch.',
 				textHuman: 'Für mich ist jeder Mensch eine Führungspersönlichkeit, denn Führung beginnt immer mit der eigenen Person, mit der eigenen Lebensführung. Die Fähigkeit zur Selbstreflexion ist dabei zentrale Schlüsselkompetenz – vor allem mit Blick auf den immer schneller werdenden Wandel und die digitale Transformation.', // eslint-disable-line
 				titleMethod: 'Die Methode.',
-				textMethod: 'Ich arbeite auf Basis meiner systemischen Trainer-Ausbildung und der <a href="/focus" title="Im Fokus - Was ist die Symbolon Methode?">Symbolon-Methode®</a>. Immer mit dem Blick auf die bereits vorhandenen Ressourcen und die Möglichkeiten zur Potentialentfaltung.<br /><br />Die systemische Betrachtungsweise sieht einzelne Personen als Teil eines größeren Gesamtsystems, dessen Elemente in wechselseitigem Zusammenhang miteinander stehen und sich gegenseitig beeinflussen. Meine systemische Grundhaltung stärkt Ihre Fähigkeit zur Selbstverantwortung, ist wertschätzend und ganzheitlich.<br /><br />Die <a href="/focus" title="Im Fokus - Was ist die Symbolon Methode?">Symbolon-Methode®</a> ist weltweit das führende Reflexionsinstrument für Persönlichkeitsentwicklung. Bis heute wurden über 10.000 Symbolon-Profile in Coachings und Trainings angewendet.<br /><br />Im Unterschied zu herkömmlichen Analyseinstrumenten basiert die Symbolon-Potentialanalyse auf der Reflexion von Kunstwerken, Archetypen und Symbolen. Weitere Details unter <a href="https://www.symbolon.com/symbolon-methode" target="_blank" rel="nofollow noreferrer">https://www.symbolon.com/symbolon-methode.</a>', // eslint-disable-line
+				textMethod: 'Ich arbeite auf Basis meiner systemischen Trainer-Ausbildung und der Symbolon-Methode®. Immer mit dem Blick auf die bereits vorhandenen Ressourcen und die Möglichkeiten zur Potentialentfaltung.<br /><br />Die systemische Betrachtungsweise sieht einzelne Personen als Teil eines größeren Gesamtsystems, dessen Elemente in wechselseitigem Zusammenhang miteinander stehen und sich gegenseitig beeinflussen. Meine systemische Grundhaltung stärkt Ihre Fähigkeit zur Selbstverantwortung, ist wertschätzend und ganzheitlich.<br /><br />Die Symbolon-Methode® ist weltweit das führende Reflexionsinstrument für Persönlichkeitsentwicklung. Bis heute wurden über 10.000 Symbolon-Profile in Coachings und Trainings angewendet.<br /><br />Im Unterschied zu herkömmlichen Analyseinstrumenten basiert die Symbolon-Potentialanalyse auf der Reflexion von Kunstwerken, Archetypen und Symbolen. Weitere Details unter <a href="https://www.symbolon.com/symbolon-methode" target="_blank" rel="nofollow noreferrer">https://www.symbolon.com/symbolon-methode.</a>', // eslint-disable-line
 			},
 		},
 		aboutme: {
 			title: 'Über mich',
 			content: {
 				titleExperience: 'Erfahren.',
-				textExperience: '25 Jahre Marketing- und Vertriebserfahrung bei der Firma Microsoft Corporation (Redmond, USA) und Microsoft Deutschland GmbH. Sattelfest im Großunternehmen und in der Führung (virtueller) Teams. Systemische Trainerin (zertifiziert von der European Coaching Association, ECA) und Symbolon-Spezialistin (zertifiziert von der International Coach Federation, ICF).',
+				textExperience: '25 Jahre Marketing- und Vertriebserfahrung bei der Firma Microsoft Corporation (Redmond, USA) und Microsoft Deutschland GmbH. Sattelfest im Großunternehmen und in der Führung von (virtuellen) Teams. Systemische Trainerin (zertifiziert von der European Coaching Association, ECA) und Symbolon-Spezialistin (zertifiziert von der International Coach Federation, ICF).',
 				titleLanguages: 'Sprachverliebt.',
 				textLanguages: 'Als Diplom-Übersetzerin baue ich mit Sprache Brücken: zu Ihnen, zu Ihrem Team, in Ihrer Gruppe. Trainings und Coachings auf Deutsch und Englisch.',
 				titleHuman: 'Menschlich.',
