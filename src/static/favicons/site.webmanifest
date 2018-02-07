@@ -1,20 +1,19 @@
 {
-    "name": "",
-    "short_name": "",
+    "name": "Michaela Jaritz",
+    "short_name": "Michaela Jaritz",
     "icons": [
         {
-            "src": "/static/favicons/android-chrome-192x192.png?v=47MJ98MQ8B",
+            "src": "/static/favicons/android-chrome-192x192.png?v=RyMgLlLMO9",
             "sizes": "192x192",
             "type": "image/png"
         },
         {
-            "src": "/static/favicons/android-chrome-512x512.png?v=47MJ98MQ8B",
+            "src": "/static/favicons/android-chrome-512x512.png?v=RyMgLlLMO9",
             "sizes": "512x512",
             "type": "image/png"
         }
     ],
     "theme_color": "#ffffff",
     "background_color": "#ffffff",
-    "start_url": "https://www.michaela-jaritz.com",
     "display": "standalone"
 }
