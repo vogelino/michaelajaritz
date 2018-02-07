@@ -12,7 +12,7 @@ const Cooperations = () => (
 			position={[10, 0]}
 		/>
 		<Parallelepiped
-			link="https://www.symbolon.com/"
+			link="http://www.methodenberatung-jahn.de/"
 			placement="toBottom"
 			size={8}
 			image="/static/logos/judith-jahn.jpg"
@@ -20,7 +20,7 @@ const Cooperations = () => (
 			position={[5, 10]}
 		/>
 		<Parallelepiped
-			link="http://www.methodenberatung-jahn.de/"
+			link="https://www.symbolon.com/"
 			placement="toBottom"
 			size={10}
 			image="/static/logos/symbolon.jpg"
