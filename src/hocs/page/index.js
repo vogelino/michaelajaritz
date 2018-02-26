@@ -14,7 +14,6 @@ import Content from '../../components/Content';
 injectGlobal`
 	body {
 		margin: 0;
-		min-width: 1280px;
 	}
 
 	.page-wrapper {
