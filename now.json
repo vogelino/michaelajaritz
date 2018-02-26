@@ -1,8 +1,18 @@
 {
 	"name": "michaela-jaritz",
 	"alias": [
-		"2017.michaela-jaritz.com",
-		"2018.michaela-jaritz.com"
+		"mein-kaleidoskop.co",
+		"www.mein-kaleidoskop.co",
+		"mein-kaleidoskop.com",
+		"www.mein-kaleidoskop.com",
+		"mein-kaleidoskop.eu",
+		"www.mein-kaleidoskop.eu",
+		"mein-kaleidoskop.info",
+		"www.mein-kaleidoskop.info",
+		"mein-kaleidoskop.net",
+		"www.mein-kaleidoskop.net",
+		"michaela-jaritz.com",
+		"www.michaela-jaritz.com"
 	],
 	"engines": {
 		"node": "8.9.0"
