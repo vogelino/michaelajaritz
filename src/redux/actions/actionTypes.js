@@ -1,1 +1,3 @@
 export const WINDOW_RESIZED = 'WINDOW_RESIZED';
+export const SIDEBAR_TOGGLED = 'SIDEBAR_TOGGLED';
+
