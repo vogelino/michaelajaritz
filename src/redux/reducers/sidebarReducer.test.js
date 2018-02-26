@@ -1,6 +1,6 @@
 /* global test, expect */
 import sidebarReducer, { uiInitialState } from './sidebarReducer';
-import { toggleSidebar } from '../actions/sidebarActions';
+import { setSidebarState } from '../actions/sidebarActions';
 
 test('calling sidebarReducer without arguments should return the initialState', () => {
 	expect(sidebarReducer()).toEqual(uiInitialState);
@@ -12,7 +12,7 @@ test('calling sidebarReducer with arguments should return the arguments', () => 
 });
 
 test('sidebarReducer should return calculated timeline size', () => {
-	const action = toggleSidebar();
 	const expectedState = true;
+	const action = setSidebarState(expectedState);
 	expect(sidebarReducer(undefined, action)).toEqual(expectedState);
 });
