@@ -20,7 +20,7 @@ const SocialIconListWrapper = styled('div')`
 
 const ContactPage = ({ pageName }) => (
 	<div>
-		<Subtitle timeout={1000} nomargin>
+		<Subtitle timeout={1000} marginBottom={80}>
 			<FormattedHTMLMessage id={`pages.${pageName}.content.subtitle`} />
 		</Subtitle>
 		<BigTitle timeout={1100}>

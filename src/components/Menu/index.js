@@ -8,17 +8,33 @@ import pages from '../../constants/pages';
 
 const MenuListItem = styled('li')`
 	padding: 10px 0 0;
-	font-weight: ${({ active, theme }) => (active ? theme.menuFontWeightActive : theme.menuFontWeight)};
+	font-weight: ${({ active, theme }) =>
+		(active ? theme.menuFontWeightActive : theme.menuFontWeight)};
 	font-size: ${({ theme }) => theme.menuFontSize};
 	font-family: ${({ theme }) => theme.menuFontFamily};
 
+	@media screen and (max-width: 540px) {
+		font-weight: ${({ active, theme }) =>
+			(active ? theme.menuFontWeightActive : theme.menuFontWeightMobile)};
+	}
+
 	& a {
 		text-decoration: none;
-		color: ${({ theme, active }) => (!active ? theme.grey : theme.darkGrey)};
+		color: ${({ theme, active }) =>
+			(!active ? theme.grey : theme.darkGrey)};
 		transition: color 150ms ease-out;
 
 		&:hover {
 			color: ${({ theme }) => theme.darkGrey}
+		}
+
+		> span {
+			width: 100%;
+			height: 27px;
+
+			> span {
+				pointer-events: none;
+			}
 		}
 	}
 `;

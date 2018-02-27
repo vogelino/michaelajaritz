@@ -23,7 +23,7 @@ const OfferPage = ({ intl, pageName }) => {
 			<Subtitle timeout={1000}>
 				<FormattedHTMLMessage id={`pages.${pageName}.content.subtitle`} />
 			</Subtitle>
-			<BigTitle timeout={1200} color="orange">
+			<BigTitle timeout={1200} color="orange" marginTop={80}>
 				<FormattedHTMLMessage id={`pages.${pageName}.content.titlePersonalOffer`} />
 			</BigTitle>
 			<Paragraph timeout={1300}>

@@ -15,6 +15,10 @@ const ParagraphWrapper = withTheme(styled('p')`
 	padding: 0 4px;
 	hyphens: auto;
 
+	@media screen and (max-width: 540px) {
+		font-size: ${({ theme }) => theme.paragraphFontSizeMobile};
+	}
+
 	& a {
 		color: ${({ theme }) => [theme.blue, theme.purple][Math.round(Math.random())]};
 		transition: color 200ms ease-out;

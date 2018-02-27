@@ -22,6 +22,13 @@ const BigTitleLineContent = styled('span')`
 		transform: scaleX(0);
 		transform-origin: 0 50%;
 		transition-delay: 400ms;
+
+		@media screen and (max-width: 540px) {
+			width: 80%;
+			width: calc(100% - 24px);
+			height: 16px;
+			bottom: -2px;
+		}
 	}
 `;
 
@@ -32,13 +39,22 @@ const BigTitleLine = styled('span')`
 	letter-spacing: ${({ theme }) => theme.titleLetterSpacing};
 
 	display: block;
-	margin-bottom: 10px;
 	opacity: 0;
 	transform: translateY(20px);
+
+	@media screen and (max-width: 540px) {
+		font-size: ${({ theme }) => theme.titleFontSizeMobile};
+	}
 `;
 
 const BigTitleWrapper = styled('h1')`
-	margin: ${({ nomargin }) => (nomargin ? 0 : 30)}px 0 0;
+	margin-top: ${({ marginTop }) => marginTop}px;
+	margin-bottom: ${({ marginBottom }) => marginBottom}px;
+
+	@media screen and (max-width: 540px) {
+		margin-top: ${({ marginTop }) => marginTop / 2}px;
+		margin-bottom: ${({ marginBottom }) => marginBottom / 2}px;
+	}
 
 	&.ready span {
 		opacity: 1;
@@ -66,14 +82,13 @@ class BigTitle extends Component {
 	}
 
 	render() {
-		const { children, theme, color, nomargin } = this.props;
 		const { ready } = this.state;
 
 		return (
-			<BigTitleWrapper nomargin={nomargin} className={ready && 'ready'}>
-				<BigTitleLine theme={theme}>
-					<BigTitleLineContent color={color} theme={theme}>
-						{children}
+			<BigTitleWrapper {...this.props} className={ready && 'ready'}>
+				<BigTitleLine {...this.props}>
+					<BigTitleLineContent {...this.props}>
+						{this.props.children}
 					</BigTitleLineContent>
 				</BigTitleLine>
 			</BigTitleWrapper>
@@ -84,7 +99,8 @@ class BigTitle extends Component {
 BigTitle.defaultProps = {
 	timeout: 15,
 	color: 'blue',
-	nomargin: false,
+	marginTop: 40,
+	marginBottom: 10,
 };
 
 const messageType = PropTypes.oneOfType([
@@ -101,7 +117,8 @@ BigTitle.propTypes = {
 	theme: PropTypes.shape({
 		titleFontFamily: PropTypes.string.isRequired,
 	}).isRequired,
-	nomargin: PropTypes.bool,
+	marginTop: PropTypes.number,
+	marginBottom: PropTypes.number,
 };
 
 export default withTheme(BigTitle);

@@ -11,14 +11,22 @@ const Subtitle = withTheme(styled('h2')`
 	letter-spacing: ${({ theme }) => theme.subtitleLetterSpacing};
 	color: ${({ theme }) => theme.grey};
 	display: block;
-	margin: 0 0 ${({ nomargin }) => (nomargin ? 0 : 80)}px 0;
+	margin-top: ${({ marginTop }) => marginTop}px;
+	margin-bottom: ${({ marginBottom }) => marginBottom}px;
+
+	@media screen and (max-width: 540px) {
+		font-size: ${({ theme }) => theme.subtitleFontSizeMobile};
+		font-weight: ${({ theme }) => theme.subtitleFontWeightMobile};
+		margin-top: ${({ marginTop }) => marginTop / 2}px;
+		margin-bottom: ${({ marginBottom }) => marginBottom / 2}px;
+	}
 `);
 
-const AnimatedSubtitle = ({ children, timeout, nomargin, block }) => (
-	<Subtitle nomargin={nomargin}>
-		<AnimatedInText timeout={timeout} block={block}>
+const AnimatedSubtitle = (props) => (
+	<Subtitle {...props} >
+		<AnimatedInText timeout={props.timeout} block={props.block}>
 			<span>
-				{children}
+				{props.children}
 			</span>
 		</AnimatedInText>
 	</Subtitle>
@@ -26,14 +34,16 @@ const AnimatedSubtitle = ({ children, timeout, nomargin, block }) => (
 
 AnimatedSubtitle.defaultProps = {
 	timeout: 10,
-	nomargin: false,
+	marginTop: 0,
+	marginBottom: 40,
 	block: false,
 };
 
 AnimatedSubtitle.propTypes = {
 	children: PropTypes.element.isRequired,
 	timeout: PropTypes.number,
-	nomargin: PropTypes.bool,
+	marginTop: PropTypes.number,
+	marginBottom: PropTypes.number,
 	block: PropTypes.bool,
 };
 

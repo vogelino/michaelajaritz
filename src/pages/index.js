@@ -14,28 +14,27 @@ const WelcomePage = ({ pageName, intl }) => {
 		},
 	});
 	const titleColors = ['purple', 'orange', 'blue'];
+	const titleLines = intl.formatMessage(messages.title).split('\n');
 
 	return (
 		<div>
-			<Subtitle timeout={1000}>
+			<Subtitle timeout={1000} block >
 				<FormattedMessage id={`pages.${pageName}.content.subtitle`} />
 			</Subtitle>
-			{intl.formatMessage(messages.title).split('\n').map((lineText, i) => (
+			{titleLines.map((lineText, i) => (
 				<BigTitle
 					key={lineText}
 					timeout={(i * 300) + 1200}
 					color={titleColors[i]}
-					nomargin
+					marginTop={10}
+					marginBottom={i === titleLines.length - 1 ? 40 : 0}
 				>
 					{lineText}
 				</BigTitle>
 			))}
-			<br />
-			<br />
-			<Subtitle timeout={2300} block nomargin>
+			<Subtitle timeout={2300} block marginTop={40} marginBottom={0} >
 				<FormattedHTMLMessage id={`pages.${pageName}.content.quote`} />
 			</Subtitle>
-			<br />
 			<Paragraph timeout={2400}>
 				<FormattedMessage id={`pages.${pageName}.content.greetings`} />
 			</Paragraph>

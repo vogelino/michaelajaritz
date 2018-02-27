@@ -20,13 +20,13 @@ const IdeaPage = ({ pageName }) => {
 			<Subtitle timeout={1000}>
 				<Text id="subtitle" />
 			</Subtitle>
-			<BigTitle timeout={1200} color="orange">
+			<BigTitle timeout={1200} color="orange" marginBottom={10} marginTop={80}>
 				<Text id="titleTraining" />
 			</BigTitle>
-			<BigTitle timeout={1400} color="blue" nomargin>
+			<BigTitle timeout={1400} color="blue" marginBottom={10} marginTop={0}>
 				<Text id="titleCoaching" />
 			</BigTitle>
-			<BigTitle timeout={1600} color="purple" nomargin>
+			<BigTitle timeout={1600} color="purple" marginTop={0}>
 				<Text id="titleModeration" />
 			</BigTitle>
 			<Paragraph timeout={1800}>

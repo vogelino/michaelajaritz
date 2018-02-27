@@ -8,7 +8,7 @@ import Paragraph from '../components/Paragraph';
 
 const FocusPage = ({ pageName }) => (
 	<div>
-		<Subtitle timeout={1000}>
+		<Subtitle timeout={1000} marginBottom={80}>
 			<FormattedHTMLMessage id={`pages.${pageName}.content.subtitle`} />
 		</Subtitle>
 		<BigTitle timeout={1200} color="blue">

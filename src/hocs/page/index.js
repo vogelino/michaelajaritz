@@ -16,12 +16,6 @@ injectGlobal`
 		margin: 0;
 	}
 
-	.page-wrapper {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-	}
-
 	* {
 		box-sizing: border-box;
 	}
@@ -32,7 +26,7 @@ export default (pageName) => (Component) => (props) => (
 	<Provider store={configureStore()}>
 		<TextsProvider>
 			<ThemeProvider>
-				<div className="page-wrapper">
+				<div id="page-wrapper">
 					<HtmlHead pageName={pageName} />
 					<IllustrationZone pageName={pageName} />
 					<Sidebar pageName={pageName} />
