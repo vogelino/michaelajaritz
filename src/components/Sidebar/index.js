@@ -30,7 +30,8 @@ const SidebarWrapper = styled('aside')`
 `;
 
 const LogoZone = styled('section')`
-	width: 100%;
+	width: 212px;
+	height: 43px;
 	flex-basis: 130px;
 `;
 
