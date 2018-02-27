@@ -7,7 +7,7 @@ import AnimatedInText, { AnimatedInTextContent } from '../AnimatedInText';
 import SocialIconList from '../SocialIconList';
 
 const FooterWrapper = styled('div')`
-	width: 100%;
+	width: 160px;
 
 	${AnimatedInTextContent} > * {
 		position: inherit;
