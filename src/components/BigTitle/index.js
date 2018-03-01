@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { FormattedMessage, FormattedHTMLMessage } from 'react-intl';
 
-const BigTitleLineContent = styled('span')`
+const BigTitleLineContent = styled.span`
 	display: inline-block;
 	position: relative;
 	color: ${({ color, theme }) => theme[color]};
@@ -33,7 +33,7 @@ const BigTitleLineContent = styled('span')`
 	}
 `;
 
-const BigTitleLine = styled('span')`
+const BigTitleLine = styled.span`
 	font-family: ${({ theme }) => theme.titleFontFamily};
 	font-size: ${({ theme }) => theme.titleFontSize};
 	font-weight: ${({ theme }) => theme.titleFontWeight};
@@ -48,7 +48,7 @@ const BigTitleLine = styled('span')`
 	}
 `;
 
-const BigTitleWrapper = styled('h1')`
+const BigTitleWrapper = styled.h1`
 	margin-top: ${({ marginTop }) => marginTop}px;
 	margin-bottom: ${({ marginBottom }) => marginBottom}px;
 

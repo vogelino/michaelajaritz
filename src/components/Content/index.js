@@ -6,7 +6,7 @@ import styled from 'styled-components';
 import { HamburgerButton } from 'react-hamburger-button';
 import { setSidebarState } from '../../redux/actions/sidebarActions';
 
-const ContentWrapper = styled('section')`
+const ContentWrapper = styled.section`
 	width: 50%;
 	height: 100%;
 	max-width: 590px;
@@ -17,7 +17,7 @@ const ContentWrapper = styled('section')`
 	padding-left: 20px;
 `;
 
-const ScrollTopGradientOverlay = styled('div')`
+const ScrollTopGradientOverlay = styled.div`
 	width: 100%;
 	height: 40px;
 	background: linear-gradient(to top, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 95%);
@@ -34,7 +34,7 @@ const ScrollBottomGradientOverlay = styled(ScrollTopGradientOverlay)`
 	bottom: 0;
 `;
 
-const ScrollContainer = styled('div')`
+const ScrollContainer = styled.div`
 	width: 100%;
 	height: 100%;
 	top: 0;
@@ -53,13 +53,13 @@ const ScrollContainer = styled('div')`
 	}
 `;
 
-const MobileWrapper = styled('div')`
+const MobileWrapper = styled.div`
 	width: 100%;
 	box-sizing: border-box;
 	padding: 80px 20px;
 `;
 
-const MobileHeader = styled('header')`
+const MobileHeader = styled.header`
 	z-index: 20;
 	width: 100%;
 	position: fixed;
@@ -77,13 +77,13 @@ const MobileHeader = styled('header')`
 	}
 `;
 
-const LogoImage = styled('img')`
+const LogoImage = styled.img`
 	height: 18px;
 	width: auto;
 	float: left;
 `;
 
-const SidebarToggle = styled('span')`
+const SidebarToggle = styled.span`
 	float: right;
 `;
 
