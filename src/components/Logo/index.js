@@ -1,6 +1,5 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import styled, { withTheme } from 'styled-components';
+import React from 'react';
+import styled from 'styled-components';
 import Link from 'next/link';
 import { FormattedMessage } from 'react-intl';
 import AnimatedInText, { AnimatedInTextContent } from '../AnimatedInText';
@@ -45,13 +44,13 @@ const LogoSlogan = styled('span')`
 	}
 `;
 
-const Logo = ({ theme }) => (
+const Logo = () => (
 	<Link href="/">
 		<LogoLink>
 			<LogoImage src="/static/logo.svg" />
 			<FormattedMessage id="site.slogan">
 				{(msg) => (
-					<LogoSlogan theme={theme}>
+					<LogoSlogan>
 						{msg.split('\n').map((line, index) => (
 							<LogoSloganLine key={line}>
 								<AnimatedInText timeout={index * 100}>
@@ -66,15 +65,4 @@ const Logo = ({ theme }) => (
 	</Link>
 );
 
-Logo.propTypes = {
-	theme: PropTypes.shape({
-		grey: PropTypes.string.isRequired,
-	}).isRequired,
-};
-
-/* eslint-disable react/prefer-stateless-function */
-export default withTheme(class extends Component {
-	render() {
-		return <Logo {...this.props} />;
-	}
-});
+export default Logo;

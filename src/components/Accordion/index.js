@@ -6,7 +6,6 @@ import {
 	AccordionItem as ASAccordionItem,
 } from 'react-sanfona';
 import { FormattedMessage, FormattedHTMLMessage } from 'react-intl';
-import withTheme from '../../hocs/withTheme';
 import Paragraph from '../Paragraph';
 
 const Accordion = styled(ASAccordion)`
@@ -14,7 +13,7 @@ const Accordion = styled(ASAccordion)`
 	padding: 0 3px;
 `;
 
-const AccordionItem = withTheme(styled(ASAccordionItem)`
+const AccordionItem = styled(ASAccordionItem)`
 	padding: 10px 0;
 	border-top: solid 1px rgba(0,0,0,.1);
 	overflow: hidden;
@@ -58,7 +57,7 @@ const AccordionItem = withTheme(styled(ASAccordionItem)`
 	&.react-sanfona-item-expanded .react-sanfona-item-title:after {
 		content: '–';
 	}
-`);
+`;
 
 class AccordionWrapper extends Component {
 	constructor(props) {

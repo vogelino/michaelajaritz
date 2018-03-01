@@ -41,8 +41,8 @@ const IllustrationZoneContent = styled('div')`
 	transform: translateY(-25%) scale(${({ scale }) => scale});
 `;
 
-const IllustrationZone = ({ pageName, scale, isMobile }) => {
-	if (isMobile) {
+const IllustrationZone = ({ clientSideReady, pageName, scale, isMobile }) => {
+	if (isMobile && !clientSideReady) {
 		return null;
 	}
 	const Component = components[pageName] || (() => null);
@@ -59,11 +59,13 @@ IllustrationZone.propTypes = {
 	pageName: PropTypes.string,
 	scale: PropTypes.number.isRequired,
 	isMobile: PropTypes.bool.isRequired,
+	clientSideReady: PropTypes.bool.isRequired,
 };
 
-const mapStateToProps = ({ ui }) => ({
-	scale: ui.windowWidth < 1280 ? 0.8 : ui.windowWidth / 1600,
-	isMobile: ui.windowWidth < 1280,
+const mapStateToProps = ({ ui: { clientSideReady, windowWidth } }) => ({
+	scale: windowWidth < 1280 ? 0.8 : windowWidth / 1600,
+	isMobile: windowWidth < 1280,
+	clientSideReady,
 });
 
 export default connect(mapStateToProps)(IllustrationZone);

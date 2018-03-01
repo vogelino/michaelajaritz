@@ -2,11 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 import Link from 'next/link';
 import { FormattedMessage } from 'react-intl';
-import withTheme from '../../hocs/withTheme';
 import AnimatedInText, { AnimatedInTextContent } from '../AnimatedInText';
 import SocialIconList from '../SocialIconList';
 
-const FooterWrapper = styled('div')`
+const FooterWrapper = styled.div`
 	width: 160px;
 
 	${AnimatedInTextContent} > * {
@@ -15,7 +14,7 @@ const FooterWrapper = styled('div')`
 	}
 `;
 
-const FooterLink = withTheme(styled('a')`
+const FooterLink = styled.a`
 	font-size: ${({ theme }) => theme.footerLinkFontSize};
 	font-weight: ${({ theme }) => theme.footerLinkFontWeight};
 	font-family: ${({ theme }) => theme.footerLinkFontFamily};
@@ -30,7 +29,7 @@ const FooterLink = withTheme(styled('a')`
 	&:hover {
 		color: ${({ theme }) => theme.darkGrey}
 	}
-`);
+`;
 
 
 const Footer = () => (
@@ -47,4 +46,3 @@ const Footer = () => (
 );
 
 export default Footer;
-

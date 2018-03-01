@@ -1,10 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import withTheme from '../../hocs/withTheme';
 import AnimatedInText from '../AnimatedInText';
 
-const Subtitle = withTheme(styled('h2')`
+const Subtitle = styled.h2`
 	font-family: ${({ theme }) => theme.subtitleFontFamily};
 	font-size: ${({ theme }) => theme.subtitleFontSize};
 	font-weight: ${({ theme }) => theme.subtitleFontWeight};
@@ -20,7 +19,7 @@ const Subtitle = withTheme(styled('h2')`
 		margin-top: ${({ marginTop }) => marginTop / 2}px;
 		margin-bottom: ${({ marginBottom }) => marginBottom / 2}px;
 	}
-`);
+`;
 
 const AnimatedSubtitle = (props) => (
 	<Subtitle {...props} >

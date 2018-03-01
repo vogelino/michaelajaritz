@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import styled, { withTheme } from 'styled-components';
+import styled from 'styled-components';
 import Link from 'next/link';
 import { FormattedMessage } from 'react-intl';
 import AnimatedInText from '../AnimatedInText';
 import pages from '../../constants/pages';
 
-const MenuListItem = styled('li')`
+const MenuListItem = styled.li`
 	padding: 10px 0 0;
 	font-weight: ${({ active, theme }) =>
 		(active ? theme.menuFontWeightActive : theme.menuFontWeight)};
@@ -39,7 +39,7 @@ const MenuListItem = styled('li')`
 	}
 `;
 
-const MenuList = styled('ul')`
+const MenuList = styled.ul`
 	&,
 	${MenuListItem} {
 		margin-left: 0;
@@ -48,10 +48,10 @@ const MenuList = styled('ul')`
 	}
 `;
 
-const Menu = ({ pageName, theme }) => (
+const Menu = ({ pageName }) => (
 	<MenuList>
 		{pages.map((page, index) => (
-			<MenuListItem key={page.name} active={pageName === page.name} theme={theme}>
+			<MenuListItem key={page.name} active={pageName === page.name}>
 				<Link prefetch href={page.path}>
 					<a>
 						<AnimatedInText timeout={(index * 100) + 400}>
@@ -66,14 +66,6 @@ const Menu = ({ pageName, theme }) => (
 
 Menu.propTypes = {
 	pageName: PropTypes.string.isRequired,
-	theme: PropTypes.shape({
-		menuFontSize: PropTypes.string.isRequired,
-	}).isRequired,
 };
 
-/* eslint-disable react/prefer-stateless-function */
-export default withTheme(class extends Component {
-	render() {
-		return <Menu {...this.props} />;
-	}
-});
+export default Menu;

@@ -1,10 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import withTheme from '../../hocs/withTheme';
 import AnimatedInText from '../AnimatedInText';
 
-const ParagraphWrapper = withTheme(styled('p')`
+const ParagraphWrapper = styled.p`
 	font-family: ${({ theme }) => theme.paragraphFontFamily};
 	font-size: ${({ theme }) => theme.paragraphFontSize};
 	font-weight: ${({ theme }) => theme.paragraphFontWeight};
@@ -34,7 +33,7 @@ const ParagraphWrapper = withTheme(styled('p')`
 		margin: 0 0 8px 0;
 		list-style: none;
 	}
-`);
+`;
 
 const Paragraph = ({ children, timeout }) => (
 	<AnimatedInText block timeout={timeout}>

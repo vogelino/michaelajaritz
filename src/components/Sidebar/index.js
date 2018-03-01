@@ -6,7 +6,7 @@ import Menu from '../Menu';
 import Logo from '../Logo';
 import Footer from '../Footer';
 
-const SidebarWrapper = styled('aside')`
+const SidebarWrapper = styled.aside`
 	top: 0;
 	left: 0;
 	width: ${({ isMobile }) => (isMobile ? '100%' : '280px')};
@@ -29,13 +29,13 @@ const SidebarWrapper = styled('aside')`
 	}
 `;
 
-const LogoZone = styled('section')`
+const LogoZone = styled.section`
 	width: 212px;
 	height: 43px;
 	flex-basis: 130px;
 `;
 
-const MenuZone = styled('nav')`
+const MenuZone = styled.nav`
 	width: 100%;
 	${({ isMobile }) => isMobile && 'margin-bottom: 20px;'}
 	${({ isMobile }) => !isMobile && `
@@ -46,18 +46,14 @@ const MenuZone = styled('nav')`
 	`}
 `;
 
-const FooterZone = styled('footer')`
+const FooterZone = styled.footer`
 	width: 100%;
 	flex-basis: 56px;
 `;
 
 const Sidebar = ({ isOpen, isMobile, pageName }) => (
 	<SidebarWrapper isOpen={isOpen} isMobile={isMobile}>
-		{!isMobile && (
-			<LogoZone>
-				<Logo />
-			</LogoZone>
-		)}
+		{!isMobile && <LogoZone><Logo /></LogoZone>}
 		<MenuZone {...{ isMobile }}>
 			<Menu pageName={pageName} />
 		</MenuZone>

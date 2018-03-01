@@ -2,10 +2,9 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { injectGlobal } from 'styled-components';
 import HtmlHead from '../../components/HtmlHead';
-import ThemeProvider from '../../theme';
 import TextsProvider from '../../texts';
 import configureStore from '../../redux/store/configureStore';
-import CoreLayout from '../withResize';
+import CoreLayout from '../CoreLayout';
 import Sidebar from '../../components/Sidebar';
 import IllustrationZone from '../../components/IllustrationZone';
 import Content from '../../components/Content';
@@ -25,18 +24,16 @@ injectGlobal`
 export default (pageName) => (Component) => (props) => (
 	<Provider store={configureStore()}>
 		<TextsProvider>
-			<ThemeProvider>
+			<CoreLayout>
 				<div id="page-wrapper">
 					<HtmlHead pageName={pageName} />
 					<IllustrationZone pageName={pageName} />
 					<Sidebar pageName={pageName} />
 					<Content>
-						<CoreLayout>
-							<Component pageName={pageName} {...props} />
-						</CoreLayout>
+						<Component pageName={pageName} {...props} />
 					</Content>
 				</div>
-			</ThemeProvider>
+			</CoreLayout>
 		</TextsProvider>
 	</Provider>
 );

@@ -1,6 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import styled, { withTheme } from 'styled-components';
+import styled from 'styled-components';
+import theme from '../../theme';
 
 const getTranslateYByPlacement = ({ placement }) => (
 	placement === 'toTop' ? '' : 'translateY(100%)'
@@ -57,102 +59,94 @@ const ExternalLink = styled.a`
 	cursor: pointer;
 	opacity: 1;
 	transition: opacity 800ms cubic-bezier(0,1,.37,.98);
-	
+
 	&:hover {
 		opacity: .8;
 	}
 `;
 
-class Parallelepiped extends Component {
+const Parallelepiped = ({
+	timeout,
+	clientSideReady,
+	link,
+	placement,
+	size,
+	position,
+	color,
+	image,
+}) => {
+	const clipPathId = `${placement}-${color}-${position.join('-')}-${size}`;
+	const height = getHeightBySize({ size });
+	const width = getWidthBySize({ size });
+	const thirdWidth = (width / 100) * 33.3337;
+	const twoThirdWidth = (width / 100) * 66.6667;
+	const pathToTop = [
+		`M${thirdWidth}`,
+		0,
+		0,
+		height,
+		twoThirdWidth,
+		height,
+		width,
+		0,
+		thirdWidth,
+		'0z',
+	].join(' ');
+	const pathToBottom = [
+		'M0',
+		'0',
+		thirdWidth,
+		height,
+		width,
+		height,
+		twoThirdWidth,
+		0,
+		thirdWidth,
+		'0z',
+	].join(' ');
+	const content = image ? (
+		<Image
+			clipPathId={clipPathId}
+			xlinkHref={image}
+			width={width}
+			height={height}
+		/>
+	) : (
+		<ParallelepipedPath
+			d={placement === 'toBottom' ? pathToBottom : pathToTop}
+			fill={theme[color]}
+		/>
+	);
 
-	constructor(props) {
-		super(props);
-
-		this.state = { ready: false };
-	}
-
-	componentDidMount() {
-		const { timeout } = this.props;
-		setTimeout(() => {
-			this.setState({ ready: true });
-		}, timeout);
-	}
-
-	render() {
-		const { link, theme, placement, size, position, color, image } = this.props;
-		const { ready } = this.state;
-		const clipPathId = `${placement}-${color}-${position.join('-')}-${size}`;
-		const height = getHeightBySize({ size });
-		const width = getWidthBySize({ size });
-		const thirdWidth = (width / 100) * 33.3337;
-		const twoThirdWidth = (width / 100) * 66.6667;
-		const pathToTop = [
-			`M${thirdWidth}`,
-			0,
-			0,
-			height,
-			twoThirdWidth,
-			height,
-			width,
-			0,
-			thirdWidth,
-			'0z',
-		].join(' ');
-		const pathToBottom = [
-			'M0',
-			'0',
-			thirdWidth,
-			height,
-			width,
-			height,
-			twoThirdWidth,
-			0,
-			thirdWidth,
-			'0z',
-		].join(' ');
-		const content = image ? (
-			<Image
-				clipPathId={clipPathId}
-				xlinkHref={image}
-				width={width}
-				height={height}
-			/>
-		) : (
-			<ParallelepipedPath
-				d={placement === 'toBottom' ? pathToBottom : pathToTop}
-				fill={theme[color]}
-			/>
-		);
-
-		return (
-			<Container
-				placement={placement}
-				position={position}
-				size={size}
-				ready={ready}
+	return (
+		<Container
+			placement={placement}
+			position={position}
+			size={size}
+			clientSideReady={clientSideReady}
+			timeout={timeout}
+		>
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				viewBox={`0 0 ${width} ${height}`}
+				version="1.1"
 			>
-				<svg
-					xmlns="http://www.w3.org/2000/svg"
-					viewBox={`0 0 ${width} ${height}`}
-					version="1.1"
-				>
-					{image && (
-						<defs>
-							<clipPath id={clipPathId}>
-								<ParallelepipedPath d={placement === 'toBottom' ? pathToBottom : pathToTop} />
-							</clipPath>
-						</defs>
-					)}
-					{link ? (
-						<ExternalLink href={link} target="_blank" rel="noopener nofollower">
-							{content}
-						</ExternalLink>
-					) : content}
-				</svg>
-			</Container>
-		);
-	}
-}
+				{image && (
+					<defs>
+						<clipPath id={clipPathId}>
+							<ParallelepipedPath d={placement === 'toBottom' ? pathToBottom : pathToTop} />
+						</clipPath>
+					</defs>
+				)}
+				{link ? (
+					<ExternalLink href={link} target="_blank" rel="noopener nofollower">
+						{content}
+					</ExternalLink>
+				) : content}
+			</svg>
+		</Container>
+	);
+};
 
 Parallelepiped.defaultProps = {
 	placement: 'toTop',
@@ -168,12 +162,13 @@ Parallelepiped.propTypes = {
 	placement: PropTypes.oneOf(['toTop', 'toBottom']),
 	position: PropTypes.arrayOf(PropTypes.number),
 	size: PropTypes.number,
-	theme: PropTypes.shape({}).isRequired,
 	color: PropTypes.oneOf(['blue', 'orange', 'purple']),
 	image: PropTypes.string,
 	timeout: PropTypes.number,
 	link: PropTypes.string,
+	clientSideReady: PropTypes.bool.isRequired,
 };
 
+const mapStateToProps = ({ ui: { clientSideReady } }) => ({ clientSideReady });
 
-export default withTheme(Parallelepiped);
+export default connect(mapStateToProps)(Parallelepiped);

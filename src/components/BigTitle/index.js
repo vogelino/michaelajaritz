@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import styled, { withTheme } from 'styled-components';
+import styled from 'styled-components';
 import { FormattedMessage, FormattedHTMLMessage } from 'react-intl';
 
 const BigTitleLineContent = styled('span')`
@@ -21,7 +22,7 @@ const BigTitleLineContent = styled('span')`
 		display: block;
 		transform: scaleX(0);
 		transform-origin: 0 50%;
-		transition-delay: 400ms;
+		transition-delay: ${({ timeout }) => timeout + 400}ms;
 
 		@media screen and (max-width: 540px) {
 			width: 80%;
@@ -59,42 +60,26 @@ const BigTitleWrapper = styled('h1')`
 	&.ready span {
 		opacity: 1;
 		transform: translateY(0);
-		transition: opacity 2000ms cubic-bezier(0,1,.37,.98) 100ms, transform 400ms cubic-bezier(0,1,.37,.98) 100ms;
+		transition: opacity 2000ms cubic-bezier(0,1,.37,.98), transform 400ms cubic-bezier(0,1,.37,.98);
+		transition-delay: ${({ timeout }) => timeout + 100}ms, ${({ timeout }) => timeout + 100}ms;
 	}
 
 	&.ready span > span:after {
 		transform: scaleX(1);
 		transition: transform 600ms cubic-bezier(.12,1.45,.28,.97) 300ms;
+		transition-delay: ${({ timeout }) => timeout + 300}ms;
 	}
 `;
 
-class BigTitle extends Component {
-	constructor(props) {
-		super(props);
-
-		this.state = { ready: true };
-	}
-
-	componentDidMount() {
-		const { timeout } = this.props;
-		setTimeout(() => this.setState({ ready: false }), 10);
-		setTimeout(() => this.setState({ ready: true }), timeout);
-	}
-
-	render() {
-		const { ready } = this.state;
-
-		return (
-			<BigTitleWrapper {...this.props} className={ready && 'ready'}>
-				<BigTitleLine {...this.props}>
-					<BigTitleLineContent {...this.props}>
-						{this.props.children}
-					</BigTitleLineContent>
-				</BigTitleLine>
-			</BigTitleWrapper>
-		);
-	}
-}
+const BigTitle = (props) => (
+	<BigTitleWrapper {...props} className={props.clientSideReady && 'ready'}>
+		<BigTitleLine {...props}>
+			<BigTitleLineContent {...props}>
+				{props.children}
+			</BigTitleLineContent>
+		</BigTitleLine>
+	</BigTitleWrapper>
+);
 
 BigTitle.defaultProps = {
 	timeout: 15,
@@ -114,12 +99,12 @@ BigTitle.propTypes = {
 	children: messageType,
 	color: PropTypes.string,
 	timeout: PropTypes.number,
-	theme: PropTypes.shape({
-		titleFontFamily: PropTypes.string.isRequired,
-	}).isRequired,
 	marginTop: PropTypes.number,
 	marginBottom: PropTypes.number,
+	clientSideReady: PropTypes.bool.isRequired,
 };
 
-export default withTheme(BigTitle);
+const mapStateToProps = ({ ui: { clientSideReady } }) => ({ clientSideReady });
+
+export default connect(mapStateToProps)(BigTitle);
 
