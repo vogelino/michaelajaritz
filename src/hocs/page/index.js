@@ -1,6 +1,6 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { injectGlobal } from 'styled-components';
+import { injectGlobal, ThemeProvider } from 'styled-components';
 import HtmlHead from '../../components/HtmlHead';
 import TextsProvider from '../../texts';
 import configureStore from '../../redux/store/configureStore';
@@ -8,6 +8,7 @@ import CoreLayout from '../CoreLayout';
 import Sidebar from '../../components/Sidebar';
 import IllustrationZone from '../../components/IllustrationZone';
 import Content from '../../components/Content';
+import theme from '../../theme';
 
 /* eslint-disable no-unused-expressions */
 injectGlobal`
@@ -23,18 +24,20 @@ injectGlobal`
 
 export default (pageName) => (Component) => (props) => (
 	<Provider store={configureStore()}>
-		<TextsProvider>
-			<CoreLayout>
+		<ThemeProvider theme={theme}>
+			<TextsProvider>
 				<div id="page-wrapper">
 					<HtmlHead pageName={pageName} />
 					<IllustrationZone pageName={pageName} />
 					<Sidebar pageName={pageName} />
-					<Content>
-						<Component pageName={pageName} {...props} />
-					</Content>
+					<CoreLayout>
+						<Content>
+							<Component pageName={pageName} {...props} />
+						</Content>
+					</CoreLayout>
 				</div>
-			</CoreLayout>
-		</TextsProvider>
+			</TextsProvider>
+		</ThemeProvider>
 	</Provider>
 );
 
