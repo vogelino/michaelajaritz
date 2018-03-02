@@ -9,7 +9,6 @@
     "dist": "mkdir -p dist",
     "lint": "eslint ./**/*.js",
     "lint-fix": "eslint --fix ./**/*.js",
-    "test": "jest",
     "start": "next start src",
     "build": "next build src",
     "dev": "next dev src",
@@ -35,10 +34,8 @@
   "license": "ISC",
   "homepage": "https://bitbucket.org/vogelino/michaelajaritz#readme",
   "dependencies": {
-    "flux-standard-action": "^1.2.0",
     "next": "^4.2.3",
     "prop-types": "^15.5.10",
-    "raven-js": "^3.17.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-hamburger-button": "0.0.1",
@@ -53,24 +50,18 @@
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",
-    "babel-jest": "^20.0.3",
     "babel-plugin-styled-components": "^1.5.0",
     "babel-plugin-transform-object-assign": "^6.22.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
-    "enzyme": "^3.3.0",
-    "enzyme-adapter-react-16": "^1.1.1",
     "eslint": "^3.19.0",
     "eslint-config-airbnb": "^15.1.0",
     "eslint-config-vogelint-react": "^1.0.0",
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-jsx-a11y": "^5.1.1",
     "eslint-plugin-react": "^7.3.0",
-    "jest": "^20.0.4",
-    "jest-cli": "^20.0.4",
     "now": "^7.3.0",
-    "react-test-renderer": "^16.2.0",
     "regenerator-runtime": "^0.11.0"
   }
 }
