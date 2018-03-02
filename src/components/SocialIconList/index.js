@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import AnimatedInText from '../AnimatedInText';
 
-const Icon = styled('span')`
+const Icon = styled.span`
 	width: 24px;
 	height: 24px;
 	margin-right: 16px;

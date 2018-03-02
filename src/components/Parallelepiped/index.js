@@ -26,7 +26,7 @@ const getPosition = ({ position, size }) => {
 	return `translate(${xPos}px, ${yPos}px)`;
 };
 
-const Container = styled('div')`
+const Container = styled.div`
 	display: inline-block;
 	width: ${getWidthBySize}px;
 	height: ${getHeightBySize}px;
@@ -40,7 +40,7 @@ const Container = styled('div')`
 	left: 0;
 `;
 
-const Image = styled('image')`
+const Image = styled.image`
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -51,7 +51,7 @@ const Image = styled('image')`
 	border: 0;
 `;
 
-const ParallelepipedPath = styled('path')`
+const ParallelepipedPath = styled.path`
 	transition: fill 400ms cubic-bezier(0,1,.37,.98);
 `;
 

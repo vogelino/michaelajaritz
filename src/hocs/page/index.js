@@ -26,16 +26,16 @@ export default (pageName) => (Component) => (props) => (
 	<Provider store={configureStore()}>
 		<ThemeProvider theme={theme}>
 			<TextsProvider>
-				<div id="page-wrapper">
-					<HtmlHead pageName={pageName} />
-					<IllustrationZone pageName={pageName} />
-					<Sidebar pageName={pageName} />
-					<CoreLayout>
+				<CoreLayout>
+					<div id="page-wrapper">
+						<HtmlHead pageName={pageName} />
+						<IllustrationZone pageName={pageName} />
+						<Sidebar pageName={pageName} />
 						<Content>
 							<Component pageName={pageName} {...props} />
 						</Content>
-					</CoreLayout>
-				</div>
+					</div>
+				</CoreLayout>
 			</TextsProvider>
 		</ThemeProvider>
 	</Provider>

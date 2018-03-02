@@ -22,7 +22,7 @@ const components = {
 	impressum,
 };
 
-const IllustrationZoneWrapper = styled('section')`
+const IllustrationZoneWrapper = styled.section`
 	width: 100%;
 	height: 100%;
 	position: fixed;
@@ -32,7 +32,7 @@ const IllustrationZoneWrapper = styled('section')`
 	overflow: hidden;
 `;
 
-const IllustrationZoneContent = styled('div')`
+const IllustrationZoneContent = styled.div`
 	position: relative;
 	width: 100%;
 	height: 200%;
