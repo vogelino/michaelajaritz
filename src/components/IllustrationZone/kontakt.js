@@ -73,11 +73,5 @@ const welcome = () => (
 	</div>
 );
 
-welcome.defaultProps = {
-};
-
-welcome.propTypes = {
-};
-
 export default welcome;
 

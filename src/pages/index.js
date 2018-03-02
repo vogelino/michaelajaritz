@@ -1,51 +1,46 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { FormattedMessage, FormattedHTMLMessage, injectIntl, intlShape, defineMessages } from 'react-intl';
-import page from '../hocs/page';
-// import { gracefulFunction } from '../hocs/withErrorLogs';
+import { FormattedMessage, FormattedHTMLMessage } from 'react-intl';
+import Page from '../hocs/Page';
 import BigTitle from '../components/BigTitle';
 import Subtitle from '../components/Subtitle';
 import Paragraph from '../components/Paragraph';
 
-const WelcomePage = ({ pageName, intl }) => {
-	const messages = defineMessages({
-		title: {
-			id: `pages.${pageName}.content.title`,
-		},
-	});
-	const titleColors = ['purple', 'orange', 'blue'];
-	const titleLines = intl.formatMessage(messages.title).split('\n');
+const pageName = 'willkommen';
+const WelcomePage = () => (
+	<Page pageName={pageName}>
+		<Subtitle timeout={1000} block >
+			<FormattedMessage id={`pages.${pageName}.content.subtitle`} />
+		</Subtitle>
+		<BigTitle
+			timeout={1200}
+			color="purple"
+			marginTop={10}
+			marginBottom={0}
+		>
+			<FormattedHTMLMessage id={`pages.${pageName}.content.fresh`} />
+		</BigTitle>
+		<BigTitle
+			timeout={1500}
+			color="orange"
+			marginTop={10}
+			marginBottom={0}
+		>
+			<FormattedHTMLMessage id={`pages.${pageName}.content.individual`} />
+		</BigTitle>
+		<BigTitle
+			timeout={1800}
+			color="blue"
+			marginTop={10}
+		>
+			<FormattedHTMLMessage id={`pages.${pageName}.content.sustainable`} />
+		</BigTitle>
+		<Subtitle timeout={2300} block marginTop={40}>
+			<FormattedHTMLMessage id={`pages.${pageName}.content.quote`} />
+		</Subtitle>
+		<Paragraph timeout={2400}>
+			<FormattedMessage id={`pages.${pageName}.content.greetings`} />
+		</Paragraph>
+	</Page>
+);
 
-	return (
-		<div>
-			<Subtitle timeout={1000} block >
-				<FormattedMessage id={`pages.${pageName}.content.subtitle`} />
-			</Subtitle>
-			{titleLines.map((lineText, i) => (
-				<BigTitle
-					key={lineText}
-					timeout={(i * 300) + 1200}
-					color={titleColors[i]}
-					marginTop={10}
-					marginBottom={i === titleLines.length - 1 ? 40 : 0}
-				>
-					{lineText}
-				</BigTitle>
-			))}
-			<Subtitle timeout={2300} block marginTop={40} marginBottom={0} >
-				<FormattedHTMLMessage id={`pages.${pageName}.content.quote`} />
-			</Subtitle>
-			<Paragraph timeout={2400}>
-				<FormattedMessage id={`pages.${pageName}.content.greetings`} />
-			</Paragraph>
-		</div>
-	);
-};
-
-WelcomePage.propTypes = {
-	pageName: PropTypes.string.isRequired,
-	intl: intlShape.isRequired,
-};
-
-export default page('willkommen')(injectIntl(WelcomePage));
-
+export default WelcomePage;

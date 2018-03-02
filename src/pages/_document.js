@@ -7,8 +7,8 @@ export default class MyDocument extends Document {
 		const sheet = new ServerStyleSheet();
 		const page = renderPage((App) => (props) =>
 			sheet.collectStyles(<App {...props} />));
-		const styleTags = sheet.getStyleElement();
-		return { ...page, styleTags };
+		const styleElement = sheet.getStyleElement();
+		return { ...page, styleElement };
 	}
 
 	render() {
@@ -16,7 +16,7 @@ export default class MyDocument extends Document {
 		return (
 			<html lang="de">
 				<Head>
-					{this.props.styleTags}
+					{this.props.styleElement}
 				</Head>
 				<body>
 					<Main />

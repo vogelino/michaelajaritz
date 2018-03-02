@@ -7,6 +7,8 @@ import AnimatedInText from '../AnimatedInText';
 import pages from '../../constants/pages';
 
 const MenuListItem = styled.li`
+	margin: 0;
+	list-style: none;
 	padding: 10px 0 0;
 	font-weight: ${({ active, theme }) =>
 		(active ? theme.menuFontWeightActive : theme.menuFontWeight)};
@@ -40,12 +42,9 @@ const MenuListItem = styled.li`
 `;
 
 const MenuList = styled.ul`
-	&,
-	${MenuListItem} {
-		margin-left: 0;
-		padding-left: 0;
-		list-style: none;
-	}
+	margin: 0;
+	padding: 0;
+	list-style: none;
 `;
 
 const Menu = ({ pageName }) => (

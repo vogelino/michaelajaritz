@@ -1,12 +1,12 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { FormattedHTMLMessage } from 'react-intl';
-import page from '../hocs/page';
+import Page from '../hocs/Page';
 import BigTitle from '../components/BigTitle';
 import Paragraph from '../components/Paragraph';
 
-const AboutMePage = ({ pageName }) => (
-	<div>
+const pageName = 'ueber-mich';
+const AboutMePage = () => (
+	<Page pageName={pageName}>
 		<BigTitle timeout={1200} color="purple">
 			<FormattedHTMLMessage id={`pages.${pageName}.content.titleExperience`} />
 		</BigTitle>
@@ -25,12 +25,8 @@ const AboutMePage = ({ pageName }) => (
 		<Paragraph timeout={1800}>
 			<FormattedHTMLMessage id={`pages.${pageName}.content.textHuman`} />
 		</Paragraph>
-	</div>
+	</Page>
 );
 
-AboutMePage.propTypes = {
-	pageName: PropTypes.string.isRequired,
-};
-
-export default page('ueber-mich')(AboutMePage);
+export default AboutMePage;
 

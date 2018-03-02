@@ -1,9 +1,9 @@
 import React from 'react';
 import Head from 'next/head';
 import PropTypes from 'prop-types';
-import { intlShape, injectIntl } from 'react-intl';
+import { intlShape } from 'react-intl';
 
-export const HtmlHeadComponent = ({ pageName, intl, children }) => (
+export const HtmlHeadComponent = ({ pageName, children }, { intl }) => (
 	<Head>
 		<title>
 			{intl.formatMessage({ id: `pages.${pageName}.title` })}
@@ -36,10 +36,13 @@ HtmlHeadComponent.defaultProps = {
 	chilren: null,
 };
 
+HtmlHeadComponent.contextTypes = {
+	intl: intlShape.isRequired,
+};
+
 HtmlHeadComponent.propTypes = {
 	pageName: PropTypes.string.isRequired,
-	intl: intlShape.isRequired,
 	children: PropTypes.any,
 };
 
-export default injectIntl(HtmlHeadComponent);
+export default HtmlHeadComponent;

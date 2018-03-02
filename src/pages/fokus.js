@@ -1,13 +1,13 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { FormattedHTMLMessage } from 'react-intl';
-import page from '../hocs/page';
+import Page from '../hocs/Page';
 import BigTitle from '../components/BigTitle';
 import Subtitle from '../components/Subtitle';
 import Paragraph from '../components/Paragraph';
 
-const FocusPage = ({ pageName }) => (
-	<div>
+const pageName = 'fokus';
+const FocusPage = () => (
+	<Page pageName={pageName}>
 		<Subtitle timeout={1000} marginBottom={80}>
 			<FormattedHTMLMessage id={`pages.${pageName}.content.subtitle`} />
 		</Subtitle>
@@ -29,11 +29,7 @@ const FocusPage = ({ pageName }) => (
 		<Paragraph timeout={1800}>
 			<FormattedHTMLMessage id={`pages.${pageName}.content.textMethod`} />
 		</Paragraph>
-	</div>
+	</Page>
 );
 
-FocusPage.propTypes = {
-	pageName: PropTypes.string.isRequired,
-};
-
-export default page('fokus')(FocusPage);
+export default FocusPage;

@@ -108,7 +108,7 @@ const Content = ({ children, isMobile, setSidebar, isOpen }) => (isMobile ? (
 	) : (
 		<ContentWrapper>
 			<ScrollContainer>
-				{children}
+				<div>{children}</div>
 			</ScrollContainer>
 			<ScrollTopGradientOverlay />
 			<ScrollBottomGradientOverlay />
@@ -124,7 +124,7 @@ Content.propTypes = {
 };
 
 const mapStateToProps = ({ ui, isSidebarOpen }) => ({
-	isMobile: ui.windowWidth < 1280,
+	isMobile: ui.windowWidth < 960,
 	isOpen: isSidebarOpen,
 });
 

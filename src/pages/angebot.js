@@ -1,80 +1,94 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { FormattedHTMLMessage, defineMessages, injectIntl, intlShape } from 'react-intl';
+import { FormattedHTMLMessage, defineMessages, intlShape } from 'react-intl';
+import Page from '../hocs/Page';
 import { getPageContentsByKeys } from '../texts/utils';
-import page from '../hocs/page';
 import BigTitle from '../components/BigTitle';
 import Subtitle from '../components/Subtitle';
 import Paragraph from '../components/Paragraph';
 import Accordion from '../components/Accordion';
 
-const OfferPage = ({ intl, pageName }) => {
+const pageName = 'angebot';
+
+const Accordion1 = (_, { intl }) => {
 	const messages = defineMessages(getPageContentsByKeys(pageName, [
-		'symbolonTitle',
 		'symbolonProfilTitle',
 		'symbolonProfilIntensiveTitle',
-		'systemicTitle',
+	]));
+	return (
+		<Accordion
+			startTimeout={1600}
+			color="orange"
+			items={[
+				{
+					title: intl.formatMessage(messages.symbolonProfilTitle),
+					content: <FormattedHTMLMessage id={`pages.${pageName}.content.symbolonProfilText`} />,
+				},
+				{
+					title: intl.formatMessage(messages.symbolonProfilIntensiveTitle),
+					content: <FormattedHTMLMessage id={`pages.${pageName}.content.symbolonProfilIntensiveText`} />,
+				},
+			]}
+		/>
+	);
+};
+
+Accordion1.contextTypes = {
+	intl: intlShape.isRequired,
+};
+
+const Accordion2 = (_, { intl }) => {
+	const messages = defineMessages(getPageContentsByKeys(pageName, [
 		'businessCoachingTitle',
 		'symbolonTeamTitle',
 		'art4reflectionTitle',
 	]));
 	return (
-		<div>
-			<Subtitle timeout={1000}>
-				<FormattedHTMLMessage id={`pages.${pageName}.content.subtitle`} />
-			</Subtitle>
-			<BigTitle timeout={1200} color="orange" marginTop={80}>
-				<FormattedHTMLMessage id={`pages.${pageName}.content.titlePersonalOffer`} />
-			</BigTitle>
-			<Paragraph timeout={1300}>
-				<FormattedHTMLMessage id={`pages.${pageName}.content.textPersonalOffer`} />
-			</Paragraph>
-			<Accordion
-				startTimeout={1400}
-				color="orange"
-				items={[
-					{
-						title: intl.formatMessage(messages.symbolonProfilTitle),
-						content: <FormattedHTMLMessage id={`pages.${pageName}.content.symbolonProfilText`} />,
-					},
-					{
-						title: intl.formatMessage(messages.symbolonProfilIntensiveTitle),
-						content: <FormattedHTMLMessage id={`pages.${pageName}.content.symbolonProfilIntensiveText`} />,
-					},
-				]}
-			/>
-			<BigTitle timeout={1800} color="blue">
-				<FormattedHTMLMessage id={`pages.${pageName}.content.titleTeamOffer`} />
-			</BigTitle>
-			<Paragraph timeout={1900}>
-				<FormattedHTMLMessage id={`pages.${pageName}.content.textTeamOffer`} />
-			</Paragraph>
-			<Accordion
-				startTimeout={2100}
-				color="blue"
-				items={[
-					{
-						title: intl.formatMessage(messages.businessCoachingTitle),
-						content: <FormattedHTMLMessage id={`pages.${pageName}.content.businessCoachingText`} />,
-					},
-					{
-						title: intl.formatMessage(messages.symbolonTeamTitle),
-						content: <FormattedHTMLMessage id={`pages.${pageName}.content.symbolonTeamText`} />,
-					},
-					{
-						title: intl.formatMessage(messages.art4reflectionTitle),
-						content: <FormattedHTMLMessage id={`pages.${pageName}.content.art4reflectionText`} />,
-					},
-				]}
-			/>
-		</div>
+		<Accordion
+			startTimeout={2100}
+			color="blue"
+			items={[
+				{
+					title: intl.formatMessage(messages.businessCoachingTitle),
+					content: <FormattedHTMLMessage id={`pages.${pageName}.content.businessCoachingText`} />,
+				},
+				{
+					title: intl.formatMessage(messages.symbolonTeamTitle),
+					content: <FormattedHTMLMessage id={`pages.${pageName}.content.symbolonTeamText`} />,
+				},
+				{
+					title: intl.formatMessage(messages.art4reflectionTitle),
+					content: <FormattedHTMLMessage id={`pages.${pageName}.content.art4reflectionText`} />,
+				},
+			]}
+		/>
 	);
 };
 
-OfferPage.propTypes = {
-	pageName: PropTypes.string.isRequired,
+Accordion2.contextTypes = {
 	intl: intlShape.isRequired,
 };
 
-export default page('angebot')(injectIntl(OfferPage));
+const OfferPage = () => (
+	<Page pageName={pageName}>
+		<Subtitle timeout={1000}>
+			<FormattedHTMLMessage id={`pages.${pageName}.content.subtitle`} />
+		</Subtitle>
+		<BigTitle timeout={1200} color="orange" marginTop={80}>
+			<FormattedHTMLMessage id={`pages.${pageName}.content.titlePersonalOffer`} />
+		</BigTitle>
+		<Paragraph timeout={1300}>
+			<FormattedHTMLMessage id={`pages.${pageName}.content.textPersonalOffer`} />
+		</Paragraph>
+		<Accordion1 />
+		<BigTitle timeout={1800} color="blue">
+			<FormattedHTMLMessage id={`pages.${pageName}.content.titleTeamOffer`} />
+		</BigTitle>
+		<Paragraph timeout={1900}>
+			<FormattedHTMLMessage id={`pages.${pageName}.content.textTeamOffer`} />
+		</Paragraph>
+		<Accordion2 />
+	</Page>
+);
+
+export default OfferPage;
 

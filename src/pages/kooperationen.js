@@ -1,12 +1,12 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { FormattedHTMLMessage } from 'react-intl';
-import page from '../hocs/page';
+import Page from '../hocs/Page';
 import BigTitle from '../components/BigTitle';
 import Paragraph from '../components/Paragraph';
 
-const CooperationsPage = ({ pageName }) => (
-	<div>
+const pageName = 'kooperationen';
+const CooperationsPage = () => (
+	<Page pageName={pageName}>
 		<BigTitle timeout={1100}>
 			<FormattedHTMLMessage id={`pages.${pageName}.content.title`} />
 		</BigTitle>
@@ -19,12 +19,8 @@ const CooperationsPage = ({ pageName }) => (
 		<Paragraph timeout={1400}>
 			<FormattedHTMLMessage id={`pages.${pageName}.content.thanks`} />
 		</Paragraph>
-	</div>
+	</Page>
 );
 
-CooperationsPage.propTypes = {
-	pageName: PropTypes.string.isRequired,
-};
-
-export default page('kooperationen')(CooperationsPage);
+export default CooperationsPage;
 

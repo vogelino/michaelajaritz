@@ -10,8 +10,8 @@ const ParagraphWrapper = styled.p`
 	letter-spacing: ${({ theme }) => theme.paragraphLetterSpacing};
 	line-height: ${({ theme }) => theme.paragraphLineHeight};
 	color: ${({ theme }) => theme.darkGrey};
-	margin: 20px 0 20px 0;
-	padding: 0 4px;
+	padding: 0 4px 20px 4px;
+	margin: 0;
 	hyphens: auto;
 
 	@media screen and (max-width: 540px) {
@@ -19,7 +19,7 @@ const ParagraphWrapper = styled.p`
 	}
 
 	& a {
-		color: ${({ theme }) => [theme.blue, theme.purple][Math.round(Math.random())]};
+		color: ${({ theme }) => theme.blue};
 		transition: color 200ms ease-out;
 
 		&:hover {
@@ -30,7 +30,7 @@ const ParagraphWrapper = styled.p`
 	& ul,
 	& li {
 		padding: 0;
-		margin: 0 0 8px 0;
+		margin: 0 0 0 0;
 		list-style: none;
 	}
 `;

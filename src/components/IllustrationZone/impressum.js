@@ -58,11 +58,5 @@ const Impressum = () => (
 	</div>
 );
 
-Impressum.defaultProps = {
-};
-
-Impressum.propTypes = {
-};
-
 export default Impressum;
 

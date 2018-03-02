@@ -85,11 +85,5 @@ const Cooperations = () => (
 	</div>
 );
 
-Cooperations.defaultProps = {
-};
-
-Cooperations.propTypes = {
-};
-
 export default Cooperations;
 

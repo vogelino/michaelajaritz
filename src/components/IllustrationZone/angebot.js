@@ -68,11 +68,5 @@ const Offer = () => (
 	</div>
 );
 
-Offer.defaultProps = {
-};
-
-Offer.propTypes = {
-};
-
 export default Offer;
 

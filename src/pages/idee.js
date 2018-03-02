@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedHTMLMessage } from 'react-intl';
-import page from '../hocs/page';
-// import { gracefulFunction } from '../hocs/withErrorLogs';
+import Page from '../hocs/Page';
 import BigTitle from '../components/BigTitle';
 import Subtitle from '../components/Subtitle';
 import Paragraph from '../components/Paragraph';
 
-const IdeaPage = ({ pageName }) => {
+const pageName = 'idee';
+const IdeaPage = () => {
 	const Text = ({ id }) => (
 		<FormattedHTMLMessage id={`pages.${pageName}.content.${id}`} />
 	);
@@ -16,11 +16,11 @@ const IdeaPage = ({ pageName }) => {
 	};
 
 	return (
-		<div>
+		<Page pageName={pageName}>
 			<Subtitle timeout={1000}>
 				<Text id="subtitle" />
 			</Subtitle>
-			<BigTitle timeout={1200} color="orange" marginBottom={10} marginTop={80}>
+			<BigTitle timeout={1200} color="orange" marginBottom={10}>
 				<Text id="titleTraining" />
 			</BigTitle>
 			<BigTitle timeout={1400} color="blue" marginBottom={10} marginTop={0}>
@@ -50,13 +50,8 @@ const IdeaPage = ({ pageName }) => {
 			<Paragraph timeout={2400}>
 				<Text id="textMakePossible" />
 			</Paragraph>
-		</div>
+		</Page>
 	);
 };
 
-IdeaPage.propTypes = {
-	pageName: PropTypes.string.isRequired,
-};
-
-export default page('idee')(IdeaPage);
-
+export default IdeaPage;

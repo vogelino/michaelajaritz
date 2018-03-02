@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { setUiDimensions, setClientSideAsReady } from '../../redux/actions/uiActions';
@@ -19,18 +19,13 @@ class CoreLayout extends Component {
 		setTimeout(this.props.setClientSideAsReady, 10);
 	}
 	render() {
-		return this.props.children;
+		return <div>{this.props.children}</div>;
 	}
 }
 
-CoreLayout.defaultProps = {
-	setWindowSize: () => ({ windowWidth: 0, windowHeight: 0 }),
-	setClientSideAsReady: () => {},
-};
-
 CoreLayout.propTypes = {
-	setWindowSize: PropTypes.func,
-	setClientSideAsReady: PropTypes.func,
+	setWindowSize: PropTypes.func.isRequired,
+	setClientSideAsReady: PropTypes.func.isRequired,
 	children: PropTypes.any,
 };
 
@@ -38,5 +33,6 @@ const mapDispatchToProps = (dispatch) => ({
 	setWindowSize: (dimensions) => dispatch(setUiDimensions(dimensions)),
 	setClientSideAsReady: () => dispatch(setClientSideAsReady()),
 });
+
 export default connect(null, mapDispatchToProps)(CoreLayout);
 

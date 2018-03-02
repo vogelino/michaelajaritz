@@ -49,12 +49,13 @@ const BigTitleLine = styled.span`
 `;
 
 const BigTitleWrapper = styled.h1`
-	margin-top: ${({ marginTop }) => marginTop}px;
-	margin-bottom: ${({ marginBottom }) => marginBottom}px;
+	padding-top: ${({ marginTop }) => marginTop}px;
+	padding-bottom: ${({ marginBottom }) => marginBottom}px;
+	margin: 0;
 
 	@media screen and (max-width: 540px) {
-		margin-top: ${({ marginTop }) => marginTop / 2}px;
-		margin-bottom: ${({ marginBottom }) => marginBottom / 2}px;
+		padding-top: ${({ marginTop }) => marginTop / 2}px;
+		padding-bottom: ${({ marginBottom }) => marginBottom / 2}px;
 	}
 
 	&.ready span {
@@ -85,7 +86,7 @@ BigTitle.defaultProps = {
 	timeout: 15,
 	color: 'blue',
 	marginTop: 40,
-	marginBottom: 10,
+	marginBottom: 30,
 };
 
 const messageType = PropTypes.oneOfType([

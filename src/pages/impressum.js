@@ -1,18 +1,22 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
-import { FormattedHTMLMessage } from 'react-intl';
-import page from '../hocs/page';
-import Paragraph from '../components/Paragraph';
+import { intlShape } from 'react-intl';
+import MarkdownSuite from '../components/MarkdownSuite';
+import Page from '../hocs/Page';
 
-const ImprintPage = () => (
-	<div>
-		<Paragraph timeout={1200}>
-			<FormattedHTMLMessage id="pages.impressum.text" />
-		</Paragraph>
-	</div>
+const pageName = 'impressum';
+const Content = (props, { intl: { formatMessage } }) => (
+	<MarkdownSuite
+		timeout={1200}
+		source={formatMessage({ id: `pages.${pageName}.text` })}
+	/>
 );
 
-ImprintPage.propTypes = {};
+Content.contextTypes = { intl: intlShape };
 
-export default page('impressum')(ImprintPage);
+const ImpressumPage = () => (
+	<Page pageName={pageName}>
+		<Content />
+	</Page>
+);
 
+export default ImpressumPage;
