@@ -1,28 +1,43 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import Raven from 'raven-js';
-import TextsProvider from '../../texts';
+import { injectGlobal, ThemeProvider } from 'styled-components';
 import HtmlHead from '../../components/HtmlHead';
+import TextsProvider from '../../texts';
 import configureStore from '../../redux/store/configureStore';
-import withResize from '../withResize';
-import withErrorLogs from '../withErrorLogs';
+import CoreLayout from '../CoreLayout';
+import Sidebar from '../../components/Sidebar';
+import IllustrationZone from '../../components/IllustrationZone';
+import Content from '../../components/Content';
+import theme from '../../theme';
 
-Raven.config('https://5b9457deb5544977a1851e1217fd8066@sentry.io/214731', {
-	environment: process.NODE_ENV,
-}).install();
+/* eslint-disable no-unused-expressions */
+injectGlobal`
+	body {
+		margin: 0;
+	}
 
+	* {
+		box-sizing: border-box;
+	}
+`;
+/* eslint-enable no-unused-expressions */
 
-export default (pageName) => (Component) => (props) => {
-	const ComponentWithResize = withResize(Component);
-	const ComponentWithErrorLogs = withErrorLogs(ComponentWithResize);
-	return (
-		<Provider store={configureStore()}>
+export default (pageName) => (Component) => (props) => (
+	<Provider store={configureStore()}>
+		<ThemeProvider theme={theme}>
 			<TextsProvider>
-				<div className="page-wrapper">
-					<HtmlHead pageName={pageName} />
-					<ComponentWithErrorLogs pageName={pageName} {...props} />
-				</div>
+				<CoreLayout>
+					<div id="page-wrapper">
+						<HtmlHead pageName={pageName} />
+						<IllustrationZone pageName={pageName} />
+						<Sidebar pageName={pageName} />
+						<Content>
+							<Component pageName={pageName} {...props} />
+						</Content>
+					</div>
+				</CoreLayout>
 			</TextsProvider>
-		</Provider>
-	);
-};
+		</ThemeProvider>
+	</Provider>
+);
+

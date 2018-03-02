@@ -3,5 +3,9 @@
 		"es2015",
 		"react",
 		"stage-2"
+	],
+	"plugins": [
+		["styled-components", { "ssr": true, "displayName": true, "preprocess": false } ],
+		"transform-object-assign"
 	]
 }

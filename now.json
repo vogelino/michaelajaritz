@@ -1,8 +1,23 @@
 {
 	"name": "michaela-jaritz",
-	"alias": "michaela-jaritz.vogelino.com",
+	"alias": [
+		"www.mein-kaleidoskop.de",
+		"mein-kaleidoskop.co",
+		"www.mein-kaleidoskop.co",
+		"mein-kaleidoskop.com",
+		"www.mein-kaleidoskop.com",
+		"mein-kaleidoskop.eu",
+		"www.mein-kaleidoskop.eu",
+		"mein-kaleidoskop.info",
+		"www.mein-kaleidoskop.info",
+		"mein-kaleidoskop.net",
+		"www.mein-kaleidoskop.net",
+		"michaela-jaritz.com",
+		"www.michaela-jaritz.de",
+		"www.michaela-jaritz.com"
+	],
 	"engines": {
-		"node": "8.4.0"
+		"node": "8.9.0"
 	},
 	"env": {
 		"NODE_ENV": "production"

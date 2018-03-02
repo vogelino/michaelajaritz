@@ -1,24 +1,51 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { FormattedMessage } from 'react-intl';
+import { FormattedMessage, FormattedHTMLMessage, injectIntl, intlShape, defineMessages } from 'react-intl';
 import page from '../hocs/page';
-import { interaction } from '../hocs/withErrorLogs';
+// import { gracefulFunction } from '../hocs/withErrorLogs';
+import BigTitle from '../components/BigTitle';
+import Subtitle from '../components/Subtitle';
+import Paragraph from '../components/Paragraph';
 
-const WelcomePage = ({ pageName }) => (
-	<div>
-		{pageName}: <FormattedMessage id="pages.welcome.greetings" />
-		<button
-			onClick={
-				interaction('Do something', () => {
-					throw new Error('Test error');
-				})
-			}
-		/>
-	</div>
-);
+const WelcomePage = ({ pageName, intl }) => {
+	const messages = defineMessages({
+		title: {
+			id: `pages.${pageName}.content.title`,
+		},
+	});
+	const titleColors = ['purple', 'orange', 'blue'];
+	const titleLines = intl.formatMessage(messages.title).split('\n');
+
+	return (
+		<div>
+			<Subtitle timeout={1000} block >
+				<FormattedMessage id={`pages.${pageName}.content.subtitle`} />
+			</Subtitle>
+			{titleLines.map((lineText, i) => (
+				<BigTitle
+					key={lineText}
+					timeout={(i * 300) + 1200}
+					color={titleColors[i]}
+					marginTop={10}
+					marginBottom={i === titleLines.length - 1 ? 40 : 0}
+				>
+					{lineText}
+				</BigTitle>
+			))}
+			<Subtitle timeout={2300} block marginTop={40} marginBottom={0} >
+				<FormattedHTMLMessage id={`pages.${pageName}.content.quote`} />
+			</Subtitle>
+			<Paragraph timeout={2400}>
+				<FormattedMessage id={`pages.${pageName}.content.greetings`} />
+			</Paragraph>
+		</div>
+	);
+};
 
 WelcomePage.propTypes = {
 	pageName: PropTypes.string.isRequired,
+	intl: intlShape.isRequired,
 };
 
-export default page('welcome')(WelcomePage);
+export default page('willkommen')(injectIntl(WelcomePage));
+
