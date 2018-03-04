@@ -19,8 +19,8 @@ const IdeaPage = () => {
 	return (
 		<Page pageName={pageName}>
 			<MobilePicture
-				src="/static/images/artworks/possible.jpg"
-				alt="Training, Coaching und Moderation"
+				src="/static/images/welcomeMain.jpg"
+				alt="Training, Coaching, Moderation."
 			/>
 			<Subtitle timeout={1000}>
 				<Text id="subtitle" />
@@ -37,18 +37,30 @@ const IdeaPage = () => {
 			<Paragraph timeout={1800}>
 				<Text id="textIntro" />
 			</Paragraph>
+			<MobilePicture
+				src="/static/images/artworks/experienced.jpg"
+				alt="Sichtbar machen."
+			/>
 			<BigTitle timeout={1900} color="purple">
 				<Text id="titleMakeVisible" />
 			</BigTitle>
 			<Paragraph timeout={2000}>
 				<Text id="textMakeVisible" />
 			</Paragraph>
+			<MobilePicture
+				src="/static/images/artworks/makespace.jpg"
+				alt="Platz machen."
+			/>
 			<BigTitle timeout={2100} color="orange">
 				<Text id="titleMakeRoom" />
 			</BigTitle>
 			<Paragraph timeout={2200}>
 				<Text id="textMakeRoom" />
 			</Paragraph>
+			<MobilePicture
+				src="/static/images/artworks/possible.jpg"
+				alt="Möglich machen."
+			/>
 			<BigTitle timeout={2300} color="blue">
 				<Text id="titleMakePossible" />
 			</BigTitle>
