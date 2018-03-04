@@ -130,6 +130,7 @@ const Parallelepiped = ({
 			size={size}
 			clientSideReady={clientSideReady}
 			timeout={timeout}
+			className={`parallelepiped parallelepiped-${placement}`}
 		>
 			<svg
 				xmlns="http://www.w3.org/2000/svg"

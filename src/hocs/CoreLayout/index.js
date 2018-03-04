@@ -16,7 +16,8 @@ class CoreLayout extends Component {
 		const resizer = () => setWindowSize(getWindowSize());
 		this.optimizedResize.add(resizer);
 		setWindowSize(getWindowSize());
-		setTimeout(this.props.setClientSideAsReady, 10);
+
+		setTimeout(this.props.setClientSideAsReady, 100);
 	}
 	render() {
 		return <div>{this.props.children}</div>;
