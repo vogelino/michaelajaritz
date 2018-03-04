@@ -4,10 +4,15 @@ import Page from '../hocs/Page';
 import BigTitle from '../components/BigTitle';
 import Subtitle from '../components/Subtitle';
 import Paragraph from '../components/Paragraph';
+import MobilePicture from '../components/MobilePicture';
 
 const pageName = 'willkommen';
 const WelcomePage = () => (
 	<Page pageName={pageName}>
+		<MobilePicture
+			src="/static/images/welcomeSecondary.jpg"
+			alt="Portrait von Michaela Jaritz"
+		/>
 		<Subtitle timeout={1000} block >
 			<FormattedMessage id={`pages.${pageName}.content.subtitle`} />
 		</Subtitle>

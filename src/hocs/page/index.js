@@ -10,7 +10,6 @@ import Sidebar from '../../components/Sidebar';
 import IllustrationZone from '../../components/IllustrationZone';
 import Content from '../../components/Content';
 import theme from '../../theme';
-import pages from '../../constants/pages';
 
 /* eslint-disable no-unused-expressions */
 injectGlobal`
@@ -38,7 +37,7 @@ const Page = ({ children, pageName }) => (
 
 Page.propTypes = {
 	children: PropTypes.any.isRequired,
-	pageName: PropTypes.oneOf(pages.map(({ name }) => name)).isRequired,
+	pageName: PropTypes.string.isRequired,
 };
 
 export default Page;

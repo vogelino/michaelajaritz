@@ -6,6 +6,7 @@ import BigTitle from '../components/BigTitle';
 import Subtitle from '../components/Subtitle';
 import Paragraph from '../components/Paragraph';
 import SocialIconList from '../components/SocialIconList';
+import MobilePicture from '../components/MobilePicture';
 
 const SocialIconListWrapper = styled.div`
 	position: relative;
@@ -15,7 +16,11 @@ const SocialIconListWrapper = styled.div`
 const pageName = 'kontakt';
 const ContactPage = () => (
 	<Page pageName={pageName}>
-		<Subtitle timeout={1000} marginBottom={80}>
+		<MobilePicture
+			src="/static/images/artworks/wandererseafog.jpg"
+			alt="Kontaktdaten von Michaela Jaritz"
+		/>
+		<Subtitle timeout={1000}>
 			<FormattedHTMLMessage id={`pages.${pageName}.content.subtitle`} />
 		</Subtitle>
 		<BigTitle timeout={1100}>

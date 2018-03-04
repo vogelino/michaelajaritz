@@ -1,6 +1,7 @@
 import React from 'react';
 import { intlShape } from 'react-intl';
 import MarkdownSuite from '../components/MarkdownSuite';
+import MobilePicture from '../components/MobilePicture';
 import Page from '../hocs/Page';
 
 const pageName = 'impressum';
@@ -15,6 +16,10 @@ Content.contextTypes = { intl: intlShape };
 
 const ImpressumPage = () => (
 	<Page pageName={pageName}>
+		<MobilePicture
+			src="/static/images/artworks/paulklee.jpg"
+			alt="Impressum"
+		/>
 		<Content />
 	</Page>
 );

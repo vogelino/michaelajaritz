@@ -6,6 +6,7 @@ import BigTitle from '../components/BigTitle';
 import Subtitle from '../components/Subtitle';
 import Paragraph from '../components/Paragraph';
 import Accordion from '../components/Accordion';
+import MobilePicture from '../components/MobilePicture';
 
 const pageName = 'angebot';
 
@@ -70,16 +71,24 @@ Accordion2.contextTypes = {
 
 const OfferPage = () => (
 	<Page pageName={pageName}>
+		<MobilePicture
+			src="/static/images/artworks/atelier.jpg"
+			alt="Persönliche Angebot"
+		/>
 		<Subtitle timeout={1000}>
 			<FormattedHTMLMessage id={`pages.${pageName}.content.subtitle`} />
 		</Subtitle>
-		<BigTitle timeout={1200} color="orange" marginTop={80}>
+		<BigTitle timeout={1200} color="orange">
 			<FormattedHTMLMessage id={`pages.${pageName}.content.titlePersonalOffer`} />
 		</BigTitle>
 		<Paragraph timeout={1300}>
 			<FormattedHTMLMessage id={`pages.${pageName}.content.textPersonalOffer`} />
 		</Paragraph>
 		<Accordion1 />
+		<MobilePicture
+			src="/static/images/artworks/renoir.jpg"
+			alt="Team Angebot"
+		/>
 		<BigTitle timeout={1800} color="blue">
 			<FormattedHTMLMessage id={`pages.${pageName}.content.titleTeamOffer`} />
 		</BigTitle>

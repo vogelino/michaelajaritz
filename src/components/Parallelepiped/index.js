@@ -145,7 +145,7 @@ const Parallelepiped = ({
 					</defs>
 				)}
 				{link ? (
-					<ExternalLink href={link} target="_blank" rel="noopener nofollower">
+					<ExternalLink href={link} target="_blank" rel="noopener noreferrer">
 						{content}
 					</ExternalLink>
 				) : content}

@@ -5,6 +5,7 @@ import Page from '../hocs/Page';
 import BigTitle from '../components/BigTitle';
 import Subtitle from '../components/Subtitle';
 import Paragraph from '../components/Paragraph';
+import MobilePicture from '../components/MobilePicture';
 
 const pageName = 'idee';
 const IdeaPage = () => {
@@ -17,6 +18,10 @@ const IdeaPage = () => {
 
 	return (
 		<Page pageName={pageName}>
+			<MobilePicture
+				src="/static/images/artworks/possible.jpg"
+				alt="Training, Coaching und Moderation"
+			/>
 			<Subtitle timeout={1000}>
 				<Text id="subtitle" />
 			</Subtitle>
