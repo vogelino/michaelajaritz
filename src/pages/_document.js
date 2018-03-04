@@ -68,7 +68,18 @@ export default class MyDocument extends Document {
 				<body>
 					<Main />
 					<NextScript />
-					<link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700|PT+Mono" rel="stylesheet" />
+					<script
+						type="text/javascript"
+						dangerouslySetInnerHTML={{ __html: `
+								var resource = document.createElement('link'); 
+								resource.setAttribute("rel", "stylesheet");
+								resource.setAttribute("href","https://fonts.googleapis.com/css?family=Lato:300,400,400i,700|PT+Mono");
+								resource.setAttribute("type","text/css");      
+								var head = document.getElementsByTagName('head')[0];
+								head.appendChild(resource);
+							`,
+						}}
+					/>
 				</body>
 			</html>
 		);

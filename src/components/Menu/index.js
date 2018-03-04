@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Link from 'next/link';
-import { FormattedMessage } from 'react-intl';
+import { FormattedMessage, intlShape } from 'react-intl';
 import AnimatedInText from '../AnimatedInText';
 import pages from '../../constants/pages';
 
@@ -32,11 +32,6 @@ const MenuListItem = styled.li`
 
 		> span {
 			width: 100%;
-			height: 27px;
-
-			> span {
-				pointer-events: none;
-			}
 		}
 	}
 `;
@@ -47,12 +42,12 @@ const MenuList = styled.ul`
 	list-style: none;
 `;
 
-const Menu = ({ pageName }) => (
+const Menu = ({ pageName }, { intl: { formatMessage } }) => (
 	<MenuList>
 		{pages.map((page, index) => (
 			<MenuListItem key={page.name} active={pageName === page.name}>
 				<Link prefetch href={page.path}>
-					<a>
+					<a title={`Michaela Jaritz | ${formatMessage({ id: `pages.${page.name}.title` })}`}>
 						<AnimatedInText timeout={(index * 100) + 400}>
 							<FormattedMessage id={`pages.${page.name}.title`} />
 						</AnimatedInText>
@@ -62,6 +57,10 @@ const Menu = ({ pageName }) => (
 		))}
 	</MenuList>
 );
+
+Menu.contextTypes = {
+	intl: intlShape,
+};
 
 Menu.propTypes = {
 	pageName: PropTypes.string.isRequired,

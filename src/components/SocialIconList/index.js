@@ -37,6 +37,7 @@ const SocialIconList = ({ startTimeout }) => (
 			href="https://www.facebook.com/michaela.jaritz.77"
 			target="_blank"
 			rel="noopener noreferrer"
+			title="Facebook Seite von Michaela Jaritz"
 		>
 			<AnimatedInText timeout={startTimeout}>
 				<span><Icon iconPath="/static/facebook.svg" /></span>
@@ -46,6 +47,7 @@ const SocialIconList = ({ startTimeout }) => (
 			href="https://www.xing.com/profile/Michaela_Jaritz/"
 			target="_blank"
 			rel="noopener noreferrer"
+			title="Xing Profil von Michaela Jaritz"
 		>
 			<AnimatedInText timeout={startTimeout + 200}>
 				<span><Icon iconPath="/static/xing.svg" /></span>
@@ -55,6 +57,7 @@ const SocialIconList = ({ startTimeout }) => (
 			href="https://twitter.com/MichaelaJaritz"
 			target="_blank"
 			rel="noopener noreferrer"
+			title="Twitter Account von Michaela Jaritz"
 		>
 			<AnimatedInText timeout={startTimeout + 300}>
 				<span><Icon iconPath="/static/twitter.svg" /></span>
@@ -64,6 +67,7 @@ const SocialIconList = ({ startTimeout }) => (
 			href="https://www.linkedin.com/in/michaela-jaritz-797b77145/"
 			target="_blank"
 			rel="noopener noreferrer"
+			title="LinkedIn Profil von Michaela Jaritz"
 		>
 			<AnimatedInText timeout={startTimeout + 400}>
 				<span><Icon iconPath="/static/linkedin.svg" /></span>

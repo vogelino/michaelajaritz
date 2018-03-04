@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Link from 'next/link';
-import { FormattedMessage } from 'react-intl';
+import { FormattedMessage, intlShape } from 'react-intl';
 import AnimatedInText from '../AnimatedInText';
 import SocialIconList from '../SocialIconList';
 
@@ -24,11 +24,11 @@ const FooterLink = styled.a`
 `;
 
 
-const Footer = () => (
+const Footer = (_, { intl: { formatMessage } }) => (
 	<FooterWrapper>
 		<SocialIconList startTimeout={1000} />
 		<Link href="/impressum">
-			<FooterLink>
+			<FooterLink title={`Michaela Jaritz | ${formatMessage({ id: 'pages.impressum.title' })}`}>
 				<AnimatedInText timeout={1300}>
 					<FormattedMessage id="pages.impressum.title" />
 				</AnimatedInText>
@@ -36,5 +36,9 @@ const Footer = () => (
 		</Link>
 	</FooterWrapper>
 );
+
+Footer.contextTypes = {
+	intl: intlShape,
+};
 
 export default Footer;

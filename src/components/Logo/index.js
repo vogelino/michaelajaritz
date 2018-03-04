@@ -39,9 +39,9 @@ const LogoSlogan = styled.span`
 
 const Logo = () => (
 	<Link href="/">
-		<LogoLink>
+		<LogoLink title="Hauptseite | Michaela Jaritz">
 			<AnimatedInText timeout={0}>
-				<LogoImage src="/static/logo.svg" />
+				<LogoImage src="/static/logo.svg" alt="Site Logo | Michaela Jaritz" />
 			</AnimatedInText>
 			<LogoSlogan>
 				<LogoSloganLine>
