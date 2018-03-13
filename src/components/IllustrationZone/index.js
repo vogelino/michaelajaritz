@@ -30,6 +30,10 @@ const IllustrationZoneWrapper = styled.section`
 	left: 0;
 	padding-left: 240px;
 	overflow: hidden;
+
+	@media screen and (max-width: 960px) {
+		display: none;
+	}
 `;
 
 const IllustrationZoneContent = styled.div`
@@ -41,10 +45,7 @@ const IllustrationZoneContent = styled.div`
 	transform: translateY(-25%) scale(${({ scale }) => scale});
 `;
 
-const IllustrationZone = ({ clientSideReady, pageName, scale, isMobile }) => {
-	if (isMobile && !clientSideReady) {
-		return null;
-	}
+const IllustrationZone = ({ pageName, scale }) => {
 	const Component = components[pageName] || (() => null);
 	return (
 		<IllustrationZoneWrapper>
@@ -58,14 +59,10 @@ const IllustrationZone = ({ clientSideReady, pageName, scale, isMobile }) => {
 IllustrationZone.propTypes = {
 	pageName: PropTypes.string,
 	scale: PropTypes.number.isRequired,
-	isMobile: PropTypes.bool.isRequired,
-	clientSideReady: PropTypes.bool.isRequired,
 };
 
-const mapStateToProps = ({ ui: { clientSideReady, windowWidth } }) => ({
-	scale: windowWidth < 1280 ? 0.8 : windowWidth / 1600,
-	isMobile: windowWidth < 1280,
-	clientSideReady,
+const mapStateToProps = ({ ui: { windowWidth } }) => ({
+	scale: windowWidth < 960 ? 0.8 : windowWidth / 1600,
 });
 
 export default connect(mapStateToProps)(IllustrationZone);

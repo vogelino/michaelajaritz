@@ -9,32 +9,30 @@ const Subtitle = styled.h2`
 	font-weight: ${({ theme }) => theme.subtitleFontWeight};
 	letter-spacing: ${({ theme }) => theme.subtitleLetterSpacing};
 	color: ${({ theme }) => theme.grey};
-	display: block;
-	margin-top: ${({ marginTop }) => marginTop}px;
-	margin-bottom: ${({ marginBottom }) => marginBottom}px;
+	padding-top: ${({ marginTop }) => marginTop}px;
+	padding-bottom: ${({ marginBottom }) => marginBottom}px;
+	margin: 0;
 
 	@media screen and (max-width: 540px) {
 		font-size: ${({ theme }) => theme.subtitleFontSizeMobile};
 		font-weight: ${({ theme }) => theme.subtitleFontWeightMobile};
-		margin-top: ${({ marginTop }) => marginTop / 2}px;
-		margin-bottom: ${({ marginBottom }) => marginBottom / 2}px;
+		padding-top: ${({ marginTop }) => marginTop / 2}px;
+		padding-bottom: ${({ marginBottom }) => marginBottom / 2}px;
 	}
 `;
 
 const AnimatedSubtitle = (props) => (
 	<Subtitle {...props} >
 		<AnimatedInText timeout={props.timeout} block={props.block}>
-			<span>
-				{props.children}
-			</span>
+			{props.children}
 		</AnimatedInText>
 	</Subtitle>
 );
 
 AnimatedSubtitle.defaultProps = {
 	timeout: 10,
-	marginTop: 0,
-	marginBottom: 40,
+	marginTop: 40,
+	marginBottom: 20,
 	block: false,
 };
 

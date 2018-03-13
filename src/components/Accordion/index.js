@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import {
@@ -13,7 +14,11 @@ const Accordion = styled(ASAccordion)`
 	padding: 0 3px;
 `;
 
-const AccordionItem = styled(ASAccordionItem)`
+const AccordionItem = styled(ASAccordionItem).attrs({
+	style: ({ timeout }) => ({
+		transitionDelay: `${timeout}ms, ${timeout}ms`,
+	}),
+})`
 	padding: 10px 0;
 	border-top: solid 1px rgba(0,0,0,.1);
 	overflow: hidden;
@@ -43,7 +48,7 @@ const AccordionItem = styled(ASAccordionItem)`
 		&:hover {
 			color: ${({ theme, color }) => theme[color]}
 		}
-		
+
 		&:after {
 			content: '+';
 			position: absolute;
@@ -57,54 +62,28 @@ const AccordionItem = styled(ASAccordionItem)`
 	&.react-sanfona-item-expanded .react-sanfona-item-title:after {
 		content: '–';
 	}
+
+	& p {
+		padding: 10px 0;
+	}
 `;
 
-class AccordionWrapper extends Component {
-	constructor(props) {
-		super(props);
-
-		this.state = {
-			items: props.items.map((item) => ({
-				...item,
-				ready: false,
-			})),
-		};
-	}
-
-	componentDidMount() {
-		const { startTimeout } = this.props;
-		const { items } = this.state;
-		const animationDuration = 100;
-		items.forEach((item, index) => {
-			const timeout = (animationDuration * index) + startTimeout;
-			setTimeout(() => this.setState({
-				items: items.map((innerItem, innerIndex) => ({
-					...innerItem,
-					ready: innerIndex <= index,
-				})),
-			}), timeout);
-		});
-	}
-
-	render() {
-		const { items } = this.state;
-		const { color } = this.props;
-		return (
-			<Accordion activeItems={[]}>
-				{items.map(({ title, content, ready }) => (
-					<AccordionItem
-						key={title}
-						title={title}
-						className={ready && 'ready'}
-						color={color}
-					>
-						<Paragraph timeout={0}>{content}</Paragraph>
-					</AccordionItem>
-				))}
-			</Accordion>
-		);
-	}
-}
+const AccordionWrapper = ({ items, color, clientSideReady, startTimeout }) => (
+	<Accordion activeItems={[]}>
+		{items.map(({ title, content }, i) => (
+			<AccordionItem
+				key={title}
+				title={title}
+				className={clientSideReady && 'ready'}
+				color={color}
+				timeout={(i * 100) + startTimeout}
+				clientSideReady={clientSideReady}
+			>
+				<Paragraph timeout={0}>{content}</Paragraph>
+			</AccordionItem>
+		))}
+	</Accordion>
+);
 
 AccordionWrapper.defaultProps = {
 	items: [],
@@ -126,7 +105,9 @@ AccordionWrapper.propTypes = {
 	})),
 	startTimeout: PropTypes.number,
 	color: PropTypes.oneOf(['blue', 'orange', 'purple']),
+	clientSideReady: PropTypes.bool.isRequired,
 };
 
-export default AccordionWrapper;
+const mapStateToProps = ({ ui: { clientSideReady } }) => ({ clientSideReady });
 
+export default connect(mapStateToProps)(AccordionWrapper);

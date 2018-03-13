@@ -1,18 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 import Link from 'next/link';
-import { FormattedMessage } from 'react-intl';
-import AnimatedInText, { AnimatedInTextContent } from '../AnimatedInText';
+import { FormattedMessage, intlShape } from 'react-intl';
+import AnimatedInText from '../AnimatedInText';
 import SocialIconList from '../SocialIconList';
 
-const FooterWrapper = styled.div`
-	width: 160px;
-
-	${AnimatedInTextContent} > * {
-		position: inherit;
-		text-decoration: underline;
-	}
-`;
+const FooterWrapper = styled.div``;
 
 const FooterLink = styled.a`
 	font-size: ${({ theme }) => theme.footerLinkFontSize};
@@ -20,11 +13,10 @@ const FooterLink = styled.a`
 	font-family: ${({ theme }) => theme.footerLinkFontFamily};
 	color: ${({ theme }) => theme.grey};
 	transition: color 150ms ease-out;
-	display: inline-block;
-	margin-right: 20px;
-	margin-top: 10px;
+	display: block;
+	margin: 10px 0 0 0;
 	cursor: pointer;
-	width: 70px;
+	width: 100%;
 
 	&:hover {
 		color: ${({ theme }) => theme.darkGrey}
@@ -32,11 +24,11 @@ const FooterLink = styled.a`
 `;
 
 
-const Footer = () => (
+const Footer = (_, { intl: { formatMessage } }) => (
 	<FooterWrapper>
 		<SocialIconList startTimeout={1000} />
 		<Link href="/impressum">
-			<FooterLink>
+			<FooterLink title={`Michaela Jaritz | ${formatMessage({ id: 'pages.impressum.title' })}`}>
 				<AnimatedInText timeout={1300}>
 					<FormattedMessage id="pages.impressum.title" />
 				</AnimatedInText>
@@ -44,5 +36,9 @@ const Footer = () => (
 		</Link>
 	</FooterWrapper>
 );
+
+Footer.contextTypes = {
+	intl: intlShape,
+};
 
 export default Footer;

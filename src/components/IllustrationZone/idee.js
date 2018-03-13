@@ -94,11 +94,5 @@ const Idea = () => (
 	</div>
 );
 
-Idea.defaultProps = {
-};
-
-Idea.propTypes = {
-};
-
 export default Idea;
 

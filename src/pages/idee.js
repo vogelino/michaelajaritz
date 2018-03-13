@@ -1,13 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedHTMLMessage } from 'react-intl';
-import page from '../hocs/page';
-// import { gracefulFunction } from '../hocs/withErrorLogs';
+import Page from '../hocs/Page';
 import BigTitle from '../components/BigTitle';
 import Subtitle from '../components/Subtitle';
 import Paragraph from '../components/Paragraph';
+import MobilePicture from '../components/MobilePicture';
 
-const IdeaPage = ({ pageName }) => {
+const pageName = 'idee';
+const IdeaPage = () => {
 	const Text = ({ id }) => (
 		<FormattedHTMLMessage id={`pages.${pageName}.content.${id}`} />
 	);
@@ -16,11 +17,15 @@ const IdeaPage = ({ pageName }) => {
 	};
 
 	return (
-		<div>
+		<Page pageName={pageName}>
+			<MobilePicture
+				src="/static/images/welcomeMain.jpg"
+				alt="Training, Coaching, Moderation."
+			/>
 			<Subtitle timeout={1000}>
 				<Text id="subtitle" />
 			</Subtitle>
-			<BigTitle timeout={1200} color="orange" marginBottom={10} marginTop={80}>
+			<BigTitle timeout={1200} color="orange" marginBottom={10}>
 				<Text id="titleTraining" />
 			</BigTitle>
 			<BigTitle timeout={1400} color="blue" marginBottom={10} marginTop={0}>
@@ -32,31 +37,38 @@ const IdeaPage = ({ pageName }) => {
 			<Paragraph timeout={1800}>
 				<Text id="textIntro" />
 			</Paragraph>
+			<MobilePicture
+				src="/static/images/artworks/experienced.jpg"
+				alt="Sichtbar machen."
+			/>
 			<BigTitle timeout={1900} color="purple">
 				<Text id="titleMakeVisible" />
 			</BigTitle>
 			<Paragraph timeout={2000}>
 				<Text id="textMakeVisible" />
 			</Paragraph>
+			<MobilePicture
+				src="/static/images/artworks/makespace.jpg"
+				alt="Platz machen."
+			/>
 			<BigTitle timeout={2100} color="orange">
 				<Text id="titleMakeRoom" />
 			</BigTitle>
 			<Paragraph timeout={2200}>
 				<Text id="textMakeRoom" />
 			</Paragraph>
+			<MobilePicture
+				src="/static/images/artworks/possible.jpg"
+				alt="Möglich machen."
+			/>
 			<BigTitle timeout={2300} color="blue">
 				<Text id="titleMakePossible" />
 			</BigTitle>
 			<Paragraph timeout={2400}>
 				<Text id="textMakePossible" />
 			</Paragraph>
-		</div>
+		</Page>
 	);
 };
 
-IdeaPage.propTypes = {
-	pageName: PropTypes.string.isRequired,
-};
-
-export default page('idee')(IdeaPage);
-
+export default IdeaPage;

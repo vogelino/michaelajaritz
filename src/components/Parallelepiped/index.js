@@ -8,8 +8,8 @@ const getTranslateYByPlacement = ({ placement }) => (
 	placement === 'toTop' ? '' : 'translateY(100%)'
 );
 
-const getRotateByPlacement = ({ ready, placement }) => (
-	!ready ?
+const getRotateByPlacement = ({ clientSideReady, placement }) => (
+	!clientSideReady ?
 		`rotate(${placement === 'toTop' ? '20deg' : '-20deg'})` :
 		'rotate(0)'
 );
@@ -26,15 +26,20 @@ const getPosition = ({ position, size }) => {
 	return `translate(${xPos}px, ${yPos}px)`;
 };
 
-const Container = styled.div`
+const Container = styled.div.attrs({
+	style: (props) => ({
+		transform: `${getPosition(props)} ${getRotateByPlacement(props)} ${getTranslateYByPlacement(props)}`,
+		transitionDelay: `${props.timeout + 300}ms, ${props.timeout + 300}ms`,
+		opacity: (props.clientSideReady ? 1 : 0),
+		width: `${getWidthBySize(props)}px`,
+		height: `${getHeightBySize(props)}px`,
+	}),
+})`
 	display: inline-block;
-	width: ${getWidthBySize}px;
-	height: ${getHeightBySize}px;
 	transform-origin: 0 100%;
-	transform: ${getPosition} ${getRotateByPlacement} ${getTranslateYByPlacement};
-	opacity: ${({ ready }) => (ready ? 1 : 0)};
-	transition: transform 400ms cubic-bezier(0,1,.37,.98),
-		opacity 400ms cubic-bezier(0,1,.37,.98);
+	transition-property: transform, opacity;
+	transition-duration: 800ms, 1000ms;
+	transition-timing-function: cubic-bezier(0,1,.37,.98), cubic-bezier(0,1,.37,.98);
 	position: absolute;
 	top: 50%;
 	left: 0;
@@ -125,6 +130,7 @@ const Parallelepiped = ({
 			size={size}
 			clientSideReady={clientSideReady}
 			timeout={timeout}
+			className={`parallelepiped parallelepiped-${placement}`}
 		>
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
@@ -139,7 +145,7 @@ const Parallelepiped = ({
 					</defs>
 				)}
 				{link ? (
-					<ExternalLink href={link} target="_blank" rel="noopener nofollower">
+					<ExternalLink href={link} target="_blank" rel="noopener noreferrer">
 						{content}
 					</ExternalLink>
 				) : content}

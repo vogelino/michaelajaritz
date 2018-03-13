@@ -7,8 +7,8 @@ export default class MyDocument extends Document {
 		const sheet = new ServerStyleSheet();
 		const page = renderPage((App) => (props) =>
 			sheet.collectStyles(<App {...props} />));
-		const styleTags = sheet.getStyleElement();
-		return { ...page, styleTags };
+		const styleElement = sheet.getStyleElement();
+		return { ...page, styleElement };
 	}
 
 	render() {
@@ -16,12 +16,70 @@ export default class MyDocument extends Document {
 		return (
 			<html lang="de">
 				<Head>
-					{this.props.styleTags}
+					{this.props.styleElement}
+					<style
+						id="opacity-enforcer"
+						dangerouslySetInnerHTML={{ __html: `
+								* {
+									opacity: 1 !important;
+								}
+
+								.parallelepiped.parallelepiped-toBottom {
+									transform: none !important;
+								}
+								.parallelepiped.parallelepiped-toTop {
+									transform: translate(0, -100%) !important;
+								}
+							`,
+						}}
+					/>
+					<style
+						id="transition-enforcer"
+						dangerouslySetInnerHTML={{ __html: `
+								* {
+									transition: none !important;
+								}
+							`,
+						}}
+					/>
+					<script
+						async
+						type="text/javascript"
+						dangerouslySetInnerHTML={{ __html: `
+								var opacityEnforcer = document.getElementById("opacity-enforcer");
+								var transitionEnforcer = document.getElementById("transition-enforcer");
+								var whiteOverlay = document.createElement('div');
+								whiteOverlay.style.cssText = [
+									'posistion: fixed;',
+									'width: 100%;',
+									'height: 100%;',
+									'background: white;',
+								].join(' ');
+								opacityEnforcer.parentNode.appendChild(whiteOverlay);
+								opacityEnforcer.parentNode.removeChild(opacityEnforcer);
+								setTimeout(function() {
+									transitionEnforcer.parentNode.removeChild(transitionEnforcer);
+									whiteOverlay.parentNode.removeChild(whiteOverlay);
+								}, 10);
+							`,
+						}}
+					/>
 				</Head>
 				<body>
 					<Main />
 					<NextScript />
-					<link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700|PT+Mono" rel="stylesheet" />
+					<script
+						type="text/javascript"
+						dangerouslySetInnerHTML={{ __html: `
+								var resource = document.createElement('link'); 
+								resource.setAttribute("rel", "stylesheet");
+								resource.setAttribute("href","https://fonts.googleapis.com/css?family=Lato:300,400,400i,700|PT+Mono");
+								resource.setAttribute("type","text/css");      
+								var head = document.getElementsByTagName('head')[0];
+								head.appendChild(resource);
+							`,
+						}}
+					/>
 				</body>
 			</html>
 		);

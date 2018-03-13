@@ -94,11 +94,5 @@ const Focus = () => (
 	</div>
 );
 
-Focus.defaultProps = {
-};
-
-Focus.propTypes = {
-};
-
 export default Focus;
 
