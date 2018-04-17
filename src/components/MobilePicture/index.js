@@ -30,7 +30,7 @@ const MobilePictureWrapper = styled.section`
 
 	& .big-right-parallelepiped {
 		left: 100%;
-		transform: translate(-12%, 2px) !important;
+		transform: translate(-8%, 2px) !important;
 		transition: none;
 	}
 `;
