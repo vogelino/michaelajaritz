@@ -79,6 +79,7 @@ const Parallelepiped = ({
 	position,
 	color,
 	image,
+	className,
 }) => {
 	const clipPathId = `${placement}-${color}-${position.join('-')}-${size}`;
 	const height = getHeightBySize({ size });
@@ -130,7 +131,7 @@ const Parallelepiped = ({
 			size={size}
 			clientSideReady={clientSideReady}
 			timeout={timeout}
-			className={`parallelepiped parallelepiped-${placement}`}
+			className={`parallelepiped parallelepiped-${placement} ${className}`}
 		>
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
@@ -162,14 +163,16 @@ Parallelepiped.defaultProps = {
 	image: undefined,
 	timeout: 10,
 	link: undefined,
+	className: '',
 };
 
 Parallelepiped.propTypes = {
 	placement: PropTypes.oneOf(['toTop', 'toBottom']),
 	position: PropTypes.arrayOf(PropTypes.number),
 	size: PropTypes.number,
-	color: PropTypes.oneOf(['blue', 'orange', 'purple']),
+	color: PropTypes.oneOf(['blue', 'orange', 'purple', 'white']),
 	image: PropTypes.string,
+	className: PropTypes.string,
 	timeout: PropTypes.number,
 	link: PropTypes.string,
 	clientSideReady: PropTypes.bool.isRequired,
