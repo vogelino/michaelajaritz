@@ -7,7 +7,7 @@ export default {
 			line2: 'Platz machen.',
 			line3: 'Möglich machen.',
 		},
-		description: 'Training, Coatching und Moderation für Sie persönnllich oder für Teams und Gruppen, systemisch, mit der Symbolon-Methode®.',
+		description: 'Training, Coaching und Moderation für Sie persönlich oder für Teams und Gruppen, systemisch, mit der Symbolon-Methode©.',
 	},
 	pages: {
 		willkommen: {
@@ -54,7 +54,7 @@ export default {
 				symbolonTeamTitle: 'Symbolon Team-Profil',
 				symbolonTeamText: 'Bei einer Teamentwicklung mit dem Symbolon-Team-Profil füllen alle Teammitglieder ihr individuelles Symbolon-Profil bzw. Symbolon-Profil Intensiv aus. In der Voranalyse fasse ich alle Einzelprofile in einem Teamprofil zusammen. Im Workshop werden dann die Kernthemen des Teams interaktiv bearbeitet, gemeinsam werden Lösungen entwickelt und Ziele vereinbart. Vor und/oder nach dem Workshop sind Einzel-Coachings eine sinnvolle Ergänzung.', // eslint-disable-line
 				art4reflectionTitle: 'Symbolon Art4Reflection',
-				art4reflectionText: 'Das Coaching im Museum findet als offene Veranstaltung für Gruppen mit max. 10 Teilnehmern statt oder exklusiv für Ihr Team. In der etwa 1,5-stündigen Führung erleben Sie einen Reflexionsprozess mit drei unterschiedlichen Kunstwerken.  <br />Treffen Sie mich bei den Führungen in Leipzig, im Museum der bildenden Künste.  <br /> <br /><strong>Aktuelle Symbolon Art4Reflection-Termine:</strong> <br />Samstag, 14.04.2018 – 14:00 Uhr <br /> <br />Weitere Informationen unter: <a href="http://www.art4reflection.com" target="_blank" rel="nofollow noreferrer">www.art4reflection.com</a>', // eslint-disable-line
+				art4reflectionText: 'Das Coaching im Museum findet als offene Veranstaltung für Gruppen mit max. 10 Teilnehmern statt oder exklusiv für Ihr Team. In der etwa 1,5-stündigen Führung erleben Sie einen Reflexionsprozess mit drei unterschiedlichen Kunstwerken.  <br />Treffen Sie mich bei den Führungen in Leipzig, im Museum der bildenden Künste.<br /> <br />Weitere Informationen unter: <a href="http://www.art4reflection.com" target="_blank" rel="nofollow noreferrer">www.art4reflection.com</a>', // eslint-disable-line
 			},
 		},
 		fokus: {
