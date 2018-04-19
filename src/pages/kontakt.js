@@ -17,7 +17,7 @@ const pageName = 'kontakt';
 const ContactPage = () => (
 	<Page pageName={pageName}>
 		<MobilePicture
-			src="/static/images/artworks/wandererseafog.jpg"
+			src="/static/images/artworks/mobile/wandererseafog.jpg"
 			alt="Kontaktdaten von Michaela Jaritz"
 		/>
 		<Subtitle timeout={1000}>

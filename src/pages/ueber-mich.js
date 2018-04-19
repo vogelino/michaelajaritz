@@ -9,7 +9,7 @@ const pageName = 'ueber-mich';
 const AboutMePage = () => (
 	<Page pageName={pageName}>
 		<MobilePicture
-			src="/static/images/michaela-portrait.jpg"
+			src="/static/images/portraits/mobile/michaela-portrait.jpg"
 			alt="Portrait von Michaela Jaritz"
 		/>
 		<BigTitle timeout={1200} color="purple">
@@ -19,7 +19,7 @@ const AboutMePage = () => (
 			<FormattedHTMLMessage id={`pages.${pageName}.content.textExperience`} />
 		</Paragraph>
 		<MobilePicture
-			src="/static/images/artworks/bilingual.jpg"
+			src="/static/images/artworks/mobile/bilingual.jpg"
 			alt="Sprachverliebt"
 		/>
 		<BigTitle timeout={1500} color="blue">
@@ -29,7 +29,7 @@ const AboutMePage = () => (
 			<FormattedHTMLMessage id={`pages.${pageName}.content.textLanguages`} />
 		</Paragraph>
 		<MobilePicture
-			src="/static/images/artworks/girl-pearl.jpg"
+			src="/static/images/artworks/mobile/girl-pearl.jpg"
 			alt="Menschlich"
 		/>
 		<BigTitle timeout={1700} color="orange">

@@ -11,7 +11,7 @@ const welcome = () => (
 		<Parallelepiped
 			placement="toBottom"
 			size={10}
-			image="/static/images/welcomeSecondary.jpg"
+			image="/static/images/portraits/welcomeSecondary.jpg"
 			timeout={100}
 		/>
 		<Parallelepiped

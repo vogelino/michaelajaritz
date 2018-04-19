@@ -5,7 +5,7 @@ const Idea = () => (
 	<div>
 		<Parallelepiped
 			size={17}
-			image="/static/images/welcomeMain.jpg"
+			image="/static/images/portraits/welcomeMain.jpg"
 			timeout={100}
 		/>
 		<Parallelepiped

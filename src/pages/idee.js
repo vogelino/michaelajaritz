@@ -19,7 +19,7 @@ const IdeaPage = () => {
 	return (
 		<Page pageName={pageName}>
 			<MobilePicture
-				src="/static/images/welcomeMain.jpg"
+				src="/static/images/portraits/mobile/welcomeMain.jpg"
 				alt="Training, Coaching, Moderation."
 			/>
 			<Subtitle timeout={1000}>
@@ -38,7 +38,7 @@ const IdeaPage = () => {
 				<Text id="textIntro" />
 			</Paragraph>
 			<MobilePicture
-				src="/static/images/artworks/experienced.jpg"
+				src="/static/images/artworks/mobile/experienced.jpg"
 				alt="Sichtbar machen."
 			/>
 			<BigTitle timeout={1900} color="purple">
@@ -48,7 +48,7 @@ const IdeaPage = () => {
 				<Text id="textMakeVisible" />
 			</Paragraph>
 			<MobilePicture
-				src="/static/images/artworks/makespace.jpg"
+				src="/static/images/artworks/mobile/makespace.jpg"
 				alt="Platz machen."
 			/>
 			<BigTitle timeout={2100} color="orange">
@@ -58,7 +58,7 @@ const IdeaPage = () => {
 				<Text id="textMakeRoom" />
 			</Paragraph>
 			<MobilePicture
-				src="/static/images/artworks/possible.jpg"
+				src="/static/images/artworks/mobile/possible.jpg"
 				alt="Möglich machen."
 			/>
 			<BigTitle timeout={2300} color="blue">

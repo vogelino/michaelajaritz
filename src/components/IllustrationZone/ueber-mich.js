@@ -5,7 +5,7 @@ const welcome = () => (
 	<div>
 		<Parallelepiped
 			size={18}
-			image="/static/images/michaela-portrait.jpg"
+			image="/static/images/portraits/michaela-portrait.jpg"
 			timeout={100}
 		/>
 		<Parallelepiped

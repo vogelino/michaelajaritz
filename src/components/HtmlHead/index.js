@@ -36,11 +36,11 @@ export const HtmlHeadComponent = ({ pageName, children }, { intl }) => (
 		<meta property="og:type" content="website" />
 		<meta property="og:title" content={intl.formatMessage({ id: `pages.${pageName}.title` })} />
 		<meta property="og:description" content={intl.formatMessage({ id: 'site.description' })} />
-		<meta property="og:image" content="/static/images/michaela-portrait.jpg" />
+		<meta property="og:image" content="/static/images/portraits/michaela-portrait.jpg" />
 
 		<meta name="twitter:site" content="@MichaelaJaritz" />
 		<meta name="twitter:creator" content="@soyvogelino" />
-		<meta name="twitter:image" content="/static/images/michaela-portrait.jpg" />
+		<meta name="twitter:image" content="/static/images/portraits/michaela-portrait.jpg" />
 		<meta name="twitter:title" content={intl.formatMessage({ id: `pages.${pageName}.title` })} />
 		<meta name="twitter:description" content={intl.formatMessage({ id: 'site.description' })} />
 

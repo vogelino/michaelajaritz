@@ -72,7 +72,7 @@ Accordion2.contextTypes = {
 const OfferPage = () => (
 	<Page pageName={pageName}>
 		<MobilePicture
-			src="/static/images/artworks/atelier.jpg"
+			src="/static/images/artworks/mobile/atelier.jpg"
 			alt="Persönliche Angebot"
 		/>
 		<Subtitle timeout={1000}>
@@ -86,7 +86,7 @@ const OfferPage = () => (
 		</Paragraph>
 		<Accordion1 />
 		<MobilePicture
-			src="/static/images/artworks/renoir.jpg"
+			src="/static/images/artworks/mobile/renoir.jpg"
 			alt="Team Angebot"
 		/>
 		<BigTitle timeout={1800} color="blue">
@@ -100,4 +100,3 @@ const OfferPage = () => (
 );
 
 export default OfferPage;
-

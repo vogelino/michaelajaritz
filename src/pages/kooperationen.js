@@ -9,7 +9,7 @@ const pageName = 'kooperationen';
 const CooperationsPage = () => (
 	<Page pageName={pageName}>
 		<MobilePicture
-			src="/static/images/artworks/TheRehearsalOfTheBalletOnstage.jpg"
+			src="/static/images/artworks/mobile/TheRehearsalOfTheBalletOnstage.jpg"
 			alt="Kooperationen"
 		/>
 		<BigTitle timeout={1100}>

@@ -10,7 +10,7 @@ const pageName = 'fokus';
 const FocusPage = () => (
 	<Page pageName={pageName}>
 		<MobilePicture
-			src="/static/images/artworks/gallery.jpg"
+			src="/static/images/artworks/mobile/gallery.jpg"
 			alt="Die Kunst"
 		/>
 		<Subtitle timeout={1000}>
@@ -23,7 +23,7 @@ const FocusPage = () => (
 			<FormattedHTMLMessage id={`pages.${pageName}.content.textArt`} />
 		</Paragraph>
 		<MobilePicture
-			src="/static/images/artworks/monalisa.jpg"
+			src="/static/images/artworks/mobile/monalisa.jpg"
 			alt="Der Mensch"
 		/>
 		<BigTitle timeout={1500} color="orange">
@@ -33,7 +33,7 @@ const FocusPage = () => (
 			<FormattedHTMLMessage id={`pages.${pageName}.content.textHuman`} />
 		</Paragraph>
 		<MobilePicture
-			src="/static/images/artworks/soapbubbles.jpg"
+			src="/static/images/artworks/mobile/soapbubbles.jpg"
 			alt="Die Methode"
 		/>
 		<BigTitle timeout={1700} color="purple">
