@@ -35,16 +35,8 @@ const MobilePictureWrapper = styled.section`
 	}
 `;
 
-const MobilePictureElement = styled.img.attrs({
-	style: ({ timeout, clientSideReady }) => ({
-		transitionDelay: `${timeout}ms`,
-		opacity: clientSideReady ? 1 : 0,
-	}),
-})`
+const MobilePictureElement = styled.img`
 	width: 100%;
-	transition-property: opacity;
-	transition-duration: 6000ms;
-	transition-timing-function: cubic-bezier(0,1,.37,.98);
 	float: left;
 `;
 
