@@ -6,7 +6,7 @@ const Cooperations = () => (
 		<Parallelepiped
 			link="http://a-u-m.biz/"
 			size={8}
-			image="/static/logos/aundm.jpg"
+			image="/static/logos/transparent/aundm.png"
 			timeout={100}
 			placement="toBottom"
 			position={[10, 0]}
@@ -15,7 +15,7 @@ const Cooperations = () => (
 			link="http://www.methodenberatung-jahn.de/"
 			placement="toBottom"
 			size={8}
-			image="/static/logos/judith-jahn.jpg"
+			image="/static/logos/transparent/judith-jahn.png"
 			timeout={200}
 			position={[5, 10]}
 		/>
@@ -23,12 +23,12 @@ const Cooperations = () => (
 			link="https://www.symbolon.com/"
 			placement="toBottom"
 			size={10}
-			image="/static/logos/symbolon.jpg"
+			image="/static/logos/transparent/symbolon.png"
 			timeout={300}
 		/>
 		<Parallelepiped
 			placement="toTop"
-			image="/static/images/artworks/TheRehearsalOfTheBalletOnstage.jpg"
+			image="/static/images/artworks/transparent/TheRehearsalOfTheBalletOnstage.png"
 			size={15}
 			timeout={300}
 			color="blue"

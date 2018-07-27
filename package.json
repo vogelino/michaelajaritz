@@ -12,7 +12,6 @@
     "start": "next start src",
     "build": "next build src",
     "dev": "next dev src",
-    "deploy": "now deploy -t $NOW_TOKEN",
     "alias": "now alias -t $NOW_TOKEN",
     "deploy": "now deploy -t $NOW_TOKEN && now alias -t $NOW_TOKEN"
   },
@@ -39,7 +38,7 @@
     "theming": "^1.1.0"
   },
   "devDependencies": {
-    "babel-core": "^6.26.0",
+    "babel-core": "^6.26.3",
     "babel-eslint": "^7.2.3",
     "babel-plugin-styled-components": "^1.5.0",
     "babel-plugin-transform-object-assign": "^6.22.0",
@@ -52,7 +51,6 @@
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-jsx-a11y": "^5.1.1",
     "eslint-plugin-react": "^7.3.0",
-    "now": "^7.3.0",
     "regenerator-runtime": "^0.11.0"
   }
 }
