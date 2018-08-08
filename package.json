@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "The personal website of Michaela Jaritz, business coach and trainer.",
   "engines": {
-    "node": "8.9.0"
+    "node": "10.7.0"
   },
   "scripts": {
     "dist": "mkdir -p dist",
@@ -13,7 +13,7 @@
     "build": "next build src",
     "dev": "next dev src",
     "alias": "now alias -t $NOW_TOKEN",
-    "deploy": "now deploy -t $NOW_TOKEN && now alias -t $NOW_TOKEN"
+    "deploy": "now deploy && now alias"
   },
   "repository": {
     "type": "git",
@@ -23,10 +23,10 @@
   "license": "ISC",
   "homepage": "https://bitbucket.org/vogelino/michaelajaritz#readme",
   "dependencies": {
-    "next": "^4.2.3",
+    "next": "^6.1.1",
     "prop-types": "^15.5.10",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
     "react-hamburger-button": "0.0.1",
     "react-intl": "^2.4.0",
     "react-markdown": "^3.2.2",
@@ -42,13 +42,10 @@
     "babel-eslint": "^7.2.3",
     "babel-plugin-styled-components": "^1.5.0",
     "babel-plugin-transform-object-assign": "^6.22.0",
-    "babel-preset-es2015": "^6.24.1",
-    "babel-preset-react": "^6.24.1",
-    "babel-preset-stage-2": "^6.24.1",
     "eslint": "^3.19.0",
     "eslint-config-airbnb": "^15.1.0",
     "eslint-config-vogelint-react": "^1.0.0",
-    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-import": "^2.13.0",
     "eslint-plugin-jsx-a11y": "^5.1.1",
     "eslint-plugin-react": "^7.3.0",
     "regenerator-runtime": "^0.11.0"
