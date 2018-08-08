@@ -1,4 +1,4 @@
-module.exports = () => {
+module.exports = function extendBabelConfig() {
 	const presets = ['next/babel'];
 	const plugins = [
 		'transform-object-assign',
