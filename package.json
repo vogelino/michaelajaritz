@@ -24,7 +24,7 @@
   "homepage": "https://bitbucket.org/vogelino/michaelajaritz#readme",
   "dependencies": {
     "next": "^6.1.1",
-    "prop-types": "^15.5.10",
+    "prop-types": "^15.6.2",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-hamburger-button": "0.0.1",
@@ -43,7 +43,7 @@
     "babel-plugin-transform-object-assign": "^6.22.0",
     "eslint": "^3.19.0",
     "eslint-config-airbnb": "^15.1.0",
-    "eslint-config-vogelint-react": "^1.0.0",
+    "eslint-config-vogelint-react": "^1.0.4",
     "eslint-plugin-import": "^2.13.0",
     "eslint-plugin-jsx-a11y": "^5.1.1",
     "eslint-plugin-react": "^7.3.0"
