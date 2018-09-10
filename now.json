@@ -19,9 +19,6 @@
 		"www.michaelajaritz.com"
 	],
 	"engines": {
-		"node": "10.7.0"
-	},
-	"env": {
-		"NODE_ENV": "production"
+		"node": "8.9.0"
 	}
 }
