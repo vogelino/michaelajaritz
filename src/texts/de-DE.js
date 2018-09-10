@@ -73,7 +73,7 @@ export default {
 			title: 'Über mich',
 			content: {
 				titleExperience: 'Erfahren.',
-				textExperience: '25 Jahre Marketing- und Vertriebserfahrung bei der Firma Microsoft Corporation (Redmond, USA) und Microsoft Deutschland GmbH. Sattelfest im Großunternehmen und in der Führung von (virtuellen) Teams. Systemische Trainerin (akkreditiert von der European Coaching Association, ECA) und Symbolon-Spezialistin (zertifiziert von der International Coach Federation, ICF).',
+				textExperience: '25 Jahre Marketing- und Vertriebserfahrung bei der Firma Microsoft Corporation (Redmond, USA) und Microsoft Deutschland GmbH. Sattelfest im Großunternehmen und in der Führung von (virtuellen) Teams. Systemische Trainerin (zertifiziert von der European Coaching Association, ECA) und Symbolon-Spezialistin (akkreditiert von der International Coach Federation, ICF).',
 				titleLanguages: 'Sprachverliebt.',
 				textLanguages: 'Als Diplom-Übersetzerin baue ich mit Sprache Brücken: zu Ihnen, zu Ihrem Team, in Ihrer Gruppe. Trainings und Coachings auf Deutsch und Englisch.',
 				titleHuman: 'Menschlich.',
