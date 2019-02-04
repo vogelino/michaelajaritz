@@ -2,8 +2,6 @@
 	"name": "michaela-jaritz",
 	"alias": [
 		"www.mein-kaleidoskop.de",
-		"mein-kaleidoskop.co",
-		"www.mein-kaleidoskop.co",
 		"mein-kaleidoskop.com",
 		"www.mein-kaleidoskop.com",
 		"mein-kaleidoskop.eu",
@@ -19,9 +17,6 @@
 		"www.michaelajaritz.com"
 	],
 	"engines": {
-		"node": "10.7.0"
-	},
-	"env": {
-		"NODE_ENV": "production"
+		"node": "8.9.0"
 	}
 }
