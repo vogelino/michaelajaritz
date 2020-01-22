@@ -17,11 +17,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://vogelino@bitbucket.org/vogelino/michaelajaritz.git"
+    "url": "git@github.com:vogelino/michaelajaritz.git"
   },
   "author": "Lucas Vogel <contact@vogelino.com> (http://vogelino.com/)",
   "license": "ISC",
-  "homepage": "https://bitbucket.org/vogelino/michaelajaritz#readme",
+  "homepage": "https://www.michaela-jaritz.de/",
   "dependencies": {
     "next": "^4.2.3",
     "prop-types": "^15.5.10",
