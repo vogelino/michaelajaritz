@@ -11,9 +11,7 @@
     "start": "next start",
     "build": "next build",
     "now-build": "next build",
-    "dev": "next dev",
-    "deploy": "now deploy -t $NOW_TOKEN && now alias -t $NOW_TOKEN",
-    "alias": "now alias -t $NOW_TOKEN"
+    "dev": "next dev"
   },
   "repository": {
     "type": "git",
