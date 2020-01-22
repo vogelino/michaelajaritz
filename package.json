@@ -3,15 +3,15 @@
   "version": "1.0.0",
   "description": "The personal website of Michaela Jaritz, business coach and trainer.",
   "engines": {
-    "node": "8.9.0"
+    "node": "12.14.1"
   },
   "scripts": {
-    "dist": "mkdir -p dist",
     "lint": "eslint ./**/*.js",
     "lint-fix": "eslint --fix ./**/*.js",
-    "start": "next start src",
-    "build": "next build src",
-    "dev": "next dev src",
+    "start": "next start",
+    "build": "next build",
+    "now-build": "next build",
+    "dev": "next dev",
     "deploy": "now deploy -t $NOW_TOKEN && now alias -t $NOW_TOKEN",
     "alias": "now alias -t $NOW_TOKEN"
   },
@@ -25,8 +25,8 @@
   "dependencies": {
     "next": "^4.2.3",
     "prop-types": "^15.5.10",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
     "react-hamburger-button": "0.0.1",
     "react-intl": "^2.4.0",
     "react-markdown": "^3.2.2",
@@ -47,6 +47,7 @@
     "babel-preset-stage-2": "^6.24.1",
     "eslint": "^3.19.0",
     "eslint-config-airbnb": "^15.1.0",
+    "eslint-config-prettier": "^6.9.0",
     "eslint-config-vogelint-react": "^1.0.0",
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-jsx-a11y": "^5.1.1",

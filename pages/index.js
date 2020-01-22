@@ -1,10 +1,10 @@
 import React from 'react';
 import { FormattedMessage, FormattedHTMLMessage } from 'react-intl';
-import Page from '../hocs/Page';
-import BigTitle from '../components/BigTitle';
-import Subtitle from '../components/Subtitle';
-import Paragraph from '../components/Paragraph';
-import MobilePicture from '../components/MobilePicture';
+import Page from '../src/hocs/Page';
+import BigTitle from '../src/components/BigTitle';
+import Subtitle from '../src/components/Subtitle';
+import Paragraph from '../src/components/Paragraph';
+import MobilePicture from '../src/components/MobilePicture';
 
 const pageName = 'willkommen';
 const WelcomePage = () => (

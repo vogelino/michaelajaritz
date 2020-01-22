@@ -1,9 +1,9 @@
 import React from 'react';
 import { FormattedHTMLMessage } from 'react-intl';
-import Page from '../hocs/Page';
-import BigTitle from '../components/BigTitle';
-import Paragraph from '../components/Paragraph';
-import MobilePicture from '../components/MobilePicture';
+import Page from '../src/hocs/Page';
+import BigTitle from '../src/components/BigTitle';
+import Paragraph from '../src/components/Paragraph';
+import MobilePicture from '../src/components/MobilePicture';
 
 const pageName = 'ueber-mich';
 const AboutMePage = () => (

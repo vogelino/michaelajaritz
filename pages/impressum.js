@@ -1,8 +1,8 @@
 import React from 'react';
 import { intlShape } from 'react-intl';
-import MarkdownSuite from '../components/MarkdownSuite';
-import MobilePicture from '../components/MobilePicture';
-import Page from '../hocs/Page';
+import MarkdownSuite from '../src/components/MarkdownSuite';
+import MobilePicture from '../src/components/MobilePicture';
+import Page from '../src/hocs/Page';
 
 const pageName = 'impressum';
 const Content = (props, { intl: { formatMessage } }) => (

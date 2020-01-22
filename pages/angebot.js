@@ -1,12 +1,12 @@
 import React from 'react';
 import { FormattedHTMLMessage, defineMessages, intlShape } from 'react-intl';
-import Page from '../hocs/Page';
-import { getPageContentsByKeys } from '../texts/utils';
-import BigTitle from '../components/BigTitle';
-import Subtitle from '../components/Subtitle';
-import Paragraph from '../components/Paragraph';
-import Accordion from '../components/Accordion';
-import MobilePicture from '../components/MobilePicture';
+import Page from '../src/hocs/Page';
+import { getPageContentsByKeys } from '../src/texts/utils';
+import BigTitle from '../src/components/BigTitle';
+import Subtitle from '../src/components/Subtitle';
+import Paragraph from '../src/components/Paragraph';
+import Accordion from '../src/components/Accordion';
+import MobilePicture from '../src/components/MobilePicture';
 
 const pageName = 'angebot';
 

@@ -1,12 +1,12 @@
 import React from 'react';
 import { FormattedHTMLMessage } from 'react-intl';
 import styled from 'styled-components';
-import Page from '../hocs/Page';
-import BigTitle from '../components/BigTitle';
-import Subtitle from '../components/Subtitle';
-import Paragraph from '../components/Paragraph';
-import SocialIconList from '../components/SocialIconList';
-import MobilePicture from '../components/MobilePicture';
+import Page from '../src/hocs/Page';
+import BigTitle from '../src/components/BigTitle';
+import Subtitle from '../src/components/Subtitle';
+import Paragraph from '../src/components/Paragraph';
+import SocialIconList from '../src/components/SocialIconList';
+import MobilePicture from '../src/components/MobilePicture';
 
 const SocialIconListWrapper = styled.div`
 	position: relative;
