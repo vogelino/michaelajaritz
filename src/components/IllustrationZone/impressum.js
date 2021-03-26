@@ -5,13 +5,13 @@ const Impressum = () => (
 	<div>
 		<Parallelepiped
 			size={18}
-			image="/static/images/artworks/transparent/paulklee.png"
+			image="/images/artworks/transparent/paulklee.png"
 			timeout={100}
 		/>
 		<Parallelepiped
 			placement="toBottom"
 			size={10}
-			image="/static/images/artworks/transparent/paulklee2.png"
+			image="/images/artworks/transparent/paulklee2.png"
 			timeout={100}
 		/>
 		<Parallelepiped

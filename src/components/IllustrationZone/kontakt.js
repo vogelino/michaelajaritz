@@ -5,14 +5,14 @@ const welcome = () => (
 	<div>
 		<Parallelepiped
 			size={17}
-			image="/static/images/artworks/transparent/girlundertree.png"
+			image="/images/artworks/transparent/girlundertree.png"
 			timeout={100}
 		/>
 		<Parallelepiped
 			placement="toBottom"
 			size={10}
 			timeout={100}
-			image="/static/images/artworks/transparent/wandererseafog.png"
+			image="/images/artworks/transparent/wandererseafog.png"
 		/>
 		<Parallelepiped
 			placement="toBottom"

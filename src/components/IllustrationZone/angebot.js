@@ -5,13 +5,13 @@ const Offer = () => (
 	<div>
 		<Parallelepiped
 			size={14}
-			image="/static/images/artworks/transparent/atelier.png"
+			image="/images/artworks/transparent/atelier.png"
 			timeout={100}
 		/>
 		<Parallelepiped
 			placement="toBottom"
 			size={14}
-			image="/static/images/artworks/transparent/renoir.png"
+			image="/images/artworks/transparent/renoir.png"
 			timeout={100}
 		/>
 		<Parallelepiped

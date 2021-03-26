@@ -5,26 +5,26 @@ const welcome = () => (
 	<div>
 		<Parallelepiped
 			size={18}
-			image="/static/images/portraits/transparent/michaela-portrait.png"
+			image="/images/portraits/transparent/michaela-portrait.png"
 			timeout={100}
 		/>
 		<Parallelepiped
 			size={8}
 			placement="toBottom"
-			image="/static/images/artworks/transparent/experienced.png"
+			image="/images/artworks/transparent/experienced.png"
 			timeout={100}
 		/>
 		<Parallelepiped
 			size={8}
 			placement="toBottom"
-			image="/static/images/artworks/transparent/bilingual.png"
+			image="/images/artworks/transparent/bilingual.png"
 			timeout={200}
 			position={[8, 0]}
 		/>
 		<Parallelepiped
 			size={10}
 			placement="toBottom"
-			image="/static/images/artworks/transparent/girl-pearl.png"
+			image="/images/artworks/transparent/girl-pearl.png"
 			timeout={300}
 			position={[4, 8]}
 		/>

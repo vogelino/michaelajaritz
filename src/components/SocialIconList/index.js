@@ -40,7 +40,7 @@ const SocialIconList = ({ startTimeout }) => (
 			title="Facebook Seite von Michaela Jaritz"
 		>
 			<AnimatedInText timeout={startTimeout}>
-				<span><Icon iconPath="/static/facebook.svg" /></span>
+				<span><Icon iconPath="/facebook.svg" /></span>
 			</AnimatedInText>
 		</IconLink>
 		<IconLink
@@ -50,7 +50,7 @@ const SocialIconList = ({ startTimeout }) => (
 			title="Xing Profil von Michaela Jaritz"
 		>
 			<AnimatedInText timeout={startTimeout + 200}>
-				<span><Icon iconPath="/static/xing.svg" /></span>
+				<span><Icon iconPath="/xing.svg" /></span>
 			</AnimatedInText>
 		</IconLink>
 		<IconLink
@@ -60,7 +60,7 @@ const SocialIconList = ({ startTimeout }) => (
 			title="Twitter Account von Michaela Jaritz"
 		>
 			<AnimatedInText timeout={startTimeout + 300}>
-				<span><Icon iconPath="/static/twitter.svg" /></span>
+				<span><Icon iconPath="/twitter.svg" /></span>
 			</AnimatedInText>
 		</IconLink>
 		<IconLink
@@ -70,7 +70,7 @@ const SocialIconList = ({ startTimeout }) => (
 			title="LinkedIn Profil von Michaela Jaritz"
 		>
 			<AnimatedInText timeout={startTimeout + 400}>
-				<span><Icon iconPath="/static/linkedin.svg" /></span>
+				<span><Icon iconPath="/linkedin.svg" /></span>
 			</AnimatedInText>
 		</IconLink>
 	</IconsWrapper>

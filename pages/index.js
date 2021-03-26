@@ -10,7 +10,7 @@ const pageName = 'willkommen';
 const WelcomePage = () => (
 	<Page pageName={pageName}>
 		<MobilePicture
-			src="/static/images/portraits/mobile/welcomeSecondary.jpg"
+			src="/images/portraits/mobile/welcomeSecondary.jpg"
 			alt="Portrait von Michaela Jaritz"
 		/>
 		<Subtitle timeout={1000} block >

@@ -18,41 +18,41 @@ injectGlobal`
 
 	@font-face {
 		font-family: 'Lato';
-		src: url('/static/fonts/lato-bold-webfont.woff2') format('woff2'),
-			 url('/static/fonts/lato-bold-webfont.woff') format('woff'),
-			 url('/static/fonts/lato-bold-webfont.ttf') format('truetype');
+		src: url('/fonts/lato-bold-webfont.woff2') format('woff2'),
+			 url('/fonts/lato-bold-webfont.woff') format('woff'),
+			 url('/fonts/lato-bold-webfont.ttf') format('truetype');
 		font-weight: 700, bold;
 		font-style: normal;
 	}
 	@font-face {
 		font-family: 'Lato';
-		src: url('/static/fonts/lato-italic-webfont.woff2') format('woff2'),
-			 url('/static/fonts/lato-italic-webfont.woff') format('woff'),
-			 url('/static/fonts/lato-italic-webfont.ttf') format('truetype');
+		src: url('/fonts/lato-italic-webfont.woff2') format('woff2'),
+			 url('/fonts/lato-italic-webfont.woff') format('woff'),
+			 url('/fonts/lato-italic-webfont.ttf') format('truetype');
 		font-weight: 400, normal;
 		font-style: italic;
 	}
 	@font-face {
 		font-family: 'Lato';
-		src: url('/static/fonts/lato-light-webfont.woff2') format('woff2'),
-			 url('/static/fonts/lato-light-webfont.woff') format('woff'),
-			 url('/static/fonts/lato-light-webfont.ttf') format('truetype');
+		src: url('/fonts/lato-light-webfont.woff2') format('woff2'),
+			 url('/fonts/lato-light-webfont.woff') format('woff'),
+			 url('/fonts/lato-light-webfont.ttf') format('truetype');
 		font-weight: 300, lighter;
 		font-style: normal;
 	}
 	@font-face {
 		font-family: 'Lato';
-		src: url('/static/fonts/lato-regular-webfont.woff2') format('woff2'),
-			 url('/static/fonts/lato-regular-webfont.woff') format('woff'),
-			 url('/static/fonts/lato-regular-webfont.ttf') format('truetype');
+		src: url('/fonts/lato-regular-webfont.woff2') format('woff2'),
+			 url('/fonts/lato-regular-webfont.woff') format('woff'),
+			 url('/fonts/lato-regular-webfont.ttf') format('truetype');
 		font-weight: 400, normal;
 		font-style: normal;
 	}
 	@font-face {
 		font-family: 'PT Mono';
-		src: url('/static/fonts/pt-mono-webfont.woff2') format('woff2'),
-			 url('/static/fonts/pt-mono-webfont.woff') format('woff'),
-			 url('/static/fonts/pt-mono-webfont.ttf') format('truetype');
+		src: url('/fonts/pt-mono-webfont.woff2') format('woff2'),
+			 url('/fonts/pt-mono-webfont.woff') format('woff'),
+			 url('/fonts/pt-mono-webfont.ttf') format('truetype');
 		font-weight: normal;
 		font-style: normal;
 	}

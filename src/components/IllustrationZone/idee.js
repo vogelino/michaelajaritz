@@ -5,19 +5,19 @@ const Idea = () => (
 	<div>
 		<Parallelepiped
 			size={17}
-			image="/static/images/portraits/transparent/welcomeMain.png"
+			image="/images/portraits/transparent/welcomeMain.png"
 			timeout={100}
 		/>
 		<Parallelepiped
 			placement="toBottom"
 			size={10}
-			image="/static/images/artworks/transparent/makespace.png"
+			image="/images/artworks/transparent/makespace.png"
 			timeout={100}
 		/>
 		<Parallelepiped
 			placement="toBottom"
 			size={13}
-			image="/static/images/artworks/transparent/possible.png"
+			image="/images/artworks/transparent/possible.png"
 			timeout={200}
 			position={[5, 10]}
 		/>

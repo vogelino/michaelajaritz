@@ -17,7 +17,7 @@ Content.contextTypes = { intl: intlShape };
 const ImpressumPage = () => (
 	<Page pageName={pageName}>
 		<MobilePicture
-			src="/static/images/artworks/mobile/paulklee.jpg"
+			src="/images/artworks/mobile/paulklee.jpg"
 			alt="Impressum"
 		/>
 		<Content />

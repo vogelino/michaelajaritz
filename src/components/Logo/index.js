@@ -41,7 +41,7 @@ const Logo = () => (
 	<Link href="/">
 		<LogoLink title="Hauptseite | Michaela Jaritz">
 			<AnimatedInText timeout={0}>
-				<LogoImage src="/static/logo.svg" alt="Site Logo | Michaela Jaritz" />
+				<LogoImage src="/logo.svg" alt="Site Logo | Michaela Jaritz" />
 			</AnimatedInText>
 			<LogoSlogan>
 				<LogoSloganLine>

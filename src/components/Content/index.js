@@ -91,7 +91,7 @@ const Content = ({ children, isMobile, setSidebar, isOpen }) => (isMobile ? (
 	<MobileWrapper>
 		<MobileHeader isOpen={isOpen}>
 			<Link prefetch href="/">
-				<LogoImage src="/static/logo-mobile.svg" />
+				<LogoImage src="/logo-mobile.svg" />
 			</Link>
 			<SidebarToggle>
 				<HamburgerButton

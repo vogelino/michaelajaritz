@@ -5,19 +5,19 @@ const Focus = () => (
 	<div>
 		<Parallelepiped
 			size={14}
-			image="/static/images/artworks/transparent/gallery.png"
+			image="/images/artworks/transparent/gallery.png"
 			timeout={100}
 		/>
 		<Parallelepiped
 			placement="toBottom"
 			size={13}
-			image="/static/images/artworks/transparent/monalisa.png"
+			image="/images/artworks/transparent/monalisa.png"
 			timeout={100}
 		/>
 		<Parallelepiped
 			placement="toBottom"
 			size={10}
-			image="/static/images/artworks/transparent/soapbubbles.png"
+			image="/images/artworks/transparent/soapbubbles.png"
 			timeout={200}
 			position={[6.5, 13]}
 		/>

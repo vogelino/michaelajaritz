@@ -9,7 +9,7 @@ const pageName = 'kooperationen';
 const CooperationsPage = () => (
 	<Page pageName={pageName}>
 		<MobilePicture
-			src="/static/images/artworks/mobile/TheRehearsalOfTheBalletOnstage.jpg"
+			src="/images/artworks/mobile/TheRehearsalOfTheBalletOnstage.jpg"
 			alt="Kooperationen"
 		/>
 		<BigTitle timeout={1100}>
@@ -34,7 +34,7 @@ const CooperationsPage = () => (
 			title="A+M | Marketing, Consulting, Training, Coaching"
 		>
 			<MobilePicture
-				src="/static/logos/aundm.jpg"
+				src="/logos/aundm.jpg"
 				alt="Kooperationen"
 			/>
 		</a>
@@ -45,7 +45,7 @@ const CooperationsPage = () => (
 			title="Symbolon AG"
 		>
 			<MobilePicture
-				src="/static/logos/symbolon.jpg"
+				src="/logos/symbolon.jpg"
 				alt="Kooperationen"
 			/>
 		</a>
@@ -56,7 +56,7 @@ const CooperationsPage = () => (
 			title="Judith Jahn | Marktforschung, Methodenberatung und Evaluation"
 		>
 			<MobilePicture
-				src="/static/logos/judith-jahn.jpg"
+				src="/logos/judith-jahn.jpg"
 				alt="Kooperationen"
 			/>
 		</a>
