@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { HamburgerButton } from 'react-hamburger-button';
 import { setSidebarState } from '../../redux/actions/sidebarActions';
+import { useResponsiveState } from '../../utils/hooks/useResponsiveState';
 
 const ContentWrapper = styled.section`
 	width: 50%;
@@ -87,44 +88,49 @@ const SidebarToggle = styled.span`
 	float: right;
 `;
 
-const Content = ({ children, isMobile, setSidebar, isOpen }) => (isMobile ? (
-	<MobileWrapper>
-		<MobileHeader isOpen={isOpen}>
-			<Link href="/">
-				<LogoImage src="/logo-mobile.svg" />
-			</Link>
-			<SidebarToggle>
-				<HamburgerButton
-					onClick={() => setSidebar(!isOpen)}
-					width={20}
-					height={16}
-					open={isOpen}
-					color="#9AABB3"
-				/>
-			</SidebarToggle>
-		</MobileHeader>
-		{children}
-	</MobileWrapper>
-	) : (
-		<ContentWrapper>
-			<ScrollContainer>
-				<div>{children}</div>
-			</ScrollContainer>
-			<ScrollTopGradientOverlay />
-			<ScrollBottomGradientOverlay />
-		</ContentWrapper>
-	)
-);
+const Content = ({ children, setSidebar, isOpen }) => {
+	const { isMobile } = useResponsiveState();
+
+	if (!isMobile) {
+		return (
+			<ContentWrapper>
+				<ScrollContainer>
+					<div>{children}</div>
+				</ScrollContainer>
+				<ScrollTopGradientOverlay />
+				<ScrollBottomGradientOverlay />
+			</ContentWrapper>
+		);
+	}
+
+	return (
+		<MobileWrapper>
+			<MobileHeader isOpen={isOpen}>
+				<Link href="/">
+					<LogoImage src="/logo-mobile.svg" />
+				</Link>
+				<SidebarToggle>
+					<HamburgerButton
+						onClick={() => setSidebar(!isOpen)}
+						width={20}
+						height={16}
+						open={isOpen}
+						color="#9AABB3"
+					/>
+				</SidebarToggle>
+			</MobileHeader>
+			{children}
+		</MobileWrapper>
+	);
+};
 
 Content.propTypes = {
 	children: PropTypes.any,
-	isMobile: PropTypes.bool.isRequired,
 	isOpen: PropTypes.bool.isRequired,
 	setSidebar: PropTypes.func.isRequired,
 };
 
-const mapStateToProps = ({ ui, isSidebarOpen }) => ({
-	isMobile: ui.windowWidth < 960,
+const mapStateToProps = ({ isSidebarOpen }) => ({
 	isOpen: isSidebarOpen,
 });
 

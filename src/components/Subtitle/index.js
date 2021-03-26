@@ -21,10 +21,16 @@ const Subtitle = styled.h2`
 	}
 `;
 
-const AnimatedSubtitle = (props) => (
-	<Subtitle {...props} >
-		<AnimatedInText timeout={props.timeout} block={props.block}>
-			{props.children}
+const AnimatedSubtitle = ({
+	children,
+	marginTop,
+	marginBottom,
+	block,
+	timeout,
+}) => (
+	<Subtitle marginTop={marginTop} marginBottom={marginBottom} >
+		<AnimatedInText timeout={timeout} block={block}>
+			{children}
 		</AnimatedInText>
 	</Subtitle>
 );
@@ -37,7 +43,11 @@ AnimatedSubtitle.defaultProps = {
 };
 
 AnimatedSubtitle.propTypes = {
-	children: PropTypes.element.isRequired,
+	children: PropTypes.oneOfType([
+		PropTypes.element,
+		PropTypes.arrayOf(PropTypes.element),
+		PropTypes.string,
+	]).isRequired,
 	timeout: PropTypes.number,
 	marginTop: PropTypes.number,
 	marginBottom: PropTypes.number,

@@ -1,17 +1,15 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import theme from '../../theme';
+import { useClientIsReady } from '../../utils/hooks/useClientIsReady';
 
-const getTranslateYByPlacement = ({ placement }) => (
+const getTranslateYByPlacement = (placement) => (
 	placement === 'toTop' ? '' : 'translateY(100%)'
 );
 
-const getRotateByPlacement = ({ clientSideReady, placement }) => (
-	!clientSideReady ?
-		`rotate(${placement === 'toTop' ? '20deg' : '-20deg'})` :
-		'rotate(0)'
+const getRotateByPlacement = (placement) => (
+	`rotate(${placement === 'toTop' ? '20deg' : '-20deg'})`
 );
 
 const getHeightBySize = ({ size }) => size * 20;
@@ -26,15 +24,7 @@ const getPosition = ({ position, size }) => {
 	return `translate(${xPos}px, ${yPos}px)`;
 };
 
-const Container = styled.div.attrs({
-	style: (props) => ({
-		transform: `${getPosition(props)} ${getRotateByPlacement(props)} ${getTranslateYByPlacement(props)}`,
-		transitionDelay: `${props.timeout + 300}ms, ${props.timeout + 300}ms`,
-		opacity: (props.clientSideReady ? 1 : 0),
-		width: `${getWidthBySize(props)}px`,
-		height: `${getHeightBySize(props)}px`,
-	}),
-})`
+const Container = styled.div`
 	display: inline-block;
 	transform-origin: 0 100%;
 	transition-property: transform, opacity;
@@ -51,8 +41,7 @@ const Image = styled.image`
 	left: 0;
 	width: 100%;
 	height: 100%;
-	clip-path: url(#${({ clipPathId }) => clipPathId});
-	${({ color }) => color && `background-color: ${color};`}
+	background-color: ${({ color }) => color || 'unset'};
 	border: 0;
 `;
 
@@ -72,7 +61,6 @@ const ExternalLink = styled.a`
 
 const Parallelepiped = ({
 	timeout,
-	clientSideReady,
 	link,
 	placement,
 	size,
@@ -81,6 +69,7 @@ const Parallelepiped = ({
 	image,
 	className,
 }) => {
+	const isClientReady = useClientIsReady();
 	const clipPathId = `${placement}-${color}-${position.join('-')}-${size}`;
 	const height = getHeightBySize({ size });
 	const width = getWidthBySize({ size });
@@ -112,10 +101,10 @@ const Parallelepiped = ({
 	].join(' ');
 	const content = image ? (
 		<Image
-			clipPathId={clipPathId}
 			xlinkHref={image}
 			width={width}
 			height={height}
+			style={{ clipPath: `url(#${clipPathId})` }}
 		/>
 	) : (
 		<ParallelepipedPath
@@ -126,12 +115,14 @@ const Parallelepiped = ({
 
 	return (
 		<Container
-			placement={placement}
-			position={position}
-			size={size}
-			clientSideReady={clientSideReady}
-			timeout={timeout}
 			className={`parallelepiped parallelepiped-${placement} ${className}`}
+			style={{
+				transform: `${getPosition({ position, size })} ${!isClientReady ? getRotateByPlacement(placement) : 'rotate(0deg)'} ${getTranslateYByPlacement(placement)}`,
+				transitionDelay: `${timeout + 300}ms, ${timeout + 300}ms`,
+				opacity: (isClientReady ? 1 : 0),
+				width: `${width}px`,
+				height: `${height}px`,
+			}}
 		>
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
@@ -175,9 +166,6 @@ Parallelepiped.propTypes = {
 	className: PropTypes.string,
 	timeout: PropTypes.number,
 	link: PropTypes.string,
-	clientSideReady: PropTypes.bool.isRequired,
 };
 
-const mapStateToProps = ({ ui: { clientSideReady } }) => ({ clientSideReady });
-
-export default connect(mapStateToProps)(Parallelepiped);
+export default Parallelepiped;

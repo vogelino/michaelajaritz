@@ -11,11 +11,7 @@ const IconLink = styled.a`
 	display: inline-block;
 `;
 
-const Icon = styled.span.attrs({
-	style: ({ iconPath }) => ({
-		backgroundImage: `url("${iconPath}")`,
-	}),
-})`
+const Icon = styled.span`
 	width: 24px;
 	height: 24px;
 	margin-right: 16px;
@@ -40,7 +36,7 @@ const SocialIconList = ({ startTimeout }) => (
 			title="Facebook Seite von Michaela Jaritz"
 		>
 			<AnimatedInText timeout={startTimeout}>
-				<span><Icon iconPath="/facebook.svg" /></span>
+				<span><Icon style={({ backgroundImage: 'url("/facebook.svg")' })} /></span>
 			</AnimatedInText>
 		</IconLink>
 		<IconLink
@@ -50,7 +46,7 @@ const SocialIconList = ({ startTimeout }) => (
 			title="Xing Profil von Michaela Jaritz"
 		>
 			<AnimatedInText timeout={startTimeout + 200}>
-				<span><Icon iconPath="/xing.svg" /></span>
+				<span><Icon style={({ backgroundImage: 'url("/xing.svg")' })} /></span>
 			</AnimatedInText>
 		</IconLink>
 		<IconLink
@@ -60,7 +56,7 @@ const SocialIconList = ({ startTimeout }) => (
 			title="Twitter Account von Michaela Jaritz"
 		>
 			<AnimatedInText timeout={startTimeout + 300}>
-				<span><Icon iconPath="/twitter.svg" /></span>
+				<span><Icon style={({ backgroundImage: 'url("/twitter.svg")' })} /></span>
 			</AnimatedInText>
 		</IconLink>
 		<IconLink
@@ -70,7 +66,7 @@ const SocialIconList = ({ startTimeout }) => (
 			title="LinkedIn Profil von Michaela Jaritz"
 		>
 			<AnimatedInText timeout={startTimeout + 400}>
-				<span><Icon iconPath="/linkedin.svg" /></span>
+				<span><Icon style={({ backgroundImage: 'url("/linkedin.svg")' })} /></span>
 			</AnimatedInText>
 		</IconLink>
 	</IconsWrapper>

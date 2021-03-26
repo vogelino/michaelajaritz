@@ -4,7 +4,6 @@ import { Provider } from 'react-redux';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import HtmlHead from '../../components/HtmlHead';
 import configureStore from '../../redux/store/configureStore';
-import CoreLayout from '../CoreLayout';
 import Sidebar from '../../components/Sidebar';
 import IllustrationZone from '../../components/IllustrationZone';
 import Content from '../../components/Content';
@@ -59,15 +58,13 @@ const GlobalStyles = createGlobalStyle`
 const Page = ({ children, pageName }) => (
 	<Provider store={configureStore()}>
 		<ThemeProvider theme={theme}>
-			<CoreLayout>
-				<GlobalStyles />
-				<HtmlHead pageName={pageName} />
-				<IllustrationZone pageName={pageName} />
-				<Sidebar pageName={pageName} />
-				<Content>
-					{children}
-				</Content>
-			</CoreLayout>
+			<GlobalStyles />
+			<HtmlHead pageName={pageName} />
+			<IllustrationZone pageName={pageName} />
+			<Sidebar pageName={pageName} />
+			<Content>
+				{children}
+			</Content>
 		</ThemeProvider>
 	</Provider>
 );

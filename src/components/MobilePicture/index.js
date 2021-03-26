@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { connect } from 'react-redux';
 import Parallelepiped from '../Parallelepiped';
+import { useResponsiveState } from '../../utils/hooks/useResponsiveState';
 
 const MobilePictureWrapper = styled.section`
 	position: relative;
@@ -40,57 +40,54 @@ const MobilePictureElement = styled.img`
 	float: left;
 `;
 
-const MobilePicture = (props) => (!props.isMobile ? null : (
-	<MobilePictureWrapper>
-		<MobilePictureElement {...props} />
-		<Parallelepiped
-			size={13}
-			position={[-15, 12]}
-			timeout={200}
-			color="blue"
-		/>
-		<Parallelepiped
-			size={2}
-			position={[0, 2]}
-			timeout={300}
-		/>
-		<Parallelepiped
-			size={1}
-			position={[3, -1]}
-			timeout={400}
-			color="blue"
-		/>
-		<Parallelepiped
-			size={6}
-			position={[-6, 6]}
-			timeout={500}
-			color="orange"
-		/>
-		<Parallelepiped
-			size={30}
-			position={[13, 30]}
-			color="white"
-			className="big-right-parallelepiped"
-		/>
-	</MobilePictureWrapper>
-));
+const MobilePicture = (props) => {
+	const { isMobile } = useResponsiveState();
+
+	if (!isMobile) return null;
+
+	return (
+		<MobilePictureWrapper>
+			<MobilePictureElement src={props.src} alt={props.alt} />
+			<Parallelepiped
+				size={13}
+				position={[-15, 12]}
+				timeout={200}
+				color="blue"
+			/>
+			<Parallelepiped
+				size={2}
+				position={[0, 2]}
+				timeout={300}
+			/>
+			<Parallelepiped
+				size={1}
+				position={[3, -1]}
+				timeout={400}
+				color="blue"
+			/>
+			<Parallelepiped
+				size={6}
+				position={[-6, 6]}
+				timeout={500}
+				color="orange"
+			/>
+			<Parallelepiped
+				size={30}
+				position={[13, 30]}
+				color="white"
+				className="big-right-parallelepiped"
+			/>
+		</MobilePictureWrapper>
+	);
+};
 
 MobilePicture.defaultProps = {
-	isMobile: false,
 	timeout: 100,
 };
 
 MobilePicture.propTypes = {
 	src: PropTypes.string.isRequired,
 	alt: PropTypes.string.isRequired,
-	timeout: PropTypes.number,
-	isMobile: PropTypes.bool,
-	clientSideReady: PropTypes.bool.isRequired,
 };
 
-const mapStateToProps = ({ ui: { windowWidth, clientSideReady } }) => ({
-	isMobile: windowWidth < 960,
-	clientSideReady,
-});
-
-export default connect(mapStateToProps)(MobilePicture);
+export default MobilePicture;

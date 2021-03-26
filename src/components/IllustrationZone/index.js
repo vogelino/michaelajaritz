@@ -1,4 +1,3 @@
-import { connect } from 'react-redux';
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
@@ -10,6 +9,7 @@ import idee from './idee';
 import angebot from './angebot';
 import kontakt from './kontakt';
 import impressum from './impressum';
+import { useResponsiveState } from '../../utils/hooks/useResponsiveState';
 
 const components = {
 	'ueber-mich': ueberMich,
@@ -42,14 +42,15 @@ const IllustrationZoneContent = styled.div`
 	height: 200%;
 	overflow: hidden;
 	transform-origin: 0 50%;
-	transform: translateY(-25%) scale(${({ scale }) => scale});
+	transform: translateY(-25%) scale(${({ scale }) => scale || 1});
 `;
 
-const IllustrationZone = ({ pageName, scale }) => {
+const IllustrationZone = ({ pageName }) => {
+	const { illustrationSclale } = useResponsiveState();
 	const Component = components[pageName] || (() => null);
 	return (
 		<IllustrationZoneWrapper>
-			<IllustrationZoneContent scale={scale}>
+			<IllustrationZoneContent scale={illustrationSclale}>
 				<Component />
 			</IllustrationZoneContent>
 		</IllustrationZoneWrapper>
@@ -58,12 +59,7 @@ const IllustrationZone = ({ pageName, scale }) => {
 
 IllustrationZone.propTypes = {
 	pageName: PropTypes.string,
-	scale: PropTypes.number.isRequired,
 };
 
-const mapStateToProps = ({ ui: { windowWidth } }) => ({
-	scale: windowWidth < 960 ? 0.8 : windowWidth / 1600,
-});
-
-export default connect(mapStateToProps)(IllustrationZone);
+export default IllustrationZone;
 

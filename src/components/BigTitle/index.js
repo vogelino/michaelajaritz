@@ -1,7 +1,7 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { useClientIsReady } from '../../utils/hooks/useClientIsReady';
 
 const BigTitleLineContent = styled.span`
 	display: inline-block;
@@ -71,15 +71,23 @@ const BigTitleWrapper = styled.h1`
 	}
 `;
 
-const BigTitle = (props) => (
-	<BigTitleWrapper {...props} className={props.clientSideReady && 'ready'}>
-		<BigTitleLine {...props}>
-			<BigTitleLineContent {...props}>
-				{props.children}
-			</BigTitleLineContent>
-		</BigTitleLine>
-	</BigTitleWrapper>
-);
+const BigTitle = (props) => {
+	const clientIsReady = useClientIsReady();
+	return (
+		<BigTitleWrapper
+			className={clientIsReady && 'ready'}
+			timeout={props.timeout}
+			marginTop={props.marginTop}
+			marginBottom={props.marginBottom}
+		>
+			<BigTitleLine>
+				<BigTitleLineContent color={props.color}>
+					{props.children}
+				</BigTitleLineContent>
+			</BigTitleLine>
+		</BigTitleWrapper>
+	);
+};
 
 BigTitle.defaultProps = {
 	timeout: 15,
@@ -99,10 +107,6 @@ BigTitle.propTypes = {
 	timeout: PropTypes.number,
 	marginTop: PropTypes.number,
 	marginBottom: PropTypes.number,
-	clientSideReady: PropTypes.bool.isRequired,
 };
 
-const mapStateToProps = ({ ui: { clientSideReady } }) => ({ clientSideReady });
-
-export default connect(mapStateToProps)(BigTitle);
-
+export default BigTitle;

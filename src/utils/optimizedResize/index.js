@@ -28,7 +28,7 @@ const optimizedResize = () => {
 
 	return {
 		add: (callback) => {
-			if (!callbacks.length) {
+			if (!callbacks.length && typeof window !== 'undefined') {
 				window.addEventListener('resize', resize);
 			}
 			addCallback(callback);

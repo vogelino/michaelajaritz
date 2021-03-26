@@ -6,12 +6,7 @@ import Menu from '../Menu';
 import Logo from '../Logo';
 import Footer from '../Footer';
 
-const SidebarWrapper = styled.aside.attrs({
-	style: ({ isSidebarOpen }) => (isSidebarOpen ? {} : {
-		transform: 'translateX(-100%)',
-		opacity: 0,
-	}),
-})`
+const SidebarWrapper = styled.aside`
 	top: 0;
 	left: 0;
 	width: 280px;
@@ -75,7 +70,11 @@ const FooterZone = styled.footer`
 `;
 
 const Sidebar = ({ isSidebarOpen, pageName }) => (
-	<SidebarWrapper isSidebarOpen={isSidebarOpen}>
+	<SidebarWrapper style={(isSidebarOpen ? {} : {
+		transform: 'translateX(-100%)',
+		opacity: 0,
+	})}
+	>
 		<LogoZone>
 			<Logo />
 		</LogoZone>
