@@ -90,7 +90,7 @@ const SidebarToggle = styled.span`
 const Content = ({ children, isMobile, setSidebar, isOpen }) => (isMobile ? (
 	<MobileWrapper>
 		<MobileHeader isOpen={isOpen}>
-			<Link prefetch href="/">
+			<Link href="/">
 				<LogoImage src="/logo-mobile.svg" />
 			</Link>
 			<SidebarToggle>

@@ -46,7 +46,7 @@ const Menu = ({ pageName }, { intl: { formatMessage } }) => (
 	<MenuList>
 		{pages.map((page, index) => (
 			<MenuListItem key={page.name} active={pageName === page.name}>
-				<Link prefetch href={page.path}>
+				<Link href={page.path}>
 					<a title={`Michaela Jaritz | ${formatMessage({ id: `pages.${page.name}.title` })}`}>
 						<AnimatedInText timeout={(index * 100) + 400}>
 							<FormattedMessage id={`pages.${page.name}.title`} />
