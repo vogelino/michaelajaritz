@@ -1,18 +1,18 @@
 import React from 'react';
 import Head from 'next/head';
 import PropTypes from 'prop-types';
-import { intlShape } from 'react-intl';
+import { getText } from '../../texts/getText';
 
-export const HtmlHeadComponent = ({ pageName, children }, { intl }) => (
+export const HtmlHeadComponent = ({ pageName, children }) => (
 	<Head>
 		<title>
-			{intl.formatMessage({ id: `pages.${pageName}.title` })}
-			{intl.formatMessage({ id: 'site.title' })}
+			{getText(`pages.${pageName}.title`)}
+			{getText('site.description')}
 		</title>
 
 		<meta charSet="utf-8" />
 		<meta name="viewport" content="initial-scale=1.0, width=device-width" />
-		<meta name="description" content={intl.formatMessage({ id: 'site.description' })} />
+		<meta name="description" content={getText('site.description')} />
 		<meta name="revisit-after" content="30 days" />
 		<meta name="distribution" content="web" />
 		<meta name="robots" content="index, follow" />
@@ -34,15 +34,15 @@ export const HtmlHeadComponent = ({ pageName, children }, { intl }) => (
 
 		<meta property="og:url" content="http://www.michaela-jaritz.de" />
 		<meta property="og:type" content="website" />
-		<meta property="og:title" content={intl.formatMessage({ id: `pages.${pageName}.title` })} />
-		<meta property="og:description" content={intl.formatMessage({ id: 'site.description' })} />
+		<meta property="og:title" content={getText(`pages.${pageName}.title`)} />
+		<meta property="og:description" content={getText('site.description')} />
 		<meta property="og:image" content="/images/portraits/michaela-portrait.jpg" />
 
 		<meta name="twitter:site" content="@MichaelaJaritz" />
 		<meta name="twitter:creator" content="@soyvogelino" />
 		<meta name="twitter:image" content="/images/portraits/michaela-portrait.jpg" />
-		<meta name="twitter:title" content={intl.formatMessage({ id: `pages.${pageName}.title` })} />
-		<meta name="twitter:description" content={intl.formatMessage({ id: 'site.description' })} />
+		<meta name="twitter:title" content={getText(`pages.${pageName}.title`)} />
+		<meta name="twitter:description" content={getText('site.description')} />
 
 		{children}
 	</Head>
@@ -50,10 +50,6 @@ export const HtmlHeadComponent = ({ pageName, children }, { intl }) => (
 
 HtmlHeadComponent.defaultProps = {
 	chilren: null,
-};
-
-HtmlHeadComponent.contextTypes = {
-	intl: intlShape.isRequired,
 };
 
 HtmlHeadComponent.propTypes = {

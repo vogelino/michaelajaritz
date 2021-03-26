@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Link from 'next/link';
-import { FormattedMessage, intlShape } from 'react-intl';
 import AnimatedInText from '../AnimatedInText';
 import pages from '../../constants/pages';
+import { getText } from '../../texts/getText';
 
 const MenuListItem = styled.li`
 	margin: 0;
@@ -42,14 +42,14 @@ const MenuList = styled.ul`
 	list-style: none;
 `;
 
-const Menu = ({ pageName }, { intl: { formatMessage } }) => (
+const Menu = ({ pageName }) => (
 	<MenuList>
 		{pages.map((page, index) => (
 			<MenuListItem key={page.name} active={pageName === page.name}>
 				<Link href={page.path}>
-					<a title={`Michaela Jaritz | ${formatMessage({ id: `pages.${page.name}.title` })}`}>
+					<a title={`Michaela Jaritz | ${getText(`pages.${pageName}.title`)}`}>
 						<AnimatedInText timeout={(index * 100) + 400}>
-							<FormattedMessage id={`pages.${page.name}.title`} />
+							{getText(`pages.${page.name}.title`)}
 						</AnimatedInText>
 					</a>
 				</Link>
@@ -57,10 +57,6 @@ const Menu = ({ pageName }, { intl: { formatMessage } }) => (
 		))}
 	</MenuList>
 );
-
-Menu.contextTypes = {
-	intl: intlShape,
-};
 
 Menu.propTypes = {
 	pageName: PropTypes.string.isRequired,

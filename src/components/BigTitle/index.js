@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { FormattedMessage, FormattedHTMLMessage } from 'react-intl';
 
 const BigTitleLineContent = styled.span`
 	display: inline-block;
@@ -90,8 +89,6 @@ BigTitle.defaultProps = {
 };
 
 const messageType = PropTypes.oneOfType([
-	PropTypes.instanceOf(FormattedMessage),
-	PropTypes.instanceOf(FormattedHTMLMessage),
 	PropTypes.element,
 	PropTypes.string,
 ]).isRequired;

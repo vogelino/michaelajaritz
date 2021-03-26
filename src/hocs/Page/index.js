@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
 import { injectGlobal, ThemeProvider } from 'styled-components';
 import HtmlHead from '../../components/HtmlHead';
-import TextsProvider from '../../texts';
 import configureStore from '../../redux/store/configureStore';
 import CoreLayout from '../CoreLayout';
 import Sidebar from '../../components/Sidebar';
@@ -62,16 +61,14 @@ injectGlobal`
 const Page = ({ children, pageName }) => (
 	<Provider store={configureStore()}>
 		<ThemeProvider theme={theme}>
-			<TextsProvider>
-				<CoreLayout>
-					<HtmlHead pageName={pageName} />
-					<IllustrationZone pageName={pageName} />
-					<Sidebar pageName={pageName} />
-					<Content>
-						{children}
-					</Content>
-				</CoreLayout>
-			</TextsProvider>
+			<CoreLayout>
+				<HtmlHead pageName={pageName} />
+				<IllustrationZone pageName={pageName} />
+				<Sidebar pageName={pageName} />
+				<Content>
+					{children}
+				</Content>
+			</CoreLayout>
 		</ThemeProvider>
 	</Provider>
 );

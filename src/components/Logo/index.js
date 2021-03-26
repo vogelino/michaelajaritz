@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import Link from 'next/link';
-import { FormattedMessage } from 'react-intl';
 import AnimatedInText from '../AnimatedInText';
+import { getText } from '../../texts/getText';
 
 const LogoImage = styled.img`
 	width: 100%;
@@ -46,17 +46,17 @@ const Logo = () => (
 			<LogoSlogan>
 				<LogoSloganLine>
 					<AnimatedInText timeout={100}>
-						<FormattedMessage id="site.slogan.line1" />
+						{getText('site.slogan.line1')}
 					</AnimatedInText>
 				</LogoSloganLine>
 				<LogoSloganLine>
 					<AnimatedInText timeout={200}>
-						<FormattedMessage id="site.slogan.line2" />
+						{getText('site.slogan.line2')}
 					</AnimatedInText>
 				</LogoSloganLine>
 				<LogoSloganLine>
 					<AnimatedInText timeout={300}>
-						<FormattedMessage id="site.slogan.line3" />
+						{getText('site.slogan.line3')}
 					</AnimatedInText>
 				</LogoSloganLine>
 			</LogoSlogan>

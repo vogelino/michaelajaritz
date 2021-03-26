@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
@@ -6,7 +6,6 @@ import {
 	Accordion as ASAccordion,
 	AccordionItem as ASAccordionItem,
 } from 'react-sanfona';
-import { FormattedMessage, FormattedHTMLMessage } from 'react-intl';
 import Paragraph from '../Paragraph';
 
 const Accordion = styled(ASAccordion)`
@@ -92,8 +91,6 @@ AccordionWrapper.defaultProps = {
 };
 
 const messageType = PropTypes.oneOfType([
-	PropTypes.instanceOf(FormattedMessage),
-	PropTypes.instanceOf(FormattedHTMLMessage),
 	PropTypes.element,
 	PropTypes.string,
 ]).isRequired;

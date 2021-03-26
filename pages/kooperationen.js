@@ -1,9 +1,9 @@
 import React from 'react';
-import { FormattedHTMLMessage } from 'react-intl';
 import Page from '../src/hocs/Page';
 import BigTitle from '../src/components/BigTitle';
 import Paragraph from '../src/components/Paragraph';
 import MobilePicture from '../src/components/MobilePicture';
+import { getText } from '../src/texts/getText';
 
 const pageName = 'kooperationen';
 const CooperationsPage = () => (
@@ -13,20 +13,20 @@ const CooperationsPage = () => (
 			alt="Kooperationen"
 		/>
 		<BigTitle timeout={1100}>
-			<FormattedHTMLMessage id={`pages.${pageName}.content.title`} />
+			{getText(`pages.${pageName}.content.title`)}
 		</BigTitle>
 		<Paragraph timeout={1200}>
-			<FormattedHTMLMessage id={`pages.${pageName}.content.text`} />
+			{getText(`pages.${pageName}.content.text`)}
 		</Paragraph>
 		<Paragraph timeout={1300}>
-			<FormattedHTMLMessage id={`pages.${pageName}.content.list`} />
+			{getText(`pages.${pageName}.content.list`)}
 		</Paragraph>
 		<Paragraph timeout={1400}>
-			<FormattedHTMLMessage id={`pages.${pageName}.content.thanks`} />
+			{getText(`pages.${pageName}.content.thanks`)}
 		</Paragraph>
-		<br/>
-		<br/>
-		<br/>
+		<br />
+		<br />
+		<br />
 		<a
 			href="http://a-u-m.biz/"
 			target="_blank"
