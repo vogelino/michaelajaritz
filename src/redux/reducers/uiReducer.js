@@ -6,10 +6,12 @@ export const uiInitialState = {
 	clientSideReady: false,
 };
 
-export default (state = uiInitialState, action = {}) => {
+const uiReducer = (state = uiInitialState, action = {}) => {
 	switch (action.type) {
 	case types.WINDOW_RESIZED: return { ...state, ...action.payload };
 	case types.CLIENT_SIDE_IS_READY: return { ...state, clientSideReady: action.payload };
 	default: return state;
 	}
 };
+
+export default uiReducer;

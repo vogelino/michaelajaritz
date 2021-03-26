@@ -1,4 +1,4 @@
-export default () => {
+const optimizedResize = () => {
 	const callbacks = [];
 	let running = false;
 
@@ -36,3 +36,5 @@ export default () => {
 		getCallbacks: () => callbacks,
 	};
 };
+
+export default optimizedResize;
