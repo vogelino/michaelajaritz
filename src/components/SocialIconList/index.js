@@ -30,30 +30,6 @@ const Icon = styled.span`
 const SocialIconList = ({ startTimeout }) => (
 	<IconsWrapper>
 		<IconLink
-			href="https://www.facebook.com/michaela.jaritz.77"
-			target="_blank"
-			rel="noopener noreferrer"
-			title="Facebook Seite von Michaela Jaritz"
-		>
-			<AnimatedInText timeout={startTimeout}>
-				<span>
-					<Icon style={{ backgroundImage: 'url("/facebook.svg")' }} />
-				</span>
-			</AnimatedInText>
-		</IconLink>
-		<IconLink
-			href="https://www.xing.com/profile/Michaela_Jaritz/"
-			target="_blank"
-			rel="noopener noreferrer"
-			title="Xing Profil von Michaela Jaritz"
-		>
-			<AnimatedInText timeout={startTimeout + 200}>
-				<span>
-					<Icon style={{ backgroundImage: 'url("/xing.svg")' }} />
-				</span>
-			</AnimatedInText>
-		</IconLink>
-		<IconLink
 			href="https://twitter.com/MichaelaJaritz"
 			target="_blank"
 			rel="noopener noreferrer"
