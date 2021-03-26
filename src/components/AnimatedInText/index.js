@@ -1,7 +1,7 @@
-import React from 'react';
-import styled from 'styled-components';
-import PropTypes from 'prop-types';
-import { useClientIsReady } from '../../utils/hooks/useClientIsReady';
+import React from 'react'
+import styled from 'styled-components'
+import PropTypes from 'prop-types'
+import { useClientIsReady } from '../../utils/hooks/useClientIsReady'
 
 const AnimatedInSpan = styled.span`
 	& > * {
@@ -11,23 +11,22 @@ const AnimatedInSpan = styled.span`
 		transition-delay: ${({ timeout }) => timeout}ms, ${({ timeout }) => timeout}ms;
 		transition-property: opacity, transform;
 		transition-duration: 6000ms, 400ms;
-		transition-timing-function: cubic-bezier(0,1,.37,.98), cubic-bezier(0,1,.37,.98);
+		transition-timing-function: cubic-bezier(0, 1, 0.37, 0.98), cubic-bezier(0, 1, 0.37, 0.98);
 	}
-`;
+`
 
 const AnimatedInText = ({ children, ...props }) => {
-	const clientIsReady = useClientIsReady();
+	const clientIsReady = useClientIsReady()
 
 	return (
 		<AnimatedInSpan {...props} clientIsReady={clientIsReady}>
-			{typeof children === 'string' ? (<span>{children}</span>) : children}
+			{typeof children === 'string' ? <span>{children}</span> : children}
 		</AnimatedInSpan>
-	);
-};
+	)
+}
 
 AnimatedInText.propTypes = {
 	children: PropTypes.element.isRequired,
-};
+}
 
-export default AnimatedInText;
-
+export default AnimatedInText

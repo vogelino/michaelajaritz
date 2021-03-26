@@ -1,13 +1,13 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Provider } from 'react-redux';
-import { createGlobalStyle, ThemeProvider } from 'styled-components';
-import HtmlHead from '../../components/HtmlHead';
-import configureStore from '../../redux/store/configureStore';
-import Sidebar from '../../components/Sidebar';
-import IllustrationZone from '../../components/IllustrationZone';
-import Content from '../../components/Content';
-import theme from '../../theme';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Provider } from 'react-redux'
+import { createGlobalStyle, ThemeProvider } from 'styled-components'
+import HtmlHead from '../../components/HtmlHead'
+import configureStore from '../../redux/store/configureStore'
+import Sidebar from '../../components/Sidebar'
+import IllustrationZone from '../../components/IllustrationZone'
+import Content from '../../components/Content'
+import theme from '../../theme'
 
 const GlobalStyles = createGlobalStyle`
 	body { margin: 0; }
@@ -53,7 +53,7 @@ const GlobalStyles = createGlobalStyle`
 		font-weight: normal;
 		font-style: normal;
 	}
-`;
+`
 
 const Page = ({ children, pageName }) => (
 	<Provider store={configureStore()}>
@@ -62,16 +62,14 @@ const Page = ({ children, pageName }) => (
 			<HtmlHead pageName={pageName} />
 			<IllustrationZone pageName={pageName} />
 			<Sidebar pageName={pageName} />
-			<Content>
-				{children}
-			</Content>
+			<Content>{children}</Content>
 		</ThemeProvider>
 	</Provider>
-);
+)
 
 Page.propTypes = {
 	children: PropTypes.any.isRequired,
 	pageName: PropTypes.string.isRequired,
-};
+}
 
-export default Page;
+export default Page

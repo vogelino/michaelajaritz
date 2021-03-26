@@ -1,39 +1,35 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import styled from 'styled-components';
-import theme from '../../theme';
-import { useClientIsReady } from '../../utils/hooks/useClientIsReady';
+import React from 'react'
+import PropTypes from 'prop-types'
+import styled from 'styled-components'
+import theme from '../../theme'
+import { useClientIsReady } from '../../utils/hooks/useClientIsReady'
 
-const getTranslateYByPlacement = (placement) => (
-	placement === 'toTop' ? '' : 'translateY(100%)'
-);
+const getTranslateYByPlacement = (placement) => (placement === 'toTop' ? '' : 'translateY(100%)')
 
-const getRotateByPlacement = (placement) => (
-	`rotate(${placement === 'toTop' ? '20deg' : '-20deg'})`
-);
+const getRotateByPlacement = (placement) => `rotate(${placement === 'toTop' ? '20deg' : '-20deg'})`
 
-const getHeightBySize = ({ size }) => size * 20;
-const getWidthBySize = ({ size }) => size * 35;
+const getHeightBySize = ({ size }) => size * 20
+const getWidthBySize = ({ size }) => size * 35
 
 const getPosition = ({ position, size }) => {
-	const [x, y] = position;
-	const xFullWidth = getWidthBySize({ size: x });
-	const yFullHeight = getHeightBySize({ size: y });
-	const xPos = xFullWidth - (xFullWidth / 3);
-	const yPos = yFullHeight - getHeightBySize({ size });
-	return `translate(${xPos}px, ${yPos}px)`;
-};
+	const [x, y] = position
+	const xFullWidth = getWidthBySize({ size: x })
+	const yFullHeight = getHeightBySize({ size: y })
+	const xPos = xFullWidth - xFullWidth / 3
+	const yPos = yFullHeight - getHeightBySize({ size })
+	return `translate(${xPos}px, ${yPos}px)`
+}
 
 const Container = styled.div`
 	display: inline-block;
 	transform-origin: 0 100%;
 	transition-property: transform, opacity;
 	transition-duration: 800ms, 1000ms;
-	transition-timing-function: cubic-bezier(0,1,.37,.98), cubic-bezier(0,1,.37,.98);
+	transition-timing-function: cubic-bezier(0, 1, 0.37, 0.98), cubic-bezier(0, 1, 0.37, 0.98);
 	position: absolute;
 	top: 50%;
 	left: 0;
-`;
+`
 
 const Image = styled.image`
 	position: absolute;
@@ -43,38 +39,29 @@ const Image = styled.image`
 	height: 100%;
 	background-color: ${({ color }) => color || 'unset'};
 	border: 0;
-`;
+`
 
 const ParallelepipedPath = styled.path`
-	transition: fill 400ms cubic-bezier(0,1,.37,.98);
-`;
+	transition: fill 400ms cubic-bezier(0, 1, 0.37, 0.98);
+`
 
 const ExternalLink = styled.a`
 	cursor: pointer;
 	opacity: 1;
-	transition: opacity 800ms cubic-bezier(0,1,.37,.98);
+	transition: opacity 800ms cubic-bezier(0, 1, 0.37, 0.98);
 
 	&:hover {
-		opacity: .8;
+		opacity: 0.8;
 	}
-`;
+`
 
-const Parallelepiped = ({
-	timeout,
-	link,
-	placement,
-	size,
-	position,
-	color,
-	image,
-	className,
-}) => {
-	const isClientReady = useClientIsReady();
-	const clipPathId = `${placement}-${color}-${position.join('-')}-${size}`;
-	const height = getHeightBySize({ size });
-	const width = getWidthBySize({ size });
-	const thirdWidth = (width / 100) * 33.3337;
-	const twoThirdWidth = (width / 100) * 66.6667;
+const Parallelepiped = ({ timeout, link, placement, size, position, color, image, className }) => {
+	const isClientReady = useClientIsReady()
+	const clipPathId = `${placement}-${color}-${position.join('-')}-${size}`
+	const height = getHeightBySize({ size })
+	const width = getWidthBySize({ size })
+	const thirdWidth = (width / 100) * 33.3337
+	const twoThirdWidth = (width / 100) * 66.6667
 	const pathToTop = [
 		`M${thirdWidth}`,
 		0,
@@ -86,7 +73,7 @@ const Parallelepiped = ({
 		0,
 		thirdWidth,
 		'0z',
-	].join(' ');
+	].join(' ')
 	const pathToBottom = [
 		'M0',
 		'0',
@@ -98,7 +85,7 @@ const Parallelepiped = ({
 		0,
 		thirdWidth,
 		'0z',
-	].join(' ');
+	].join(' ')
 	const content = image ? (
 		<Image
 			xlinkHref={image}
@@ -111,24 +98,22 @@ const Parallelepiped = ({
 			d={placement === 'toBottom' ? pathToBottom : pathToTop}
 			fill={theme[color]}
 		/>
-	);
+	)
 
 	return (
 		<Container
 			className={`parallelepiped parallelepiped-${placement} ${className}`}
 			style={{
-				transform: `${getPosition({ position, size })} ${!isClientReady ? getRotateByPlacement(placement) : 'rotate(0deg)'} ${getTranslateYByPlacement(placement)}`,
+				transform: `${getPosition({ position, size })} ${
+					!isClientReady ? getRotateByPlacement(placement) : 'rotate(0deg)'
+				} ${getTranslateYByPlacement(placement)}`,
 				transitionDelay: `${timeout + 300}ms, ${timeout + 300}ms`,
-				opacity: (isClientReady ? 1 : 0),
+				opacity: isClientReady ? 1 : 0,
 				width: `${width}px`,
 				height: `${height}px`,
 			}}
 		>
-			<svg
-				xmlns="http://www.w3.org/2000/svg"
-				viewBox={`0 0 ${width} ${height}`}
-				version="1.1"
-			>
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox={`0 0 ${width} ${height}`} version="1.1">
 				{image && (
 					<defs>
 						<clipPath id={clipPathId}>
@@ -140,11 +125,13 @@ const Parallelepiped = ({
 					<ExternalLink href={link} target="_blank" rel="noopener noreferrer">
 						{content}
 					</ExternalLink>
-				) : content}
+				) : (
+					content
+				)}
 			</svg>
 		</Container>
-	);
-};
+	)
+}
 
 Parallelepiped.defaultProps = {
 	placement: 'toTop',
@@ -155,7 +142,7 @@ Parallelepiped.defaultProps = {
 	timeout: 10,
 	link: undefined,
 	className: '',
-};
+}
 
 Parallelepiped.propTypes = {
 	placement: PropTypes.oneOf(['toTop', 'toBottom']),
@@ -166,6 +153,6 @@ Parallelepiped.propTypes = {
 	className: PropTypes.string,
 	timeout: PropTypes.number,
 	link: PropTypes.string,
-};
+}
 
-export default Parallelepiped;
+export default Parallelepiped

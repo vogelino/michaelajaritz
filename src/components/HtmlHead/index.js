@@ -1,7 +1,7 @@
-import React from 'react';
-import Head from 'next/head';
-import PropTypes from 'prop-types';
-import { getText } from '../../texts/getText';
+import React from 'react'
+import Head from 'next/head'
+import PropTypes from 'prop-types'
+import { getText } from '../../texts/getText'
 
 export const HtmlHeadComponent = ({ pageName, children }) => (
 	<Head>
@@ -18,9 +18,23 @@ export const HtmlHeadComponent = ({ pageName, children }) => (
 		<meta name="robots" content="index, follow" />
 		<meta httpEquiv="Content-Type" content="text/html; charset=UTF-8" />
 
-		<link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png?v=RyMgLlLMO9" />
-		<link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png?v=RyMgLlLMO9" />
-		<link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png?v=RyMgLlLMO9" />
+		<link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="/favicons/apple-touch-icon.png?v=RyMgLlLMO9"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="/favicons/favicon-32x32.png?v=RyMgLlLMO9"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="/favicons/favicon-16x16.png?v=RyMgLlLMO9"
+		/>
 		<link rel="manifest" href="/favicons/site.webmanifest?v=RyMgLlLMO9" />
 		<link rel="mask-icon" href="/favicons/safari-pinned-tab.svg?v=RyMgLlLMO9" color="#5bbad5" />
 		<link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico?v=RyMgLlLMO9" />
@@ -46,15 +60,15 @@ export const HtmlHeadComponent = ({ pageName, children }) => (
 
 		{children}
 	</Head>
-);
+)
 
 HtmlHeadComponent.defaultProps = {
 	chilren: null,
-};
+}
 
 HtmlHeadComponent.propTypes = {
 	pageName: PropTypes.string.isRequired,
 	children: PropTypes.any,
-};
+}
 
-export default HtmlHeadComponent;
+export default HtmlHeadComponent

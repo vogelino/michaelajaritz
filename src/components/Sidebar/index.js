@@ -1,10 +1,10 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
-import styled from 'styled-components';
-import Menu from '../Menu';
-import Logo from '../Logo';
-import Footer from '../Footer';
+import React from 'react'
+import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
+import styled from 'styled-components'
+import Menu from '../Menu'
+import Logo from '../Logo'
+import Footer from '../Footer'
 
 const SidebarWrapper = styled.aside`
 	top: 0;
@@ -16,7 +16,8 @@ const SidebarWrapper = styled.aside`
 	display: flex;
 	flex-direction: column;
 	z-index: 10;
-	transition: transform 600ms cubic-bezier(0,1,.37,.98), opacity 400ms cubic-bezier(0,1,.37,.98);
+	transition: transform 600ms cubic-bezier(0, 1, 0.37, 0.98),
+		opacity 400ms cubic-bezier(0, 1, 0.37, 0.98);
 	box-sizing: border-box;
 
 	@media screen and (min-width: 321px) {
@@ -33,10 +34,10 @@ const SidebarWrapper = styled.aside`
 		width: 100%;
 		padding: 80px 20px 40px 20px;
 		background: white;
-		box-shadow: 0 -4px 20px -4px rgba(0,0,0,.2);
+		box-shadow: 0 -4px 20px -4px rgba(0, 0, 0, 0.2);
 		transform: translateX(0);
 	}
-`;
+`
 
 const LogoZone = styled.header`
 	width: 212px;
@@ -47,7 +48,7 @@ const LogoZone = styled.header`
 	@media screen and (max-width: 960px) {
 		display: none;
 	}
-`;
+`
 
 const MenuZone = styled.nav`
 	width: 100%;
@@ -62,18 +63,23 @@ const MenuZone = styled.nav`
 		flex-direction: column;
 		justify-content: center;
 	}
-`;
+`
 
 const FooterZone = styled.footer`
 	width: 100%;
 	flex-basis: 56px;
-`;
+`
 
 const Sidebar = ({ isSidebarOpen, pageName }) => (
-	<SidebarWrapper style={(isSidebarOpen ? {} : {
-		transform: 'translateX(-100%)',
-		opacity: 0,
-	})}
+	<SidebarWrapper
+		style={
+			isSidebarOpen
+				? {}
+				: {
+						transform: 'translateX(-100%)',
+						opacity: 0,
+				  }
+		}
 	>
 		<LogoZone>
 			<Logo />
@@ -85,13 +91,13 @@ const Sidebar = ({ isSidebarOpen, pageName }) => (
 			<Footer />
 		</FooterZone>
 	</SidebarWrapper>
-);
+)
 
 Sidebar.propTypes = {
 	pageName: PropTypes.string.isRequired,
 	isSidebarOpen: PropTypes.bool.isRequired,
-};
+}
 
-const mapStateToProps = ({ isSidebarOpen }) => ({ isSidebarOpen });
+const mapStateToProps = ({ isSidebarOpen }) => ({ isSidebarOpen })
 
-export default connect(mapStateToProps)(Sidebar);
+export default connect(mapStateToProps)(Sidebar)

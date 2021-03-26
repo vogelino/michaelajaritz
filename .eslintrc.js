@@ -6,6 +6,7 @@ module.exports = {
 	}, // to enable features such as async/await
 	ignorePatterns: ['node_modules/*', '.vercel/*', 'build/*', '.next/*', '.out/*', '!.prettierrc.js'], // We don't want to lint generated files nor node_modules, but we want to lint .prettierrc.js (ignored by default by eslint)
 	plugins: ['import'],
+	parser: 'babel-eslint',
 	settings: {
 		react: { version: 'detect' },
 	},

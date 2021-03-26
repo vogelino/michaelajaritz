@@ -1,5 +1,5 @@
-import getMessages from './messages';
+import getMessages from './messages'
 
-const texts = getMessages('de-DE');
+const texts = getMessages('de-DE')
 
-export const getText = (key) => texts[key] || '';
+export const getText = (key) => texts[key] || ''

@@ -1,14 +1,14 @@
-import React from 'react';
-import styled from 'styled-components';
-import Link from 'next/link';
-import AnimatedInText from '../AnimatedInText';
-import { getText } from '../../texts/getText';
+import React from 'react'
+import styled from 'styled-components'
+import Link from 'next/link'
+import AnimatedInText from '../AnimatedInText'
+import { getText } from '../../texts/getText'
 
 const LogoImage = styled.img`
 	width: 100%;
 	margin-bottom: 10px;
 	cursor: pointer;
-`;
+`
 
 const LogoLink = styled.a`
 	width: 100%;
@@ -16,16 +16,16 @@ const LogoLink = styled.a`
 	transition: opacity 200ms ease-out;
 
 	&:hover {
-		opacity: .6;
+		opacity: 0.6;
 	}
-`;
+`
 
 const LogoSloganLine = styled.span`
 	width: 100%;
 	margin-bottom: 3px;
 	height: 19px;
 	display: inline-block;
-`;
+`
 
 const LogoSlogan = styled.span`
 	cursor: pointer;
@@ -35,7 +35,7 @@ const LogoSlogan = styled.span`
 	font-weight: ${({ theme }) => theme.sloganFontWeight};
 	font-size: ${({ theme }) => theme.sloganFontSize};
 	display: inline-block;
-`;
+`
 
 const Logo = () => (
 	<Link href="/">
@@ -45,23 +45,17 @@ const Logo = () => (
 			</AnimatedInText>
 			<LogoSlogan>
 				<LogoSloganLine>
-					<AnimatedInText timeout={100}>
-						{getText('site.slogan.line1')}
-					</AnimatedInText>
+					<AnimatedInText timeout={100}>{getText('site.slogan.line1')}</AnimatedInText>
 				</LogoSloganLine>
 				<LogoSloganLine>
-					<AnimatedInText timeout={200}>
-						{getText('site.slogan.line2')}
-					</AnimatedInText>
+					<AnimatedInText timeout={200}>{getText('site.slogan.line2')}</AnimatedInText>
 				</LogoSloganLine>
 				<LogoSloganLine>
-					<AnimatedInText timeout={300}>
-						{getText('site.slogan.line3')}
-					</AnimatedInText>
+					<AnimatedInText timeout={300}>{getText('site.slogan.line3')}</AnimatedInText>
 				</LogoSloganLine>
 			</LogoSlogan>
 		</LogoLink>
 	</Link>
-);
+)
 
-export default Logo;
+export default Logo

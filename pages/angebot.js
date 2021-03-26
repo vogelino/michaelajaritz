@@ -1,13 +1,13 @@
-import React from 'react';
-import Page from '../src/hocs/Page';
-import { getText } from '../src/texts/getText';
-import BigTitle from '../src/components/BigTitle';
-import Subtitle from '../src/components/Subtitle';
-import Paragraph from '../src/components/Paragraph';
-import Accordion from '../src/components/Accordion';
-import MobilePicture from '../src/components/MobilePicture';
+import React from 'react'
+import Page from '../src/hocs/Page'
+import { getText } from '../src/texts/getText'
+import BigTitle from '../src/components/BigTitle'
+import Subtitle from '../src/components/Subtitle'
+import Paragraph from '../src/components/Paragraph'
+import Accordion from '../src/components/Accordion'
+import MobilePicture from '../src/components/MobilePicture'
 
-const pageName = 'angebot';
+const pageName = 'angebot'
 
 const Accordion1 = () => (
 	<Accordion
@@ -24,7 +24,7 @@ const Accordion1 = () => (
 			},
 		]}
 	/>
-);
+)
 
 const Accordion2 = () => (
 	<Accordion
@@ -45,36 +45,24 @@ const Accordion2 = () => (
 			},
 		]}
 	/>
-	);
+)
 
 const OfferPage = () => (
 	<Page pageName={pageName}>
-		<MobilePicture
-			src="/images/artworks/mobile/atelier.jpg"
-			alt="Persönliche Angebot"
-		/>
-		<Subtitle timeout={1000}>
-			{getText(`pages.${pageName}.content.subtitle`)}
-		</Subtitle>
+		<MobilePicture src="/images/artworks/mobile/atelier.jpg" alt="Persönliche Angebot" />
+		<Subtitle timeout={1000}>{getText(`pages.${pageName}.content.subtitle`)}</Subtitle>
 		<BigTitle timeout={1200} color="orange">
 			{getText(`pages.${pageName}.content.titlePersonalOffer`)}
 		</BigTitle>
-		<Paragraph timeout={1300}>
-			{getText(`pages.${pageName}.content.textPersonalOffer`)}
-		</Paragraph>
+		<Paragraph timeout={1300}>{getText(`pages.${pageName}.content.textPersonalOffer`)}</Paragraph>
 		<Accordion1 />
-		<MobilePicture
-			src="/images/artworks/mobile/renoir.jpg"
-			alt="Team Angebot"
-		/>
+		<MobilePicture src="/images/artworks/mobile/renoir.jpg" alt="Team Angebot" />
 		<BigTitle timeout={1800} color="blue">
 			{getText(`pages.${pageName}.content.titleTeamOffer`)}
 		</BigTitle>
-		<Paragraph timeout={1900}>
-			{getText(`pages.${pageName}.content.textTeamOffer`)}
-		</Paragraph>
+		<Paragraph timeout={1900}>{getText(`pages.${pageName}.content.textTeamOffer`)}</Paragraph>
 		<Accordion2 />
 	</Page>
-);
+)
 
-export default OfferPage;
+export default OfferPage
