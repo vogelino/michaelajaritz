@@ -1,24 +1,36 @@
-import { connect } from 'react-redux';
-import styled from 'styled-components';
+import React from 'react'
+import styled from 'styled-components'
+import PropTypes from 'prop-types'
+import { useClientIsReady } from '../../utils/hooks/useClientIsReady'
 
-const AnimatedInTextDelayClass = styled.span`
-	& > * {
-		transition-delay: ${({ timeout }) => timeout}ms, ${({ timeout }) => timeout}ms;
-	}
-`;
-
-const AnimatedInText = styled(AnimatedInTextDelayClass)`
+const AnimatedInSpan = styled.span`
 	& > * {
 		display: block;
-		transform: translateY(${({ clientSideReady }) => (clientSideReady ? 0 : '30px')});
-		opacity: ${({ clientSideReady }) => (clientSideReady ? 1 : 0)};
+		transform: translateY(${({ clientIsReady }) => (clientIsReady ? 0 : '30px')});
+		opacity: ${({ clientIsReady }) => (clientIsReady ? 1 : 0)};
+		transition-delay: ${({ timeout }) => timeout}ms, ${({ timeout }) => timeout}ms;
 		transition-property: opacity, transform;
 		transition-duration: 6000ms, 400ms;
-		transition-timing-function: cubic-bezier(0,1,.37,.98), cubic-bezier(0,1,.37,.98);
+		transition-timing-function: cubic-bezier(0, 1, 0.37, 0.98), cubic-bezier(0, 1, 0.37, 0.98);
 	}
-`;
+`
 
-const mapStateToProps = ({ ui: { clientSideReady } }) => ({ clientSideReady });
+const AnimatedInText = ({ children, ...props }) => {
+	const clientIsReady = useClientIsReady()
 
-export default connect(mapStateToProps)(AnimatedInText);
+	return (
+		<AnimatedInSpan {...props} clientIsReady={clientIsReady}>
+			{typeof children === 'string' ? (
+				<span dangerouslySetInnerHTML={{ __html: children }} />
+			) : (
+				children
+			)}
+		</AnimatedInSpan>
+	)
+}
 
+AnimatedInText.propTypes = {
+	children: PropTypes.element.isRequired,
+}
+
+export default AnimatedInText

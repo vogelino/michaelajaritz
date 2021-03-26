@@ -1,38 +1,39 @@
-export default () => {
-	const callbacks = [];
-	let running = false;
+const optimizedResize = () => {
+	const callbacks = []
+	let running = false
 
 	function runCallbacks() {
-		callbacks.forEach((callback) => callback());
+		callbacks.forEach((callback) => callback())
 
-		running = false;
+		running = false
 	}
 
 	function resize() {
 		if (!running) {
-			running = true;
+			running = true
 			if (window.requestAnimationFrame) {
-				window.requestAnimationFrame(runCallbacks);
-			}
-			else {
-				setTimeout(runCallbacks, 66);
+				window.requestAnimationFrame(runCallbacks)
+			} else {
+				setTimeout(runCallbacks, 66)
 			}
 		}
 	}
 
 	function addCallback(callback) {
 		if (callback) {
-			callbacks.push(callback);
+			callbacks.push(callback)
 		}
 	}
 
 	return {
 		add: (callback) => {
-			if (!callbacks.length) {
-				window.addEventListener('resize', resize);
+			if (!callbacks.length && typeof window !== 'undefined') {
+				window.addEventListener('resize', resize)
 			}
-			addCallback(callback);
+			addCallback(callback)
 		},
 		getCallbacks: () => callbacks,
-	};
-};
+	}
+}
+
+export default optimizedResize

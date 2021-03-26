@@ -1,8 +1,7 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
-import styled from 'styled-components';
-import { FormattedMessage, FormattedHTMLMessage } from 'react-intl';
+import React from 'react'
+import PropTypes from 'prop-types'
+import styled from 'styled-components'
+import { useClientIsReady } from '../../utils/hooks/useClientIsReady'
 
 const BigTitleLineContent = styled.span`
 	display: inline-block;
@@ -31,7 +30,7 @@ const BigTitleLineContent = styled.span`
 			bottom: -2px;
 		}
 	}
-`;
+`
 
 const BigTitleLine = styled.span`
 	font-family: ${({ theme }) => theme.titleFontFamily};
@@ -46,7 +45,7 @@ const BigTitleLine = styled.span`
 	@media screen and (max-width: 540px) {
 		font-size: ${({ theme }) => theme.titleFontSizeMobile};
 	}
-`;
+`
 
 const BigTitleWrapper = styled.h1`
 	padding-top: ${({ marginTop }) => marginTop}px;
@@ -61,40 +60,42 @@ const BigTitleWrapper = styled.h1`
 	&.ready span {
 		opacity: 1;
 		transform: translateY(0);
-		transition: opacity 2000ms cubic-bezier(0,1,.37,.98), transform 400ms cubic-bezier(0,1,.37,.98);
+		transition: opacity 2000ms cubic-bezier(0, 1, 0.37, 0.98),
+			transform 400ms cubic-bezier(0, 1, 0.37, 0.98);
 		transition-delay: ${({ timeout }) => timeout + 100}ms, ${({ timeout }) => timeout + 100}ms;
 	}
 
 	&.ready span > span:after {
 		transform: scaleX(1);
-		transition: transform 600ms cubic-bezier(.12,1.45,.28,.97) 300ms;
+		transition: transform 600ms cubic-bezier(0.12, 1.45, 0.28, 0.97) 300ms;
 		transition-delay: ${({ timeout }) => timeout + 300}ms;
 	}
-`;
+`
 
-const BigTitle = (props) => (
-	<BigTitleWrapper {...props} className={props.clientSideReady && 'ready'}>
-		<BigTitleLine {...props}>
-			<BigTitleLineContent {...props}>
-				{props.children}
-			</BigTitleLineContent>
-		</BigTitleLine>
-	</BigTitleWrapper>
-);
+const BigTitle = (props) => {
+	const clientIsReady = useClientIsReady()
+	return (
+		<BigTitleWrapper
+			className={clientIsReady && 'ready'}
+			timeout={props.timeout}
+			marginTop={props.marginTop}
+			marginBottom={props.marginBottom}
+		>
+			<BigTitleLine>
+				<BigTitleLineContent color={props.color}>{props.children}</BigTitleLineContent>
+			</BigTitleLine>
+		</BigTitleWrapper>
+	)
+}
 
 BigTitle.defaultProps = {
 	timeout: 15,
 	color: 'blue',
 	marginTop: 40,
 	marginBottom: 30,
-};
+}
 
-const messageType = PropTypes.oneOfType([
-	PropTypes.instanceOf(FormattedMessage),
-	PropTypes.instanceOf(FormattedHTMLMessage),
-	PropTypes.element,
-	PropTypes.string,
-]).isRequired;
+const messageType = PropTypes.oneOfType([PropTypes.element, PropTypes.string]).isRequired
 
 BigTitle.propTypes = {
 	children: messageType,
@@ -102,10 +103,6 @@ BigTitle.propTypes = {
 	timeout: PropTypes.number,
 	marginTop: PropTypes.number,
 	marginBottom: PropTypes.number,
-	clientSideReady: PropTypes.bool.isRequired,
-};
+}
 
-const mapStateToProps = ({ ui: { clientSideReady } }) => ({ clientSideReady });
-
-export default connect(mapStateToProps)(BigTitle);
-
+export default BigTitle

@@ -1,14 +1,14 @@
-const sansSerifFont = 'Lato, sans-serif';
-const monospaceFont = '"PT Mono", monospace';
-const baseFontSize = 16;
-const baseFontWeight = 400;
+const sansSerifFont = 'Lato, sans-serif'
+const monospaceFont = '"PT Mono", monospace'
+const baseFontSize = 16
+const baseFontWeight = 400
 export default {
 	paragraphFontSize: `${baseFontSize}px`,
 	paragraphFontSizeMobile: `${baseFontSize - 1}px`,
 	paragraphFontFamily: sansSerifFont,
 	paragraphFontWeight: baseFontWeight,
 	paragraphLetterSpacing: '0.02em',
-	paragraphLineHeight: `${baseFontSize + (baseFontSize / 4)}px`,
+	paragraphLineHeight: `${baseFontSize + baseFontSize / 4}px`,
 	footerLinkFontSize: `${baseFontSize - 2}px`,
 	footerLinkFontWeight: baseFontWeight,
 	footerLinkFontFamily: sansSerifFont,
@@ -36,7 +36,6 @@ export default {
 	accordionFontSize: `${baseFontSize + 2}px`,
 	accordionFontFamily: sansSerifFont,
 	accordionFontWeight: baseFontWeight + 200,
-	accordionLineHeight: `${(baseFontSize + 2) + ((baseFontSize + 2) / 3)}px`,
+	accordionLineHeight: `${baseFontSize + 2 + (baseFontSize + 2) / 3}px`,
 	accordionLetterSpacing: 'inherit',
-};
-
+}

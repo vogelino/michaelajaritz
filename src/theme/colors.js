@@ -8,5 +8,4 @@ export default {
 	darkGrey: '#505A62',
 	grey: '#9AABB3',
 	white: '#ffffff',
-};
-
+}

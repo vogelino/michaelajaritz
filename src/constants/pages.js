@@ -27,5 +27,4 @@ export default [
 		name: 'kooperationen',
 		path: '/kooperationen',
 	},
-];
-
+]

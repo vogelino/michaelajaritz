@@ -1,33 +1,26 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
-import styled from 'styled-components';
-import {
-	Accordion as ASAccordion,
-	AccordionItem as ASAccordionItem,
-} from 'react-sanfona';
-import { FormattedMessage, FormattedHTMLMessage } from 'react-intl';
-import Paragraph from '../Paragraph';
+import React from 'react'
+import PropTypes from 'prop-types'
+import styled from 'styled-components'
+import { Accordion as ASAccordion, AccordionItem as ASAccordionItem } from 'react-sanfona'
+import Paragraph from '../Paragraph'
+import { useClientIsReady } from '../../utils/hooks/useClientIsReady'
 
 const Accordion = styled(ASAccordion)`
 	margin: 0 0 30px 0;
 	padding: 0 3px;
-`;
+`
 
-const AccordionItem = styled(ASAccordionItem).attrs({
-	style: ({ timeout }) => ({
-		transitionDelay: `${timeout}ms, ${timeout}ms`,
-	}),
-})`
+const AccordionItem = styled(ASAccordionItem)`
 	padding: 10px 0;
-	border-top: solid 1px rgba(0,0,0,.1);
+	border-top: solid 1px rgba(0, 0, 0, 0.1);
 	overflow: hidden;
 	opacity: 0;
 	transform: translateY(10px);
-	transition: opacity 2000ms cubic-bezier(0,1,.37,.98), transform 400ms cubic-bezier(0,1,.37,.98);
+	transition: opacity 2000ms cubic-bezier(0, 1, 0.37, 0.98),
+		transform 400ms cubic-bezier(0, 1, 0.37, 0.98);
 
 	&:last-child {
-		border-bottom: solid 1px rgba(0,0,0,.1);
+		border-bottom: solid 1px rgba(0, 0, 0, 0.1);
 	}
 
 	&.ready {
@@ -46,7 +39,7 @@ const AccordionItem = styled(ASAccordionItem).attrs({
 		position: relative;
 
 		&:hover {
-			color: ${({ theme, color }) => theme[color]}
+			color: ${({ theme, color }) => theme[color]};
 		}
 
 		&:after {
@@ -66,48 +59,46 @@ const AccordionItem = styled(ASAccordionItem).attrs({
 	& p {
 		padding: 10px 0;
 	}
-`;
+`
 
-const AccordionWrapper = ({ items, color, clientSideReady, startTimeout }) => (
-	<Accordion activeItems={[]}>
-		{items.map(({ title, content }, i) => (
-			<AccordionItem
-				key={title}
-				title={title}
-				className={clientSideReady && 'ready'}
-				color={color}
-				timeout={(i * 100) + startTimeout}
-				clientSideReady={clientSideReady}
-			>
-				<Paragraph timeout={0}>{content}</Paragraph>
-			</AccordionItem>
-		))}
-	</Accordion>
-);
+const AccordionWrapper = ({ items, color, startTimeout }) => {
+	const clientIsReady = useClientIsReady()
+	return (
+		<Accordion activeItems={[]}>
+			{items.map(({ title, content }, i) => (
+				<AccordionItem
+					key={title}
+					title={title}
+					className={clientIsReady && 'ready'}
+					color={color}
+					style={{
+						transitionDelay: `${i * 100 + startTimeout}ms, ${i * 100 + startTimeout}ms`,
+					}}
+				>
+					<Paragraph timeout={0}>{content}</Paragraph>
+				</AccordionItem>
+			))}
+		</Accordion>
+	)
+}
 
 AccordionWrapper.defaultProps = {
 	items: [],
 	startTimeout: 10,
 	color: 'blue',
-};
+}
 
-const messageType = PropTypes.oneOfType([
-	PropTypes.instanceOf(FormattedMessage),
-	PropTypes.instanceOf(FormattedHTMLMessage),
-	PropTypes.element,
-	PropTypes.string,
-]).isRequired;
+const messageType = PropTypes.oneOfType([PropTypes.element, PropTypes.string]).isRequired
 
 AccordionWrapper.propTypes = {
-	items: PropTypes.arrayOf(PropTypes.shape({
-		title: messageType,
-		content: messageType,
-	})),
+	items: PropTypes.arrayOf(
+		PropTypes.shape({
+			title: messageType,
+			content: messageType,
+		})
+	),
 	startTimeout: PropTypes.number,
 	color: PropTypes.oneOf(['blue', 'orange', 'purple']),
-	clientSideReady: PropTypes.bool.isRequired,
-};
+}
 
-const mapStateToProps = ({ ui: { clientSideReady } }) => ({ clientSideReady });
-
-export default connect(mapStateToProps)(AccordionWrapper);
+export default AccordionWrapper

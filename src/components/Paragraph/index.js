@@ -1,7 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import styled from 'styled-components';
-import AnimatedInText from '../AnimatedInText';
+import React from 'react'
+import PropTypes from 'prop-types'
+import styled from 'styled-components'
+import AnimatedInText from '../AnimatedInText'
 
 const ParagraphWrapper = styled.p`
 	font-family: ${({ theme }) => theme.paragraphFontFamily};
@@ -33,24 +33,25 @@ const ParagraphWrapper = styled.p`
 		margin: 0 0 0 0;
 		list-style: none;
 	}
-`;
+`
 
 const Paragraph = ({ children, timeout }) => (
 	<AnimatedInText block timeout={timeout}>
-		<ParagraphWrapper>
-			{children}
-		</ParagraphWrapper>
+		{typeof children === 'string' ? (
+			<ParagraphWrapper dangerouslySetInnerHTML={{ __html: children }} />
+		) : (
+			<ParagraphWrapper>{children}</ParagraphWrapper>
+		)}
 	</AnimatedInText>
-);
+)
 
 Paragraph.defaultProps = {
 	timeout: 0,
-};
+}
 
 Paragraph.propTypes = {
 	children: PropTypes.any.isRequired,
 	timeout: PropTypes.number,
-};
+}
 
-export default Paragraph;
-
+export default Paragraph
