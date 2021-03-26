@@ -2,7 +2,7 @@ import { useWindowWidth } from '@react-hook/window-size';
 
 
 export const useResponsiveState = () => {
-	const windowWidth = useWindowWidth();
+	const windowWidth = useWindowWidth({ initialWidth: 1600 });
 
 	const isMobile = windowWidth < 960;
 	return {
