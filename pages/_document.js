@@ -17,7 +17,7 @@ export default class MyDocument extends Document {
 			<Html lang="de">
 				<Head>
 					{this.props.styleElement}
-						<style
+					<style
 						id="opacity-enforcer"
 						dangerouslySetInnerHTML={{ __html: `
 								* {
