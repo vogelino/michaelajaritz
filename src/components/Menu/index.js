@@ -49,7 +49,7 @@ const Menu = ({ pageName }) => (
 				<Link href={page.path}>
 					<a title={`Michaela Jaritz | ${getText(`pages.${pageName}.title`)}`}>
 						<AnimatedInText timeout={(index * 100) + 400}>
-							<span>{getText(`pages.${page.name}.title`)}</span>
+							{getText(`pages.${page.name}.title`)}
 						</AnimatedInText>
 					</a>
 				</Link>
