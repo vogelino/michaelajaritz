@@ -31,7 +31,7 @@
     "react-sanfona": "0.4.3",
     "redux": "3.7.2",
     "redux-devtools-extension": "2.13.2",
-    "styled-components": "3.1.6",
+    "styled-components": "5.2.1",
     "theming": "1.1.0"
   },
   "devDependencies": {

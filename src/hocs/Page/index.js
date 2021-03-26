@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
-import { injectGlobal, ThemeProvider } from 'styled-components';
+import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import HtmlHead from '../../components/HtmlHead';
 import configureStore from '../../redux/store/configureStore';
 import CoreLayout from '../CoreLayout';
@@ -10,8 +10,7 @@ import IllustrationZone from '../../components/IllustrationZone';
 import Content from '../../components/Content';
 import theme from '../../theme';
 
-/* eslint-disable no-unused-expressions */
-injectGlobal`
+const GlobalStyles = createGlobalStyle`
 	body { margin: 0; }
 	* { box-sizing: border-box; }
 
@@ -56,12 +55,12 @@ injectGlobal`
 		font-style: normal;
 	}
 `;
-/* eslint-enable no-unused-expressions */
 
 const Page = ({ children, pageName }) => (
 	<Provider store={configureStore()}>
 		<ThemeProvider theme={theme}>
 			<CoreLayout>
+				<GlobalStyles />
 				<HtmlHead pageName={pageName} />
 				<IllustrationZone pageName={pageName} />
 				<Sidebar pageName={pageName} />
