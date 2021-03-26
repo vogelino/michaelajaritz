@@ -2,9 +2,6 @@
   "name": "michaelajaritz",
   "version": "1.0.0",
   "description": "The personal website of Michaela Jaritz, business coach and trainer.",
-  "engines": {
-    "node": "12.14.1"
-  },
   "scripts": {
     "test": "jest --passWithNoTests",
     "lint": "eslint .",
@@ -33,6 +30,7 @@
     "react-sanfona": "0.4.3",
     "redux": "3.7.2",
     "redux-devtools-extension": "2.13.2",
+    "sanitize-html": "^2.3.3",
     "styled-components": "5.2.1",
     "theming": "1.1.0"
   },
