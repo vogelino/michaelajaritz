@@ -20,7 +20,11 @@ const AnimatedInText = ({ children, ...props }) => {
 
 	return (
 		<AnimatedInSpan {...props} clientIsReady={clientIsReady}>
-			{typeof children === 'string' ? <span>{children}</span> : children}
+			{typeof children === 'string' ? (
+				<span dangerouslySetInnerHTML={{ __html: children }} />
+			) : (
+				children
+			)}
 		</AnimatedInSpan>
 	)
 }
