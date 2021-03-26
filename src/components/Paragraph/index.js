@@ -37,7 +37,11 @@ const ParagraphWrapper = styled.p`
 
 const Paragraph = ({ children, timeout }) => (
 	<AnimatedInText block timeout={timeout}>
-		<ParagraphWrapper dangerouslySetInnerHTML={{ __html: children }} />
+		{typeof children === 'undefined' ? (
+			<ParagraphWrapper dangerouslySetInnerHTML={{ __html: children }} />
+		) : (
+			<ParagraphWrapper>{children}</ParagraphWrapper>
+		)}
 	</AnimatedInText>
 )
 

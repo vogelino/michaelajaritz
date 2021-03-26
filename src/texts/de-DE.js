@@ -30,13 +30,17 @@ export default {
 				titleCoaching: 'Coaching.',
 				titleModeration: 'Moderation.',
 				subtitle: 'Für Ihre Potentialentfaltung.',
-				textIntro: 'Stellen Sie sich vor, Sie schauen in ein Kaleidoskop. Dieses „Fernrohr“ mit seinen bunten und schillernden Glasteilchen spiegelt im übertragenen Sinne Ihr ganz besonderes und individuelles Potential.  <br /> <br /> Manchmal reicht schon eine leichte Drehung und Sie erhalten sofort neue und überraschende Ein- und Ausblicke. Eine frische Perspektive auf vermeintlich Bekanntes entsteht. Vorhandene Muster lösen sich auf und neue werden sichtbar.  <br /> <br /> Meine Trainings und Coachings bringen Ihr individuelles Potential ans Licht und lassen es sich entfalten. Die Möglichkeiten sind unendlich – genau wie in einem Kaleidoskop.', // eslint-disable-line
+				textIntro:
+          "Stellen Sie sich vor, Sie schauen in ein Kaleidoskop. Dieses „Fernrohr“ mit seinen bunten und schillernden Glasteilchen spiegelt im übertragenen Sinne Ihr ganz besonderes und individuelles Potential.  <br /> <br /> Manchmal reicht schon eine leichte Drehung und Sie erhalten sofort neue und überraschende Ein- und Ausblicke. Eine frische Perspektive auf vermeintlich Bekanntes entsteht. Vorhandene Muster lösen sich auf und neue werden sichtbar.  <br /> <br /> Meine Trainings und Coachings bringen Ihr individuelles Potential ans Licht und lassen es sich entfalten. Die Möglichkeiten sind unendlich – genau wie in einem Kaleidoskop.", // eslint-disable-line
 				titleMakeVisible: 'Sichtbar machen.',
-				textMakeVisible: 'Mit der <a href="/fokus" title="Im Fokus - Was ist die Symbolon Methode?">Symbolon-Methode®</a>, dem Coaching mit Kunstwerken, wird bisher Unsichtbares sichtbar und Sie erhalten verblüffend schnell neue Einblicke und Lösungsansätze.', // eslint-disable-line
+				textMakeVisible:
+          'Mit der <a href="/fokus" title="Im Fokus - Was ist die Symbolon Methode?">Symbolon-Methode®</a>, dem Coaching mit Kunstwerken, wird bisher Unsichtbares sichtbar und Sie erhalten verblüffend schnell neue Einblicke und Lösungsansätze.', // eslint-disable-line
 				titleMakeRoom: 'Platz machen.',
-				textMakeRoom: 'Damit Neues entstehen kann, darf Bisheriges Platz machen. Ich begleite Sie dabei, herauszufinden, was das genau für Sie ist.', // eslint-disable-line
+				textMakeRoom:
+          "Damit Neues entstehen kann, darf Bisheriges Platz machen. Ich begleite Sie dabei, herauszufinden, was das genau für Sie ist.", // eslint-disable-line
 				titleMakePossible: 'Möglich machen.',
-				textMakePossible: 'Potentialentfaltung ist ein Verb. Damit Sie ins Handeln kommen, treffen Sie mit sich eine Vereinbarung. Auch dabei begleite ich Sie.', // eslint-disable-line
+				textMakePossible:
+          "Potentialentfaltung ist ein Verb. Damit Sie ins Handeln kommen, treffen Sie mit sich eine Vereinbarung. Auch dabei begleite ich Sie.", // eslint-disable-line
 			},
 		},
 		angebot: {
@@ -44,9 +48,11 @@ export default {
 			content: {
 				subtitle: 'Mein Angebot.',
 				titlePersonalOffer: 'Für Sie persönlich:',
-				textPersonalOffer: 'Business Coaching mit Kunstwerken und der <a href="/fokus" title="Im Fokus - Was ist die Symbolon Methode?">Symbolon-Methode®</a> – frappierend schnell im Erkenntnisgewinn und nachhaltig in der Umsetzung.', // eslint-disable-line
+				textPersonalOffer:
+          'Business Coaching mit Kunstwerken und der <a href="/fokus" title="Im Fokus - Was ist die Symbolon Methode?">Symbolon-Methode®</a> – frappierend schnell im Erkenntnisgewinn und nachhaltig in der Umsetzung.', // eslint-disable-line
 				titleTeamOffer: 'Für Teams & Gruppen:',
-				textTeamOffer: 'Individuelle Trainings, Team-Entwicklung und Moderationen, systemisch fundiert, mit der <a href="/fokus" title="Im Fokus - Was ist die Symbolon Methode?">Symbolon-Methode®</a>, Schwerpunkt Persönlichkeitsentwicklung für Fach- und Führungskräfte sowie Vertriebs- und Kommunikationsthemen.', // eslint-disable-line
+				textTeamOffer:
+          'Individuelle Trainings, Team-Entwicklung und Moderationen, systemisch fundiert, mit der <a href="/fokus" title="Im Fokus - Was ist die Symbolon Methode?">Symbolon-Methode®</a>, Schwerpunkt Persönlichkeitsentwicklung für Fach- und Führungskräfte sowie Vertriebs- und Kommunikationsthemen.', // eslint-disable-line
 				symbolonProfilTitle: 'Symbolon-Profil',
 				symbolonProfilText:
 					'Das Symbolon-Profil wird von Ihnen online ausgefüllt und beinhaltet fünf unterschiedliche Bereiche. Ihre daraus resultierende schriftliche 30-seitige Potentialanalyse sowie Ihre individuelle Fragestellung bilden den Rahmen für unser gemeinsames Coaching-Gespräch, das etwa zwei Stunden dauert. Ihr persönlicher Maßnahmenplan, Ihre Vereinbarung mit sich selbst, garantiert die nachhaltige Umsetzung.',
@@ -54,11 +60,14 @@ export default {
 				symbolonProfilIntensiveText:
 					'Das Symbolon-Profil Intensiv beinhaltet 17 unterschiedliche Bereiche und wird handschriftlich ausgefüllt. Die daraus resultierende schriftliche Potentialanalyse, Ihr persönliches 75-seitiges Buch, sowie Ihre individuelle Fragestellung bilden den Rahmen für unser gemeinsames Coaching-Gespräch, das an zwei Terminen mit jeweils zwei Stunden stattfindet. Ihr persönlicher Maßnahmenplan, Ihre Vereinbarung mit sich selbst, garantiert die nachhaltige Umsetzung.',
 				businessCoachingTitle: 'Individuell für Sie kuratierte firmeninterne Trainings',
-				businessCoachingText: 'Basierend auf Ihrer konkreten Situation und Ihren Bedürfnissen stelle ich die Inhalte für Ihr firmeninternes Training oder Ihren Workshop zusammen. Vertriebliche und kommunikative Methodenkompetenz sowie persönlichkeitsentwickelnde Themen stehen dabei im Mittelpunkt. In meinen Trainings ergeben theoretische Grundlagen, Möglichkeiten zur Selbstanalyse und -reflexion und viel Praxis-Übungen einen Mix, der ein lernförderndes Umfeld und eine nachhaltige Umsetzung der Inhalte garantiert.<br /><br />Für die weitere Nachhaltigkeit in der Umsetzung hat sich das „+1-Konzept“ bewährt. Mit zeitlichem Abstand von 6 bis 8 Wochen zum Training oder Workshop findet ein Folgetag statt, bei dem die Teilnehmer den Praxistransfer des Gelernten reflektieren, Inhalte vertiefen und weiter üben.', // eslint-disable-line
+				businessCoachingText:
+          "Basierend auf Ihrer konkreten Situation und Ihren Bedürfnissen stelle ich die Inhalte für Ihr firmeninternes Training oder Ihren Workshop zusammen. Vertriebliche und kommunikative Methodenkompetenz sowie persönlichkeitsentwickelnde Themen stehen dabei im Mittelpunkt. In meinen Trainings ergeben theoretische Grundlagen, Möglichkeiten zur Selbstanalyse und -reflexion und viel Praxis-Übungen einen Mix, der ein lernförderndes Umfeld und eine nachhaltige Umsetzung der Inhalte garantiert.<br /><br />Für die weitere Nachhaltigkeit in der Umsetzung hat sich das „+1-Konzept“ bewährt. Mit zeitlichem Abstand von 6 bis 8 Wochen zum Training oder Workshop findet ein Folgetag statt, bei dem die Teilnehmer den Praxistransfer des Gelernten reflektieren, Inhalte vertiefen und weiter üben.", // eslint-disable-line
 				symbolonTeamTitle: 'Symbolon Team-Profil',
-				symbolonTeamText: 'Bei einer Teamentwicklung mit dem Symbolon-Team-Profil füllen alle Teammitglieder ihr individuelles Symbolon-Profil bzw. Symbolon-Profil Intensiv aus. In der Voranalyse fasse ich alle Einzelprofile in einem Teamprofil zusammen. Im Workshop werden dann die Kernthemen des Teams interaktiv bearbeitet, gemeinsam werden Lösungen entwickelt und Ziele vereinbart. Vor und/oder nach dem Workshop sind Einzel-Coachings eine sinnvolle Ergänzung.', // eslint-disable-line
+				symbolonTeamText:
+          "Bei einer Teamentwicklung mit dem Symbolon-Team-Profil füllen alle Teammitglieder ihr individuelles Symbolon-Profil bzw. Symbolon-Profil Intensiv aus. In der Voranalyse fasse ich alle Einzelprofile in einem Teamprofil zusammen. Im Workshop werden dann die Kernthemen des Teams interaktiv bearbeitet, gemeinsam werden Lösungen entwickelt und Ziele vereinbart. Vor und/oder nach dem Workshop sind Einzel-Coachings eine sinnvolle Ergänzung.", // eslint-disable-line
 				art4reflectionTitle: 'Symbolon Art4Reflection',
-				art4reflectionText: 'Das Coaching im Museum findet als offene Veranstaltung für Gruppen mit max. 10 Teilnehmern statt oder exklusiv für Ihr Team. In der etwa 1,5-stündigen Führung erleben Sie einen Reflexionsprozess mit drei unterschiedlichen Kunstwerken.  <br /><br />Treffen Sie mich bei den Führungen in Leipzig, im Museum der bildenden Künste.  <br /> <br /><strong>Die nächsten Symbolon Art4Reflection-Termine, <br />jeweils um 17:30 Uhr:</strong><br /><br/>Mittwoch, 08. Januar <br/> Mittwoch, 12. Februar <br/> Mittwoch, 04. März <br/> Mittwoch, 18. März <br/> Mittwoch, 01. April <br/> Mittwoch, 13. Mai <br/> Mittwoch, 03. Juni <br/> Mittwoch, 17. Juni<br/> <br />Anmeldung per Email oder Anfragen für exklusive Team-Führungen an <a href="mailto:michaela.jaritz@outlook.de" title="Kontaktiere Michaela per E-Mail">michaela.jaritz@outlook.de</a>. <br /><br />Symbolon Art4Reflection ist eine internationale Initiative, weitere Informationen und alle Termine unter:  <a href="https://symbolon.com/art4reflection" target="_blank" rel="nofollow noreferrer">symbolon.com/art4reflection</a>', // eslint-disable-line
+				art4reflectionText:
+          "Das Coaching im Museum findet als offene Veranstaltung für Gruppen mit max. 10 Teilnehmern statt oder exklusiv für Ihr Team. In der etwa 1,5-stündigen Führung erleben Sie einen Reflexionsprozess mit drei unterschiedlichen Kunstwerken.  <br /><br />Demnächst wieder: Treffen Sie mich bei den Führungen in Leipzig, im Museum der bildenden Künste.<br /> <br /><strong>Bis auf weiteres sind – auch nach Wieder-Öffnung des Museums ab dem 7. Mai 2020 - keine Art4Reflection-Führungen für Gruppen möglich. Sobald sich das ändert, erfahren Sie es hier bzw. auf meinen Social Media Profilen.</strong><br /><br />Alternativ können wir uns zum <strong>Einzel-Coaching im Museum</strong> treffen oder eine <strong>Online-Kunstpause</strong> gestalten. Bei Interesse kurze Nachricht mit Ihren Kontaktdaten an: <a href='mailto:michaela.jaritz@outlook.de'>michaela.jaritz@outlook.de</a> und ich rufe Sie dazu zurück.<br /><br />Symbolon Art4Reflection ist eine internationale Initiative, weitere Informationen unter: <a href='https://symbolon.com/event' title='Symbolon Art4Reflection - Quick dive for your brilliance' target='_blank' rel='noopener'>symbolon.com/event</a>", // eslint-disable-line
 			},
 		},
 		fokus: {
@@ -66,11 +75,14 @@ export default {
 			content: {
 				subtitle: 'Was mich leitet.',
 				titleArt: 'Die Kunst.',
-				textArt: 'Kunst ist zentrales Element meiner Arbeit: Kunstwerke zur Selbstreflexion. Lebenskunst als Grundfähigkeit eines jeden Menschen. Die Handwerkskunst, ein für Sie zugeschnittenes Training zu konzipieren. Die Kunst, mit Sprache zu spielen, zu gestalten.', // eslint-disable-line
+				textArt:
+          "Kunst ist zentrales Element meiner Arbeit: Kunstwerke zur Selbstreflexion. Lebenskunst als Grundfähigkeit eines jeden Menschen. Die Handwerkskunst, ein für Sie zugeschnittenes Training zu konzipieren. Die Kunst, mit Sprache zu spielen, zu gestalten.", // eslint-disable-line
 				titleHuman: 'Der Mensch.',
-				textHuman: 'Für mich ist jeder Mensch eine Führungspersönlichkeit, denn Führung beginnt immer mit der eigenen Person, mit der eigenen Lebensführung. Die Fähigkeit zur Selbstreflexion ist dabei zentrale Schlüsselkompetenz – vor allem mit Blick auf den immer schneller werdenden Wandel und die digitale Transformation.', // eslint-disable-line
+				textHuman:
+          "Für mich ist jeder Mensch eine Führungspersönlichkeit, denn Führung beginnt immer mit der eigenen Person, mit der eigenen Lebensführung. Die Fähigkeit zur Selbstreflexion ist dabei zentrale Schlüsselkompetenz – vor allem mit Blick auf den immer schneller werdenden Wandel und die digitale Transformation.", // eslint-disable-line
 				titleMethod: 'Die Methode.',
-				textMethod: 'Ich arbeite auf Basis meiner systemischen Trainer-Ausbildung und der Symbolon-Methode®. Immer mit dem Blick auf die bereits vorhandenen Ressourcen und die Möglichkeiten zur Potentialentfaltung.<br /><br />Die systemische Betrachtungsweise sieht einzelne Personen als Teil eines größeren Gesamtsystems, dessen Elemente in wechselseitigem Zusammenhang miteinander stehen und sich gegenseitig beeinflussen. Meine systemische Grundhaltung stärkt Ihre Fähigkeit zur Selbstverantwortung, ist wertschätzend und ganzheitlich.<br /><br />Die Symbolon-Methode® ist weltweit das führende Reflexionsinstrument für Persönlichkeitsentwicklung. Bis heute wurden über 10.000 Symbolon-Profile in Coachings und Trainings angewendet.<br /><br />Im Unterschied zu herkömmlichen Analyseinstrumenten basiert die Symbolon-Potentialanalyse auf der Reflexion von Kunstwerken, Archetypen und Symbolen. Weitere Details unter <a href="https://www.symbolon.com/symbolon-methode" target="_blank" rel="nofollow noreferrer">https://www.symbolon.com/symbolon-methode.</a>', // eslint-disable-line
+				textMethod:
+          'Ich arbeite auf Basis meiner systemischen Trainer-Ausbildung und der Symbolon-Methode®. Immer mit dem Blick auf die bereits vorhandenen Ressourcen und die Möglichkeiten zur Potentialentfaltung.<br /><br />Die systemische Betrachtungsweise sieht einzelne Personen als Teil eines größeren Gesamtsystems, dessen Elemente in wechselseitigem Zusammenhang miteinander stehen und sich gegenseitig beeinflussen. Meine systemische Grundhaltung stärkt Ihre Fähigkeit zur Selbstverantwortung, ist wertschätzend und ganzheitlich.<br /><br />Die Symbolon-Methode® ist weltweit das führende Reflexionsinstrument für Persönlichkeitsentwicklung. Bis heute wurden über 10.000 Symbolon-Profile in Coachings und Trainings angewendet.<br /><br />Im Unterschied zu herkömmlichen Analyseinstrumenten basiert die Symbolon-Potentialanalyse auf der Reflexion von Kunstwerken, Archetypen und Symbolen. Weitere Details unter <a href="https://www.symbolon.com/symbolon-methode" target="_blank" rel="noopener">https://www.symbolon.com/symbolon-methode.</a>', // eslint-disable-line
 			},
 		},
 		'ueber-mich': {
@@ -92,7 +104,8 @@ export default {
 			content: {
 				subtitle: 'Training. Coaching. Moderation.',
 				title: 'Michaela Jaritz',
-				contactInformations: 'The Westin Business Center <br />Gerberstr. 15 <br />04105 Leipzig <br /> <br /><a href="mailto:michaela.jaritz@outlook.de" title="professional email of Michaela Jaritz">michaela.jaritz@outlook.de</a><br />+49 175 5844 738', // eslint-disable-line
+				contactInformations:
+          'The Westin Business Center <br />Gerberstr. 15 <br />04105 Leipzig <br /> <br /><a href="mailto:michaela.jaritz@outlook.de" title="professional email of Michaela Jaritz">michaela.jaritz@outlook.de</a><br />+49 175 5844 738', // eslint-disable-line
 				finalSentence:
 					'Schreiben Sie mir, rufen Sie mich an oder treffen Sie mich bei einer der nächsten <a href="/angebot">Symbolon Art4Reflection-Veranstaltungen</a>. Ich freue mich auf Sie.',
 			},
@@ -103,9 +116,10 @@ export default {
 				title: 'Kooperationen.',
 				text:
 					'Ein großes Kunstwerk entsteht oft in der Zusammenarbeit. Ich arbeite im Netzwerk sehr gern und erfolgreich mit folgenden Menschen und Unternehmen zusammen:',
-				list: '<ul><li><a rel="nofollow noreferrer" target="_blank" href="http://a-u-m.biz/" title="Marketing, Consulting, Training, Coaching">A+M Hamburg</a></li><li><a rel="nofollow noreferrer" target="_blank" href="https://www.symbolon.com" title="Ausbildungszentrum für Reflexionskompetenz in der Wirtschaft">Symbolon AG</a></li><li><a rel="nofollow noreferrer" target="_blank" href="http://www.methodenberatung-jahn.de/" title="Methodenberatung, Marktforschung und Multivariate Datenanalyse Leipzig">Judith Jahn Methodenberatung</a></li></ul>', // eslint-disable-line
+				list:
+          '<ul><li><a rel="noopener" target="_blank" href="http://a-u-m.biz/" title="Marketing, Consulting, Training, Coaching">A+M Hamburg</a></li><li><a rel="noopener" target="_blank" href="https://www.symbolon.com" title="Ausbildungszentrum für Reflexionskompetenz in der Wirtschaft">Symbolon AG</a></li><li><a rel="noopener" target="_blank" href="http://www.methodenberatung-jahn.de/" title="Methodenberatung, Marktforschung und Multivariate Datenanalyse Leipzig">Judith Jahn Methodenberatung</a></li></ul>', // eslint-disable-line
 				thanks:
-					'Mein herzlicher Dank für die professionelle Zusammenarbeit, die mir viel Freude gemacht hat, geht an <a rel="nofollow noreferrer" target="_blank" href="https://vogelino.com" title="UI and UX Designer based in Berlin">Lucas Vogel</a> für das Design und die Umsetzung dieses Webauftritts und an <a href="http://www.lichtbildnerei-leipzig.de" title="Professionelle Lichtbildnerei" target="_blank" rel="nofollow noopener">Susanne Stark</a>, Die Lichtbildnerei für die Portrait-Aufnahmen.',
+					'Mein herzlicher Dank für die professionelle Zusammenarbeit, die mir viel Freude gemacht hat, geht an <a rel="noopener" target="_blank" href="https://vogelino.com" title="UI and UX Designer based in Berlin">Lucas Vogel</a> für das Design und die Umsetzung dieses Webauftritts und an <a href="http://www.lichtbildnerei-leipzig.de" title="Professionelle Lichtbildnerei" target="_blank" rel="nofollow noopener">Susanne Stark</a>, Die Lichtbildnerei für die Portrait-Aufnahmen.',
 			},
 		},
 		impressum: {
