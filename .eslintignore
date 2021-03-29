@@ -1,5 +1,7 @@
 node_modules
+out
 .next
+.vercel
 *.config.js
 *.setup.js
 .*.js
