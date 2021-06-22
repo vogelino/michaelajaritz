@@ -20,7 +20,7 @@
   "homepage": "https://www.michaela-jaritz.de/",
   "dependencies": {
     "@react-hook/window-size": "3.0.7",
-    "next": "10.0.9",
+    "next": "11.0.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-hamburger-button": "0.0.1",
