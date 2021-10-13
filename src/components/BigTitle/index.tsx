@@ -108,8 +108,14 @@ const BigTitle: FC<BigTitleType> = ({
 			marginBottom={marginBottom}
 		>
 			<BigTitleLine>
-				<BigTitleLineContent timeout={timeout} color={color}>
-					{children}
+				<BigTitleLineContent
+					timeout={timeout}
+					color={color}
+					dangerouslySetInnerHTML={
+						typeof children === 'string' ? { __html: children || '' } : undefined
+					}
+				>
+					{typeof children === 'string' ? null : children}
 				</BigTitleLineContent>
 			</BigTitleLine>
 		</BigTitleWrapper>
