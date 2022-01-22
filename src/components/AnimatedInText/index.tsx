@@ -20,6 +20,10 @@ const AnimatedInSpan = styled.span<AnimatedInSpanType>`
 		transition-duration: 6000ms, 400ms;
 		transition-timing-function: cubic-bezier(0, 1, 0.37, 0.98), cubic-bezier(0, 1, 0.37, 0.98);
 	}
+	& > strong {
+		color: ${({ theme }) => theme.blue};
+		font-weight: 900;
+	}
 `
 
 const AnimatedInText: FC<AnimatedInTextType> = ({ children, timeout }) => {

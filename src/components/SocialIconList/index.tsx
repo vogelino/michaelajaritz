@@ -41,14 +41,26 @@ const SocialIconList: FC<{ startTimeout?: number }> = ({ startTimeout = 10 }) =>
 			</AnimatedInText>
 		</IconLink>
 		<IconLink
-			href="https://www.linkedin.com/in/michaela-jaritz-797b77145/"
+			href="https://www.linkedin.com/in/michaela-jaritz-die-kaleidoskopin-🔭-797b77145/"
 			target="_blank"
 			rel="noopener noreferrer"
 			title="LinkedIn Profil von Michaela Jaritz"
 		>
-			<AnimatedInText timeout={startTimeout + 400}>
+			<AnimatedInText timeout={startTimeout + 350}>
 				<span>
 					<Icon style={{ backgroundImage: 'url("/linkedin.svg")' }} />
+				</span>
+			</AnimatedInText>
+		</IconLink>
+		<IconLink
+			href="https://www.instagram.com/michaelajaritz/"
+			target="_blank"
+			rel="noopener noreferrer"
+			title="Instagram Profil von Michaela Jaritz"
+		>
+			<AnimatedInText timeout={startTimeout + 400}>
+				<span>
+					<Icon style={{ backgroundImage: 'url("/instagram.svg")' }} />
 				</span>
 			</AnimatedInText>
 		</IconLink>

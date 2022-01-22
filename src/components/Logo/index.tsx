@@ -38,11 +38,25 @@ const LogoSlogan = styled.span<{ theme: ThemeType }>`
 	display: inline-block;
 `
 
+const Trademark = styled.span<{ theme: ThemeType }>`
+	color: ${({ theme }) => theme.blue};
+	font-family: ${({ theme }) => theme.sloganFontFamily};
+	font-weight: bold;
+	font-size: ${({ theme }) => theme.sloganFontSize};
+	margin-bottom: 12px;
+`
+
 const Logo: FC = () => (
 	<Link href="/">
 		<LogoLink title="Hauptseite | Michaela Jaritz">
 			<AnimatedInText timeout={0}>
 				<LogoImage src="/logo.svg" alt="Site Logo | Michaela Jaritz" />
+			</AnimatedInText>
+			<AnimatedInText timeout={50}>
+				<Trademark>
+					{getText('site.slogan.title')}
+					<sup>®</sup>
+				</Trademark>
 			</AnimatedInText>
 			<LogoSlogan>
 				<LogoSloganLine>

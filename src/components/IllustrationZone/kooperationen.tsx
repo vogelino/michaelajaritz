@@ -3,14 +3,7 @@ import Parallelepiped from '../Parallelepiped'
 
 const Cooperations: FC = () => (
 	<div>
-		<Parallelepiped
-			link="http://a-u-m.biz/"
-			size={8}
-			image="/logos/transparent/aundm.png"
-			timeout={100}
-			placement="toBottom"
-			position={[10, 0]}
-		/>
+		<Parallelepiped size={8} timeout={100} placement="toBottom" position={[10, 0]} />
 		<Parallelepiped
 			link="http://www.methodenberatung-jahn.de/"
 			placement="toBottom"

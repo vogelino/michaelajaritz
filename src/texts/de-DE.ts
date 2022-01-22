@@ -3,6 +3,7 @@ export default {
 	site: {
 		title: ' | Michaela Jaritz | Training, Coaching und Moderation',
 		slogan: {
+			title: 'Die Kaleidoskopin',
 			line1: 'Sichtbar machen.',
 			line2: 'Platz machen.',
 			line3: 'Möglich machen.',
@@ -107,7 +108,7 @@ export default {
 				contactInformations:
           'The Westin Business Center <br />Gerberstr. 15 <br />04105 Leipzig <br /> <br /><a href="mailto:michaela.jaritz@outlook.de" title="professional email of Michaela Jaritz">michaela.jaritz@outlook.de</a><br />+49 175 5844 738', // eslint-disable-line
 				finalSentence:
-					'Schreiben Sie mir, rufen Sie mich an oder treffen Sie mich bei einer der nächsten <a href="/angebot">Symbolon Art4Reflection-Veranstaltungen</a>. Ich freue mich auf Sie.',
+					'Folgen Sie mir gern auf den sozialen Medien, dort veröffentliche ich jede Woche einen Reflexionsimpuls für Sie zur Inspiration. Coaching mit einem Kunstwerk in verdichteter Form.<br/><br/>Oder schreiben Sie mir, rufen Sie mich an oder treffen Sie mich bei einer der nächsten <a href="/angebot">Symbolon Art4Reflection-Veranstaltungen</a>. Ich freue mich auf Sie.',
 			},
 		},
 		kooperationen: {
@@ -117,7 +118,7 @@ export default {
 				text:
 					'Ein großes Kunstwerk entsteht oft in der Zusammenarbeit. Ich arbeite im Netzwerk sehr gern und erfolgreich mit folgenden Menschen und Unternehmen zusammen:',
 				list:
-          '<ul><li><a rel="noopener" target="_blank" href="http://a-u-m.biz/" title="Marketing, Consulting, Training, Coaching">A+M Hamburg</a></li><li><a rel="noopener" target="_blank" href="https://www.symbolon.com" title="Ausbildungszentrum für Reflexionskompetenz in der Wirtschaft">Symbolon AG</a></li><li><a rel="noopener" target="_blank" href="http://www.methodenberatung-jahn.de/" title="Methodenberatung, Marktforschung und Multivariate Datenanalyse Leipzig">Judith Jahn Methodenberatung</a></li></ul>', // eslint-disable-line
+          '<ul><li><a rel="noopener" target="_blank" href="https://www.symbolon.com" title="Ausbildungszentrum für Reflexionskompetenz in der Wirtschaft">Symbolon AG</a></li><li><a rel="noopener" target="_blank" href="http://www.methodenberatung-jahn.de/" title="Methodenberatung, Marktforschung und Multivariate Datenanalyse Leipzig">Judith Jahn Methodenberatung</a></li></ul>', // eslint-disable-line
 				thanks:
 					'Mein herzlicher Dank für die professionelle Zusammenarbeit, die mir viel Freude gemacht hat, geht an <a rel="noopener" target="_blank" href="https://vogelino.com" title="UI and UX Designer based in Berlin">Lucas Vogel</a> für das Design und die Umsetzung dieses Webauftritts und an <a href="http://www.lichtbildnerei-leipzig.de" title="Professionelle Lichtbildnerei" target="_blank" rel="nofollow noopener">Susanne Stark</a>, Die Lichtbildnerei für die Portrait-Aufnahmen.',
 			},
