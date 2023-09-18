@@ -89,6 +89,7 @@ const SidebarToggle = styled.span`
 interface ContentType {
 	setSidebar: (isSidebarOpen: boolean) => void
 	isOpen: boolean
+	children: JSX.Element | JSX.Element[]
 }
 
 const Content: FC<ContentType> = ({ children, setSidebar, isOpen }) => {

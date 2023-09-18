@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { useClientIsReady } from '../../utils/hooks/useClientIsReady'
 
 interface AnimatedInTextType {
+	children: string | JSX.Element
 	timeout: number
 }
 
