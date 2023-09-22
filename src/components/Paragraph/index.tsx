@@ -5,6 +5,7 @@ import AnimatedInText from '../AnimatedInText'
 
 interface ParagraphWrapperType {
 	theme: ThemeType
+	children?: string | JSX.Element
 }
 
 const ParagraphWrapper = styled.p<ParagraphWrapperType>`
@@ -39,7 +40,10 @@ const ParagraphWrapper = styled.p<ParagraphWrapperType>`
 	}
 `
 
-const Paragraph: FC<{ timeout?: number }> = ({ children, timeout = 0 }) => (
+const Paragraph: FC<{
+	timeout?: number,
+	children?: string | JSX.Element
+ }> = ({ children, timeout = 0 }) => (
 	<AnimatedInText timeout={timeout}>
 		{typeof children === 'string' ? (
 			<ParagraphWrapper dangerouslySetInnerHTML={{ __html: children }} />

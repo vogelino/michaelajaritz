@@ -7,6 +7,7 @@ interface AnimatedSubtitleType {
 	marginTop: number
 	marginBottom: number
 	timeout: number
+	children: string | undefined | JSX.Element | JSX.Element[] | null
 }
 
 interface SubtitleType extends Omit<AnimatedSubtitleType, 'timeout'> {

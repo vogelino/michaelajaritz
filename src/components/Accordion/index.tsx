@@ -1,22 +1,40 @@
-import { FC } from 'react'
-import styled from 'styled-components'
-import { Accordion as ASAccordion, AccordionItem as ASAccordionItem } from 'react-sanfona'
-import Paragraph from '../Paragraph'
-import { useClientIsReady } from '../../utils/hooks/useClientIsReady'
+import { Disclosure } from '@headlessui/react'
+import React from 'react'
 import { ColorsType } from '../../theme/colors'
+import styled from 'styled-components'
+import Paragraph from '@components/Paragraph'
+import { useClientIsReady } from '@utils/hooks/useClientIsReady'
 
-const Accordion = styled(ASAccordion)`
-	margin: 0 0 30px 0;
-	padding: 0 3px;
-`
+interface AccordionItemType {
+	title: string
+	content: string
+}
 
-const AccordionItem = styled(ASAccordionItem)`
-	padding: 10px 0;
+interface HAccordionPropsType {
+	items: AccordionItemType[]
+	color: keyof ColorsType
+	startTimeout: number
+}
+
+const StyledDisclosureButton = styled(Disclosure.Button)`
+	padding: 10px 0 10px 4px;
 	border-top: solid 1px rgba(0, 0, 0, 0.1);
 	overflow: hidden;
 	opacity: 0;
 	transform: translateY(10px);
-	transition: opacity 2000ms cubic-bezier(0, 1, 0.37, 0.98),
+	text-align: left;
+	border: none;
+	background: none;
+	font-family: ${({ theme }) => theme.accordionFontFamily};
+	font-size: ${({ theme }) => theme.accordionFontSize};
+	font-weight: ${({ theme }) => theme.accordionFontWeight};
+	letter-spacing: ${({ theme }) => theme.accordionLetterSpacing};
+	line-height: ${({ theme }) => theme.accordionLineHeight};
+	color: ${({ theme }) => theme.darkGrey};
+	position: relative;
+	cursor: pointer;
+	transition:
+		opacity 2000ms cubic-bezier(0, 1, 0.37, 0.98),
 		transform 400ms cubic-bezier(0, 1, 0.37, 0.98);
 
 	&:last-child {
@@ -28,75 +46,60 @@ const AccordionItem = styled(ASAccordionItem)`
 		transform: translateY(0);
 	}
 
-	& .react-sanfona-item-title {
-		font-family: ${({ theme }) => theme.accordionFontFamily};
-		font-size: ${({ theme }) => theme.accordionFontSize};
-		font-weight: ${({ theme }) => theme.accordionFontWeight};
-		letter-spacing: ${({ theme }) => theme.accordionLetterSpacing};
-		line-height: ${({ theme }) => theme.accordionLineHeight};
-		color: ${({ theme }) => theme.darkGrey};
+	& > span {
 		transition: color 200ms ease-out;
-		position: relative;
-
-		&:hover {
-			color: ${({ theme, color }) => theme[color]};
-		}
-
-		&:after {
-			content: '+';
-			position: absolute;
-			top: 0;
-			right: 0;
-			color: ${({ theme }) => theme.grey};
-			font-weight: 300;
-		}
+	}
+	&:hover span {
+		color: ${({ theme, color }) => theme[color]};
 	}
 
-	&.react-sanfona-item-expanded .react-sanfona-item-title:after {
+	&:after {
+		content: '+';
+		position: absolute;
+		top: 0;
+		right: 0;
+		color: ${({ theme }) => theme.grey};
+		font-weight: 300;
+	}
+
+	&.open:after {
 		content: '–';
 	}
-
-	& p {
-		padding: 10px 0;
-	}
+`
+const DisclosurePanel = styled(Disclosure.Panel)<{
+	open: boolean
+}>`
+	transition: max-height 200ms ease-in-out;
+	will-change: max-height;
+	overflow: hidden;
+	max-height: ${({ open }) => (open ? '100vh' : '0')};
 `
 
-interface AccordionItemType {
-	title: string
-	content: string
-}
-
-interface AccordionWrapperType {
-	items: AccordionItemType[]
-	color: keyof ColorsType
-	startTimeout: number
-}
-
-const AccordionWrapper: FC<AccordionWrapperType> = ({ items, color, startTimeout }) => {
+export function Accordion(props: HAccordionPropsType): JSX.Element {
+	const { items, color, startTimeout } = props
 	const clientIsReady = useClientIsReady()
 	return (
-		<Accordion activeItems={[]}>
+		<>
 			{items.map(({ title, content }, i) => (
-				<AccordionItem
-					key={title}
-					title={title}
-					className={clientIsReady && 'ready'}
-					color={color}
-					style={{
-						transitionDelay: `${i * 100 + startTimeout}ms, ${i * 100 + startTimeout}ms`,
-					}}
-				>
-					<Paragraph timeout={0}>{content}</Paragraph>
-				</AccordionItem>
+				<Disclosure key={i} defaultOpen={false}>
+					{({ open }) => (
+						<>
+							<StyledDisclosureButton
+								className={[clientIsReady && 'ready', open && 'open'].filter(Boolean).join(' ')}
+								color={color}
+								style={{
+									transitionDelay: `${i * 100 + startTimeout}ms, ${i * 100 + startTimeout}ms`,
+								}}
+							>
+								<span>{title}</span>
+							</StyledDisclosureButton>
+							<DisclosurePanel open={open} static>
+								<Paragraph timeout={0}>{content}</Paragraph>
+							</DisclosurePanel>
+						</>
+					)}
+				</Disclosure>
 			))}
-		</Accordion>
+		</>
 	)
 }
-
-AccordionWrapper.defaultProps = {
-	items: [],
-	startTimeout: 10,
-	color: 'blue',
-}
-
-export default AccordionWrapper

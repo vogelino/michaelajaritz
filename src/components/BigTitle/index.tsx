@@ -9,6 +9,7 @@ interface BigTitleType {
 	timeout?: number
 	marginTop?: number
 	marginBottom?: number
+	children: undefined | string | null | JSX.Element | JSX.Element[]
 }
 
 interface BigTitleLineContentType {
@@ -80,7 +81,8 @@ const BigTitleWrapper = styled.h1<BigTitleWrapperType>`
 	&.ready span {
 		opacity: 1;
 		transform: translateY(0);
-		transition: opacity 2000ms cubic-bezier(0, 1, 0.37, 0.98),
+		transition:
+			opacity 2000ms cubic-bezier(0, 1, 0.37, 0.98),
 			transform 400ms cubic-bezier(0, 1, 0.37, 0.98);
 		transition-delay: ${({ timeout }) => timeout + 100}ms, ${({ timeout }) => timeout + 100}ms;
 	}
