@@ -1,10 +1,10 @@
-import { FC } from 'react'
+import React, { FC } from 'react'
 import Page from '../src/hocs/Page'
 import { getText } from '../src/texts/getText'
 import BigTitle from '../src/components/BigTitle'
 import Subtitle from '../src/components/Subtitle'
 import Paragraph from '../src/components/Paragraph'
-import Accordion from '../src/components/Accordion'
+import { Accordion } from '../src/components/Accordion'
 import MobilePicture from '../src/components/MobilePicture'
 
 const pageName = 'angebot'

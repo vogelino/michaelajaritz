@@ -1,3 +1,4 @@
+import React from 'react'
 import { FC, useState } from 'react'
 import { createGlobalStyle, ThemeProvider } from 'styled-components'
 import HtmlHead from '../../components/HtmlHead'
@@ -54,7 +55,10 @@ const GlobalStyles = createGlobalStyle`
 	}
 `
 
-const Page: FC<{ pageName: PageNameType }> = ({ children, pageName }) => {
+const Page: FC<{ pageName: PageNameType; children: JSX.Element | JSX.Element[] }> = ({
+	children,
+	pageName,
+}) => {
 	const isMobile = useResponsiveState()
 	const [isSidebarOpened, setSidebarIsOpened] = useState<boolean>(!isMobile)
 

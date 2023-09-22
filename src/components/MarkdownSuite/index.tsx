@@ -3,11 +3,13 @@ import Markdown from 'react-markdown'
 import Paragraph from '../Paragraph'
 import BigTitle from '../BigTitle'
 import Subtitle from '../Subtitle'
+import type { ChildrenType, FCWithChildren } from '../../types'
 
 interface MarkdownSuiteType {
 	timeout: number
 	level: number
 	source: string
+	children: ChildrenType
 }
 
 class MarkdownSuite extends Component<MarkdownSuiteType> {
@@ -36,7 +38,7 @@ class MarkdownSuite extends Component<MarkdownSuiteType> {
 			)
 		}
 
-		const ParagraphRenderer: FC = ({ children, ...rest }) => {
+		const ParagraphRenderer: FCWithChildren = ({ children, ...rest }) => {
 			this.timeout += 100
 			return (
 				<Paragraph {...rest} timeout={this.timeout}>
@@ -47,8 +49,9 @@ class MarkdownSuite extends Component<MarkdownSuiteType> {
 
 		return (
 			<Markdown
-				source={this.props.source}
+				children={this.props.source}
 				skipHtml={false}
+				// @ts-ignore
 				renderers={{
 					paragraph: ParagraphRenderer,
 					heading: HeadingRenderer,

@@ -7,7 +7,7 @@ import { getText } from '../../texts/getText'
 
 const FooterWrapper = styled.div``
 
-const FooterLink = styled.a`
+const FooterLink = styled(Link)`
 	font-size: ${({ theme }) => theme.footerLinkFontSize};
 	font-weight: ${({ theme }) => theme.footerLinkFontWeight};
 	font-family: ${({ theme }) => theme.footerLinkFontFamily};
@@ -26,11 +26,9 @@ const FooterLink = styled.a`
 const Footer: FC = () => (
 	<FooterWrapper>
 		<SocialIconList startTimeout={1000} />
-		<Link href="/impressum">
-			<FooterLink title={`Michaela Jaritz | ${getText('getTextpages.impressum.title')}`}>
+			<FooterLink href="/impressum" title={`Michaela Jaritz | ${getText('getTextpages.impressum.title')}`}>
 				<AnimatedInText timeout={1300}>{getText('pages.impressum.title')}</AnimatedInText>
 			</FooterLink>
-		</Link>
 	</FooterWrapper>
 )
 

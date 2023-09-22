@@ -11,7 +11,7 @@ const LogoImage = styled.img`
 	cursor: pointer;
 `
 
-const LogoLink = styled.a`
+const LogoLink = styled(Link)`
 	width: 100%;
 	opacity: 1;
 	transition: opacity 200ms ease-out;
@@ -47,8 +47,7 @@ const Trademark = styled.span<{ theme: ThemeType }>`
 `
 
 const Logo: FC = () => (
-	<Link href="/">
-		<LogoLink title="Hauptseite | Michaela Jaritz">
+		<LogoLink href="/" title="Hauptseite | Michaela Jaritz">
 			<AnimatedInText timeout={0}>
 				<LogoImage src="/logo.svg" alt="Site Logo | Michaela Jaritz" />
 			</AnimatedInText>
@@ -70,7 +69,6 @@ const Logo: FC = () => (
 				</LogoSloganLine>
 			</LogoSlogan>
 		</LogoLink>
-	</Link>
 )
 
 export default Logo

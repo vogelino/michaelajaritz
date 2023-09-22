@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import React, { FC } from 'react'
 import Page from '../src/hocs/Page'
 import BigTitle from '../src/components/BigTitle'
 import Paragraph from '../src/components/Paragraph'
@@ -20,14 +20,6 @@ const CooperationsPage: FC = () => (
 		<br />
 		<br />
 		<a
-			href="http://a-u-m.biz/"
-			target="_blank"
-			rel="noopener noreferrer"
-			title="A+M | Marketing, Consulting, Training, Coaching"
-		>
-			<MobilePicture src="/logos/aundm.jpg" alt="Kooperationen" />
-		</a>
-		<a
 			href="https://www.symbolon.com/"
 			target="_blank"
 			rel="noopener noreferrer"
@@ -42,6 +34,30 @@ const CooperationsPage: FC = () => (
 			title="Judith Jahn | Marktforschung, Methodenberatung und Evaluation"
 		>
 			<MobilePicture src="/logos/judith-jahn.jpg" alt="Kooperationen" />
+		</a>
+		<a
+			href="https://changesupport.de/"
+			target="_blank"
+			rel="noopener noreferrer"
+			title="ChangeSupport | Begleitung, für erfolgreiche Veränderungsprozesse. Experten für Führung, Kommunikation & Konfliktlösung. Zukunft und Performance im Einklang."
+		>
+			<MobilePicture src="/logos/change-support.png" alt="Logo von Change Support" />
+		</a>
+		<a
+			href="https://www.sabinestock.com/"
+			target="_blank"
+			rel="noopener noreferrer"
+			title="Sabine Stock | Stärken. Revolution. Die Stärke deiner Einzigartigkeit!"
+		>
+			<MobilePicture src="/logos/sabine-stock.png" alt="Logo von Sabine Stock" />
+		</a>
+		<a
+			href="https://www.linkedin.com/in/harald-stock-39910241/"
+			target="_blank"
+			rel="noopener noreferrer"
+			title="Harald Stock | Managing Director bei Strande Consulting - Sichtbar-Macher * Inspirator * Impulsator * Aktivator"
+		>
+			<MobilePicture src="/logos/harald-stock.png" alt="Bild und Name von Harald Stock" />
 		</a>
 	</Page>
 )

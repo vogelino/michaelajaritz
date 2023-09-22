@@ -51,12 +51,10 @@ const Menu: FC<{ pageName: string }> = ({ pageName }) => (
 	<MenuList>
 		{pages.map((page, index) => (
 			<MenuListItem key={page.name} active={pageName === page.name}>
-				<Link href={page.path}>
-					<a title={`Michaela Jaritz | ${getText(`pages.${pageName}.title`)}`}>
+				<Link href={page.path} title={`Michaela Jaritz | ${getText(`pages.${pageName}.title`)}`}>
 						<AnimatedInText timeout={index * 100 + 400}>
 							{getText(`pages.${page.name}.title`)}
 						</AnimatedInText>
-					</a>
 				</Link>
 			</MenuListItem>
 		))}
