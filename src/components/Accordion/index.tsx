@@ -17,6 +17,7 @@ interface HAccordionPropsType {
 }
 
 const StyledDisclosureButton = styled(Disclosure.Button)`
+	width: 100%;
 	padding: 10px 0 10px 4px;
 	border-top: solid 1px rgba(0, 0, 0, 0.1);
 	overflow: hidden;

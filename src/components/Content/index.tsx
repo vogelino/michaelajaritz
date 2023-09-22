@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import Link from 'next/link'
 import styled from 'styled-components'
-import { HamburgerButton } from 'react-hamburger-button'
+import Hamburger from 'hamburger-react'
 import { useResponsiveState } from '../../utils/hooks/useResponsiveState'
 
 const ContentWrapper = styled.section`
@@ -83,7 +83,9 @@ const LogoImage = styled.img`
 `
 
 const SidebarToggle = styled.span`
-	float: right;
+	position: absolute;
+	top: 4px;
+	right: 4px;
 `
 
 interface ContentType {
@@ -114,11 +116,10 @@ const Content: FC<ContentType> = ({ children, setSidebar, isOpen }) => {
 					<LogoImage src="/logo-mobile.svg" />
 				</Link>
 				<SidebarToggle>
-					<HamburgerButton
-						onClick={() => setSidebar(!isOpen)}
-						width={20}
-						height={16}
-						open={isOpen}
+					<Hamburger
+						toggle={() => setSidebar(!isOpen)}
+						toggled={isOpen}
+						size={20}
 						color="#9AABB3"
 					/>
 				</SidebarToggle>
