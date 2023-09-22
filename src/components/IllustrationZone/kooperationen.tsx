@@ -3,7 +3,14 @@ import Parallelepiped from '../Parallelepiped'
 
 const Cooperations: FC = () => (
 	<div>
-		<Parallelepiped size={8} timeout={100} placement="toBottom" position={[10, 0]} />
+		<Parallelepiped
+			size={8}
+			timeout={100}
+			placement="toBottom"
+			position={[10, 0]}
+			link="https://www.sabinestock.com/"
+			image="logos/transparent/sabine-stock.png"
+		/>
 		<Parallelepiped
 			link="http://www.methodenberatung-jahn.de/"
 			placement="toBottom"
@@ -34,8 +41,24 @@ const Cooperations: FC = () => (
 			color="purple"
 			position={[13, 10]}
 		/>
-		<Parallelepiped placement="toBottom" size={3} timeout={300} color="orange" position={[14, 8]} />
-		<Parallelepiped placement="toTop" size={3} timeout={300} color="blue" position={[15, 0]} />
+		<Parallelepiped
+			placement="toBottom"
+			size={6}
+			timeout={300}
+			color="blue"
+			position={[14, 8]}
+			link="https://www.linkedin.com/in/harald-stock-39910241/"
+			image="/logos/transparent/harald-stock.png"
+		/>
+		<Parallelepiped
+			placement="toTop"
+			size={6}
+			timeout={300}
+			color="purple"
+			position={[15, 0]}
+			link="https://changesupport.de/"
+			image="/logos/transparent/change-support.png"
+		/>
 		<Parallelepiped placement="toTop" size={2} timeout={200} color="blue" position={[7.5, -15]} />
 		<Parallelepiped placement="toTop" size={3} timeout={400} color="purple" position={[9.5, -15]} />
 		<Parallelepiped placement="toTop" size={1} timeout={500} color="orange" position={[14, -18]} />

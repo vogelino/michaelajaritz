@@ -5,7 +5,7 @@ import { PageNameType } from 'src/constants/pages'
 
 export const HtmlHeadComponent: FC<{
 	pageName: PageNameType
-	children: string | undefined | null | JSX.Element | JSX.Element[]
+	children?: string | undefined | null | JSX.Element | JSX.Element[]
 }> = ({ pageName, children }) => (
 	<Head>
 		<title>

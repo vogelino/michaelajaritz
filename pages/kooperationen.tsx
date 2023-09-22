@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import React, { FC } from 'react'
 import Page from '../src/hocs/Page'
 import BigTitle from '../src/components/BigTitle'
 import Paragraph from '../src/components/Paragraph'
