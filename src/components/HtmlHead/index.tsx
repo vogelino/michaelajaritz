@@ -3,7 +3,10 @@ import Head from 'next/head'
 import { getText } from '../../texts/getText'
 import { PageNameType } from 'src/constants/pages'
 
-export const HtmlHeadComponent: FC<{ pageName: PageNameType }> = ({ pageName, children }) => (
+export const HtmlHeadComponent: FC<{
+	pageName: PageNameType
+	children: string | undefined | null | JSX.Element | JSX.Element[]
+}> = ({ pageName, children }) => (
 	<Head>
 		<title>
 			{getText(`pages.${pageName}.title`)}
