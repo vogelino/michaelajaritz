@@ -29,24 +29,12 @@ const Icon = styled.span`
 const SocialIconList: FC<{ startTimeout?: number }> = ({ startTimeout = 10 }) => (
 	<IconsWrapper>
 		<IconLink
-			href="https://twitter.com/MichaelaJaritz"
-			target="_blank"
-			rel="noopener noreferrer"
-			title="Twitter Account von Michaela Jaritz"
-		>
-			<AnimatedInText timeout={startTimeout + 300}>
-				<span>
-					<Icon style={{ backgroundImage: 'url("/twitter.svg")' }} />
-				</span>
-			</AnimatedInText>
-		</IconLink>
-		<IconLink
 			href="https://www.linkedin.com/in/michaela-jaritz-die-kaleidoskopin-🔭-797b77145/"
 			target="_blank"
 			rel="noopener noreferrer"
 			title="LinkedIn Profil von Michaela Jaritz"
 		>
-			<AnimatedInText timeout={startTimeout + 350}>
+			<AnimatedInText timeout={startTimeout + 300}>
 				<span>
 					<Icon style={{ backgroundImage: 'url("/linkedin.svg")' }} />
 				</span>

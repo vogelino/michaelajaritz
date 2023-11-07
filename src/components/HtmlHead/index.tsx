@@ -56,12 +56,6 @@ export const HtmlHeadComponent: FC<{
 		<meta property="og:description" content={getText('site.description')} />
 		<meta property="og:image" content="/images/portraits/michaela-portrait.jpg" />
 
-		<meta name="twitter:site" content="@MichaelaJaritz" />
-		<meta name="twitter:creator" content="@soyvogelino" />
-		<meta name="twitter:image" content="/images/portraits/michaela-portrait.jpg" />
-		<meta name="twitter:title" content={getText(`pages.${pageName}.title`)} />
-		<meta name="twitter:description" content={getText('site.description')} />
-
 		{children}
 	</Head>
 )
