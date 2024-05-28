@@ -1,8 +1,8 @@
 import React, { FC } from 'react'
-import Page from '../src/hocs/Page'
 import BigTitle from '../src/components/BigTitle'
-import Paragraph from '../src/components/Paragraph'
 import MobilePicture from '../src/components/MobilePicture'
+import Paragraph from '../src/components/Paragraph'
+import Page from '../src/hocs/Page'
 import { getText } from '../src/texts/getText'
 
 const pageName = 'kooperationen'
@@ -36,12 +36,12 @@ const CooperationsPage: FC = () => (
 			<MobilePicture src="/logos/judith-jahn.jpg" alt="Kooperationen" />
 		</a>
 		<a
-			href="https://changesupport.de/"
+			href="https://change-collective.de/"
 			target="_blank"
 			rel="noopener noreferrer"
-			title="ChangeSupport | Begleitung, für erfolgreiche Veränderungsprozesse. Experten für Führung, Kommunikation & Konfliktlösung. Zukunft und Performance im Einklang."
+			title="THE CHANGE COLLECTIVE | Begleitung, für erfolgreiche Veränderungsprozesse. Experten für Führung, Kommunikation & Konfliktlösung. Zukunft und Performance im Einklang."
 		>
-			<MobilePicture src="/logos/change-support.png" alt="Logo von Change Support" />
+			<MobilePicture src="/logos/change-collective.png" alt="Logo von THE CHANGE COLLECTIVE" />
 		</a>
 		<a
 			href="https://www.sabinestock.com/"

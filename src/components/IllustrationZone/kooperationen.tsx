@@ -56,8 +56,8 @@ const Cooperations: FC = () => (
 			timeout={300}
 			color="purple"
 			position={[15, 0]}
-			link="https://changesupport.de/"
-			image="/logos/transparent/change-support.png"
+			link="https://change-collective.de/"
+			image="/logos/transparent/change-collective.png"
 		/>
 		<Parallelepiped placement="toTop" size={2} timeout={200} color="blue" position={[7.5, -15]} />
 		<Parallelepiped placement="toTop" size={3} timeout={400} color="purple" position={[9.5, -15]} />

@@ -128,8 +128,8 @@ export default {
 						</a>
 					</li>
 					<li>
-						<a rel="noopener" target="_blank" href="https://changesupport.de/" title="Begleitung, für erfolgreiche Veränderungsprozesse. Experten für Führung, Kommunikation & Konfliktlösung. Zukunft und Performance im Einklang.">
-							CHANGEsupport | Wir begleiten Veränderung
+						<a rel="noopener" target="_blank" href="https://change-collective.de/" title="Flexibel vernetzt. Stark verbunden. Fokussiert zum Erfolg.">
+							THE CHANGE COLLECTIVE
 						</a>
 					</li>
 					<li>
