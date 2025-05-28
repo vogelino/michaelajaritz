@@ -128,8 +128,8 @@ export default {
 						</a>
 					</li>
 					<li>
-						<a rel="noopener" target="_blank" href="https://change-collective.de/" title="Flexibel vernetzt. Stark verbunden. Fokussiert zum Erfolg.">
-							THE CHANGE COLLECTIVE
+						<a rel="noopener" target="_blank" href="https://beyond-company.de/" title="Organisationsentwicklung Change Management Executive Coaching Beyond Company">
+							Beyond Company
 						</a>
 					</li>
 					<li>

@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import { FC } from 'react'
 import BigTitle from '../src/components/BigTitle'
 import MobilePicture from '../src/components/MobilePicture'
 import Paragraph from '../src/components/Paragraph'
@@ -36,12 +36,12 @@ const CooperationsPage: FC = () => (
 			<MobilePicture src="/logos/judith-jahn.jpg" alt="Kooperationen" />
 		</a>
 		<a
-			href="https://change-collective.de/"
+			href="https://beyond-company.de/"
 			target="_blank"
 			rel="noopener noreferrer"
-			title="THE CHANGE COLLECTIVE | Begleitung, für erfolgreiche Veränderungsprozesse. Experten für Führung, Kommunikation & Konfliktlösung. Zukunft und Performance im Einklang."
+			title="Beyond Company | Organisationsentwicklung Change Management Executive Coaching Beyond Company"
 		>
-			<MobilePicture src="/logos/change-collective.png" alt="Logo von THE CHANGE COLLECTIVE" />
+			<MobilePicture src="/logos/beyond-company.png" alt="Logo von Beyond Company" />
 		</a>
 		<a
 			href="https://www.sabinestock.com/"
