@@ -15,6 +15,9 @@
   "author": "Lucas Vogel <contact@vogelino.com> (http://vogelino.com/)",
   "license": "ISC",
   "homepage": "https://www.michaela-jaritz.de/",
+  "engines": {
+    "node": ">=22.0.0"
+  },
   "dependencies": {
     "@headlessui/react": "1.7.17",
     "@react-hook/window-size": "3.1.1",
@@ -27,11 +30,11 @@
     "styled-components": "6.0.8"
   },
   "devDependencies": {
-    "@types/node": "20.6.2",
+    "@types/node": "22.10.1",
     "@types/react": "18.2.22",
     "@types/sanitize-html": "2.9.0",
     "@types/styled-components": "5.1.27",
-    "next": "13.4.19",
+    "next": "13.5.6",
     "prettier": "3.0.3",
     "typescript": "5.2.2"
   }
